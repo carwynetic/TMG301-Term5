@@ -1,0 +1,233 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Dependency Parsing"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Introduction to Dependency Parsing\rDependency Relations\rDependency Trees\rTypes of Dependency Parsing\rTransition-based Dependency Parsing\rGraph-based Dependency Parsing\rEvaluation Metrics",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Introduction to Dependency Parsing",
+                     "3",
+                     "Dependency parsing is a process in natural language processing that involves analyzing the grammatical structure of a sentence by identifying the relationships between words. \r\rThese relationships are based on the syntactic dependencies that exist between words, indicating how words are connected and how they function within the sentence\u0027s structure."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Introduction to Dependency Parsing",
+                     "4",
+                     "Directed Graph Representation\r\rDependency parsing portrays sentence structure via a graph called a dependency tree. Each word becomes a node, linked by directed edges to depict relationships.\r\rGraph nodes match words, while edges show syntactic dependencies. Labels on edges specify relationship types, like \"subject\" or \"object,\" revealing roles and connections between sentence words."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Introduction to Dependency Parsing",
+                     "5",
+                     "Example\rConsider the sentence \"The cat chased the mouse.\" The dependency parsing process might result in the following dependency graph",
+                     "In this example:\r\rThe word \"chased\" is the root of the sentence, indicating that it is the main verb.\rThe word \"cat\" is the subject (nsubj) of the verb \"chased.\"\rThe word \"mouse\" is the direct object (dobj) of the verb \"chased.\"\rThe word \"The\" and \"the\" are determiners (det) associated with \"cat\" and \"mouse,\" respectively."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Introduction to Dependency Parsing",
+                     "6",
+                     "Python implementation",
+                     "We use the spacy library to perform dependency parsing.\rWe load the English language model for dependency parsing using spacy.load(\"en_core_web_sm\").\rWe provide a sentence for dependency parsing.\rThe nlp object processes the sentence, and each token in the sentence is annotated with its dependency relation to its head token.\rWe loop through the tokens and print out their text, dependency relation, and head text to visualize the dependency tree."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Dependency Relations",
+                     "7",
+                     "Dependency relations are the grammatical and syntactic relationships that exist between words in a sentence. \r\rThese relationships are represented using dependency edges in a dependency tree or graph, which provide insights into how words are connected and how they function within the sentence\u0027s structure."
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Dependency Relations",
+                     "8",
+                     "Key Points about Dependency Relations\r\rConnecting Words\rDependency edges connect individual words (nodes) in the sentence. Each word is a node, and the edges establish links between them to indicate their relationships.\r\rDirected Edges\rThe edges are directed, meaning they have a specific direction. The direction of an edge points from one word (the governor) to another word (the dependent), reflecting the relationship between them.\r\rGrammatical Relationships\rEach dependency edge represents a specific grammatical relationship between the words connected by the edge. These relationships describe how words function within the sentence and how they contribute to its overall meaning."
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Dependency Relations",
+                     "9",
+                     "Key Points about Dependency Relations\r\rTypes of Dependency Relations\rThere are various types of dependency relations that correspond to different grammatical roles and functions. Some common dependency labels include\r\rnsubj (Nominal Subject)\t: The word that performs the action of the main verb.\rdobj (Direct Object)\t\t: The word that receives the action of the verb.\ramod (Adjectival Modifier)\t: An adjective that modifies a noun.\radvmod (Adverbial Modifier)\t: An adverb that modifies a verb, adjective, or other adverb.\rprep (Prepositional Modifier)\t: A preposition followed by its object."
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Dependency Relations",
+                     "10",
+                     "Example\r\rConsider the sentence \"She quickly ate the delicious cake.\" The dependency relations can be represented as follows\r\r\r\r\r\r\rIn this example, \"ate\" is the main verb (root), \"She\" is the subject (nsubj), \"quickly\" is an adverbial modifier (advmod) of \"ate,\" \"cake\" is the direct object (dobj) of \"ate,\" and \"delicious\" is an adjectival modifier (amod) of \"cake.\""
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Dependency Trees",
+                     "11",
+                     "A dependency tree is a graphical representation of the syntactic structure of a sentence that captures the grammatical relationships and dependencies between words. \r\rIt is a type of directed graph where each word in the sentence is represented as a node, and the relationships between words are represented as directed edges connecting the nodes."
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Dependency Trees",
+                     "12",
+                     "Key Features of a Dependency Tree \r\rNode Representation\rEach word in the sentence corresponds to a node in the dependency tree. These nodes are typically labeled with the word itself.\rDirected Edges\rThe edges in the dependency tree are directed, indicating the dependency relations between words. Each edge points from one word (the governor) to another word (the dependent).\rRoot Node\rThe root of the dependency tree represents the main predicate or the primary action of the sentence. It is the word that does not depend on any other word in the sentence.\rDependency Labels\rThe edges in the dependency tree are labeled with dependency labels that describe the specific grammatical relationship between the connected words."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Dependency Trees",
+                     "13",
+                     "Example Dependency Tree \rConsider the sentence \"The cat chased the mouse.\" The corresponding dependency tree could be represented as follows:",
+                     "In this example\r\r\"chased\" is the main predicate (root), \r\"cat\" is the nominal subject (nsubj) of \"chased,\" \r\"The\" is a determiner (det) that modifies \"cat.“\r\rSimilarly, \r\"mouse\" is the direct object (dobj) of \"chased,\" \r\"the\" is a determiner (det) that modifies \"mouse.\""
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Types of Dependency Parsing",
+                     "14",
+                     "Dependency parsing, the process of analyzing the grammatical structure of a sentence, can be categorized into two main types based on how the relationships between words are represented:\r\rProjective Parsing\rNon-Projective Parsing"
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Types of Dependency Parsing",
+                     "15",
+                     "Projective Parsing\rProjective parsing involves constructing a dependency tree where the edges do not cross or intersect. \r\rIn other words, the tree is drawn in such a way that no two edges overlap each other. \r\rThis type of parsing is simpler and more intuitive, making it easier to visualize the relationships between words.\r\rExample of a Projective Dependency Tree \rConsider the sentence \"The cat chased the mouse.\" \rA projective dependency tree for this sentence would look like this:"
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Types of Dependency Parsing",
+                     "16",
+                     "Non-Projective Parsing\rNon-projective parsing allows for edges to cross or intersect in the dependency tree. \r\rThis means that the relationships between words can be more complex and capture subtle syntactic interactions that might not be possible to represent using only projective trees. \r\rNon-projective parsing is better suited for languages with more flexible word orders and complex sentence structures.\r\rExample of a Non-Projective Dependency Tree \rFor the sentence \"The cat chased the mouse,\" \ra non-projective dependency tree might look like this: \rIn this non-projective tree, the edge between \"cat\" \rand \"The\" crosses the edge between \"chased\" and \"The,\" \rallowing for a different representation of the relationships."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Transition-based Dependency Parsing",
+                     "17",
+                     "Transition-based parsing is a common approach to dependency parsing that involves sequentially applying a series of transition rules to construct a dependency tree for a given sentence. \r\rThis approach treats dependency parsing as a sequence of actions, where each action corresponds to a manipulation of the parsing state, eventually leading to the construction of the entire tree."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Transition-based Dependency Parsing",
+                     "18",
+                     "Key Features of Transition-Based Parsing\r\rParsing State\rThe parsing process maintains a parsing state that represents the current state of the dependency tree being constructed.\r\rTransition Rules\rTransition rules are predefined actions that can be applied to the parsing state to move it closer to the final dependency tree. These rules are designed to imitate how a human might intuitively build a sentence\u0027s structure.\r\rAction Sequence\rThe transition-based parser applies a sequence of transition rules to the parsing state, gradually transforming it into a fully formed dependency tree."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Transition-based Dependency Parsing",
+                     "19",
+                     "Common Transition Actions\r\rShift\rThe shift action moves the next word from the input sentence to the stack in the parsing state. This action is used when a word is not yet part of any dependency relationship.\r\rReduce\rThe reduce action removes a word from the stack, indicating that it has been incorporated into the dependency tree.\r\rLeft-Arc\rThe left-arc action creates a dependency edge from the current word to the top word on the stack, then pops the top word from the stack.\r\rRight-Arc\rThe right-arc action creates a dependency edge from the top word on the stack to the current word, then pushes the current word onto the stack."
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Transition-based Dependency Parsing",
+                     "20",
+                     "Example Transition Sequence\r\rLet\u0027s consider the sentence \"The cat chased the mouse.\" Here\u0027s a simplified example of the transition-based parsing process:\r\rShift: \"The\" is shifted onto the stack.\rShift: \"cat\" is shifted onto the stack.\rLeft-Arc: A left-arc is applied, creating a dependency edge from \"The\" to \"cat\" and popping \"The\" from the stack.\rShift: \"chased\" is shifted onto the stack.\rShift: \"the\" is shifted onto the stack.\rRight-Arc: A right-arc is applied, creating a dependency edge from \"chased\" to \"the\" and pushing \"the\" onto the stack.\rShift: \"mouse\" is shifted onto the stack.\rLeft-Arc: A left-arc is applied, creating a dependency edge from \"chased\" to \"mouse\" and popping \"chased\" from the stack."
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Graph-based Dependency Parsing",
+                     "21",
+                     "Graph-based parsing is an alternative approach to dependency parsing that views the task of constructing a dependency tree as a graph optimization problem. \r\rIn this approach, the goal is to find the best possible graph structure that satisfies certain constraints and assigns appropriate labels to the nodes and edges."
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Graph-based Dependency Parsing",
+                     "22",
+                     "Key Features of Graph-Based Parsing:\r\rGraph Representation\rInstead of constructing a dependency tree step by step, graph-based parsing represents the entire parsing process as a graph. The nodes of the graph correspond to words in the sentence, and the edges represent potential dependencies between words.\r\rOptimization Objective\rThe parsing process is formulated as an optimization problem, where the objective is to find the best possible graph structure that maximizes a certain scoring function. This function takes into account both the constraints and the likelihood of the observed linguistic features.\r\rLabels and Constraints\rGraph-based parsing assigns labels to nodes and edges in the graph to represent grammatical roles and relationships. Constraints ensure that the graph adheres to valid linguistic structures."
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "Graph-based Dependency Parsing",
+                     "23",
+                     "Example:\rLet\u0027s consider the sentence \"The cat chased the mouse.\"\r\rRepresent the sentence as a graph and assign labels to the nodes (words) and edges (dependencies) based on observed linguistic features. \r\rThe goal is to find the best graph structure that adheres to linguistic constraints and maximizes a scoring function."
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Graph-based Dependency Parsing",
+                     "24",
+                     "Example:\rGraph Representation\r\rParsing Process\rAssign labels to nodes: We label the nodes with words (\"The,\" \"cat,\" \"chased,\" \"the,\" \"mouse\").\rAssign edges: We start by considering all possible edges between nodes. For instance, we consider \"chased\" as the root, and we explore edges to connect \"The,\" \"cat,\" and \"the\" to \"chased.\" We also consider edges from \"chased\" to \"mouse.\"\rScore computation: We calculate scores for each potential edge based on our scoring function. For example, we might give higher scores to edges connecting \"chased\" to \"cat\" (subject relationship) and \"chased\" to \"mouse\" (object relationship).\rOptimization: We aim to find the best graph structure that maximizes the total score while adhering to linguistic constraints. We might use techniques like dynamic programming to efficiently search for the best structure.\rBest Graph Structure",
+                     "In this example, the graph-based parsing approach has successfully captured the relationships between words \"The,\" \"cat,\" \"chased,\" \"the,\" and \"mouse,\" assigning appropriate labels and constructing a coherent dependency structure."
+                 ]
+    },
+    {
+        "slide_number":  25,
+        "text":  [
+                     "Graph-based Dependency Parsing",
+                     "25",
+                     "Python Implementation",
+                     "We use the spacy library to perform graph-based dependency parsing.\r\rWe load the English language model for dependency parsing using spacy.load(\"en_core_web_sm\").\r\rWe provide a sentence for dependency parsing.\r\rThe nlp object processes the sentence and annotates each token with its dependency relation and head.\r\rWe use the displacy.render function to visualize the graph-based dependency parsing result using the \"dep\" style."
+                 ]
+    },
+    {
+        "slide_number":  26,
+        "text":  [
+                     "Evaluation Metrics",
+                     "26"
+                 ]
+    },
+    {
+        "slide_number":  27,
+        "text":  [
+                     "Evaluation Metrics",
+                     "27"
+                 ]
+    },
+    {
+        "slide_number":  28,
+        "text":  [
+                     "Evaluation Metrics",
+                     "28"
+                 ]
+    },
+    {
+        "slide_number":  29,
+        "text":  [
+                     "Q \u0026 A",
+                     "29"
+                 ]
+    }
+]

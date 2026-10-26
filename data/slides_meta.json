@@ -1,0 +1,2194 @@
+{
+  "1": {
+    "file": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "total_slides": 25,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Regular Expressions",
+        "text_sample": "Regular Expressions"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Regular Experesion\rText Normalization\rSDIT Distance 2"
+      },
+      {
+        "slide": 3,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 3 Definition of Regular Expressions (regex) Regular Expressions, often abbreviated as regex, are seq"
+      },
+      {
+        "slide": 4,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 4 Functionality of Regular Expressions Regular expressions are extensively used for various text-rel"
+      },
+      {
+        "slide": 5,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 5 Example Let's consider the task of finding email addresses within a text document using a basic re"
+      },
+      {
+        "slide": 6,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 6 Syntax Regular expressions use a combination of normal characters and special metacharacters to de"
+      },
+      {
+        "slide": 7,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 7 * (Asterisk): The asterisk matches the preceding character or group zero or more times.\r    Exampl"
+      },
+      {
+        "slide": 8,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 8 Quantifiers Quantifiers in regular expressions define how many times a preceding character or grou"
+      },
+      {
+        "slide": 9,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 9 Quantifiers ? (Question Mark): The question mark quantifier matches zero or one occurrence of the "
+      },
+      {
+        "slide": 10,
+        "title": "Regular Experession",
+        "text_sample": "Regular Experession 10 Groups and Capturing Groups in regular expressions, created using parentheses (), serve two main "
+      },
+      {
+        "slide": 11,
+        "title": "Example in Python",
+        "text_sample": "Example in Python 11 In this example, the regular expression \r\rr'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b’ \r\r"
+      },
+      {
+        "slide": 12,
+        "title": "Practice",
+        "text_sample": "Practice 12 Regular Expersions Practice\rInstructions\rCreate a Python program that performs text pattern matching using r"
+      },
+      {
+        "slide": 13,
+        "title": "Text Normalization",
+        "text_sample": "Text Normalization 13 Techniques Case Normalization\r\rCase normalization involves converting text to a consistent case, u"
+      },
+      {
+        "slide": 14,
+        "title": "Text Normalization",
+        "text_sample": "Text Normalization 14 Techniques Punctuation and Special Character Removal\r\rRemoving punctuation and special characters "
+      },
+      {
+        "slide": 15,
+        "title": "Text Normalization",
+        "text_sample": "Text Normalization 15 Techniques Whitespace and Line Break Handling\r\rHandling whitespace and line breaks ensures consist"
+      },
+      {
+        "slide": 16,
+        "title": "Text Normalization",
+        "text_sample": "Text Normalization 16 Stemming and Lemmatization Stemming: Stemming involves removing prefixes, suffixes, and inflection"
+      },
+      {
+        "slide": 17,
+        "title": "Text Normalization",
+        "text_sample": "Text Normalization 17 Stemming and Lemmatization Example:\r\rSentence: \"Running shoes are better for runners.\"\r\r    Stemmi"
+      },
+      {
+        "slide": 18,
+        "title": "Text Normalization",
+        "text_sample": "Text Normalization 18 Stop Word Removal Stop words are common words that are frequently used in a language but generally"
+      },
+      {
+        "slide": 19,
+        "title": "Example in Python",
+        "text_sample": "Example in Python 19 In this example, the normalize_text function performs the following normalization steps\r\rConverts t"
+      },
+      {
+        "slide": 20,
+        "title": "Practice",
+        "text_sample": "Practice 20 Text Normalization Practice\rInstructions\rCreate a Python program that performs text normalization using lowe"
+      },
+      {
+        "slide": 21,
+        "title": "Practice",
+        "text_sample": "Practice 21 Text Normalization Practice\rTask 1: Lowercasing\rWrite a function lowercase_text(text) that takes a text as i"
+      },
+      {
+        "slide": 22,
+        "title": "SDIT Distance",
+        "text_sample": "SDIT Distance 22 Introduction SDIT Distance is a string similarity metric that measures the similarity between two strin"
+      },
+      {
+        "slide": 23,
+        "title": "SDIT Distance",
+        "text_sample": "SDIT Distance 23 Applications in NLP Spelling correction: Identifying and suggesting corrections for transposed or misty"
+      },
+      {
+        "slide": 24,
+        "title": "Example in Python",
+        "text_sample": "Example in Python 24 Calculating the Sorted-Distance-Insensitive-Tolerant (SDIT) distance between two strings\rIn this ex"
+      },
+      {
+        "slide": 25,
+        "title": "Q & A",
+        "text_sample": "Q & A 25"
+      }
+    ]
+  },
+  "2": {
+    "file": "02. N-Gram Language Models.ppt",
+    "total_slides": 15,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "N-Gram Languages Model",
+        "text_sample": "N-Gram Languages Model"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction\rUnigrams and Bigrams\rLimitations\rTrigram and Higher N-Grams\rApplications of N-Gram Language Model "
+      },
+      {
+        "slide": 3,
+        "title": "Introduction",
+        "text_sample": "Introduction 3 N-Gram models are statistical language models used in NLP. They estimate the likelihood of a sequence of "
+      },
+      {
+        "slide": 4,
+        "title": "Introduction",
+        "text_sample": "Introduction 4 Example\rDataset with the following sentences\r\t\"I love to eat ice cream.\"\r\t\"I love to play soccer.\"\r\t\"I pr"
+      },
+      {
+        "slide": 5,
+        "title": "Unigrams and Bigrams",
+        "text_sample": "Unigrams and Bigrams 5 Unigrams (1-grams):\rUnigrams are the simplest form of N-Grams, where each word or token in a text"
+      },
+      {
+        "slide": 6,
+        "title": "Unigrams and Bigrams",
+        "text_sample": "Unigrams and Bigrams 6 Example\r\r\t\"I love to eat ice cream.“\r\rUnigrams: each word's probability is calculated separately."
+      },
+      {
+        "slide": 7,
+        "title": "Example in Python",
+        "text_sample": "Example in Python 7 In this example, the code performs the following steps\r\rPreprocess the text by removing non-alphanum"
+      },
+      {
+        "slide": 8,
+        "title": "Limitations",
+        "text_sample": "Limitations 8 Using only unigrams and bigrams in language modeling has several limitations\r\rLack of Context Beyond Adjac"
+      },
+      {
+        "slide": 9,
+        "title": "Trigrams, Higher N-Grams",
+        "text_sample": "Trigrams, Higher N-Grams 9 Trigrams (3-grams) and higher N-Grams are extensions of the N-Gram language modeling concept."
+      },
+      {
+        "slide": 10,
+        "title": "Example in Python",
+        "text_sample": "Example in Python 10 In this example, the code performs the following steps:\r\rPreprocess the text by removing non-alphan"
+      },
+      {
+        "slide": 11,
+        "title": "Applications",
+        "text_sample": "Applications 11 Speech Recognition\rMachine Translation\rText Generation\rLanguage Modeling\rSpell Checking and Correction\rI"
+      },
+      {
+        "slide": 12,
+        "title": "Summary",
+        "text_sample": "Summary While N-Gram models offer simplicity and efficiency, they are best suited for tasks that require basic language "
+      },
+      {
+        "slide": 13,
+        "title": "Practice on N-Gram Models",
+        "text_sample": "Practice on N-Gram Models Instructions\rCreate a Python program that builds an N-Gram language model from a given text an"
+      },
+      {
+        "slide": 14,
+        "title": "Practice on N-Gram Models",
+        "text_sample": "Practice on N-Gram Models Tasks\rTask 1: Preprocessing\rWrite a function preprocess_text(text) that takes a text as input "
+      },
+      {
+        "slide": 15,
+        "title": "Q & A",
+        "text_sample": "Q & A 15"
+      }
+    ]
+  },
+  "3": {
+    "file": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "total_slides": 19,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Text Classification and Sentiment",
+        "text_sample": "Text Classification and Sentiment"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Text Classification\rNavie Bayes to Text Classification\rNavie Bayes Algorithm\rSentiment Analysis (SA)\rNavie Baye"
+      },
+      {
+        "slide": 3,
+        "title": "Text Classification",
+        "text_sample": "Text Classification 3 Define\rText classification is the task of categorizing or assigning predefined labels or categorie"
+      },
+      {
+        "slide": 4,
+        "title": "Text Classification",
+        "text_sample": "Text Classification 4 Relevance of Text Classification\rSpam Detection\rIdentifying and filtering out unwanted or unsolici"
+      },
+      {
+        "slide": 5,
+        "title": "Navie Bayes to Text Classification",
+        "text_sample": "Navie Bayes to Text Classification 5 Naive Bayes is a powerful and widely used algorithm for text classification. It's b"
+      },
+      {
+        "slide": 6,
+        "title": "Navie Bayes Algorithm",
+        "text_sample": "Navie Bayes Algorithm 6"
+      },
+      {
+        "slide": 7,
+        "title": "Navie Bayes Algorithm",
+        "text_sample": "Navie Bayes Algorithm 7"
+      },
+      {
+        "slide": 8,
+        "title": "Navie Bayes Algorithm",
+        "text_sample": "Navie Bayes Algorithm 8"
+      },
+      {
+        "slide": 9,
+        "title": "Example",
+        "text_sample": "Example 9 In this example:\r\rWe have a small dataset of movie reviews, each labeled as \"positive\" or \"negative.“\r\rWe use "
+      },
+      {
+        "slide": 10,
+        "title": "Sentiment Analysis (SA)",
+        "text_sample": "Sentiment Analysis (SA) 10 Sentiment analysis, also known as opinion mining, is the process of analyzing a piece of text"
+      },
+      {
+        "slide": 11,
+        "title": "Sentiment Analysis (SA)",
+        "text_sample": "Sentiment Analysis (SA) 11 Importance of Sentiment Analysis\r\rUnderstanding Public Opinion\rCustomer Feedback Analysis\rSoc"
+      },
+      {
+        "slide": 12,
+        "title": "Navie Bayes to SA",
+        "text_sample": "Navie Bayes to SA 12 Training the Naive Bayes Model\r\rData Preparation: The first step is to gather a labeled dataset con"
+      },
+      {
+        "slide": 13,
+        "title": "Navie Bayes to SA",
+        "text_sample": "Navie Bayes to SA 13 Training the Naive Bayes Model\r\rCalculating Class Probabilities: The prior probabilities of each se"
+      },
+      {
+        "slide": 14,
+        "title": "Navie Bayes to SA",
+        "text_sample": "Navie Bayes to SA 14"
+      },
+      {
+        "slide": 15,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics 15 Accuracy: Accuracy measures the proportion of correctly classified instances out of the total inst"
+      },
+      {
+        "slide": 16,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics 16 F1-Score: The F1-score is the harmonic mean of precision and recall. It balances both metrics and "
+      },
+      {
+        "slide": 17,
+        "title": "Practice",
+        "text_sample": "Practice 17 Dataset\rpositive_reviews = [\r\"I loved the movie! The acting was great.\",\r\"The plot was engaging and the char"
+      },
+      {
+        "slide": 18,
+        "title": "Practice",
+        "text_sample": "Practice 18 Tasks\rTask 1: Data Preprocessing\rWrite a function preprocess_text(text) that takes a text as input and prepr"
+      },
+      {
+        "slide": 19,
+        "title": "Q & A",
+        "text_sample": "Q & A 19"
+      }
+    ]
+  },
+  "4": {
+    "file": "04. Logistic Regression.ppt",
+    "total_slides": 28,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Logistic Regression",
+        "text_sample": "Logistic Regression"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction\rLogistic Function (Sigmoid)\rEquation\rTraining Logistic Regression\rDecision Boundary\rRegularization"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction",
+        "text_sample": "Introduction 3 Logistic Regression for Binary Classification\r\t\rLogistic Regression is particularly suited for situations"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction",
+        "text_sample": "Introduction 4 Estimating Probability for Classification\r\t\rIn Logistic Regression, the algorithm transforms the output o"
+      },
+      {
+        "slide": 5,
+        "title": "Logistic Function (Sigmoid)",
+        "text_sample": "Logistic Function (Sigmoid) 5"
+      },
+      {
+        "slide": 6,
+        "title": "Logistic Function (Sigmoid)",
+        "text_sample": "Logistic Function (Sigmoid) 6"
+      },
+      {
+        "slide": 7,
+        "title": "Example",
+        "text_sample": "Example 7 In this example:\r\rThe sigmoid function defines the logistic function (sigmoid) as 1 / (1 + exp(-x)).\r\rWe gener"
+      },
+      {
+        "slide": 8,
+        "title": "Example",
+        "text_sample": "Example 8 In this example:\r\rThe sigmoid function defines the logistic function (sigmoid) as 1 / (1 + exp(-x)).\r\rWe gener"
+      },
+      {
+        "slide": 9,
+        "title": "Logistic Regression Equation",
+        "text_sample": "Logistic Regression Equation 9"
+      },
+      {
+        "slide": 10,
+        "title": "Logistic Regression Equation",
+        "text_sample": "Logistic Regression Equation 10"
+      },
+      {
+        "slide": 11,
+        "title": "Logistic Regression Equation",
+        "text_sample": "Logistic Regression Equation 11"
+      },
+      {
+        "slide": 12,
+        "title": "Training",
+        "text_sample": "Training 12 Initializing Coefficients\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing th"
+      },
+      {
+        "slide": 13,
+        "title": "Training",
+        "text_sample": "Training 13 Initializing Coefficients\rStart by initializing the coefficients (β0,β1,…,βnβ0​,β1​,…,βn​) with small random"
+      },
+      {
+        "slide": 14,
+        "title": "Training",
+        "text_sample": "Training 14"
+      },
+      {
+        "slide": 15,
+        "title": "Training",
+        "text_sample": "Training 15"
+      },
+      {
+        "slide": 16,
+        "title": "Training",
+        "text_sample": "Training 16 Initializing Coefficients\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing th"
+      },
+      {
+        "slide": 17,
+        "title": "Training",
+        "text_sample": "Training 17 Initializing Coefficients\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing th"
+      },
+      {
+        "slide": 18,
+        "title": "Decision Boundary",
+        "text_sample": "Decision Boundary 18 In logistic regression, the decision boundary is a critical concept that defines the separation bet"
+      },
+      {
+        "slide": 19,
+        "title": "Decision Boundary",
+        "text_sample": "Decision Boundary 19"
+      },
+      {
+        "slide": 20,
+        "title": "Decision Boundary",
+        "text_sample": "Decision Boundary 20 Visualizing the Decision Boundary.\r\rIn a two-dimensional feature space (two features), the decision"
+      },
+      {
+        "slide": 21,
+        "title": "Example",
+        "text_sample": "Example 21 In this example:\r\rWe generate synthetic data where the target labels are determined by a simple decision boun"
+      },
+      {
+        "slide": 22,
+        "title": "Regularization",
+        "text_sample": "Regularization 22 Regularization is a technique used in logistic regression (and other machine learning algorithms) to p"
+      },
+      {
+        "slide": 23,
+        "title": "Regularization",
+        "text_sample": "Regularization 23 Preventing Overfitting with Regularization\r\rOverfitting occurs when a model captures noise and fluctua"
+      },
+      {
+        "slide": 24,
+        "title": "Regularization",
+        "text_sample": "Regularization 24 L1 and L2 Regularization\r\r L1 Regularization (Lasso):\rL1 regularization adds the absolute values of co"
+      },
+      {
+        "slide": 25,
+        "title": "Example",
+        "text_sample": "Example 25 In this example:\r\rWe generate synthetic data where the target labels are determined by a simple decision boun"
+      },
+      {
+        "slide": 26,
+        "title": "Practice",
+        "text_sample": "Practice 26 Instructions\rCreate a Python program that performs binary classification using Logistic Regression. \rYou'll "
+      },
+      {
+        "slide": 27,
+        "title": "Practice",
+        "text_sample": "Practice 27 Tasks\rTask 1: Train Logistic Regression Model\rWrite a function train_logistic_regression(X, y) that takes th"
+      },
+      {
+        "slide": 28,
+        "title": "Q & A",
+        "text_sample": "Q & A 28"
+      }
+    ]
+  },
+  "5": {
+    "file": "05. Vector Semantics and Embeddings.ppt",
+    "total_slides": 29,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Vector Semantics and Embeddings",
+        "text_sample": "Vector Semantics and Embeddings"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Vector Semantics\rWord Embeddings\rDistributed Representation\rTraining Word Embeddings\rSemantic Relationships in "
+      },
+      {
+        "slide": 3,
+        "title": "Vector Semantics",
+        "text_sample": "Vector Semantics 3 Concept\rVector semantics represents words or phrases as numerical vectors in a high-dimensional space"
+      },
+      {
+        "slide": 4,
+        "title": "Word Embeddings",
+        "text_sample": "Word Embeddings 4 Concept\rWord embeddings, derived from vector semantics, are compact, continuous-value word representat"
+      },
+      {
+        "slide": 5,
+        "title": "Word Embeddings",
+        "text_sample": "Word Embeddings 5 Effectiveness in Natural Language Processing Tasks\rText Classification: Word embeddings help models un"
+      },
+      {
+        "slide": 6,
+        "title": "Word Embeddings",
+        "text_sample": "Word Embeddings 6 Effectiveness in Natural Language Processing Tasks\rInformation Retrieval: Word embeddings enable more "
+      },
+      {
+        "slide": 7,
+        "title": "Word Embeddings",
+        "text_sample": "Word Embeddings 7 Effectiveness in Natural Language Processing Tasks\rNatural Language Understanding: In tasks like senti"
+      },
+      {
+        "slide": 8,
+        "title": "Example",
+        "text_sample": "Example 8 In this example:\r\rWe use the spaCy library to load pre-trained word vectors for English words (en_core_web_md)"
+      },
+      {
+        "slide": 9,
+        "title": "Distributed Representation",
+        "text_sample": "Distributed Representation 9 Concept\r\rDistributed representation, or distributed semantics, is central to word embedding"
+      },
+      {
+        "slide": 10,
+        "title": "Distributed Representation",
+        "text_sample": "Distributed Representation 10 Encoding Semantic Features in Vector Dimensions\r\rIn word embeddings, each dimension of a v"
+      },
+      {
+        "slide": 11,
+        "title": "Distributed Representation",
+        "text_sample": "Distributed Representation 11 Illustrating Similar Words in the Embedding Space\r\rConsider a hypothetical two-dimensional"
+      },
+      {
+        "slide": 12,
+        "title": "Distributed Representation",
+        "text_sample": "Distributed Representation 12 Illustrating Similar Words in the Embedding Space\r\rIn this two-dimensional space, vectors "
+      },
+      {
+        "slide": 13,
+        "title": "Example",
+        "text_sample": "Example 13 In this example\r\rWe use the Word2Vec model from gensim to learn word embeddings from a small dataset of sente"
+      },
+      {
+        "slide": 14,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 14 Techniques for Training Word Embeddings\r\rWord2Vec\rThis method learns embeddings by predictin"
+      },
+      {
+        "slide": 15,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 15 Iterative Optimization Process\r\rInitialization\rInitialize word vectors randomly or with pre-"
+      },
+      {
+        "slide": 16,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 16 Iterative Optimization Process\r\rInitialization\rObjective Function\rDefine an objective functi"
+      },
+      {
+        "slide": 17,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 17 Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rUse optim"
+      },
+      {
+        "slide": 18,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 18 Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative "
+      },
+      {
+        "slide": 19,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 19 Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative "
+      },
+      {
+        "slide": 20,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 20 Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative "
+      },
+      {
+        "slide": 21,
+        "title": "Training Word Embeddings",
+        "text_sample": "Training Word Embeddings 21 Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative "
+      },
+      {
+        "slide": 22,
+        "title": "Semantic Relationships in Embeddings",
+        "text_sample": "Semantic Relationships in Embeddings 22 Word embeddings capture semantic relationships by representing words as dense ve"
+      },
+      {
+        "slide": 23,
+        "title": "Semantic Relationships in Embeddings",
+        "text_sample": "Semantic Relationships in Embeddings 23"
+      },
+      {
+        "slide": 24,
+        "title": "Semantic Relationships in Embeddings",
+        "text_sample": "Semantic Relationships in Embeddings 24 Similar Words in the Vector Space\rIn the embedding space, words with similar mea"
+      },
+      {
+        "slide": 25,
+        "title": "Limitations",
+        "text_sample": "Limitations 25 Polysemy and Homonymy Challenges:\rPolysemy: Words often have multiple meanings based on context. Word emb"
+      },
+      {
+        "slide": 26,
+        "title": "Contextualized Word Embeddings",
+        "text_sample": "Contextualized Word Embeddings 26 BERT (Bidirectional Encoder Representations from Transformers):\rBERT models consider b"
+      },
+      {
+        "slide": 27,
+        "title": "Practice",
+        "text_sample": "Practice 27 Dataset\rsentences = [\r\t[\"natural\", \"language\", \"processing\", \"is\", \"a\", \"subfield\", \"of\", \"artificial\", \"int"
+      },
+      {
+        "slide": 28,
+        "title": "Practice",
+        "text_sample": "Practice 28 Tasks\rTask 1: Training Word2Vec Model\rWrite a function train_word2vec_model(sentences) that takes a list of "
+      },
+      {
+        "slide": 29,
+        "title": "Q & A",
+        "text_sample": "Q & A 29"
+      }
+    ]
+  },
+  "6": {
+    "file": "06. Clustering for Text Similarity.ppt",
+    "total_slides": 28,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Clustering for Text Similarity",
+        "text_sample": "Clustering for Text Similarity"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Clustering Overview\rClustering for Text Similarity\rDistance Metrics for Text\rK-Means Clustering\rHierarchical Cl"
+      },
+      {
+        "slide": 3,
+        "title": "Clustering Overview",
+        "text_sample": "Clustering Overview 3 Concept\r\rClustering is a process in which data points are grouped together based on their similari"
+      },
+      {
+        "slide": 4,
+        "title": "Clustering Overview",
+        "text_sample": "Clustering Overview 4 Significance of Clustering in Unstructured Data\r\rClustering is particularly significant when deali"
+      },
+      {
+        "slide": 5,
+        "title": "Clustering for Text Similarity",
+        "text_sample": "Clustering for Text Similarity 5 How Clustering Algorithms Group Similar Text Documents\rVector Representation: Each text"
+      },
+      {
+        "slide": 6,
+        "title": "Clustering for Text Similarity",
+        "text_sample": "Clustering for Text Similarity 6 Role of Distance Metrics in Measuring Text Similarity\r\rEuclidean Distance: Measures the"
+      },
+      {
+        "slide": 7,
+        "title": "Distance Metrics for Text",
+        "text_sample": "Distance Metrics for Text 7"
+      },
+      {
+        "slide": 8,
+        "title": "Distance Metrics for Text",
+        "text_sample": "Distance Metrics for Text 8"
+      },
+      {
+        "slide": 9,
+        "title": "Distance Metrics for Text",
+        "text_sample": "Distance Metrics for Text 9"
+      },
+      {
+        "slide": 10,
+        "title": "K-Means Clustering",
+        "text_sample": "K-Means Clustering 10 Concept\rK-Means clustering is a widely used unsupervised machine learning algorithm for partitioni"
+      },
+      {
+        "slide": 11,
+        "title": "K-Means Clustering",
+        "text_sample": "K-Means Clustering 11 Basic Steps of the K-Means Algorithm\rChoose the Number of Clusters (K): The first step is to speci"
+      },
+      {
+        "slide": 12,
+        "title": "Example",
+        "text_sample": "Example 12 In this example:\r\rWe have a sample dataset of text documents.\r\rWe use the TfidfVectorizer to convert the text"
+      },
+      {
+        "slide": 13,
+        "title": "Hierarchical Clustering",
+        "text_sample": "Hierarchical Clustering 13 Concept\rHierarchical clustering is a method used to create a hierarchy of clusters in a datas"
+      },
+      {
+        "slide": 14,
+        "title": "Hierarchical Clustering",
+        "text_sample": "Hierarchical Clustering 14 Agglomerative and Divisive Hierarchical Clustering\r\r Agglomerative (Bottom-Up):\rAgglomerative"
+      },
+      {
+        "slide": 15,
+        "title": "Hierarchical Clustering",
+        "text_sample": "Hierarchical Clustering 15 Hierarchical Clustering Process\r\rCompute the pairwise distances between data points.\rTreat ea"
+      },
+      {
+        "slide": 16,
+        "title": "Example",
+        "text_sample": "Example 16 In this example:\r\rWe have a sample dataset of text documents.\rWe use the TfidfVectorizer to convert the text "
+      },
+      {
+        "slide": 17,
+        "title": "Density-based Clustering",
+        "text_sample": "Density-based Clustering 17 Concept\rDensity-Based Spatial Clustering of Applications with Noise (DBSCAN) is a popular de"
+      },
+      {
+        "slide": 18,
+        "title": "Density-based Clustering",
+        "text_sample": "Density-based Clustering 18 DBSCAN Groups Data Points\r\rThe algorithm classifies data points into three categories:\rCore "
+      },
+      {
+        "slide": 19,
+        "title": "Density-based Clustering",
+        "text_sample": "Density-based Clustering 19 DBSCAN Clustering Process\r\rSelect Parameters: Choose the \"eps\" (distance threshold) and \"min"
+      },
+      {
+        "slide": 20,
+        "title": "Text Pre-Processing for Clustering",
+        "text_sample": "Text Pre-Processing for Clustering 20 Importance of Text Preprocessing for Clustering\r\rText preprocessing is a crucial s"
+      },
+      {
+        "slide": 21,
+        "title": "Text Pre-Processing for Clustering",
+        "text_sample": "Text Pre-Processing for Clustering 21 Techniques in Text Preprocessing\r\rTokenization\rTokenization breaks text into indiv"
+      },
+      {
+        "slide": 22,
+        "title": "Text Pre-Processing for Clustering",
+        "text_sample": "Text Pre-Processing for Clustering 22 Techniques in Text Preprocessing\r\rStemming and Lemmatization\rStemming reduces word"
+      },
+      {
+        "slide": 23,
+        "title": "Text Pre-Processing for Clustering",
+        "text_sample": "Text Pre-Processing for Clustering 23 Enhancing Clustering Results through Preprocessing\r\rNoise Reduction\rPreprocessing "
+      },
+      {
+        "slide": 24,
+        "title": "Text Pre-Processing for Clustering",
+        "text_sample": "Text Pre-Processing for Clustering 24 Enhancing Clustering Results through Preprocessing\r\rFocus on Semantic Meaning:\rPre"
+      },
+      {
+        "slide": 25,
+        "title": "Example",
+        "text_sample": "Example 25 In this example:\r\rWe have a sample dataset of text documents.\r\rWe define a function preprocess_text to perfor"
+      },
+      {
+        "slide": 26,
+        "title": "Practice",
+        "text_sample": "Practice 26 Instructions\rCreate a Python program that performs text similarity clustering on a more challenging dataset."
+      },
+      {
+        "slide": 27,
+        "title": "Practice",
+        "text_sample": "Practice 27 Tasks\rTask 1: Text Pre-Processing\rWrite a function preprocess_text(text) that takes a text document as input"
+      },
+      {
+        "slide": 28,
+        "title": "Q & A",
+        "text_sample": "Q & A 28"
+      }
+    ]
+  },
+  "7": {
+    "file": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "total_slides": 25,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Transformer and Pre-Trained Language Models",
+        "text_sample": "Transformer and Pre-Trained Language Models"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction to Transformer\rMotivation for Transformer\rTransformer Architecture\rSelf-Attention Mechanism\rPositi"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction to Transformers",
+        "text_sample": "Introduction to Transformers 3 Transformers in Natural Language Processing (NLP)\rTransformers represent a revolutionary "
+      },
+      {
+        "slide": 4,
+        "title": "Introduction to Transformers",
+        "text_sample": "Introduction to Transformers 4 Handling Sequential Data without Recurrence or Convolution\r\rUnlike earlier models that re"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction to Transformers",
+        "text_sample": "Introduction to Transformers 5 Breakthrough Role in NLP Tasks\rMachine Translation\rTransformers, especially models like \""
+      },
+      {
+        "slide": 6,
+        "title": "Motivation for Transformer",
+        "text_sample": "Motivation for Transformer 6 Limitations of RNNs and CNNs\r\rRecurrent Neural Networks (RNNs) and Convolutional Neural Net"
+      },
+      {
+        "slide": 7,
+        "title": "Motivation for Transformer",
+        "text_sample": "Motivation for Transformer 7 Combining Attention Mechanisms and Parallel Processing\r\rThe limitations of RNNs and CNNs pr"
+      },
+      {
+        "slide": 8,
+        "title": "Transformer Architecture",
+        "text_sample": "Transformer Architecture 8 The architecture is based on self-attention mechanisms and feedforward neural networks."
+      },
+      {
+        "slide": 9,
+        "title": "Transformer Architecture",
+        "text_sample": "Transformer Architecture 9 Self-Attention Mechanism\rThe self-attention mechanism is a key component of Transformers that"
+      },
+      {
+        "slide": 10,
+        "title": "Transformer Architecture",
+        "text_sample": "Transformer Architecture 10 Encoder and Decode\r\r\tEncoder\rThe encoder stack consists of multiple layers of self-attention"
+      },
+      {
+        "slide": 11,
+        "title": "Transformer Architecture",
+        "text_sample": "Transformer Architecture 11 Positional Encodings\rSince Transformers don't have inherent positional information like RNNs"
+      },
+      {
+        "slide": 12,
+        "title": "Example",
+        "text_sample": "Example 12 example of a Transformer architecture using the Hugging Face Transformers library, which is a popular library"
+      },
+      {
+        "slide": 13,
+        "title": "Self-Attention Mechanism",
+        "text_sample": "Self-Attention Mechanism 13 Calculating Attention Scores and Weighted Context Vectors\r\rQuery, Key, Value\rEach word in th"
+      },
+      {
+        "slide": 14,
+        "title": "Self-Attention Mechanism",
+        "text_sample": "Self-Attention Mechanism 14 Capturing Local and Global Dependencies\r\rSelf-attention captures both local and global depen"
+      },
+      {
+        "slide": 15,
+        "title": "Self-Attention Mechanism",
+        "text_sample": "Self-Attention Mechanism 15 In this example:\r\rWe define a custom PositionalEncoding module that calculates the positiona"
+      },
+      {
+        "slide": 16,
+        "title": "Positional Encoding",
+        "text_sample": "Positional Encoding 16 Concept\r\rPositional encodings are introduced in the Transformer architecture to address the absen"
+      },
+      {
+        "slide": 17,
+        "title": "Positional Encoding",
+        "text_sample": "Positional Encoding 17 Injecting Order Information\r\rEncoding Scheme \rPositional encodings are generated based on a prede"
+      },
+      {
+        "slide": 18,
+        "title": "Positional Encoding",
+        "text_sample": "Positional Encoding 18"
+      },
+      {
+        "slide": 19,
+        "title": "Positional Encoding",
+        "text_sample": "Positional Encoding 19 In this example:\r\rWe define the scaled_dot_product_attention function that implements the self-at"
+      },
+      {
+        "slide": 20,
+        "title": "Pre-Trained Language Models",
+        "text_sample": "Pre-Trained Language Models 20 Pre-trained language models are neural network models that are trained on massive amounts"
+      },
+      {
+        "slide": 21,
+        "title": "Pre-Trained Language Models",
+        "text_sample": "Pre-Trained Language Models 21 Capturing Semantic Meanings and Relationships. \r\rPre-trained models learn to encode words"
+      },
+      {
+        "slide": 22,
+        "title": "Pre-Trained Language Models",
+        "text_sample": "Pre-Trained Language Models 22 Emergence of BERT, GPT-3, and Advanced Models. \r\rBERT (Bidirectional Encoder Representati"
+      },
+      {
+        "slide": 23,
+        "title": "Pre-Trained Language Models",
+        "text_sample": "Pre-Trained Language Models 23 Emergence of BERT, GPT-3, and Advanced Models. \r\rXLNet, T5, RoBERTa, etc.:\rThe success of"
+      },
+      {
+        "slide": 24,
+        "title": "Practice",
+        "text_sample": "Practice 24 Instructions\rIn this assignment, you'll explore and analyze the inner workings of a Transformer architecture"
+      },
+      {
+        "slide": 25,
+        "title": "Q & A",
+        "text_sample": "Q & A 25"
+      }
+    ]
+  },
+  "8": {
+    "file": "08. Fine-Tuning and Masked Language Models.ppt",
+    "total_slides": 27,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Fine-Tuning and Maske Language Models",
+        "text_sample": "Fine-Tuning and Maske Language Models"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction to Fine-Tuning\rPre-Trained Models for Fine-Tuning\rProcessing of Fine-Tuning\rBenefits of Fine-Tunin"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction to Fine-Tuning",
+        "text_sample": "Introduction to Fine-Tuning  3 Concept\r\rFine-tuning refers to the process of taking a pre-trained model, which has learn"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction to Fine-Tuning",
+        "text_sample": "Introduction to Fine-Tuning  4 Leveraging Pre-trained Knowledge\r\rPre-trained models have already learned rich linguistic"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction to Fine-Tuning",
+        "text_sample": "Introduction to Fine-Tuning  5 Fine-Tuning in the Context of Pre-trained Language Models\r\rIn the context of pre-trained "
+      },
+      {
+        "slide": 6,
+        "title": "Introduction to Fine-Tuning",
+        "text_sample": "Introduction to Fine-Tuning  6 The fine-tuning process generally involves the following steps\r\rTask-Specific Data\rObtain"
+      },
+      {
+        "slide": 7,
+        "title": "Example",
+        "text_sample": "Example 7 Example of fine-tuning a pre-trained BERT model for text classification using the Hugging Face Transformers li"
+      },
+      {
+        "slide": 8,
+        "title": "Pre-Trained Models for Fine-Tuning",
+        "text_sample": "Pre-Trained Models for Fine-Tuning  8 Importance of Pre-trained Language Models in NLP Tasks\r\rPre-trained language model"
+      },
+      {
+        "slide": 9,
+        "title": "Pre-Trained Models for Fine-Tuning",
+        "text_sample": "Pre-Trained Models for Fine-Tuning  9 Capturing Linguistic Patterns and Relationships\r\rPre-trained models capture lingui"
+      },
+      {
+        "slide": 10,
+        "title": "Pre-Trained Models for Fine-Tuning",
+        "text_sample": "Pre-Trained Models for Fine-Tuning  10 Models as Starting Points for Fine-Tuning\r\rModels like BERT (Bidirectional Encode"
+      },
+      {
+        "slide": 11,
+        "title": "Processing of Fine-Tuning",
+        "text_sample": "Processing of Fine-Tuning  11 Fine-tuning pre-trained language models involves adapting a pre-trained model to a specifi"
+      },
+      {
+        "slide": 12,
+        "title": "Processing of Fine-Tuning",
+        "text_sample": "Processing of Fine-Tuning  12 Fine-tuning pre-trained language models involves adapting a pre-trained model to a specifi"
+      },
+      {
+        "slide": 13,
+        "title": "Benefits of Fine-Tuning",
+        "text_sample": "Benefits of Fine-Tuning  13 Faster Convergence\rFine-tuning starts with pre-trained weights that already possess a good u"
+      },
+      {
+        "slide": 14,
+        "title": "Benefits of Fine-Tuning",
+        "text_sample": "Benefits of Fine-Tuning  14 Efficient Transfer of Knowledge\rFine-tuning encapsulates the knowledge acquired from a vast "
+      },
+      {
+        "slide": 15,
+        "title": "Limitations",
+        "text_sample": "Limitations  15 Data Quality and Domain Mismatch\rFine-tuning depends heavily on the quality and relevance of the task-sp"
+      },
+      {
+        "slide": 16,
+        "title": "Limitations",
+        "text_sample": "Limitations  16 Catastrophic Forgetting\rFine-tuning could cause the model to forget some of its pre-trained knowledge, p"
+      },
+      {
+        "slide": 17,
+        "title": "Limitations",
+        "text_sample": "Limitations  17 Sequential vs. Token-Level Tasks\rModels pre-trained for token-level tasks (like masked language modeling"
+      },
+      {
+        "slide": 18,
+        "title": "Masked Language Models (MLM)",
+        "text_sample": "Masked Language Models (MLM)  18 Masked Language Models (MLM) is a specific pre-training task used to train models like "
+      },
+      {
+        "slide": 19,
+        "title": "Masked Language Models (MLM)",
+        "text_sample": "Masked Language Models (MLM)  19 Predicting Masked Words Using Context\r\rIn the MLM task, a portion of the input text is "
+      },
+      {
+        "slide": 20,
+        "title": "Masked Language Models (MLM)",
+        "text_sample": "Masked Language Models (MLM)  20 BERT as a Popular MLM Example\r\rBERT is a groundbreaking pre-trained model that excels a"
+      },
+      {
+        "slide": 21,
+        "title": "MLM Objective and Architecture",
+        "text_sample": "MLM Objective and Architecture  21 MLM objective involves two main steps\r\rMasking Words\rA random portion of the input se"
+      },
+      {
+        "slide": 22,
+        "title": "MLM Objective and Architecture",
+        "text_sample": "MLM Objective and Architecture  22 Architecture of MLM Models (e.g., BERT)\rModels like BERT use a transformer-based arch"
+      },
+      {
+        "slide": 23,
+        "title": "MLM Objective and Architecture",
+        "text_sample": "MLM Objective and Architecture  23 Masked Language Model Training Process\r\rInput Encoding\rThe input sentence is tokenize"
+      },
+      {
+        "slide": 24,
+        "title": "Downstream Tasks with MLMs",
+        "text_sample": "Downstream Tasks with MLMs Sentence Classification\rFor tasks like sentiment analysis or text categorization, the final ["
+      },
+      {
+        "slide": 25,
+        "title": "Downstream Tasks with MLMs",
+        "text_sample": "Downstream Tasks with MLMs Machine Translation\rIn machine translation, the MLM can be fine-tuned by training it on paire"
+      },
+      {
+        "slide": 26,
+        "title": "Practice",
+        "text_sample": "Practice Instructions\rIn this assignment, you'll explore and work with masked language models using the Hugging Face Tra"
+      },
+      {
+        "slide": 27,
+        "title": "Q & A",
+        "text_sample": "Q & A 27"
+      }
+    ]
+  },
+  "9": {
+    "file": "09. Machine Translation.ppt",
+    "total_slides": 24,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Machine Translation",
+        "text_sample": "Machine Translation"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents What is Machine Translation?\rRule-Based Machine Translation\rStatistical Machine Translation\rNeural Machine Tran"
+      },
+      {
+        "slide": 3,
+        "title": "What is Machine Translation?",
+        "text_sample": "What is Machine Translation?  3 \rMachine translation is the automated process of translating text from one language to a"
+      },
+      {
+        "slide": 4,
+        "title": "What is Machine Translation?",
+        "text_sample": "What is Machine Translation?  4 Importance of Machine Translation  Tourism and Travel\rTravelers can navigate foreign cou"
+      },
+      {
+        "slide": 5,
+        "title": "What is Machine Translation?",
+        "text_sample": "What is Machine Translation?  5 Approaches to Machine Translation  Neural Machine Translation (NMT)\rNMT employs deep lea"
+      },
+      {
+        "slide": 6,
+        "title": "Rule-Based Machine Translation",
+        "text_sample": "Rule-Based Machine Translation  6 \rRule-Based Machine Translation (RBMT) was one of the early approaches to machine tran"
+      },
+      {
+        "slide": 7,
+        "title": "Rule-Based Machine Translation",
+        "text_sample": "Rule-Based Machine Translation  7 Example  In this example:\r\rWe define a RuleBasedTranslator class with a dictionary of "
+      },
+      {
+        "slide": 8,
+        "title": "Rule-Based Machine Translation",
+        "text_sample": "Rule-Based Machine Translation  8 Limitations of Rule-Based Machine Translation  Idioms and Cultural Nuances\rRBMT strugg"
+      },
+      {
+        "slide": 9,
+        "title": "Statistical Machine Translation",
+        "text_sample": "Statistical Machine Translation  9 \rStatistical Machine Translation (SMT) represents a significant advancement in the fi"
+      },
+      {
+        "slide": 10,
+        "title": "Statistical Machine Translation",
+        "text_sample": "Statistical Machine Translation  10 Learning Translation Probabilities from Parallel Corpora\r\rIn SMT, translation probab"
+      },
+      {
+        "slide": 11,
+        "title": "Statistical Machine Translation",
+        "text_sample": "Statistical Machine Translation  11 Importance of Alignment Models\r\rTo learn these translation probabilities, SMT system"
+      },
+      {
+        "slide": 12,
+        "title": "Statistical Machine Translation",
+        "text_sample": "Statistical Machine Translation  12 Phrase-Based Translation\r\rOne of the key advancements in SMT is the introduction of "
+      },
+      {
+        "slide": 13,
+        "title": "Statistical Machine Translation",
+        "text_sample": "Statistical Machine Translation  13 SMT Workflow Parallel Corpora\rSMT systems require large bilingual parallel corpora c"
+      },
+      {
+        "slide": 14,
+        "title": "Neural Machine Translation (NMT)",
+        "text_sample": "Neural Machine Translation (NMT)  14 \rNeural Machine Translation (NMT) marks a significant breakthrough in machine trans"
+      },
+      {
+        "slide": 15,
+        "title": "Neural Machine Translation (NMT)",
+        "text_sample": "Neural Machine Translation (NMT)  15 Deep Learning and Sequence-to-Sequence Models\r\rNMT employs a class of deep learning"
+      },
+      {
+        "slide": 16,
+        "title": "NMT Architecture",
+        "text_sample": "NMT Architecture  16 Encoder\rThe Encoder processes the input sentence in the source language and transforms it into a fi"
+      },
+      {
+        "slide": 17,
+        "title": "Training NMT Models",
+        "text_sample": "Training NMT Models  17 1. Parallel Corpora\rNMT models are trained on bilingual data, where each sentence in the source "
+      },
+      {
+        "slide": 18,
+        "title": "Training NMT Models",
+        "text_sample": "Training NMT Models  18 3. Training Steps\r\rInput Encoding: \rThe source language sentences are tokenized and encoded by t"
+      },
+      {
+        "slide": 19,
+        "title": "Example",
+        "text_sample": "Example 19 We use the Hugging Face Transformers library to load a pre-trained machine translation model for English to G"
+      },
+      {
+        "slide": 20,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics  20 BLEU (Bilingual Evaluation Understudy):\r\rBLEU is a widely used metric that measures the quality o"
+      },
+      {
+        "slide": 21,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics  21 METEOR (Metric for Evaluation of Translation with Explicit ORdering):\r\rMETEOR is another evaluati"
+      },
+      {
+        "slide": 22,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics  22 ROUGE (Recall-Oriented Understudy for Gisting Evaluation):\r\rROUGE is a family of evaluation metri"
+      },
+      {
+        "slide": 23,
+        "title": "Practice",
+        "text_sample": "Practice  23 Instructions\rIn this assignment, you'll work with machine translation using a pre-trained model and evaluat"
+      },
+      {
+        "slide": 24,
+        "title": "Q & A",
+        "text_sample": "Q & A 24"
+      }
+    ]
+  },
+  "10": {
+    "file": "10. Chatbot and Dialogue Systems.ppt",
+    "total_slides": 23,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Chatbot and Dialogue Systems",
+        "text_sample": "Chatbot and Dialogue Systems"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction\rTypes of Dialogue Systems\rComponents od Dialogue Systems\rDialogue Management\rNatural Language Unde"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction",
+        "text_sample": "Introduction 3 Chatbots\r\rChatbots are computer programs specifically designed to simulate human conversation.\r \rThey use"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction",
+        "text_sample": "Introduction 4 Dialogue Systems\r\ron the other hand, encompass a broader range of systems that handle natural language in"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction",
+        "text_sample": "Introduction 5 Importance of Chatbots Customer Service\rChatbots provide immediate assistance and support to customers, a"
+      },
+      {
+        "slide": 6,
+        "title": "Introduction",
+        "text_sample": "Introduction 6 Example We define a SimpleChatbot class with predefined responses for certain user inputs.\r\rThe generate_"
+      },
+      {
+        "slide": 7,
+        "title": "Types of Dialogue Systems",
+        "text_sample": "Types of Dialogue Systems 7 Task-Oriented Dialogue Systems\rTask-oriented dialogue systems, also known as goal-driven or "
+      },
+      {
+        "slide": 8,
+        "title": "Types of Dialogue Systems",
+        "text_sample": "Types of Dialogue Systems 8 Open-Domain Dialogue Systems\r\rOpen-domain dialogue systems, also called chatbots, are design"
+      },
+      {
+        "slide": 9,
+        "title": "Types of Dialogue Systems",
+        "text_sample": "Types of Dialogue Systems 9 Hybrid Dialogue Systems\r\rHybrid dialogue systems combine elements of both task-oriented and "
+      },
+      {
+        "slide": 10,
+        "title": "Components od Dialogue Systems",
+        "text_sample": "Components od Dialogue Systems 10 Natural Language Understanding (NLU)\rNatural Language Understanding (NLU) is a critica"
+      },
+      {
+        "slide": 11,
+        "title": "Components od Dialogue Systems",
+        "text_sample": "Components od Dialogue Systems 11 Dialogue Management\rDialogue Management is responsible for orchestrating the conversat"
+      },
+      {
+        "slide": 12,
+        "title": "Components od Dialogue Systems",
+        "text_sample": "Components od Dialogue Systems 12 Natural Language Generation (NLG)\rNatural Language Generation (NLG) is the component r"
+      },
+      {
+        "slide": 13,
+        "title": "Dialogue Management",
+        "text_sample": "Dialogue Management 13 Role of Dialogue Management in Chatbots Rule-Based Approach:\rIn a rule-based approach, dialogue m"
+      },
+      {
+        "slide": 14,
+        "title": "Natural Language Understanding",
+        "text_sample": "Natural Language Understanding 14 Key Tasks in NLU\rIntent Recognition\rNLU identifies the user's intention or purpose beh"
+      },
+      {
+        "slide": 15,
+        "title": "Natural Language Understanding",
+        "text_sample": "Natural Language Understanding 15 Techniques in NLU\rRule-Based Parsing\rRule-based approaches involve creating sets of ru"
+      },
+      {
+        "slide": 16,
+        "title": "Natural Language Generation",
+        "text_sample": "Natural Language Generation 16 Approaches in NLG\rTemplate-Based NLG\rIn this approach, predefined response templates are "
+      },
+      {
+        "slide": 17,
+        "title": "Natural Language Generation",
+        "text_sample": "Natural Language Generation 17 Neural Language Models in NLG\r\rNeural Language Models, such as Transformer-based models, "
+      },
+      {
+        "slide": 18,
+        "title": "Natural Language Generation",
+        "text_sample": "Natural Language Generation 18 Advantages of Neural Language Models\rContextual Awareness\rNeural models can consider the "
+      },
+      {
+        "slide": 19,
+        "title": "Natural Language Generation",
+        "text_sample": "Natural Language Generation 19 A simple dialogue system using natural language understanding (NLU) with the Hugging Face"
+      },
+      {
+        "slide": 20,
+        "title": "Training and Fine-Tuning Chatbots",
+        "text_sample": "Training and Fine-Tuning Chatbots 20 Collecting and Annotating Dialogue Data\r\rCollecting a diverse and representative da"
+      },
+      {
+        "slide": 21,
+        "title": "Training and Fine-Tuning Chatbots",
+        "text_sample": "Training and Fine-Tuning Chatbots 21 Training NLU, Dialogue Management, and NLG\r\rNLU Training\rUsing the annotated data, "
+      },
+      {
+        "slide": 22,
+        "title": "Training and Fine-Tuning Chatbots",
+        "text_sample": "Training and Fine-Tuning Chatbots 22 Fine-Tuning with User Interactions\r\rAfter initial training, the chatbot is deployed"
+      },
+      {
+        "slide": 23,
+        "title": "Q & A",
+        "text_sample": "Q & A 23"
+      }
+    ]
+  },
+  "11": {
+    "file": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "total_slides": 31,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Context-Free Grammars and Constituency Parsing",
+        "text_sample": "Context-Free Grammars and Constituency Parsing"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction to Context-Free Grammars (CFG)\rCFG Rules (Productions)\rConstituency Parsing\rParse Trees\rAmbiguity "
+      },
+      {
+        "slide": 3,
+        "title": "Introduction to CFG",
+        "text_sample": "Introduction to CFG 3 Context-Free Grammars (CFG)\r\rContext-Free Grammars (CFG) are a formal framework used to describe t"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction to CFG",
+        "text_sample": "Introduction to CFG 4 Rules and String Generation\r\rCFGs consist of a set of production rules that dictate how strings ca"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction to CFG",
+        "text_sample": "Introduction to CFG 5 Non-Terminals and Terminals:\rIn a CFG, the language is composed of two types of symbols:\rNon-Termi"
+      },
+      {
+        "slide": 6,
+        "title": "CFG Rules (Productions)",
+        "text_sample": "CFG Rules (Productions) 6 Structure of CFG Rules (Productions)\r\rThe rules, also known as productions, in a Context-Free "
+      },
+      {
+        "slide": 7,
+        "title": "CFG Rules (Productions)",
+        "text_sample": "CFG Rules (Productions) 7 Rules and Replacements\r\rEach rule specifies how a particular non-terminal symbol can be replac"
+      },
+      {
+        "slide": 8,
+        "title": "CFG Rules (Productions)",
+        "text_sample": "CFG Rules (Productions) 8 Applying Rules\r\rThe application of rules involves recursively replacing non-terminals with the"
+      },
+      {
+        "slide": 9,
+        "title": "Constituency Parsing",
+        "text_sample": "Constituency Parsing 9 Concept\r\rConstituency parsing is the process of analyzing a sentence and determining its hierarch"
+      },
+      {
+        "slide": 10,
+        "title": "Constituency Parsing",
+        "text_sample": "Constituency Parsing 10 Hierarchical Structure and Phrases\r\rConstituency parsing aims to identify the hierarchical relat"
+      },
+      {
+        "slide": 11,
+        "title": "Constituency Parsing",
+        "text_sample": "Constituency Parsing 11 For example\r\rConsider the sentence \"The cat chased the mouse under the table.\" Constituency pars"
+      },
+      {
+        "slide": 12,
+        "title": "Parse Trees",
+        "text_sample": "Parse Trees 12 Concept\r\rParse trees are graphical representations used to visualize the syntactic structure of sentences"
+      },
+      {
+        "slide": 13,
+        "title": "Parse Trees",
+        "text_sample": "Parse Trees 13 Nodes Representing Constituents\r\rIn a parse tree, each node represents a linguistic unit, which can be a "
+      },
+      {
+        "slide": 14,
+        "title": "Parse Trees",
+        "text_sample": "Parse Trees 14 Role of Terminals and Non-Terminals\r\rTerminals (Leaves)\rTerminal nodes in a parse tree correspond to the "
+      },
+      {
+        "slide": 15,
+        "title": "Parse Trees",
+        "text_sample": "Parse Trees 15 Example Parse Tree\r\rConsider the sentence \"The cat chased the mouse.“\r\rHere's a simplified example of a p"
+      },
+      {
+        "slide": 16,
+        "title": "Parse Trees",
+        "text_sample": "Parse Trees 16 Python implementation We use the nltk library to perform constituency parsing.\r\rWe first download the nec"
+      },
+      {
+        "slide": 17,
+        "title": "Ambiguity in CFG and Parse Trees",
+        "text_sample": "Ambiguity in CFG and Parse Trees 17 Ambiguity in the context of Context-Free Grammars (CFG) and parse trees refers to a "
+      },
+      {
+        "slide": 18,
+        "title": "Ambiguity in CFG and Parse Trees",
+        "text_sample": "Ambiguity in CFG and Parse Trees 18 Example of Ambiguity\r\rConsider the sentence \"Time flies like an arrow.\" \r\rThis sente"
+      },
+      {
+        "slide": 19,
+        "title": "Ambiguity in CFG and Parse Trees",
+        "text_sample": "Ambiguity in CFG and Parse Trees 19 Parse Trees for Ambiguous Sentence\rHere are the two parse trees representing the two"
+      },
+      {
+        "slide": 20,
+        "title": "Top-Down Parsing",
+        "text_sample": "Top-Down Parsing 20 Top-down parsing is a parsing approach used to construct a parse tree for a given input string based"
+      },
+      {
+        "slide": 21,
+        "title": "Top-Down Parsing",
+        "text_sample": "Top-Down Parsing 21 Steps of Top-Down Parsing\rStart from the Root\rThe parsing process begins by selecting the root of th"
+      },
+      {
+        "slide": 22,
+        "title": "Top-Down Parsing",
+        "text_sample": "Top-Down Parsing 22 Steps of Top-Down Parsing\rAdvancing Input\rAs matches occur, the parser advances to the next input to"
+      },
+      {
+        "slide": 23,
+        "title": "Top-Down Parsing",
+        "text_sample": "Top-Down Parsing 23 Two common methods for implementing top-down parsing are\r\rRecursive Descent Parsing\rIn this approach"
+      },
+      {
+        "slide": 24,
+        "title": "Bottom-Up Parsing",
+        "text_sample": "Bottom-Up Parsing 24 Bottom-up parsing is a parsing approach used to construct a parse tree for a given input string bas"
+      },
+      {
+        "slide": 25,
+        "title": "Bottom-Up Parsing",
+        "text_sample": "Bottom-Up Parsing 25 Steps of Bottom-Up Parsing\rStart from Input Tokens\rThe parsing process begins by considering the in"
+      },
+      {
+        "slide": 26,
+        "title": "Bottom-Up Parsing",
+        "text_sample": "Bottom-Up Parsing 26 Steps of Bottom-Up Parsing\rStart from Input Tokens\rThe parsing process begins by considering the in"
+      },
+      {
+        "slide": 27,
+        "title": "Bottom-Up Parsing",
+        "text_sample": "Bottom-Up Parsing 27 Two common methods for implementing bottom-up parsing are\r\rShift-Reduce Parsing\rIn this approach, t"
+      },
+      {
+        "slide": 28,
+        "title": "Constituency Parsing Algorithms",
+        "text_sample": "Constituency Parsing Algorithms 28 Earley Parser\rThe Earley parser is a chart-based parsing algorithm that uses dynamic "
+      },
+      {
+        "slide": 29,
+        "title": "Constituency Parsing Algorithms",
+        "text_sample": "Constituency Parsing Algorithms 29 CYK Parser (Cocke-Younger-Kasami)\rThe CYK parser is a dynamic programming algorithm u"
+      },
+      {
+        "slide": 30,
+        "title": "Constituency Parsing Algorithms",
+        "text_sample": "Constituency Parsing Algorithms 30 Chart Parsing\rChart parsing is a general parsing strategy that uses a chart data stru"
+      },
+      {
+        "slide": 31,
+        "title": "Q & A",
+        "text_sample": "Q & A 31"
+      }
+    ]
+  },
+  "12": {
+    "file": "12. Dependency Parsing.ppt",
+    "total_slides": 29,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Dependency Parsing",
+        "text_sample": "Dependency Parsing"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction to Dependency Parsing\rDependency Relations\rDependency Trees\rTypes of Dependency Parsing\rTransition"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction to Dependency Parsing",
+        "text_sample": "Introduction to Dependency Parsing 3 Dependency parsing is a process in natural language processing that involves analyz"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction to Dependency Parsing",
+        "text_sample": "Introduction to Dependency Parsing 4 Directed Graph Representation\r\rDependency parsing portrays sentence structure via a"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction to Dependency Parsing",
+        "text_sample": "Introduction to Dependency Parsing 5 Example\rConsider the sentence \"The cat chased the mouse.\" The dependency parsing pr"
+      },
+      {
+        "slide": 6,
+        "title": "Introduction to Dependency Parsing",
+        "text_sample": "Introduction to Dependency Parsing 6 Python implementation We use the spacy library to perform dependency parsing.\rWe lo"
+      },
+      {
+        "slide": 7,
+        "title": "Dependency Relations",
+        "text_sample": "Dependency Relations 7 Dependency relations are the grammatical and syntactic relationships that exist between words in "
+      },
+      {
+        "slide": 8,
+        "title": "Dependency Relations",
+        "text_sample": "Dependency Relations 8 Key Points about Dependency Relations\r\rConnecting Words\rDependency edges connect individual words"
+      },
+      {
+        "slide": 9,
+        "title": "Dependency Relations",
+        "text_sample": "Dependency Relations 9 Key Points about Dependency Relations\r\rTypes of Dependency Relations\rThere are various types of d"
+      },
+      {
+        "slide": 10,
+        "title": "Dependency Relations",
+        "text_sample": "Dependency Relations 10 Example\r\rConsider the sentence \"She quickly ate the delicious cake.\" The dependency relations ca"
+      },
+      {
+        "slide": 11,
+        "title": "Dependency Trees",
+        "text_sample": "Dependency Trees 11 A dependency tree is a graphical representation of the syntactic structure of a sentence that captur"
+      },
+      {
+        "slide": 12,
+        "title": "Dependency Trees",
+        "text_sample": "Dependency Trees 12 Key Features of a Dependency Tree \r\rNode Representation\rEach word in the sentence corresponds to a n"
+      },
+      {
+        "slide": 13,
+        "title": "Dependency Trees",
+        "text_sample": "Dependency Trees 13 Example Dependency Tree \rConsider the sentence \"The cat chased the mouse.\" The corresponding depende"
+      },
+      {
+        "slide": 14,
+        "title": "Types of Dependency Parsing",
+        "text_sample": "Types of Dependency Parsing 14 Dependency parsing, the process of analyzing the grammatical structure of a sentence, can"
+      },
+      {
+        "slide": 15,
+        "title": "Types of Dependency Parsing",
+        "text_sample": "Types of Dependency Parsing 15 Projective Parsing\rProjective parsing involves constructing a dependency tree where the e"
+      },
+      {
+        "slide": 16,
+        "title": "Types of Dependency Parsing",
+        "text_sample": "Types of Dependency Parsing 16 Non-Projective Parsing\rNon-projective parsing allows for edges to cross or intersect in t"
+      },
+      {
+        "slide": 17,
+        "title": "Transition-based Dependency Parsing",
+        "text_sample": "Transition-based Dependency Parsing 17 Transition-based parsing is a common approach to dependency parsing that involves"
+      },
+      {
+        "slide": 18,
+        "title": "Transition-based Dependency Parsing",
+        "text_sample": "Transition-based Dependency Parsing 18 Key Features of Transition-Based Parsing\r\rParsing State\rThe parsing process maint"
+      },
+      {
+        "slide": 19,
+        "title": "Transition-based Dependency Parsing",
+        "text_sample": "Transition-based Dependency Parsing 19 Common Transition Actions\r\rShift\rThe shift action moves the next word from the in"
+      },
+      {
+        "slide": 20,
+        "title": "Transition-based Dependency Parsing",
+        "text_sample": "Transition-based Dependency Parsing 20 Example Transition Sequence\r\rLet's consider the sentence \"The cat chased the mous"
+      },
+      {
+        "slide": 21,
+        "title": "Graph-based Dependency Parsing",
+        "text_sample": "Graph-based Dependency Parsing 21 Graph-based parsing is an alternative approach to dependency parsing that views the ta"
+      },
+      {
+        "slide": 22,
+        "title": "Graph-based Dependency Parsing",
+        "text_sample": "Graph-based Dependency Parsing 22 Key Features of Graph-Based Parsing:\r\rGraph Representation\rInstead of constructing a d"
+      },
+      {
+        "slide": 23,
+        "title": "Graph-based Dependency Parsing",
+        "text_sample": "Graph-based Dependency Parsing 23 Example:\rLet's consider the sentence \"The cat chased the mouse.\"\r\rRepresent the senten"
+      },
+      {
+        "slide": 24,
+        "title": "Graph-based Dependency Parsing",
+        "text_sample": "Graph-based Dependency Parsing 24 Example:\rGraph Representation\r\rParsing Process\rAssign labels to nodes: We label the no"
+      },
+      {
+        "slide": 25,
+        "title": "Graph-based Dependency Parsing",
+        "text_sample": "Graph-based Dependency Parsing 25 Python Implementation We use the spacy library to perform graph-based dependency parsi"
+      },
+      {
+        "slide": 26,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics 26"
+      },
+      {
+        "slide": 27,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics 27"
+      },
+      {
+        "slide": 28,
+        "title": "Evaluation Metrics",
+        "text_sample": "Evaluation Metrics 28"
+      },
+      {
+        "slide": 29,
+        "title": "Q & A",
+        "text_sample": "Q & A 29"
+      }
+    ]
+  },
+  "13": {
+    "file": "13. Locial Representations of Sentences Meaning.ppt",
+    "total_slides": 24,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Locial Representations of Sentences Meaning",
+        "text_sample": "Locial Representations of Sentences Meaning"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction to Logical Representations\rPropositional Logic\rFirst-Order Logic\rLambda Calculus\rMontague Grammar\r"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction to Logical Representations",
+        "text_sample": "Introduction to Logical Representations 3 Logical representations are formal structures used to capture the meaning of s"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction to Logical Representations",
+        "text_sample": "Introduction to Logical Representations 4 Importance of Logical Representations\r\rSemantic Precision\rNatural language is "
+      },
+      {
+        "slide": 5,
+        "title": "Introduction to Logical Representations",
+        "text_sample": "Introduction to Logical Representations 5 Importance of Logical Representations\r\rMachine Reasoning\rLogical representatio"
+      },
+      {
+        "slide": 6,
+        "title": "Propositional Logic",
+        "text_sample": "Propositional Logic 6 Propositional logic\rPropositional logic, also known as propositional calculus or sentential logic,"
+      },
+      {
+        "slide": 7,
+        "title": "Propositional Logic",
+        "text_sample": "Propositional Logic 7"
+      },
+      {
+        "slide": 8,
+        "title": "First-Order Logic",
+        "text_sample": "First-Order Logic 8"
+      },
+      {
+        "slide": 9,
+        "title": "First-Order Logic",
+        "text_sample": "First-Order Logic 9"
+      },
+      {
+        "slide": 10,
+        "title": "First-Order Logic",
+        "text_sample": "First-Order Logic 10 Expressive Power of First-Order Logic:\r\rFirst-order logic's introduction of quantifiers and predica"
+      },
+      {
+        "slide": 11,
+        "title": "Lambda Calculus",
+        "text_sample": "Lambda Calculus 11 Concept\rLambda calculus is a formal system in mathematical logic and computer science that serves as "
+      },
+      {
+        "slide": 12,
+        "title": "Lambda Calculus",
+        "text_sample": "Lambda Calculus 12 Role in Formal Semantics and Logical Representations:\rLambda calculus plays a significant role in for"
+      },
+      {
+        "slide": 13,
+        "title": "Montague Grammar",
+        "text_sample": "Montague Grammar 13 Montague grammar, developed by linguist Richard Montague in the 1970s, is a framework that aims to c"
+      },
+      {
+        "slide": 14,
+        "title": "Montague Grammar",
+        "text_sample": "Montague Grammar 14 Treating Linguistic Expressions as Functions\rIn Montague grammar, linguistic expressions are treated"
+      },
+      {
+        "slide": 15,
+        "title": "Montague Grammar",
+        "text_sample": "Montague Grammar 15 Example\rConsider the sentence \"John loves Mary.\" \rIn Montague grammar, the words \"John,\" \"loves,\" an"
+      },
+      {
+        "slide": 16,
+        "title": "Compositional Semantics",
+        "text_sample": "Compositional Semantics 16 Compositional semantics is the process of deriving the meaning of a complex expression, such "
+      },
+      {
+        "slide": 17,
+        "title": "Compositional Semantics",
+        "text_sample": "Compositional Semantics 17 Deriving Meaning from Parts\rIn compositional semantics, the meaning of a complex expression i"
+      },
+      {
+        "slide": 18,
+        "title": "Compositional Semantics",
+        "text_sample": "Compositional Semantics 18 Example\rConsider the sentence \"The cat chased the mouse.\" \r\rEach word and phrase can be assoc"
+      },
+      {
+        "slide": 19,
+        "title": "Compositional Semantics",
+        "text_sample": "Compositional Semantics 19 Facilitating Interpretation\r\rLogical representations facilitate compositional interpretation "
+      },
+      {
+        "slide": 20,
+        "title": "Semantic Parsing",
+        "text_sample": "Semantic Parsing 20 Semantic parsing is the task of converting natural language sentences into formal representations, o"
+      },
+      {
+        "slide": 21,
+        "title": "Semantic Parsing",
+        "text_sample": "Semantic Parsing 21 Challenges of Semantic Ambiguity and Variability\r\rSemantic Ambiguity\rMany natural language sentences"
+      },
+      {
+        "slide": 22,
+        "title": "Semantic Parsing",
+        "text_sample": "Semantic Parsing 22 Challenges of Semantic Ambiguity and Variability\r\rOut-of-Vocabulary Words\rHandling words or phrases "
+      },
+      {
+        "slide": 23,
+        "title": "Practice",
+        "text_sample": "Practice 23 Instructions\rIn this assignment, you'll explore logical representations of sentence meaning and practice con"
+      },
+      {
+        "slide": 24,
+        "title": "Q & A",
+        "text_sample": "Q & A 24"
+      }
+    ]
+  },
+  "14": {
+    "file": "14. Relation and Event Extraction.ppt",
+    "total_slides": 24,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Relation and Event Extraction",
+        "text_sample": "Relation and Event Extraction"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction to Relation Extraction\rTypes of Relations\rApproaches to Relation Extraction\rIntroduction to Event "
+      },
+      {
+        "slide": 3,
+        "title": "Introduction to Relation Extraction",
+        "text_sample": "Introduction to Relation Extraction 3 Relation extraction is the process of identifying and classifying the relationship"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction to Relation Extraction",
+        "text_sample": "Introduction to Relation Extraction 4 Significance in Information Retrieval and Knowledge Base Population\r\rInformation R"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction to Relation Extraction",
+        "text_sample": "Introduction to Relation Extraction 5 Significance in Information Retrieval and Knowledge Base Population\r\rQuestion Answ"
+      },
+      {
+        "slide": 6,
+        "title": "Types of Relations",
+        "text_sample": "Types of Relations 6 Binary Relations\r\rBinary relations involve two entities and represent a connection or association b"
+      },
+      {
+        "slide": 7,
+        "title": "Approaches to Relation Extraction",
+        "text_sample": "Approaches to Relation Extraction 7 Rule-Based Methods\rRule-based approaches rely on predefined patterns and linguistic "
+      },
+      {
+        "slide": 8,
+        "title": "Approaches to Relation Extraction",
+        "text_sample": "Approaches to Relation Extraction 8 Supervised Methods\rSupervised methods involve training machine learning classifiers "
+      },
+      {
+        "slide": 9,
+        "title": "Approaches to Relation Extraction",
+        "text_sample": "Approaches to Relation Extraction 9 Unsupervised Methods\r\rUnsupervised methods do not rely on labeled data and instead e"
+      },
+      {
+        "slide": 10,
+        "title": "Approaches to Relation Extraction",
+        "text_sample": "Approaches to Relation Extraction 10 Semi-Supervised Methods\r\rSemi-supervised methods combine elements of supervised and"
+      },
+      {
+        "slide": 11,
+        "title": "Approaches to Relation Extraction",
+        "text_sample": "Approaches to Relation Extraction 11 Deep Learning Approaches\r\rDeep learning techniques, such as neural networks and tra"
+      },
+      {
+        "slide": 12,
+        "title": "Introduction to Event Extraction",
+        "text_sample": "Introduction to Event Extraction 12 Event extraction is the process of identifying events mentioned in text and extracti"
+      },
+      {
+        "slide": 13,
+        "title": "Introduction to Event Extraction",
+        "text_sample": "Introduction to Event Extraction 13 Significance of Event Extraction\r\rEvent extraction is crucial for understanding the "
+      },
+      {
+        "slide": 14,
+        "title": "Introduction to Event Extraction",
+        "text_sample": "Introduction to Event Extraction 14 Example In this example:\r\rWe load the English language model using spacy.load(\"en_co"
+      },
+      {
+        "slide": 15,
+        "title": "Event Types",
+        "text_sample": "Event Types 15 Simple Events\r\rinvolve a single action or occurrence and the participants associated with that action. \r\r"
+      },
+      {
+        "slide": 16,
+        "title": "Event Types",
+        "text_sample": "Event Types 16 Temporal Events\r\rTemporal events involve time-related relationships between actions or occurrences.\r\rThes"
+      },
+      {
+        "slide": 17,
+        "title": "Applications",
+        "text_sample": "Applications 17 Knowledge Base Construction\rRelation extraction is essential for populating knowledge bases with structu"
+      },
+      {
+        "slide": 18,
+        "title": "Applications",
+        "text_sample": "Applications 18 Information Retrieval\rExtracted relations and events enhance search engines' ability to retrieve relevan"
+      },
+      {
+        "slide": 19,
+        "title": "Applications",
+        "text_sample": "Applications 19 Social Media Monitoring\rRelation and event extraction facilitate the analysis of social media content to"
+      },
+      {
+        "slide": 20,
+        "title": "Applications",
+        "text_sample": "Applications 20 Automated Summarization\rExtracted events and relationships can be used to generate concise and coherent "
+      },
+      {
+        "slide": 21,
+        "title": "Applications",
+        "text_sample": "Applications 21 Criminal Investigation\rIn law enforcement, event and relation extraction aids in analyzing case narrativ"
+      },
+      {
+        "slide": 22,
+        "title": "Practice",
+        "text_sample": "Practice 22 Instructions\rIn this assignment, you'll practice relation and event extraction using pattern matching and th"
+      },
+      {
+        "slide": 23,
+        "title": "Practice",
+        "text_sample": "Practice 23 Tasks\rTask 3: Pattern Matching for Event Extraction\rChoose three example sentences that describe events (e.g"
+      },
+      {
+        "slide": 24,
+        "title": "Q & A",
+        "text_sample": "Q & A 24"
+      }
+    ]
+  },
+  "15": {
+    "file": "15. Time and Temporal Reasoning.ppt",
+    "total_slides": 25,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Time and Temporal Reasoning",
+        "text_sample": "Time and Temporal Reasoning"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction\rTypes of Temporal Information in Text\rTemporal Entity Recognition\rTemporal Dependency Parsing\rTemp"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction",
+        "text_sample": "Introduction 3 Time and temporal reasoning in text mining refer to the process of identifying, extracting, representing,"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction",
+        "text_sample": "Introduction 4 Importance of Temporal Reasoning\r\rContextual Understanding\rTemporal information provides crucial context,"
+      },
+      {
+        "slide": 5,
+        "title": "Introduction",
+        "text_sample": "Introduction 5 Importance of Temporal Reasoning\r\rTrend Analysis\rTemporal reasoning enables the identification of trends,"
+      },
+      {
+        "slide": 6,
+        "title": "Introduction",
+        "text_sample": "Introduction 6 Importance of Temporal Reasoning\r\rLegal and Forensic Analysis\rTemporal reasoning is crucial in legal and "
+      },
+      {
+        "slide": 7,
+        "title": "Types of Temporal Information in Text",
+        "text_sample": "Types of Temporal Information in Text 7 Explicit Mentions of Dates and Times\rThis type includes direct references to spe"
+      },
+      {
+        "slide": 8,
+        "title": "Types of Temporal Information in Text",
+        "text_sample": "Types of Temporal Information in Text 8 Temporal Modifiers\rModifiers provide information about time-related aspects of a"
+      },
+      {
+        "slide": 9,
+        "title": "Types of Temporal Information in Text",
+        "text_sample": "Types of Temporal Information in Text 9 Temporal Clauses\rClauses that introduce temporal information and describe the ti"
+      },
+      {
+        "slide": 10,
+        "title": "Temporal Entity Recognition",
+        "text_sample": "Temporal Entity Recognition 10 Recognizing temporal entities, including dates, times, events, and durations, is crucial "
+      },
+      {
+        "slide": 11,
+        "title": "Temporal Entity Recognition",
+        "text_sample": "Temporal Entity Recognition 11 Here are common approaches used to identify such entities\rMachine Learning-Based Methods\r"
+      },
+      {
+        "slide": 12,
+        "title": "Temporal Entity Recognition",
+        "text_sample": "Temporal Entity Recognition 12 Here are common approaches used to identify such entities\rTransformer-Based Models\rTransf"
+      },
+      {
+        "slide": 13,
+        "title": "Temporal Dependency Parsing",
+        "text_sample": "Temporal Dependency Parsing 13 Analyzing Temporal Relationships\r\rTemporal dependency parsing is the process of analyzing"
+      },
+      {
+        "slide": 14,
+        "title": "Temporal Dependency Parsing",
+        "text_sample": "Temporal Dependency Parsing 14 How Temporal Dependency Parsing Differs from Syntax\r\rCapturing Time Relations\rTemporal de"
+      },
+      {
+        "slide": 15,
+        "title": "Temporal Expression Normalization",
+        "text_sample": "Temporal Expression Normalization 15 Converting Diverse Date and Time Formats\rTemporal expression normalization is the p"
+      },
+      {
+        "slide": 16,
+        "title": "Temporal Expression Normalization",
+        "text_sample": "Temporal Expression Normalization 16 Normalization Process\r Tokenization: Break down the temporal expression into its co"
+      },
+      {
+        "slide": 17,
+        "title": "Temporal Reasoning for Trend Analysis",
+        "text_sample": "Temporal Reasoning for Trend Analysis 17 Temporal reasoning plays a pivotal role in trend analysis by enabling the ident"
+      },
+      {
+        "slide": 18,
+        "title": "Temporal Reasoning for Trend Analysis",
+        "text_sample": "Temporal Reasoning for Trend Analysis 18 Here's how temporal reasoning contributes to trend analysis\rSeasonal Trends\rMan"
+      },
+      {
+        "slide": 19,
+        "title": "Temporal Reasoning for Trend Analysis",
+        "text_sample": "Temporal Reasoning for Trend Analysis 19 Here's how temporal reasoning contributes to trend analysis\rDecision Support\rBu"
+      },
+      {
+        "slide": 20,
+        "title": "Temporal Reasoning for Trend Analysis",
+        "text_sample": "Temporal Reasoning for Trend Analysis 20 Process of Temporal Reasoning for Trend Analysis\rData Collection\rGather histori"
+      },
+      {
+        "slide": 21,
+        "title": "Temporal Reasoning in Text Summarization",
+        "text_sample": "Temporal Reasoning in Text Summarization Role of Temporal Reasoning in Text Summarization\rTemporal reasoning plays a cri"
+      },
+      {
+        "slide": 22,
+        "title": "Temporal Reasoning in Text Summarization",
+        "text_sample": "Temporal Reasoning in Text Summarization Role of Temporal Reasoning in Text Summarization\rCohesive Summaries\rBy incorpor"
+      },
+      {
+        "slide": 23,
+        "title": "Temporal Reasoning in Text Summarization",
+        "text_sample": "Temporal Reasoning in Text Summarization Role of Temporal Reasoning in Text Summarization\rTracking Trends\rIn summaries o"
+      },
+      {
+        "slide": 24,
+        "title": "Temporal Reasoning in Text Summarization",
+        "text_sample": "Temporal Reasoning in Text Summarization Process of Incorporating Temporal Reasoning in Summarization\rTemporal Entity Re"
+      },
+      {
+        "slide": 25,
+        "title": "Q & A",
+        "text_sample": "Q & A 25"
+      }
+    ]
+  },
+  "16": {
+    "file": "16. Word Senses and WordNet.ppt",
+    "total_slides": 20,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Word Senses and WordNet",
+        "text_sample": "Word Senses and WordNet"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction\rMotivation for Word Senses\rWordNet Structure\rWordNet Relations\rWord Sense Disambiguation (WSD)\rWor"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction",
+        "text_sample": "Introduction 3 Understanding Word Meanings in Context\r\rWord Senses\rWord senses refer to the various meanings that a sing"
+      },
+      {
+        "slide": 4,
+        "title": "Motivation for Word Senses",
+        "text_sample": "Motivation for Word Senses 4 Importance of Understanding Word Senses in NLP\rResolving Ambiguity in Text\rAmbiguity arises"
+      },
+      {
+        "slide": 5,
+        "title": "Motivation for Word Senses",
+        "text_sample": "Motivation for Word Senses 5 Importance of Understanding Word Senses in NLP\rEnabling Advanced NLP Tasks\rAdvanced NLP tas"
+      },
+      {
+        "slide": 6,
+        "title": "WordNet Structure",
+        "text_sample": "WordNet Structure 6 Organizing Word Senses\rWordNet is organized into a structured hierarchy that captures the relationsh"
+      },
+      {
+        "slide": 7,
+        "title": "WordNet Structure",
+        "text_sample": "WordNet Structure 7 Organizing Word Senses\r\rSynsets (Synonym Sets)\rSynsets are groups of synonymous words that share a c"
+      },
+      {
+        "slide": 8,
+        "title": "WordNet Structure",
+        "text_sample": "WordNet Structure 8 Organizing Word Senses\rMeronymy Relationships\rMeronymy relationships indicate part-whole relationshi"
+      },
+      {
+        "slide": 9,
+        "title": "WordNet Structure",
+        "text_sample": "WordNet Structure 9 Python Implementation In this example:\r\rWe use the nltk library to interact with the WordNet lexical"
+      },
+      {
+        "slide": 10,
+        "title": "WordNet Relations",
+        "text_sample": "WordNet Relations 10 Different Types of Relations in WordNet\r\rHypernymy and Hyponymy\rHypernymy: A hypernym is a more gen"
+      },
+      {
+        "slide": 11,
+        "title": "WordNet Relations",
+        "text_sample": "WordNet Relations 11 Different Types of Relations in WordNet\r\rEntailment\rEntailment relations indicate that the truth of"
+      },
+      {
+        "slide": 12,
+        "title": "WordNet Relations",
+        "text_sample": "WordNet Relations 12 Different Types of Relations in WordNet\r\rAttribute (Has attribute)\rAttribute relations connect noun"
+      },
+      {
+        "slide": 13,
+        "title": "Word Sense Disambiguation (WSD)",
+        "text_sample": "Word Sense Disambiguation (WSD) 13 Word Sense Disambiguation (WSD) is a fundamental natural language processing task tha"
+      },
+      {
+        "slide": 14,
+        "title": "Word Sense Disambiguation (WSD)",
+        "text_sample": "Word Sense Disambiguation (WSD) 14 Challenges in WSD\rContextual Ambiguity\rWords can have different meanings based on the"
+      },
+      {
+        "slide": 15,
+        "title": "Word Sense Disambiguation (WSD)",
+        "text_sample": "Word Sense Disambiguation (WSD) 15 Challenges in WSD\rAmbiguity in WordNet\rEven in resources like WordNet, where senses a"
+      },
+      {
+        "slide": 16,
+        "title": "Word Sense Expansion and WordNet Enhancement",
+        "text_sample": "Word Sense Expansion and WordNet Enhancement 16 Word Sense Expansion\r\rWord sense expansion refers to the process of auto"
+      },
+      {
+        "slide": 17,
+        "title": "Word Sense Expansion and WordNet Enhancement",
+        "text_sample": "Word Sense Expansion and WordNet Enhancement 17 Key Points\rSynset Enrichment\rWordNet organizes words into synsets, each "
+      },
+      {
+        "slide": 18,
+        "title": "Word Sense Expansion and WordNet Enhancement",
+        "text_sample": "Word Sense Expansion and WordNet Enhancement 18 Enhancing WordNet and Beyond\r\rMultilingual WordNets\rEfforts have been ma"
+      },
+      {
+        "slide": 19,
+        "title": "Practice",
+        "text_sample": "Practice 19 Instructions\rIn this assignment, you'll explore word senses and the WordNet lexical database using the nltk "
+      },
+      {
+        "slide": 20,
+        "title": "Q & A",
+        "text_sample": "Q & A 20"
+      }
+    ]
+  },
+  "17": {
+    "file": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "total_slides": 22,
+    "slides": [
+      {
+        "slide": 1,
+        "title": "Lexicons for Sentiment Effect and Connotation",
+        "text_sample": "Lexicons for Sentiment Effect and Connotation"
+      },
+      {
+        "slide": 2,
+        "title": "Contents",
+        "text_sample": "Contents Introduction\rSentiment Lexicons (SL)\rExamples of SL\rConnotation Lexcions (CL)\rExamples of CL\rApplications\rCombi"
+      },
+      {
+        "slide": 3,
+        "title": "Introduction",
+        "text_sample": "Introduction 3 Sentiment Effect and Connotation\r\rThe sentiment effect refers to the emotional impact or tone that a word"
+      },
+      {
+        "slide": 4,
+        "title": "Introduction",
+        "text_sample": "Introduction 4 Lexicons\rA lexicon is a resource that contains a collection of words along with their associated attribut"
+      },
+      {
+        "slide": 5,
+        "title": "Sentiment Lexicons (SL)",
+        "text_sample": "Sentiment Lexicons (SL) 5 Sentiment lexicons are curated collections of words or phrases in a language, where each word "
+      },
+      {
+        "slide": 6,
+        "title": "Sentiment Lexicons (SL)",
+        "text_sample": "Sentiment Lexicons (SL) 6 Key Points\rPolarity Labels\rSentiment lexicons associate words with polarity labels that reflec"
+      },
+      {
+        "slide": 7,
+        "title": "Sentiment Lexicons (SL)",
+        "text_sample": "Sentiment Lexicons (SL) 7 Key Points\rText Classification\rSentiment lexicons are particularly useful in text classificati"
+      },
+      {
+        "slide": 8,
+        "title": "Examples of SL",
+        "text_sample": "Examples of SL 8 AFINN (Affective Norms for English Words and Phrases)\rAFINN is a widely used sentiment lexicon that ass"
+      },
+      {
+        "slide": 9,
+        "title": "Examples of SL",
+        "text_sample": "Examples of SL 9 AFINN Example\rAFINN assigns sentiment scores to words, helping to determine the overall sentiment of a "
+      },
+      {
+        "slide": 10,
+        "title": "Examples of SL",
+        "text_sample": "Examples of SL 10 VADER Example\r\rVADER takes into account grammatical and syntactical rules to analyze sentiment, making"
+      },
+      {
+        "slide": 11,
+        "title": "Examples of SL",
+        "text_sample": "Examples of SL 11 VADER Example (Python Implementation) We use the nltk library to perform sentiment analysis using the "
+      },
+      {
+        "slide": 12,
+        "title": "Connotation Lexcions (CL)",
+        "text_sample": "Connotation Lexcions (CL) 12 Connotation lexicons are specialized resources that go beyond merely indicating positive, n"
+      },
+      {
+        "slide": 13,
+        "title": "Connotation Lexcions (CL)",
+        "text_sample": "Connotation Lexcions (CL) 13 Key Points\r\rEmotional and Associative Meanings\rConnotation lexicons delve into the emotiona"
+      },
+      {
+        "slide": 14,
+        "title": "Examples of CL",
+        "text_sample": "Examples of CL 14 ANEW (Affective Norms for English Words)\rANEW is a connotation lexicon that goes beyond sentiment anal"
+      },
+      {
+        "slide": 15,
+        "title": "Examples of CL",
+        "text_sample": "Examples of CL 15 ANEW (Affective Norms for English Words) Example:\rANEW captures emotional dimensions beyond sentiment,"
+      },
+      {
+        "slide": 16,
+        "title": "Examples of CL",
+        "text_sample": "Examples of CL 16 ANEW Example (Python Implementation) In this example:\r\rWe use the pandas library to handle data manipu"
+      },
+      {
+        "slide": 17,
+        "title": "Applications",
+        "text_sample": "Applications 17 Sentiment Analysis in Social Media\rSentiment and connotation lexicons play a crucial role in analyzing s"
+      },
+      {
+        "slide": 18,
+        "title": "Applications",
+        "text_sample": "Applications 18 Movie and Music Reviews\rSentiment and connotation lexicons find application in analyzing movie and music"
+      },
+      {
+        "slide": 19,
+        "title": "Combine with Machine Learning",
+        "text_sample": "Combine with Machine Learning Lexicon-Based Methods\rLexicon-based sentiment analysis involves assigning sentiment scores"
+      },
+      {
+        "slide": 20,
+        "title": "Combine with Machine Learning",
+        "text_sample": "Combine with Machine Learning Example in a hybrid approach for sentiment analysis\rFeature Extraction: Lexicon-based feat"
+      },
+      {
+        "slide": 21,
+        "title": "Practice",
+        "text_sample": "Practice Instructions\rIn this assignment, you'll explore lexicons for sentiment effect and connotation analysis using Py"
+      },
+      {
+        "slide": 22,
+        "title": "Q & A",
+        "text_sample": "Q & A 22"
+      }
+    ]
+  }
+}

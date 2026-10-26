@@ -1,0 +1,527 @@
+[
+  {
+    "term": "Regular Expressions (Regex)",
+    "vn": "Biểu thức chính quy",
+    "ch": 1,
+    "def": "A formalized string search pattern used for parsing, extracting, and replacing text.",
+    "slide": "Slide 1–10"
+  },
+  {
+    "term": "Word Boundary (\\b)",
+    "vn": "Ranh giới từ",
+    "ch": 1,
+    "def": "An anchor matching the boundary between a word character (\\w) and non-word character (\\W).",
+    "slide": "Slide 6"
+  },
+  {
+    "term": "Capturing Group",
+    "vn": "Nhóm trích xuất",
+    "ch": 1,
+    "def": "Parentheses (pattern) grouping subexpressions and storing matched values in memory for extraction.",
+    "slide": "Slide 11"
+  },
+  {
+    "term": "Tokenization",
+    "vn": "Tách từ",
+    "ch": 1,
+    "def": "The process of segmenting running text into discrete linguistic units (tokens/words).",
+    "slide": "Slide 15"
+  },
+  {
+    "term": "Stemming",
+    "vn": "Cắt tỉa gốc từ",
+    "ch": 1,
+    "def": "Heuristic rule-based suffix chopping (e.g. Porter Stemmer) that often yields invalid dictionary stems.",
+    "slide": "Slide 18"
+  },
+  {
+    "term": "Lemmatization",
+    "vn": "Đưa về dạng chuẩn từ điển",
+    "ch": 1,
+    "def": "Morphological analysis considering POS tags to map word surface forms to canonical dictionary lemmas.",
+    "slide": "Slide 19"
+  },
+  {
+    "term": "SDIT Distance",
+    "vn": "Khoảng cách SDIT / Damerau-Levenshtein",
+    "ch": 1,
+    "def": "Edit distance metric allowing insertion, deletion, substitution, and adjacent character transposition.",
+    "slide": "Slide 22"
+  },
+  {
+    "term": "Byte-Pair Encoding (BPE)",
+    "vn": "Mã hóa cặp byte",
+    "ch": 1,
+    "def": "Iterative subword tokenization algorithm that merges the most frequent adjacent character pairs.",
+    "slide": "Slide 20"
+  },
+  {
+    "term": "Language Model (LM)",
+    "vn": "Mô hình ngôn ngữ",
+    "ch": 2,
+    "def": "A statistical model computing probability distributions P(W) over word sequences.",
+    "slide": "Slide 2"
+  },
+  {
+    "term": "Markov Assumption",
+    "vn": "Giả định Markov",
+    "ch": 2,
+    "def": "Approximating word history by assuming probability depends only on the previous k words.",
+    "slide": "Slide 4"
+  },
+  {
+    "term": "Maximum Likelihood Estimation (MLE)",
+    "vn": "Ước lượng hợp lý cực đại",
+    "ch": 2,
+    "def": "Estimating parameters by calculating relative frequency counts in training data.",
+    "slide": "Slide 5"
+  },
+  {
+    "term": "Perplexity",
+    "vn": "Độ hỗn loạn / Độ ngạc nhiên",
+    "ch": 2,
+    "def": "Inverse probability of a test corpus normalized by word count; lower perplexity = better model.",
+    "slide": "Slide 8"
+  },
+  {
+    "term": "Laplace Smoothing",
+    "vn": "Làm mịn Laplace (Add-1)",
+    "ch": 2,
+    "def": "Adding 1 to every count and |V| to denominator to eliminate zero probabilities.",
+    "slide": "Slide 10"
+  },
+  {
+    "term": "Kneser-Ney Smoothing",
+    "vn": "Làm mịn Kneser-Ney",
+    "ch": 2,
+    "def": "State-of-the-art smoothing technique using continuation probability for lower-order models.",
+    "slide": "Slide 14"
+  },
+  {
+    "term": "Naive Bayes Classifier",
+    "vn": "Bộ phân loại Naive Bayes",
+    "ch": 3,
+    "def": "Probabilistic generative classifier using Bayes' rule and feature conditional independence assumption.",
+    "slide": "Slide 3"
+  },
+  {
+    "term": "Bag-of-Words (BoW)",
+    "vn": "Mô hình túi từ",
+    "ch": 3,
+    "def": "Text representation counting word frequencies while completely ignoring word order and grammar.",
+    "slide": "Slide 5"
+  },
+  {
+    "term": "Prior Probability P(c)",
+    "vn": "Xác suất tiên nghiệm",
+    "ch": 3,
+    "def": "The baseline probability of a class before observing feature evidence: N_c / N_total.",
+    "slide": "Slide 7"
+  },
+  {
+    "term": "Likelihood P(w|c)",
+    "vn": "Khả năng / Hợp lý",
+    "ch": 3,
+    "def": "Probability of observing word w given document class c.",
+    "slide": "Slide 8"
+  },
+  {
+    "term": "Precision & Recall",
+    "vn": "Độ chính xác & Độ bao phủ",
+    "ch": 3,
+    "def": "Precision = TP / (TP + FP); Recall = TP / (TP + FN).",
+    "slide": "Slide 16"
+  },
+  {
+    "term": "F1-Score",
+    "vn": "Chỉ số F1",
+    "ch": 3,
+    "def": "Harmonic mean balancing Precision and Recall: 2 * (P * R) / (P + R).",
+    "slide": "Slide 17"
+  },
+  {
+    "term": "Logistic Regression",
+    "vn": "Hồi quy Logistic",
+    "ch": 4,
+    "def": "Discriminative linear classifier estimating posterior class probability P(y=1|x).",
+    "slide": "Slide 2"
+  },
+  {
+    "term": "Sigmoid Function",
+    "vn": "Hàm Sigmoid",
+    "ch": 4,
+    "def": "Non-linear activation function sigma(z) = 1 / (1 + e^-z) mapping real numbers to (0, 1).",
+    "slide": "Slide 5"
+  },
+  {
+    "term": "Cross-Entropy Loss",
+    "vn": "Hàm mất mát Cross-Entropy",
+    "ch": 4,
+    "def": "Convex loss function penalizing divergence between predicted probability and true binary label.",
+    "slide": "Slide 10"
+  },
+  {
+    "term": "Gradient Descent",
+    "vn": "Hạ độ dốc",
+    "ch": 4,
+    "def": "Optimization algorithm iteratively updating weights in direction opposite to the loss gradient.",
+    "slide": "Slide 14"
+  },
+  {
+    "term": "L1 & L2 Regularization",
+    "vn": "Điều chuẩn L1 (Lasso) & L2 (Ridge)",
+    "ch": 4,
+    "def": "Loss penalties preventing overfitting: L1 drives weights to zero (sparsity); L2 shrinks weights smoothly.",
+    "slide": "Slide 20"
+  },
+  {
+    "term": "Softmax Function",
+    "vn": "Hàm Softmax",
+    "ch": 4,
+    "def": "Multiclass generalization of sigmoid normalizing exponentiated logits into a probability distribution.",
+    "slide": "Slide 25"
+  },
+  {
+    "term": "Distributional Hypothesis",
+    "vn": "Giả thuyết phân bố",
+    "ch": 5,
+    "def": "'You shall know a word by the company it keeps' (Firth): words in similar contexts share meaning.",
+    "slide": "Slide 2"
+  },
+  {
+    "term": "TF-IDF",
+    "vn": "Tần suất từ - Nghịch đảo tần suất văn bản",
+    "ch": 5,
+    "def": "Weighting scheme multiplying Term Frequency by Inverse Document Frequency log(N / df).",
+    "slide": "Slide 8"
+  },
+  {
+    "term": "Positive PMI (PPMI)",
+    "vn": "Thông tin tương hỗ dương",
+    "ch": 5,
+    "def": "Quantifies word association strength, replacing negative PMI with zero.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "Cosine Similarity",
+    "vn": "Độ tương đồng Cosine",
+    "ch": 5,
+    "def": "Evaluates normalized angle between two vectors: (u . v) / (||u|| * ||v||).",
+    "slide": "Slide 15"
+  },
+  {
+    "term": "Word2Vec (Skip-Gram & CBOW)",
+    "vn": "Mô hình nhúng từ Word2Vec",
+    "ch": 5,
+    "def": "Self-supervised neural word embedding model learning dense 300D continuous vectors.",
+    "slide": "Slide 20"
+  },
+  {
+    "term": "GloVe",
+    "vn": "Vectơ toàn cục (GloVe)",
+    "ch": 5,
+    "def": "Log-bilinear matrix factorization model on global word-word co-occurrence counts.",
+    "slide": "Slide 26"
+  },
+  {
+    "term": "FastText",
+    "vn": "Mô hình FastText",
+    "ch": 5,
+    "def": "Word representation using subword character n-grams to handle out-of-vocabulary words.",
+    "slide": "Slide 28"
+  },
+  {
+    "term": "K-Means Clustering",
+    "vn": "Phân cụm K-Means",
+    "ch": 6,
+    "def": "Unsupervised partitioning algorithm minimizing within-cluster sum of squared errors (SSE).",
+    "slide": "Slide 4"
+  },
+  {
+    "term": "Silhouette Coefficient",
+    "vn": "Hệ số Silhouette",
+    "ch": 6,
+    "def": "Cluster validation metric evaluating cohesion versus separation, ranging from -1 to +1.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "Hierarchical Clustering",
+    "vn": "Phân cụm thứ bậc",
+    "ch": 6,
+    "def": "Builds nested trees of clusters (Dendrograms) via agglomerative (bottom-up) or divisive splits.",
+    "slide": "Slide 16"
+  },
+  {
+    "term": "Self-Attention",
+    "vn": "Cơ chế tự chú ý",
+    "ch": 7,
+    "def": "Computes direct pairwise attention scores between all positions in a sequence in O(1) path length.",
+    "slide": "Slide 6"
+  },
+  {
+    "term": "Query, Key, Value (Q, K, V)",
+    "vn": "Bộ ba vector Q, K, V",
+    "ch": 7,
+    "def": "Core representations in self-attention: Query probes, Key matches, Value provides content.",
+    "slide": "Slide 8"
+  },
+  {
+    "term": "Multi-Head Attention",
+    "vn": "Cơ chế chú ý đa đầu",
+    "ch": 7,
+    "def": "Projects Q,K,V into multiple subspaces in parallel to capture diverse syntactic/semantic relations.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "Positional Encoding",
+    "vn": "Mã hóa vị trí",
+    "ch": 7,
+    "def": "Injects sequence order into permutation-invariant self-attention using sinusoidal/learned vectors.",
+    "slide": "Slide 15"
+  },
+  {
+    "term": "BERT",
+    "vn": "Mô hình BERT",
+    "ch": 8,
+    "def": "Bidirectional Encoder Representations from Transformers pre-trained on MLM and NSP.",
+    "slide": "Slide 2"
+  },
+  {
+    "term": "Masked Language Model (MLM)",
+    "vn": "Mô hình ngôn ngữ che dấu",
+    "ch": 8,
+    "def": "Pre-training objective masking 15% of tokens (80% [MASK], 10% random, 10% unchanged).",
+    "slide": "Slide 7"
+  },
+  {
+    "term": "LoRA (Low-Rank Adaptation)",
+    "vn": "Thích ứng hạng thấp (LoRA)",
+    "ch": 8,
+    "def": "Parameter-Efficient Fine-Tuning decomposing weight updates into low-rank matrices B * A.",
+    "slide": "Slide 24"
+  },
+  {
+    "term": "Noisy Channel Model",
+    "vn": "Mô hình kênh nhiễu",
+    "ch": 9,
+    "def": "SMT paradigm decomposing translation into Translation Model P(Source|Target) * LM P(Target).",
+    "slide": "Slide 4"
+  },
+  {
+    "term": "Beam Search",
+    "vn": "Tìm kiếm chùm",
+    "ch": 9,
+    "def": "Heuristic decoding tracking the top B most probable candidate sequences at each step.",
+    "slide": "Slide 15"
+  },
+  {
+    "term": "BLEU Score",
+    "vn": "Chỉ số đánh giá BLEU",
+    "ch": 9,
+    "def": "Automatic translation evaluation combining clipped modified n-gram precision and Brevity Penalty.",
+    "slide": "Slide 19"
+  },
+  {
+    "term": "Task-Oriented Dialogue System",
+    "vn": "Hệ thống hội thoại hướng tác vụ",
+    "ch": 10,
+    "def": "Goal-driven conversational agent operating on a Frame-and-Slot architecture.",
+    "slide": "Slide 5"
+  },
+  {
+    "term": "Dialogue State Tracking (DST)",
+    "vn": "Theo dõi trạng thái đối thoại",
+    "ch": 10,
+    "def": "Maintains accumulating constraints and slot fillers across multi-turn user conversation.",
+    "slide": "Slide 10"
+  },
+  {
+    "term": "Grice's Maxims",
+    "vn": "Phương châm hội thoại của Grice",
+    "ch": 10,
+    "def": "Conversational cooperative principles: Quantity, Quality, Relation, and Manner.",
+    "slide": "Slide 16"
+  },
+  {
+    "term": "Context-Free Grammar (CFG)",
+    "vn": "Ngữ pháp phi ngữ cảnh",
+    "ch": 11,
+    "def": "Formal phrase structure grammar rewriting non-terminals into terminals and non-terminals.",
+    "slide": "Slide 3"
+  },
+  {
+    "term": "Chomsky Normal Form (CNF)",
+    "vn": "Dạng chuẩn Chomsky",
+    "ch": 11,
+    "def": "Standardized CFG where all productions are strictly A -> B C or A -> a.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "CKY Algorithm",
+    "vn": "Thuật toán CKY",
+    "ch": 11,
+    "def": "Bottom-up dynamic programming chart parsing algorithm running in O(N^3) time on CNF grammars.",
+    "slide": "Slide 15"
+  },
+  {
+    "term": "PARSEVAL",
+    "vn": "Tiêu chuẩn đánh giá PARSEVAL",
+    "ch": 11,
+    "def": "Evaluates constituency parsers using Labeled Precision, Recall, and F1 over brackets.",
+    "slide": "Slide 25"
+  },
+  {
+    "term": "Dependency Parsing",
+    "vn": "Phân tích cú pháp phụ thuộc",
+    "ch": 12,
+    "def": "Syntactic analysis connecting words directly with directed typed relations (Head -> Dependent).",
+    "slide": "Slide 2"
+  },
+  {
+    "term": "Universal Dependencies (UD)",
+    "vn": "Cú pháp phụ thuộc phổ quát",
+    "ch": 12,
+    "def": "Consistent cross-lingual dependency relation taxonomy (nsubj, obj, amod, root, det).",
+    "slide": "Slide 6"
+  },
+  {
+    "term": "Shift-Reduce Parsing",
+    "vn": "Phân tích cú pháp Shift-Reduce",
+    "ch": 12,
+    "def": "Linear-time O(N) transition-based parsing using a Stack, Buffer, and Arc transitions.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "UAS & LAS",
+    "vn": "Chỉ số UAS & LAS",
+    "ch": 12,
+    "def": "UAS measures correct head assignment; LAS measures both correct head and relation label.",
+    "slide": "Slide 24"
+  },
+  {
+    "term": "First-Order Logic (FOL)",
+    "vn": "Logic vị từ bậc một",
+    "ch": 13,
+    "def": "Formal semantic representation using constants, functions, predicates, connectives, and quantifiers.",
+    "slide": "Slide 4"
+  },
+  {
+    "term": "Lambda Calculus",
+    "vn": "Giải tích Lambda",
+    "ch": 13,
+    "def": "Formalism for function abstraction (lambda x. P(x)) and beta-reduction function application.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "Principle of Compositionality",
+    "vn": "Nguyên lý hợp thành",
+    "ch": 13,
+    "def": "The meaning of a whole sentence is a function of the meanings of its parts and syntax rules.",
+    "slide": "Slide 14"
+  },
+  {
+    "term": "Named Entity Recognition (NER)",
+    "vn": "Nhận diện thực thể có tên",
+    "ch": 14,
+    "def": "Classifies proper noun spans into categories (PER, ORG, LOC, GPE) using BIO tagging.",
+    "slide": "Slide 4"
+  },
+  {
+    "term": "Hearst Patterns",
+    "vn": "Mẫu hình Hearst",
+    "ch": 14,
+    "def": "Lexico-syntactic templates (e.g. 'X such as Y') used to extract hyponymy (IS-A) relations.",
+    "slide": "Slide 10"
+  },
+  {
+    "term": "Distant Supervision",
+    "vn": "Giám sát từ xa",
+    "ch": 14,
+    "def": "Weakly-supervised relation extraction aligning existing Knowledge Base triples with raw text.",
+    "slide": "Slide 16"
+  },
+  {
+    "term": "Event Trigger & Arguments",
+    "vn": "Bộ kích hoạt & Tham số sự kiện",
+    "ch": 14,
+    "def": "Trigger word evokes event type; arguments fill participant roles (Agent, Victim, Time, Place).",
+    "slide": "Slide 20"
+  },
+  {
+    "term": "TIMEX3",
+    "vn": "Chuẩn biểu thức thời gian TIMEX3",
+    "ch": 15,
+    "def": "TimeML annotation standard categorizing temporal expressions into Date, Time, Duration, and Set.",
+    "slide": "Slide 5"
+  },
+  {
+    "term": "Document Creation Time (DCT)",
+    "vn": "Thời gian tạo tài liệu",
+    "ch": 15,
+    "def": "Publication timestamp serving as the reference anchor for relative temporal expressions.",
+    "slide": "Slide 8"
+  },
+  {
+    "term": "Allen's Interval Algebra",
+    "vn": "Đại số khoảng thời gian Allen",
+    "ch": 15,
+    "def": "13 distinct qualitative temporal relations between intervals (Before, Meets, Overlaps, During, etc.).",
+    "slide": "Slide 14"
+  },
+  {
+    "term": "Synset",
+    "vn": "Tập từ đồng nghĩa (Synset)",
+    "ch": 16,
+    "def": "The fundamental unit in WordNet grouping words representing an identical cognitive concept.",
+    "slide": "Slide 4"
+  },
+  {
+    "term": "Polysemy vs Homonymy",
+    "vn": "Đa nghĩa vs Đồng âm",
+    "ch": 16,
+    "def": "Polysemy = related senses (school); Homonymy = accidental identical spelling (bat).",
+    "slide": "Slide 6"
+  },
+  {
+    "term": "Lesk Algorithm",
+    "vn": "Thuật toán Lesk",
+    "ch": 16,
+    "def": "WSD algorithm choosing the synset whose dictionary gloss shares highest word overlap with context.",
+    "slide": "Slide 14"
+  },
+  {
+    "term": "Least Common Subsumer (LCS)",
+    "vn": "Tổ tiên chung gần nhất",
+    "ch": 16,
+    "def": "The lowest shared hypernym ancestor of two synsets in the WordNet taxonomy.",
+    "slide": "Slide 18"
+  },
+  {
+    "term": "VADER",
+    "vn": "Bộ phân tích cảm xúc VADER",
+    "ch": 17,
+    "def": "Rule-based sentiment analyzer using heuristics (caps, exclamation, 'but', adverbs) for social text.",
+    "slide": "Slide 6"
+  },
+  {
+    "term": "Plutchik's Wheel of Emotions",
+    "vn": "Vòng quay cảm xúc Plutchik",
+    "ch": 17,
+    "def": "Structural model of 8 bipolar emotions arranged in polar pairs with dyadic combinations.",
+    "slide": "Slide 12"
+  },
+  {
+    "term": "VAD Model (Valence, Arousal, Dominance)",
+    "vn": "Mô hình cảm xúc 3 chiều VAD",
+    "ch": 17,
+    "def": "Continuous dimensional model mapping emotion to Valence (pleasure), Arousal, and Dominance.",
+    "slide": "Slide 15"
+  },
+  {
+    "term": "Turney's SO-PMI",
+    "vn": "Thuật toán SO-PMI của Turney",
+    "ch": 17,
+    "def": "Measures semantic orientation by subtracting PMI with 'poor' from PMI with 'excellent'.",
+    "slide": "Slide 20"
+  }
+]

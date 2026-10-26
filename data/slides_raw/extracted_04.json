@@ -1,0 +1,215 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Logistic Regression"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Introduction\rLogistic Function (Sigmoid)\rEquation\rTraining Logistic Regression\rDecision Boundary\rRegularization in Logistic Regression",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Introduction",
+                     "3",
+                     "Logistic Regression for Binary Classification\r\t\rLogistic Regression is particularly suited for situations where the dependent variable (the one we\u0027re trying to predict) is categorical and has two possible outcomes (binary).\r\rIt\u0027s used to model the probability that a data point belongs to a particular class given its features."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Introduction",
+                     "4",
+                     "Estimating Probability for Classification\r\t\rIn Logistic Regression, the algorithm transforms the output of a linear equation using the logistic function (also known as the sigmoid function). \r\rThis transformation ensures that the output stays within the range of 0 and 1, which can be interpreted as a probability. \r\rThe sigmoid function maps any input to a value between 0 and 1, making it suitable for probability estimation."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Logistic Function (Sigmoid)",
+                     "5"
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Logistic Function (Sigmoid)",
+                     "6"
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Example",
+                     "7",
+                     "In this example:\r\rThe sigmoid function defines the logistic function (sigmoid) as 1 / (1 + exp(-x)).\r\rWe generate values for the x-axis using the linspace function.\r\rThe sigmoid values for the x-axis values are calculated using the sigmoid function.\r\rWe use the matplotlib library to plot the sigmoid function along with reference lines for y=0.5 and x=0."
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Example",
+                     "8",
+                     "In this example:\r\rThe sigmoid function defines the logistic function (sigmoid) as 1 / (1 + exp(-x)).\r\rWe generate values for the x-axis using the linspace function.\r\rThe sigmoid values for the x-axis values are calculated using the sigmoid function.\r\rWe use the matplotlib library to plot the sigmoid function along with reference lines for y=0.5 and x=0."
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Logistic Regression Equation",
+                     "9"
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Logistic Regression Equation",
+                     "10"
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Logistic Regression Equation",
+                     "11"
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Training",
+                     "12",
+                     "Initializing Coefficients\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing the Loss (Optimizing Coefficients)\rConvergence and Model Output"
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Training",
+                     "13",
+                     "Initializing Coefficients\rStart by initializing the coefficients (β0,β1,…,βnβ0​,β1​,…,βn​) with small random values or zeros.\r\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing the Loss (Optimizing Coefficients)\rConvergence and Model Output"
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Training",
+                     "14"
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Training",
+                     "15"
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Training",
+                     "16",
+                     "Initializing Coefficients\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing the Loss (Optimizing Coefficients)\rThe goal is to minimize a loss function that quantifies the difference between predicted probabilities and actual labels.\rCommon loss functions for logistic regression include the binary cross-entropy loss (log loss).\rUse optimization techniques like gradient descent to adjust coefficients and find the values that minimize the loss.\rGradient Descent\r\rConvergence and Model Output"
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Training",
+                     "17",
+                     "Initializing Coefficients\rCalculating Log-Odds\rApplying the Sigmoid Function for Probabilities\rMinimizing the Loss (Optimizing Coefficients)\rConvergence and Model Output\rAfter convergence, we have optimized coefficients that provide accurate predictions.\rThe model can now classify new data points by calculating log-odds, applying the sigmoid function for probabilities, and making a decision based on a threshold."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Decision Boundary",
+                     "18",
+                     "In logistic regression, the decision boundary is a critical concept that defines the separation between two classes in a binary classification problem. \r\rIt\u0027s a hyperplane (for higher-dimensional data) that separates the feature space into regions corresponding to the different classes. \r\rThe decision boundary is determined by the model\u0027s coefficients and intercept, and it plays a key role in making classification predictions."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Decision Boundary",
+                     "19"
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Decision Boundary",
+                     "20",
+                     "Visualizing the Decision Boundary.\r\rIn a two-dimensional feature space (two features), the decision boundary is a line. In a three-dimensional space (three features), it\u0027s a plane. \r\rIn higher-dimensional spaces, it\u0027s a hyperplane. \r\rThe orientation and position of the decision boundary are determined by the coefficients and intercept of the logistic regression model."
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Example",
+                     "21",
+                     "In this example:\r\rWe generate synthetic data where the target labels are determined by a simple decision boundary (X[:, 0] + X[:, 1] \u003e 0).\r\rThe data is split into training and testing sets using train_test_split.\r\rFeatures are standardized using StandardScaler to ensure consistent scaling.\r\rA Logistic Regression model is trained on the training data using the LogisticRegression class.\r\rThe model predicts labels for the test data.\r\rThe accuracy of the model is calculated using accuracy_score."
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Regularization",
+                     "22",
+                     "Regularization is a technique used in logistic regression (and other machine learning algorithms) to prevent overfitting, which occurs when a model fits the training data too closely and performs poorly on new, unseen data.\r\rRegularization introduces a penalty term to the model\u0027s objective function, encouraging it to achieve a balance between fitting the data and keeping the model\u0027s parameters (coefficients) small."
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "Regularization",
+                     "23",
+                     "Preventing Overfitting with Regularization\r\rOverfitting occurs when a model captures noise and fluctuations in the training data, leading to poor generalization on new data. \r\rRegularization helps prevent this by discouraging large values of coefficients, making the model less sensitive to variations in the training data."
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Regularization",
+                     "24",
+                     "L1 and L2 Regularization\r\r L1 Regularization (Lasso):\rL1 regularization adds the absolute values of coefficients as the penalty term to the loss function.\rIt encourages some coefficients to become exactly zero, effectively performing feature selection by eliminating less relevant features.\rL1 regularization tends to yield sparse solutions where only a subset of features have non-zero coefficients.\r\rL2 Regularization (Ridge):\rL2 regularization adds the squared values of coefficients as the penalty term to the loss function.\rIt doesn\u0027t force coefficients to become exactly zero, but it significantly reduces their magnitudes.\rL2 regularization often results in more evenly distributed non-zero coefficients."
+                 ]
+    },
+    {
+        "slide_number":  25,
+        "text":  [
+                     "Example",
+                     "25",
+                     "In this example:\r\rWe generate synthetic data where the target labels are determined by a simple decision boundary (X[:, 0] + X[:, 1] \u003e 0).\r\rThe data is split into training and testing sets using train_test_split.\r\rFeatures are standardized using StandardScaler.\r\rWe train two Logistic Regression models, one with L1 regularization (penalty=\u0027l1\u0027) and one with L2 regularization (penalty=\u0027l2’)."
+                 ]
+    },
+    {
+        "slide_number":  26,
+        "text":  [
+                     "Practice",
+                     "26",
+                     "Instructions\rCreate a Python program that performs binary classification using Logistic Regression. \rYou\u0027ll work with a dataset containing two classes of data points. \rYour task is to train a Logistic Regression model to classify the data points into the two classes.\rDataset\rclass_1 = [ [2.0, 3.0], [3.5, 2.5], [1.5, 2.8], [4.0, 2.0], [3.6, 3.0]]\rclass_2 = [ [7.0, 7.0], [8.0, 5.5], [6.5, 6.0], [9.0, 6.5], [8.2, 6.8]]\rtest_data = [ [2.8, 2.5], [7.5, 6.2], [5.0, 4.5], [3.5, 3.8]]\rtest_labels = [0, 1, 0, 0]  # Corresponding labels for the test data"
+                 ]
+    },
+    {
+        "slide_number":  27,
+        "text":  [
+                     "Practice",
+                     "27",
+                     "Tasks\rTask 1: Train Logistic Regression Model\rWrite a function train_logistic_regression(X, y) that takes the training data X and labels y as input and trains a Logistic Regression model.\r\rTask 2: Predict Labels\rWrite a function predict_labels(model, X) that takes the trained model and test data X as input and predicts the labels for the test data.\r\rTask 3: Evaluate the Model\rWrite a function evaluate_model(predictions, true_labels) that takes the predicted labels and true labels as input and calculates the accuracy of the model.\r\rTask 4: Test Your Functions\rApply each function to the provided dataset and evaluate the model\u0027s performance using the test data and labels."
+                 ]
+    },
+    {
+        "slide_number":  28,
+        "text":  [
+                     "Q \u0026 A",
+                     "28"
+                 ]
+    }
+]

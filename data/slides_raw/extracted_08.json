@@ -1,0 +1,216 @@
+[
+  {
+    "slide_number": 1,
+    "text": [
+      "Fine-Tuning and Maske Language Models"
+    ]
+  },
+  {
+    "slide_number": 2,
+    "text": [
+      "Contents",
+      "Introduction to Fine-Tuning\rPre-Trained Models for Fine-Tuning\rProcessing of Fine-Tuning\rBenefits of Fine-Tuning\rLimitations\rMasked Language Models (MLM)\rMLM Objective and Architecture\rDownstream Tasks with MLMs\r",
+      "2"
+    ]
+  },
+  {
+    "slide_number": 3,
+    "text": [
+      "Introduction to Fine-Tuning ",
+      "3",
+      "Concept\r\rFine-tuning refers to the process of taking a pre-trained model, which has learned general language features from a large dataset, and adapting it to perform specific tasks or improve performance on specific datasets. \r\rIt involves adjusting the model's parameters based on the characteristics of the target task or data, while retaining the valuable knowledge acquired during pre-training."
+    ]
+  },
+  {
+    "slide_number": 4,
+    "text": [
+      "Introduction to Fine-Tuning ",
+      "4",
+      "Leveraging Pre-trained Knowledge\r\rPre-trained models have already learned rich linguistic patterns, semantic relationships, and contextual understanding from a diverse range of text data. \r\rFine-tuning capitalizes on this extensive knowledge, enabling the model to generalize better to specific tasks with a smaller amount of task-specific data."
+    ]
+  },
+  {
+    "slide_number": 5,
+    "text": [
+      "Introduction to Fine-Tuning ",
+      "5",
+      "Fine-Tuning in the Context of Pre-trained Language Models\r\rIn the context of pre-trained language models like BERT, GPT-3, and others, fine-tuning involves taking the model, often with its original architecture and parameters, and adapting it to perform tasks like text classification, named entity recognition, sentiment analysis, machine translation, and more."
+    ]
+  },
+  {
+    "slide_number": 6,
+    "text": [
+      "Introduction to Fine-Tuning ",
+      "6",
+      "The fine-tuning process generally involves the following steps\r\rTask-Specific Data\rObtain a dataset that is specific to the task you want the pre-trained model to perform. This dataset is used for fine-tuning.\rAdjusting Parameters\rInitialize the pre-trained model's parameters with the learned weights and then update them using the task-specific dataset. The objective is to fine-tune the model to the nuances of the task while preserving its general language understanding.\rOptimization\rTrain the model on the task-specific data using optimization techniques like gradient descent, adjusting the parameters to minimize task-specific loss.\rEvaluation\rAfter fine-tuning, evaluate the model's performance on validation or test data to see how well it performs on the target task."
+    ]
+  },
+  {
+    "slide_number": 7,
+    "text": [
+      "Example",
+      "7",
+      "Example of fine-tuning a pre-trained BERT model for text classification using the Hugging Face Transformers library",
+      "In this example:\r\rWe load a pre-trained BERT model with a binary classification head.\r\rWe prepare an example dataset with text samples and corresponding labels.\r\rWe tokenize the texts using the tokenizer and create input tensors.\r\rWe create a dataset and dataloader for batching.\r\rWe set up an optimizer (AdamW) and a loss function (CrossEntropyLoss).\r\rWe run a fine-tuning loop over the dataset using mini-batches."
+    ]
+  },
+  {
+    "slide_number": 8,
+    "text": [
+      "Pre-Trained Models for Fine-Tuning ",
+      "8",
+      "Importance of Pre-trained Language Models in NLP Tasks\r\rPre-trained language models have become pivotal in the field of Natural Language Processing (NLP) due to their ability to significantly improve the performance of various tasks. \r\rThey bring two main advantages:\rLinguistic Understanding\rPre-trained models have learned intricate linguistic patterns, semantic relationships, and contextual nuances from vast amounts of text data. This understanding of language enables them to better grasp the complexities of human communication.\rTransfer Learning\rPre-trained models serve as strong starting points for fine-tuning on specific tasks. They provide a foundation of general language knowledge that can be adapted to different tasks, reducing the need for massive task-specific datasets."
+    ]
+  },
+  {
+    "slide_number": 9,
+    "text": [
+      "Pre-Trained Models for Fine-Tuning ",
+      "9",
+      "Capturing Linguistic Patterns and Relationships\r\rPre-trained models capture linguistic patterns and relationships by training on diverse and extensive text corpora. \r\rThey learn the contextual meanings of words, syntactic structures, idiomatic expressions, synonyms, antonyms, and other intricacies of language.\r\rThis acquired knowledge is encapsulated in their hidden layers, which encode rich semantic representations. "
+    ]
+  },
+  {
+    "slide_number": 10,
+    "text": [
+      "Pre-Trained Models for Fine-Tuning ",
+      "10",
+      "Models as Starting Points for Fine-Tuning\r\rModels like BERT (Bidirectional Encoder Representations from Transformers) and GPT-3 (Generative Pre-trained Transformer 3) are two prominent examples that serve as robust starting points for fine-tuning.\rBERT\rIt captures context from both directions in a sentence, enhancing its ability to understand meaning and context. \rBERT's pre-trained weights can be fine-tuned for various tasks, such as text classification, question answering, and named entity recognition.\r\rGPT-3\rWith an immense number of parameters, GPT-3 generates coherent text and answers based on prompts. \rWhile not typically fine-tuned due to its scale, it showcases the power of pre-trained models for generating human-like language.. "
+    ]
+  },
+  {
+    "slide_number": 11,
+    "text": [
+      "Processing of Fine-Tuning ",
+      "11",
+      "Fine-tuning pre-trained language models involves adapting a pre-trained model to a specific task. Here's a general overview of the process\r\rChoose a Pre-trained Model Architecture\rSelect a pre-trained model that suits your task and matches the type of data you have. Popular choices include BERT, GPT-2, RoBERTa, and more.\r\rDefine a Task-Specific Dataset and Labels\rGather or create a dataset that is specific to your task. This dataset should include input text data and corresponding labels or annotations for training and evaluation.\r\rModify the Model's Architecture Slightly\rTailor the architecture of the pre-trained model to the specific task. This might involve adding task-specific layers or modifying the output structure to match the number of classes or labels in your task."
+    ]
+  },
+  {
+    "slide_number": 12,
+    "text": [
+      "Processing of Fine-Tuning ",
+      "12",
+      "Fine-tuning pre-trained language models involves adapting a pre-trained model to a specific task. Here's a general overview of the process\r\rFine-Tune the Model on the Task-Specific Data:\rThe process of fine-tuning involves training the modified model on your task-specific dataset. The general steps include:\rInitialize Weights: Initialize the model's weights with the pre-trained values from the chosen architecture.\r\rOptimization: Use an optimization algorithm (e.g., gradient descent) to adjust the model's weights based on the task-specific dataset. Update the model's parameters iteratively to minimize the loss function.\r\rBackpropagation: Calculate gradients of the loss with respect to the model's parameters, and update the parameters accordingly to minimize the loss.\rEvaluate and Adjust Hyperparameters if Needed:\rAfter fine-tuning, evaluate the model's performance on a separate validation or test dataset. Depending on the results, you might need to adjust hyperparameters (e.g., learning rate, batch size) or other aspects of the training process to optimize performance."
+    ]
+  },
+  {
+    "slide_number": 13,
+    "text": [
+      "Benefits of Fine-Tuning ",
+      "13",
+      "Faster Convergence\rFine-tuning starts with pre-trained weights that already possess a good understanding of language. This initial knowledge allows the model to converge faster during training, as it doesn't need to learn everything from scratch.\r\rReduced Computational Resources\rTraining a model from scratch can be computationally expensive and time-consuming. Fine-tuning takes advantage of the pre-trained weights, saving valuable computational resources and enabling quicker experimentation.\r\rImproved Performance on Specific Tasks\rFine-tuning allows pre-trained models to adapt to specific tasks, often resulting in improved performance. The model leverages its general language understanding and tailors it to the nuances of the task, often achieving state-of-the-art results.\r\rLower Data Requirements\rFine-tuning requires less task-specific labeled data compared to training a model from the ground up. This is particularly valuable when labeled data for a specific task is limited or expensive to acquire."
+    ]
+  },
+  {
+    "slide_number": 14,
+    "text": [
+      "Benefits of Fine-Tuning ",
+      "14",
+      "Efficient Transfer of Knowledge\rFine-tuning encapsulates the knowledge acquired from a vast amount of diverse text data. It enables the model to transfer this knowledge to new tasks, accelerating the learning process for those tasks.\r\rScalability\rFine-tuning is scalable, allowing the same pre-trained model to be fine-tuned on different tasks, domains, or languages, promoting reuse and adaptation.\r\rVersatility\rPre-trained models can be fine-tuned for various NLP tasks such as classification, summarization, question answering, and more. This versatility makes them a powerful tool in the NLP practitioner's toolkit.\r\rAdaptation to Domain-Specific Data\rFine-tuning enables models to adapt to domain-specific data, such as legal, medical, or technical domains, where specialized language understanding is crucial."
+    ]
+  },
+  {
+    "slide_number": 15,
+    "text": [
+      "Limitations ",
+      "15",
+      "Data Quality and Domain Mismatch\rFine-tuning depends heavily on the quality and relevance of the task-specific data. If the task data is of poor quality or doesn't match the distribution of the pre-training data, the model's performance might not improve significantly.\r\rOverfitting to Task-Specific Data\rFine-tuning can lead to overfitting, especially if the task-specific dataset is small. The model may learn to memorize the training examples rather than capturing general patterns, resulting in poor generalization to new data.\r\rBalance between Freezing and Updating Layers\rDeciding which layers to freeze (keep fixed) and which to update during fine-tuning is crucial. Lower layers tend to capture more general linguistic features, while higher layers capture task-specific nuances. Striking the right balance ensures the model benefits from pre-training while adapting to the task."
+    ]
+  },
+  {
+    "slide_number": 16,
+    "text": [
+      "Limitations ",
+      "16",
+      "Catastrophic Forgetting\rFine-tuning could cause the model to forget some of its pre-trained knowledge, particularly if the task-specific data is very different from the pre-training data. Careful regularization and training techniques are needed to mitigate this.\r\rChoosing Hyperparameters\rSelecting the right hyperparameters (learning rate, batch size, regularization) is important. Hyperparameters that worked well for pre-training might not be optimal for fine-tuning, and improper choices can impact convergence and performance.\r\rLabel Noise and Bias\rIf the task-specific labels have noise or bias, the model can learn incorrect associations. This could lead to biased predictions or suboptimal results."
+    ]
+  },
+  {
+    "slide_number": 17,
+    "text": [
+      "Limitations ",
+      "17",
+      "Sequential vs. Token-Level Tasks\rModels pre-trained for token-level tasks (like masked language modeling) might need adaptation for sequential tasks (like text generation). Consider modifications like causal masking and tailored training setups.\r\rTransferability to Unseen Tasks\rFine-tuning might not always transfer smoothly to tasks that are significantly different from the pre-training objectives. The model's performance on such tasks might not be as high as on closely related tasks.\r\rRegularization Strategies\rRegularization techniques, such as dropout and weight decay, may need adjustment for fine-tuning. Too much regularization could hinder learning, while too little could lead to overfitting.\r\rEvaluation and Validation Set\rCareful selection of the evaluation and validation datasets is important to gauge the model's generalization and track its progress during fine-tuning."
+    ]
+  },
+  {
+    "slide_number": 18,
+    "text": [
+      "Masked Language Models (MLM) ",
+      "18",
+      "Masked Language Models (MLM) is a specific pre-training task used to train models like BERT (Bidirectional Encoder Representations from Transformers).\r\rIt revolves around the idea of masking out (hiding) certain words in a sentence and then predicting those masked words based on the surrounding context."
+    ]
+  },
+  {
+    "slide_number": 19,
+    "text": [
+      "Masked Language Models (MLM) ",
+      "19",
+      "Predicting Masked Words Using Context\r\rIn the MLM task, a portion of the input text is randomly chosen, and some of its words are replaced with a special [MASK] token. \r\rThe model's objective is to predict the original words that were masked out, given the context of the surrounding words. \r\rBy training on this task, the model learns to understand contextual relationships and meaning in both directions (left and right) within a sentence."
+    ]
+  },
+  {
+    "slide_number": 20,
+    "text": [
+      "Masked Language Models (MLM) ",
+      "20",
+      "BERT as a Popular MLM Example\r\rBERT is a groundbreaking pre-trained model that excels at various NLP tasks, and it's an example of an MLM.\r\rDuring its pre-training phase, BERT learns by predicting the masked words in sentences.\r\rThis encourages the model to capture deep contextual understanding, as it must rely on the context of surrounding words to accurately predict the masked word."
+    ]
+  },
+  {
+    "slide_number": 21,
+    "text": [
+      "MLM Objective and Architecture ",
+      "21",
+      "MLM objective involves two main steps\r\rMasking Words\rA random portion of the input sentence is selected, and some of its words are masked by replacing them with a special [MASK] token. This creates gaps in the sentence.\r\rPredicting Masked Words\rThe model's task is to predict the original words that were masked out, given the context of the surrounding words. The model encodes the context and generates predictions for the masked words."
+    ]
+  },
+  {
+    "slide_number": 22,
+    "text": [
+      "MLM Objective and Architecture ",
+      "22",
+      "Architecture of MLM Models (e.g., BERT)\rModels like BERT use a transformer-based architecture for MLM pre-training. The architecture consists of multiple encoder layers. Each layer consists of two sub-layers:\r\r Self-Attention Mechanism\rIn this sub-layer, each word in the input sentence attends to all other words to capture contextual relationships. The self-attention mechanism enables the model to weigh the importance of other words in understanding the meaning of a word.\r\rPosition-wise Feedforward Neural Network\rAfter obtaining the context-based representations from the self-attention sub-layer, each word's representation is passed through a position-wise feedforward neural network. This network learns to capture complex relationships between words and their surrounding context."
+    ]
+  },
+  {
+    "slide_number": 23,
+    "text": [
+      "MLM Objective and Architecture ",
+      "23",
+      "Masked Language Model Training Process\r\rInput Encoding\rThe input sentence is tokenized and converted into word embeddings, which are then passed through the transformer's encoder layers.\rMasking\rA portion of the words in the input sentence is masked out by replacing them with [MASK] tokens.\rForward Pass\rThe masked sentence embeddings are processed through the encoder layers. The self-attention mechanism captures contextual relationships.\rPrediction\rThe model predicts the original words corresponding to the [MASK] tokens in the masked sentence.\rLoss Calculation\rThe model's predictions are compared with the actual masked words, and a loss is calculated. The goal is to minimize this loss during training."
+    ]
+  },
+  {
+    "slide_number": 24,
+    "text": [
+      "Downstream Tasks with MLMs",
+      "Sentence Classification\rFor tasks like sentiment analysis or text categorization, the final [CLS] token representation from BERT's pre-trained model can be used as an input to a classification layer. The model can be fine-tuned on labeled data for these tasks. The [CLS] token learns to encapsulate the overall understanding of the sentence and can serve as a strong starting point for classification tasks.\r\rNamed Entity Recognition (NER)\rFor NER tasks, the fine-tuning process involves providing the model with labeled data where entities are tagged. The model learns to recognize and label entities (such as names, dates, organizations) by leveraging its contextual understanding to identify boundaries and classify entities within sentences.\r",
+      "24"
+    ]
+  },
+  {
+    "slide_number": 25,
+    "text": [
+      "Downstream Tasks with MLMs",
+      "Machine Translation\rIn machine translation, the MLM can be fine-tuned by training it on paired sentences in the source and target languages. By conditioning the model on the source sentence and guiding it to generate the target sentence, fine-tuning adapts the model's language understanding for translation tasks.\r\rQuestion Answering\rFor question answering tasks, the model is fine-tuned on data that pairs questions with corresponding answers or answer spans. The MLM's contextual understanding aids in identifying the relevant parts of the text to answer questions accurately.\r",
+      "25"
+    ]
+  },
+  {
+    "slide_number": 26,
+    "text": [
+      "Practice",
+      "Instructions\rIn this assignment, you'll explore and work with masked language models using the Hugging Face Transformers library. \rYou'll understand how they're trained and implement a simple example.\rTasks\rTask 1: Understanding Masked Language Models\rResearch and explain the concept of masked language models (MLM) in the context of natural language processing.\rDescribe how MLMs are trained and what they learn from the masking process.\r\rTask 2: Implementing a Simple Masked Language Model\rChoose a pre-trained masked language model (e.g., BERT) from the Hugging Face Transformers library.\rSelect a sentence from a text corpus that you'll use for the masking task.\rTokenize the sentence using the chosen model's tokenizer.\rImplement a function to randomly mask a certain percentage of tokens in the tokenized sentence.\rPredict the masked tokens using the loaded MLM and compare them with the original tokens.\rCalculate and report the accuracy of the MLM in predicting the masked tokens.",
+      "26"
+    ]
+  },
+  {
+    "slide_number": 27,
+    "text": [
+      "Q & A",
+      "27"
+    ]
+  }
+]

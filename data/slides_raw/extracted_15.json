@@ -1,0 +1,199 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Time and Temporal Reasoning"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Introduction\rTypes of Temporal Information in Text\rTemporal Entity Recognition\rTemporal Dependency Parsing\rTemporal Expression Normalization\rTemporal Reasoning for Trend Analysis\rTemporal Reasoning in Text Summarization",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Introduction",
+                     "3",
+                     "Time and temporal reasoning in text mining refer to the process of identifying, extracting, representing, and making inferences about temporal information such as dates, durations, intervals, and sequences of events mentioned in text. \r\rThis involves understanding the temporal relationships between events, capturing trends over time, and placing events within a historical context."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Introduction",
+                     "4",
+                     "Importance of Temporal Reasoning\r\rContextual Understanding\rTemporal information provides crucial context, allowing readers to understand when events occurred, the sequence of actions, and the historical context in which they took place.\r\rChronological Order\rTemporal reasoning helps establish the correct chronological order of events. It enables the reconstruction of timelines, making it easier to follow narratives and analyze historical developments.\r\rEvent Relationships\rTemporal relationships between events are often critical for understanding causality, correlations, and dependencies. Reasoning about event sequences contributes to a deeper understanding of how events are interconnected."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Introduction",
+                     "5",
+                     "Importance of Temporal Reasoning\r\rTrend Analysis\rTemporal reasoning enables the identification of trends, patterns, and fluctuations over time. \rThis is invaluable in fields such as economics, epidemiology, and market analysis.\r\rHistorical Research\rIn historical research, temporal reasoning facilitates the exploration of historical records, aiding researchers in piecing together the past and drawing insights from historical narratives.\r\rEvent Prediction\rBy analyzing temporal patterns and historical data, temporal reasoning can also contribute to predicting future events or trends."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Introduction",
+                     "6",
+                     "Importance of Temporal Reasoning\r\rLegal and Forensic Analysis\rTemporal reasoning is crucial in legal and forensic contexts, where establishing timelines and sequences of events is essential for investigations and legal proceedings.\r\rStorytelling and Narratives\rIn literature and storytelling, temporal reasoning contributes to narrative coherence, helping authors construct engaging stories with clear timelines.\r\rInformation Retrieval\rTemporal information enhances search and retrieval systems by enabling users to filter and sort results based on time-related criteria.\r\rKnowledge Representation\rIntegrating temporal information into knowledge bases and databases enriches their capacity to store and retrieve structured data."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Types of Temporal Information in Text",
+                     "7",
+                     "Explicit Mentions of Dates and Times\rThis type includes direct references to specific dates, times, days of the week, months, and years. For example\r\"The conference will take place on June 15th.\"\r\"The meeting is scheduled for 3:00 PM.“\r\rImplicit Temporal Relationships\rImplicit temporal relationships refer to the order of events without explicitly mentioning specific dates or times. These relationships can be deduced from the context and relative timing of events. For instance:\r\"After finishing lunch, they went to the museum.\"\r\"She graduated before her brother.“\r\rTemporal Expressions and Durations\rTemporal expressions include words or phrases that convey a sense of time, such as \"soon,\" \"now,\" \"later,\" \"yesterday,\" and \"in a few days.\" Durations describe the length of time between events. Examples include:\r\"The project will be completed shortly.\"\r\"She worked on the assignment for two hours.\""
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Types of Temporal Information in Text",
+                     "8",
+                     "Temporal Modifiers\rModifiers provide information about time-related aspects of an event. These can include adverbs that modify verbs to indicate the timing of an action. For instance\r\"They finally reached their destination.\"\r\"He arrived early for the meeting.\"\r\rRelative Temporal References\rReferences that indicate time relationships between events in terms of earlier, later, before, after, and during. These references provide context for understanding event sequences. For example\r\"The party started after the sun set.\"\r\"He completed the task before the deadline.“\r\rTemporal Conjunctions\rConjunctions like \"before,\" \"after,\" \"when,\" and \"while\" connect events in a temporal sequence, helping establish their order and interrelations. For instance:\r\"She left the house after breakfast.\"\r\"When he arrived, the event had already started.\""
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Types of Temporal Information in Text",
+                     "9",
+                     "Temporal Clauses\rClauses that introduce temporal information and describe the timing of events. These clauses often begin with subordinating conjunctions like \"since,\" \"while,\" \"when,\" and \"until.\" For example:\r\"Since last year, the company has been expanding.\"\r\"She worked on the project until late in the evening.“\r\rTemporal Prepositions\rPrepositions like \"during,\" \"for,\" and \"in\" can indicate time intervals and durations. They provide context for understanding the time span of an event. For instance:\r\"He studied for hours.\"\r\"The concert took place in the evening.\""
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Temporal Entity Recognition",
+                     "10",
+                     "Recognizing temporal entities, including dates, times, events, and durations, is crucial for understanding the temporal aspects of text. Here are common approaches used to identify such entities\rRule-Based Methods\rRule-based approaches involve creating predefined patterns or rules that match specific temporal expressions. These rules can capture variations of date formats, time expressions, event mentions, and durations. For example:\r    Date: \"June 25th, 2023\"\r    Time: \"2:30 PM\"\r    Event: \"The conference\"\r    Duration: \"for two weeks\"\rRegular Expressions:\rRegular expressions are powerful tools for pattern matching in text. They can be used to capture various date formats, times, and other temporal expressions. Regular expressions can handle both explicit and implicit mentions of temporal entities."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Temporal Entity Recognition",
+                     "11",
+                     "Here are common approaches used to identify such entities\rMachine Learning-Based Methods\rMachine learning approaches involve training models on annotated data to automatically identify temporal entities. Named Entity Recognition (NER) models are commonly used for this purpose. NER models can be trained to recognize specific categories like dates, times, events, and durations.\r\rConditional Random Fields (CRFs)\rCRFs are structured prediction models used for sequence labeling tasks like NER. They consider the context of neighboring words while making predictions, which can help improve the accuracy of identifying temporal entities.\r\rSequence Labeling Models\rSequence labeling models, such as Bidirectional LSTM-CRFs, combine bidirectional LSTM networks with CRFs to capture contextual information and sequence dependencies. This approach is effective for identifying temporal entities within sentences."
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Temporal Entity Recognition",
+                     "12",
+                     "Here are common approaches used to identify such entities\rTransformer-Based Models\rTransformer-based models, such as BERT and its variants, can be fine-tuned for named entity recognition tasks. These models have the advantage of capturing complex contextual relationships, making them suitable for identifying various types of temporal entities.\r\rHybrid Approaches\rHybrid approaches combine rule-based and machine learning methods for increased accuracy and coverage. Rule-based methods can handle straightforward cases, while machine learning models can address complex patterns and variations.\r\rTemporal Databases and Resources\rLeveraging external temporal databases, knowledge graphs, or time-related resources can provide additional context and references for identifying temporal entities.\r\rUnsupervised and Semi-Supervised Learning\rUnsupervised and semi-supervised learning techniques, such as clustering and self-training, can be employed when labeled data is limited. These methods can discover temporal patterns in text without the need for extensive labeled examples."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Temporal Dependency Parsing",
+                     "13",
+                     "Analyzing Temporal Relationships\r\rTemporal dependency parsing is the process of analyzing temporal relationships within a sentence. \r\rUnlike traditional syntactic dependency parsing, which focuses on grammatical structure, temporal dependency parsing goes beyond syntax to capture the temporal structure and order of events, actions, and entities in a sentence."
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Temporal Dependency Parsing",
+                     "14",
+                     "How Temporal Dependency Parsing Differs from Syntax\r\rCapturing Time Relations\rTemporal dependency parsing focuses on identifying relationships between events, actions, and temporal expressions. It aims to determine the temporal order of these elements, such as which event occurred before or after another event.\rSemantic Meaning\rWhile syntactic dependency parsing primarily deals with grammatical relationships between words, temporal dependency parsing involves understanding the semantic meaning of temporal expressions, events, and their temporal relationships.\rTemporal Connectives\rTemporal dependency parsing pays special attention to temporal connectives (e.g., \"before,\" \"after,\" \"while\"), which explicitly indicate temporal relationships. These connectives play a critical role in establishing the sequence of events.\rUnderstanding Time-Based Structure\rTemporal dependency parsing seeks to capture the temporal structure of the sentence by identifying how events and temporal expressions are connected and ordered in time."
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Temporal Expression Normalization",
+                     "15",
+                     "Converting Diverse Date and Time Formats\rTemporal expression normalization is the process of converting a wide range of date and time formats found in text into a standardized representation. \rThis normalization allows for consistent and structured handling of temporal information, making it easier to compare, analyze, and reason about different time points. \rHere\u0027s an overview of the concept\rDiverse Formats: Texts often contain temporal expressions in various formats, including natural language phrases, numeric dates, times, and combinations of both. For example, \"January 15th, 2023,\" \"2023-01-15,\" \"1/15/23,\" and \"15th Jan \u002723\" all refer to the same point in time.\r\rStandardization: Temporal expression normalization involves converting these diverse formats into a standardized format that is machine-readable and consistent across different expressions. The goal is to have a common representation for the same time point regardless of the input format."
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Temporal Expression Normalization",
+                     "16",
+                     "Normalization Process\r Tokenization: Break down the temporal expression into its constituent parts (day, month, year, time).\r\rParsing: Interpret the tokens to understand the format and intended meaning of the expression.\r\rConversion: Convert the parsed tokens into a standardized format (e.g., YYYY-MM-DD or ISO 8601).\r\rHandling Ambiguities: Address ambiguities based on context or additional information available.\r\rCalendar Conversion: If necessary, convert the standardized date into the desired calendar system."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Temporal Reasoning for Trend Analysis",
+                     "17",
+                     "Temporal reasoning plays a pivotal role in trend analysis by enabling the identification of patterns and changes in temporal data. It empowers predictive modeling based on historical trends and supports informed decision-making. \r\rHere\u0027s how temporal reasoning contributes to trend analysis\rIdentifying Patterns and Changes\rTemporal reasoning allows us to detect patterns, cycles, and trends in time-series data. By analyzing historical data points over time, it becomes possible to recognize recurring patterns, seasonality, and fluctuations.\r\rPredictive Modeling\rTemporal reasoning provides the foundation for building predictive models that leverage historical trends to make future predictions. These models can forecast future values based on the understanding of past behaviors."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Temporal Reasoning for Trend Analysis",
+                     "18",
+                     "Here\u0027s how temporal reasoning contributes to trend analysis\rSeasonal Trends\rMany real-world phenomena exhibit seasonal patterns, such as sales trends during holidays, weather changes throughout the year, and fluctuations in stock prices. Temporal reasoning helps identify and model these seasonal trends.\r\rLong-Term Trends\rTemporal reasoning assists in identifying long-term trends that may span years or decades. This is valuable for understanding gradual changes in various fields, such as demographic shifts, economic indicators, and technological advancements.\r\rAnomaly Detection\rTemporal reasoning aids in detecting anomalies or outliers in time-series data. These anomalies could indicate unusual events or shifts in the underlying patterns, warranting further investigation.\r\rCausal Analysis\rTemporal reasoning enables the exploration of causal relationships between events. By examining the sequence of events and their temporal proximity, we can infer possible cause-and-effect relationships."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Temporal Reasoning for Trend Analysis",
+                     "19",
+                     "Here\u0027s how temporal reasoning contributes to trend analysis\rDecision Support\rBusinesses and organizations use temporal reasoning to inform decisions. For instance, retail businesses may adjust their inventory and marketing strategies based on historical sales trends.\r\rPolicy Planning\rGovernments and policymakers use trend analysis to guide policy decisions. Temporal reasoning helps in understanding the impact of policies over time and predicting potential outcomes.\r\rResource Allocation\rTemporal reasoning aids in optimizing resource allocation. For example, energy companies can use trend analysis to forecast energy consumption patterns and allocate resources accordingly.\r\rInvestment and Finance\rInvestors use temporal reasoning to analyze financial trends and make informed investment decisions. Understanding historical market behaviors informs investment strategies."
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Temporal Reasoning for Trend Analysis",
+                     "20",
+                     "Process of Temporal Reasoning for Trend Analysis\rData Collection\rGather historical data points across time intervals.\rData Preprocessing\rClean and prepare the data for analysis, ensuring consistency and accuracy.\rPattern Recognition\rApply temporal reasoning techniques to identify recurring patterns, cycles, and trends.\rModel Building\rConstruct predictive models based on identified trends. These models could range from simple linear regression to more complex machine learning models.\rValidation and Testing\rEvaluate the predictive performance of the models using validation and testing datasets.\rInterpretation\rInterpret the results to gain insights into historical behaviors and forecast future trends.\rDecision-Making\rUtilize the insights gained from temporal reasoning to guide decisions, strategies, and planning."
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Temporal Reasoning in Text Summarization",
+                     "Role of Temporal Reasoning in Text Summarization\rTemporal reasoning plays a critical role in text summarization by ensuring that relevant temporal context is preserved and enhancing the coherence of generated summaries. \r\rHere\u0027s how temporal reasoning contributes to the quality and accuracy of text summaries\rPreserving Contextual Relevance\rTemporal reasoning helps ensure that the generated summary captures the essential temporal context of the original text. This is particularly important for news articles, historical narratives, and event descriptions, where understanding the timeline of events is crucial for comprehension.\r\rMaintaining Chronological Order\rTemporal reasoning aids in arranging the summarized information in a coherent chronological order. This is essential for conveying the progression of events and actions in a way that makes sense to the reader.",
+                     "21"
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Temporal Reasoning in Text Summarization",
+                     "Role of Temporal Reasoning in Text Summarization\rCohesive Summaries\rBy incorporating temporal relationships, summarization models can create summaries that are more cohesive and logically structured. Temporal coherence helps readers follow the flow of events and better understand the underlying story.\r\rTemporal Causality\rTemporal reasoning facilitates the identification of cause-and-effect relationships between events. This enables summaries to highlight how events are connected over time and how they influence each other.\r\rEvent Summarization\rFor summarizing events, conferences, or meetings, temporal reasoning ensures that important moments, presentations, and discussions are appropriately represented in the summary.",
+                     "22"
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "Temporal Reasoning in Text Summarization",
+                     "Role of Temporal Reasoning in Text Summarization\rTracking Trends\rIn summaries of reports, research papers, or news articles, temporal reasoning helps track trends, changes, and developments over time. This is crucial for conveying the evolving nature of the subject matter.\r\rLongitudinal Studies\rTemporal reasoning supports the summarization of longitudinal studies, medical records, and historical documents. It helps distill significant changes, progress, and outcomes observed over extended periods.\r\rNews Summarization\rIn news articles, temporal reasoning assists in presenting the most recent and relevant events at the forefront of the summary, ensuring that readers are up-to-date.\r\rEvent Prediction\rIn predictive summaries, temporal reasoning aids in forecasting future events based on the historical context. This is useful for scenarios like financial reports or sports analyses.",
+                     "23"
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Temporal Reasoning in Text Summarization",
+                     "Process of Incorporating Temporal Reasoning in Summarization\rTemporal Entity Recognition\rIdentify temporal expressions, events, dates, and times in the text.\rTemporal Relationship Extraction\rDetermine the temporal relationships between events, actions, and entities.\rChronological Ordering\rArrange the extracted information in chronological order, maintaining the temporal flow.\rCausal Linkage\rIdentify causal relationships between events to create summaries that convey causality.\rContextual Embedding\rEmbed temporal information into the summary to maintain context and coherence.\rTemporal Summarization Models\rDevelop models that incorporate temporal reasoning to generate coherent and contextually accurate summaries.",
+                     "24"
+                 ]
+    },
+    {
+        "slide_number":  25,
+        "text":  [
+                     "Q \u0026 A",
+                     "25"
+                 ]
+    }
+]

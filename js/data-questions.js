@@ -1,0 +1,15203 @@
+/* TMG301 Question Bank (950 Multiple-Choice Questions) */
+window.TMG_QUESTIONS = [
+  {
+    "id": "q_ch01_01",
+    "chapter": 1,
+    "question": "Which regular expression metacharacter represents a word boundary anchor?",
+    "options": [
+      "$",
+      "^",
+      "\\b",
+      "\\w"
+    ],
+    "correct": 2,
+    "explanation": "\\b represents a word boundary, matching the position between a word character (\\w) and a non-word character (\\W) or the start/end of a string.",
+    "topic": "Regex Anchors",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_02",
+    "chapter": 1,
+    "question": "What does the caret symbol (^) signify when placed as the first character inside square brackets (e.g., [^abc])?",
+    "options": [
+      "Escape the following character",
+      "Negation of the character class",
+      "Match zero or more times",
+      "Match at the start of a line"
+    ],
+    "correct": 1,
+    "explanation": "Inside square brackets, '^' acts as a negation operator, matching any character NOT listed in the set.",
+    "topic": "Character Classes",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_03",
+    "chapter": 1,
+    "question": "Which quantifier matches the preceding element zero or one time (making it optional)?",
+    "options": [
+      "*",
+      "+",
+      "{1,}",
+      "?"
+    ],
+    "correct": 3,
+    "explanation": "The '?' quantifier specifies that the preceding token can occur either 0 or 1 time.",
+    "topic": "Quantifiers",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_04",
+    "chapter": 1,
+    "question": "What is the primary difference between a capturing group `(pattern)` and a non-capturing group `(?:pattern)`?",
+    "options": [
+      "Capturing groups only match digits, while non-capturing groups match letters.",
+      "Non-capturing groups are slower and consume more memory.",
+      "Capturing groups cannot be repeated with quantifiers.",
+      "Non-capturing groups do not store the matched substring in memory for backreferencing or extraction."
+    ],
+    "correct": 3,
+    "explanation": "Non-capturing groups `(?:...)` group tokens for logic without storing the matched subsegment into memory buffers, optimizing runtime performance.",
+    "topic": "Regex Groups",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_05",
+    "chapter": 1,
+    "question": "Given the string 'color' and 'colour', which regular expression matches both words?",
+    "options": [
+      "colou+r",
+      "colou{2}r",
+      "colou?r",
+      "colou*r"
+    ],
+    "correct": 2,
+    "explanation": "'colou?r' makes the 'u' optional (0 or 1 occurrence), perfectly matching both American 'color' and British 'colour'.",
+    "topic": "Quantifiers",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_06",
+    "chapter": 1,
+    "question": "In Python's `re` module, which function replaces occurrences of a pattern with a replacement string?",
+    "options": [
+      "re.split()",
+      "re.sub()",
+      "re.match()",
+      "re.search()"
+    ],
+    "correct": 1,
+    "explanation": "`re.sub(pattern, repl, string)` substitutes occurrences of the pattern with the specified replacement string.",
+    "topic": "Python re Module",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_07",
+    "chapter": 1,
+    "question": "What is the result of applying Stemming vs Lemmatization on the word 'better' with POS tag 'a' (adjective)?",
+    "options": [
+      "Stemming produces 'better', Lemmatization produces 'good'",
+      "Both produce 'bet'",
+      "Both produce 'good'",
+      "Stemming produces 'good', Lemmatization produces 'better'"
+    ],
+    "correct": 0,
+    "explanation": "Stemmers use heuristic rule-based affix chopping and usually leave 'better' as 'better', while lemmatization uses morphological dictionaries to return the canonical base form 'good'.",
+    "topic": "Stemming vs Lemmatization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_08",
+    "chapter": 1,
+    "question": "Which of the following is an algorithmic limitation of rule-based Stemmers like Porter Stemmer?",
+    "options": [
+      "They require a deep neural network to run.",
+      "They often produce non-words (e.g., 'univers' for 'university') due to over-stemming or under-stemming.",
+      "They run significantly slower than morphological lemmatizers.",
+      "They cannot process English text."
+    ],
+    "correct": 1,
+    "explanation": "Stemming relies on crude suffix-stripping heuristics without dictionary validation, frequently generating invalid stems such as 'organ' for 'organization' or 'univers'.",
+    "topic": "Stemming Algorithms",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_09",
+    "chapter": 1,
+    "question": "What is the minimum edit distance (Levenshtein distance) between 'kitten' and 'sitting'?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "correct": 1,
+    "explanation": "Distance is 3: substitute 'k'->'s' (sitten), substitute 'e'->'i' (sittin), insert 'g' (sitting).",
+    "topic": "Edit Distance",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_10",
+    "chapter": 1,
+    "question": "How does Damerau-Levenshtein / SDIT Distance differ from standard Levenshtein Distance?",
+    "options": [
+      "It disallows insertions.",
+      "It allows adjacent character transpositions (swaps) at cost 1.",
+      "It is strictly used for phonetics rather than characters.",
+      "It assigns negative costs to deletions."
+    ],
+    "correct": 1,
+    "explanation": "Damerau-Levenshtein (and SDIT Distance) adds a 4th atomic operation: Transposition of two adjacent characters (e.g. 'teh' -> 'the' costs 1 instead of 2).",
+    "topic": "SDIT Distance",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_11",
+    "chapter": 1,
+    "question": "What is the SDIT distance between 'CA' and 'AC'?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "correct": 1,
+    "explanation": "With transposition allowed as a single atomic operation, swapping adjacent 'C' and 'A' has an edit distance of 1.",
+    "topic": "SDIT Distance",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_12",
+    "chapter": 1,
+    "question": "Which subword tokenization algorithm iteratively merges the most frequent adjacent pair of bytes or characters in a vocabulary?",
+    "options": [
+      "Porter Algorithm",
+      "Kneser-Ney",
+      "Lesk Algorithm",
+      "Byte-Pair Encoding (BPE)"
+    ],
+    "correct": 3,
+    "explanation": "Byte-Pair Encoding (BPE) starts with individual characters and iteratively merges the most frequent co-occurring symbol pairs into new tokens.",
+    "topic": "Subword Tokenization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_13",
+    "chapter": 1,
+    "question": "What does the regex quantifier `{3,5}` mean?",
+    "options": [
+      "Matches between 3 and 5 occurrences inclusive",
+      "Matches 3 characters repeated 5 times",
+      "Matches 3 occurrences of 5",
+      "Matches either 3 or 5 occurrences only, not 4"
+    ],
+    "correct": 0,
+    "explanation": "`{m,n}` specifies a range: matching between m and n occurrences inclusive.",
+    "topic": "Quantifiers",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_14",
+    "chapter": 1,
+    "question": "What does `\\d+` match in a regular expression?",
+    "options": [
+      "Zero or more decimal points",
+      "One or more consecutive digits",
+      "Any non-digit character",
+      "A single digit"
+    ],
+    "correct": 1,
+    "explanation": "`\\d` matches any decimal digit [0-9], and `+` matches one or more occurrences.",
+    "topic": "Regex Character Classes",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_15",
+    "chapter": 1,
+    "question": "Which flag in Python's `re` module enables case-insensitive matching?",
+    "options": [
+      "re.S",
+      "re.M",
+      "re.X",
+      "re.I"
+    ],
+    "correct": 3,
+    "explanation": "`re.I` or `re.IGNORECASE` makes the regex evaluation case-insensitive.",
+    "topic": "Python re Flags",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_16",
+    "chapter": 1,
+    "question": "What does the regex `^$` match?",
+    "options": [
+      "The start and end of any file",
+      "Any line containing a dollar sign",
+      "An empty line (or empty string)",
+      "A line with spaces only"
+    ],
+    "correct": 2,
+    "explanation": "`^` is the start anchor and `$` is the end anchor. When placed together `^$`, they match an empty line.",
+    "topic": "Regex Anchors",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_17",
+    "chapter": 1,
+    "question": "In the context of text normalization, why is Case Folding (lowercasing) generally performed?",
+    "options": [
+      "To increase vocabulary size",
+      "To fix grammar mistakes",
+      "To convert text to ASCII automatically",
+      "To map capitalized words (e.g., 'The', 'THE') and lowercase 'the' to the same token, reducing sparsity"
+    ],
+    "correct": 3,
+    "explanation": "Case folding maps different casing variations to a canonical lowercase token, consolidating vocabulary counts and avoiding data sparsity.",
+    "topic": "Text Normalization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_18",
+    "chapter": 1,
+    "question": "When might Case Folding be HARMFUL in an NLP pipeline?",
+    "options": [
+      "Spam detection",
+      "Stop word removal",
+      "Named Entity Recognition (NER), where capitalization distinguishes proper nouns like 'US' (United States) from 'us' (pronoun)",
+      "Counting document frequency"
+    ],
+    "correct": 2,
+    "explanation": "In Named Entity Recognition, capital letters provide crucial signals for proper nouns (e.g., 'Apple' company vs 'apple' fruit, 'Bush' vs 'bush').",
+    "topic": "Case Normalization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_19",
+    "chapter": 1,
+    "question": "What does the regular expression `\\s+` match?",
+    "options": [
+      "A single lowercase 's'",
+      "One or more punctuation marks",
+      "One or more whitespace characters (space, tab, newline)",
+      "Special characters only"
+    ],
+    "correct": 2,
+    "explanation": "`\\s` matches any whitespace character (space, \\t, \\n, \\r), and `+` matches one or more.",
+    "topic": "Regex Character Classes",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_20",
+    "chapter": 1,
+    "question": "Which regex pattern correctly extracts all valid email addresses in a simple format like `user@domain.com`?",
+    "options": [
+      "^email.*$",
+      "[a-z]@[a-z]",
+      "[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}",
+      "\\d+@\\d+\\.\\w+"
+    ],
+    "correct": 2,
+    "explanation": "`[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}` matches alphanumeric characters including dots/dashes, followed by '@', domain name, and a valid top-level domain.",
+    "topic": "Regex Patterns",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_21",
+    "chapter": 1,
+    "question": "In dynamic programming calculation of Levenshtein distance, what is the base condition for matrix cell D(i, 0)?",
+    "options": [
+      "infinity",
+      "1",
+      "0",
+      "i (representing i deletions from the source prefix)"
+    ],
+    "correct": 3,
+    "explanation": "Transforming a source prefix of length i into an empty target string requires exactly i deletions, so D(i, 0) = i.",
+    "topic": "Edit Distance Algorithm",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_22",
+    "chapter": 1,
+    "question": "What is the cost of substitution in standard Levenshtein distance when the source character equals the target character?",
+    "options": [
+      "0",
+      "2",
+      "1",
+      "-1"
+    ],
+    "correct": 0,
+    "explanation": "When characters match (source[i] == target[j]), no edit operation is required, so the substitution cost is 0.",
+    "topic": "Edit Distance Algorithm",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_23",
+    "chapter": 1,
+    "question": "What is the time complexity of the classic Dynamic Programming algorithm for Minimum Edit Distance between two strings of lengths M and N?",
+    "options": [
+      "O(2^(M+N))",
+      "O(M * N)",
+      "O(log(M*N))",
+      "O(M + N)"
+    ],
+    "correct": 1,
+    "explanation": "Filling the (M+1) x (N+1) table cell-by-cell takes O(M * N) time and O(M * N) space.",
+    "topic": "Edit Distance Complexity",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_24",
+    "chapter": 1,
+    "question": "Which regex construct represents a Positive Lookahead assertion?",
+    "options": [
+      "(?<!pattern)",
+      "(?<=pattern)",
+      "(?!pattern)",
+      "(?=pattern)"
+    ],
+    "correct": 3,
+    "explanation": "`(?=...)` is a positive lookahead assertion: it checks that the pattern matches immediately ahead without consuming characters.",
+    "topic": "Lookaround Assertions",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_25",
+    "chapter": 1,
+    "question": "What does the regex `(?<=@)\\w+` match in the string 'Contact user@example.com'?",
+    "options": [
+      "com",
+      "example",
+      "@example",
+      "user"
+    ],
+    "correct": 1,
+    "explanation": "`(?<=@)` is a positive lookbehind matching the position right after '@', so `\\w+` captures 'example'.",
+    "topic": "Lookaround Assertions",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_26",
+    "chapter": 1,
+    "question": "What are Stop Words in text normalization?",
+    "options": [
+      "Slang and misspelled words",
+      "High-frequency functional words (e.g., 'the', 'is', 'at') that carry minimal domain-specific semantic content",
+      "Words that end sentences",
+      "Words that cause an algorithm to crash"
+    ],
+    "correct": 1,
+    "explanation": "Stop words are grammatical function words occurring with high frequency that are often filtered out in information retrieval to reduce index size.",
+    "topic": "Stop Words",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_27",
+    "chapter": 1,
+    "question": "Why is Lemmatization generally preferred over Stemming for semantic search and question answering?",
+    "options": [
+      "Lemmatization is faster to compute.",
+      "Lemmatization removes all vowels.",
+      "Lemmatization avoids using any dictionaries.",
+      "Lemmatization considers morphological context and part-of-speech tags to produce valid dictionary lemmas."
+    ],
+    "correct": 3,
+    "explanation": "Lemmatization uses lexical databases and POS information to map surface forms to true dictionary headwords (lemmas), preserving grammatical semantics.",
+    "topic": "Stemming vs Lemmatization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_28",
+    "chapter": 1,
+    "question": "What does the greedy quantifier `.*` do in regex by default?",
+    "options": [
+      "Matches only numbers",
+      "Matches as many characters as possible up to the end of the line",
+      "Matches exactly one word",
+      "Matches as few characters as possible"
+    ],
+    "correct": 1,
+    "explanation": "Greedy quantifiers consume as much input text as possible while still allowing the entire expression to match.",
+    "topic": "Greedy vs Non-Greedy",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_29",
+    "chapter": 1,
+    "question": "How do you make a greedy quantifier non-greedy (lazy) in standard regex?",
+    "options": [
+      "Append '?' (e.g., `.*?`)",
+      "Append '$'",
+      "Wrap in parentheses",
+      "Prepend '^'"
+    ],
+    "correct": 0,
+    "explanation": "Appending a '?' to any quantifier (e.g., `*?`, `+?`, `??`) converts it into a lazy / non-greedy quantifier.",
+    "topic": "Greedy vs Non-Greedy",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_30",
+    "chapter": 1,
+    "question": "What will `re.findall(r'\\b\\w{4}\\b', 'The quick brown fox jumps')` return in Python?",
+    "options": [
+      "['quick']",
+      "[]",
+      "['The', 'fox']",
+      "['quick', 'brown', 'jumps']"
+    ],
+    "correct": 3,
+    "explanation": "Wait, 'quick' has 5 letters, 'brown' has 5 letters, 'jumps' has 5 letters! None has 4 letters! So it returns `[]`.",
+    "topic": "Python re Code",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_31",
+    "chapter": 1,
+    "question": "What will `re.findall(r'\\b\\w{3}\\b', 'The quick brown fox jumps')` return in Python?",
+    "options": [
+      "['quick', 'brown']",
+      "['jumps']",
+      "['The']",
+      "['The', 'fox']"
+    ],
+    "correct": 3,
+    "explanation": "'The' (3 letters) and 'fox' (3 letters) are the only 3-letter words matched by `\\b\\w{3}\\b`.",
+    "topic": "Python re Code",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_32",
+    "chapter": 1,
+    "question": "In NLTK, which module provides the WordNet lemmatizer?",
+    "options": [
+      "nltk.stem.WordNetLemmatizer",
+      "nltk.tag.WordNetLemmatizer",
+      "nltk.tokenize.WordNetLemmatizer",
+      "nltk.corpus.WordNetLemmatizer"
+    ],
+    "correct": 0,
+    "explanation": "`from nltk.stem import WordNetLemmatizer` is the standard import path in NLTK.",
+    "topic": "NLTK Tools",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_33",
+    "chapter": 1,
+    "question": "What is the default POS tag assumed by `WordNetLemmatizer().lemmatize(word)` if none is provided?",
+    "options": [
+      "Adverb ('r')",
+      "Verb ('v')",
+      "Adjective ('a')",
+      "Noun ('n')"
+    ],
+    "correct": 3,
+    "explanation": "NLTK's `lemmatize()` defaults to noun (`pos='n'`). Thus `lemmatize('running')` returns 'running' unless `pos='v'` is passed.",
+    "topic": "NLTK Tools",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_34",
+    "chapter": 1,
+    "question": "What is Sentence Segmentation?",
+    "options": [
+      "Translating sentences into vectors",
+      "Dividing words into syllables",
+      "Parsing trees into noun phrases",
+      "Splitting a running text stream into individual distinct sentences"
+    ],
+    "correct": 3,
+    "explanation": "Sentence segmentation (sentence boundary detection) is the task of breaking a text into sentences, handling tricky periods in abbreviations.",
+    "topic": "Sentence Segmentation",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_35",
+    "chapter": 1,
+    "question": "Why is a simple period `.` split insufficient for sentence boundary detection in English?",
+    "options": [
+      "Periods are rarely used in English.",
+      "Periods only exist at paragraph ends.",
+      "Computers cannot read periods.",
+      "Periods also appear in abbreviations (e.g., 'Dr.', 'Inc.'), numbers (e.g., '3.14'), and URLs."
+    ],
+    "correct": 3,
+    "explanation": "Periods are ambiguous: they denote sentence boundaries, decimal numbers, abbreviations ('U.S.A.'), and ellipsis.",
+    "topic": "Sentence Segmentation",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_36",
+    "chapter": 1,
+    "question": "In Byte-Pair Encoding (BPE), what is the termination condition for the iterative merge process during training?",
+    "options": [
+      "When no vowels remain",
+      "When a pre-defined desired vocabulary size or number of merge operations is reached",
+      "When all sentences are parsed",
+      "When loss converges to zero"
+    ],
+    "correct": 1,
+    "explanation": "BPE stops merging when the specified target vocabulary size (e.g., 32,000 or 50,000 subword units) is attained.",
+    "topic": "Subword Tokenization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_37",
+    "chapter": 1,
+    "question": "Which subword tokenization variant uses the WordPiece algorithm rather than BPE?",
+    "options": [
+      "LLaMA",
+      "BERT",
+      "GPT-2",
+      "RoBERTa"
+    ],
+    "correct": 1,
+    "explanation": "BERT utilizes WordPiece (marking continuation subwords with `##`), whereas GPT models utilize Byte-Pair Encoding (BPE).",
+    "topic": "Subword Tokenization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_38",
+    "chapter": 1,
+    "question": "What is Backreferencing in regular expressions?",
+    "options": [
+      "Referencing the content captured by a previous capturing group using `\\1`, `\\2`, etc.",
+      "Compiling regex in reverse",
+      "Matching backwards from the end of the file",
+      "Undoing previous regex replacements"
+    ],
+    "correct": 0,
+    "explanation": "`\\1` refers back to the exact string matched by the first capturing group inside the pattern (e.g., `\\b(\\w+)\\s+\\1\\b` detects repeated words).",
+    "topic": "Regex Groups",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_39",
+    "chapter": 1,
+    "question": "Which regex pattern detects immediately repeated duplicate words like 'the the'?",
+    "options": [
+      "\\b(\\w+)\\s+\\1\\b",
+      "[a-z]+ [a-z]+",
+      "(\\w+)\\2",
+      "\\w+\\s+\\w+"
+    ],
+    "correct": 0,
+    "explanation": "`\\b(\\w+)\\s+\\1\\b` captures a word in group 1 and checks if the exact same word appears after one or more spaces using `\\1`.",
+    "topic": "Regex Patterns",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch01_40",
+    "chapter": 1,
+    "question": "What is the edit distance between 'intention' and 'execution' using standard Levenshtein weights (Insert=1, Delete=1, Replace=2)?",
+    "options": [
+      "5",
+      "10",
+      "3",
+      "8"
+    ],
+    "correct": 3,
+    "explanation": "Using classic Jurafsky-Martin cost matrix (delete=1, insert=1, replace=2 when different): cost is 8 (delete 'i', substitute 'n'->'e' (2), substitute 't'->'x' (2), substitute 't'->'c' (2), insert 'u' (1)).",
+    "topic": "Edit Distance Algorithm",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_41",
+    "chapter": 1,
+    "question": "In an edit distance matrix, what operation does a diagonal step from D(i-1, j-1) to D(i, j) represent?",
+    "options": [
+      "Insertion",
+      "Deletion",
+      "Substitution or Exact Match",
+      "Transposition"
+    ],
+    "correct": 2,
+    "explanation": "Moving diagonally represents aligning character source[i] with target[j], which is a match (cost 0) or substitution (cost 1 or 2).",
+    "topic": "Edit Distance Algorithm",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_42",
+    "chapter": 1,
+    "question": "In an edit distance matrix, what operation does a horizontal step from D(i, j-1) to D(i, j) represent?",
+    "options": [
+      "Deletion of source[i]",
+      "No operation",
+      "Insertion of target[j]",
+      "Substitution"
+    ],
+    "correct": 2,
+    "explanation": "A horizontal movement increments j while keeping i fixed, corresponding to inserting the target character target[j].",
+    "topic": "Edit Distance Algorithm",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_43",
+    "chapter": 1,
+    "question": "In an edit distance matrix, what operation does a vertical step from D(i-1, j) to D(i, j) represent?",
+    "options": [
+      "Insertion",
+      "Match",
+      "Transposition",
+      "Deletion of source[i]"
+    ],
+    "correct": 3,
+    "explanation": "A vertical movement increments i while keeping j fixed, corresponding to deleting the source character source[i].",
+    "topic": "Edit Distance Algorithm",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_44",
+    "chapter": 1,
+    "question": "Which application heavily relies on SDIT / Minimum Edit Distance?",
+    "options": [
+      "Matrix multiplication",
+      "Hash table indexing",
+      "Spell checking and spelling correction candidate generation",
+      "Image classification"
+    ],
+    "correct": 2,
+    "explanation": "Spell checkers calculate edit distance between misspelled queries and dictionary words to rank candidate corrections within distance 1 or 2.",
+    "topic": "Edit Distance Applications",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_45",
+    "chapter": 1,
+    "question": "What is the Jaccard similarity coefficient between the set of characters {'a', 'b', 'c'} and {'b', 'c', 'd'}?",
+    "options": [
+      "3/4 (0.75)",
+      "2/3 (0.67)",
+      "1/4 (0.25)",
+      "2/4 (0.5)"
+    ],
+    "correct": 3,
+    "explanation": "Intersection is {'b', 'c'} (size 2). Union is {'a', 'b', 'c', 'd'} (size 4). Jaccard = 2/4 = 0.5.",
+    "topic": "String Similarity",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_46",
+    "chapter": 1,
+    "question": "What does character normalization using Unicode NFKD (Compatibility Decomposition) accomplish?",
+    "options": [
+      "It encodes text with RSA",
+      "It decomposes characters into their basic components (e.g. separating accents from letters, decomposing ligatures like 'ﬁ')",
+      "It translates text into Spanish",
+      "It converts text to binary digits"
+    ],
+    "correct": 1,
+    "explanation": "NFKD decomposes composite characters (such as accented characters or typographical ligatures) into canonical base characters plus combining marks.",
+    "topic": "Unicode Normalization",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_47",
+    "chapter": 1,
+    "question": "Which Python regex syntax enables Verbose mode, allowing comments and whitespace inside the pattern?",
+    "options": [
+      "re.ASCII",
+      "re.DOTALL",
+      "re.MULTILINE",
+      "re.VERBOSE (or re.X)"
+    ],
+    "correct": 3,
+    "explanation": "`re.VERBOSE` (or `re.X`) ignores unescaped whitespace and '#' comments within the regular expression pattern string.",
+    "topic": "Python re Flags",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch01_48",
+    "chapter": 1,
+    "question": "What does the regex `[a-zA-Z0-9_]` match equivalently in standard ASCII regex?",
+    "options": [
+      "\\b",
+      "\\w",
+      "\\s",
+      "\\d"
+    ],
+    "correct": 1,
+    "explanation": "`\\w` represents word characters: alphanumeric characters plus underscore `[a-zA-Z0-9_]`.",
+    "topic": "Regex Character Classes",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch01_49",
+    "chapter": 1,
+    "question": "What is the output of `re.split(r'\\s+', 'NLP  is   fun')` in Python?",
+    "options": [
+      "['NLP is fun']",
+      "['NLP', ' ', 'is', ' ', 'fun']",
+      "['NLP', 'is', 'fun']",
+      "'NLP is fun'"
+    ],
+    "correct": 2,
+    "explanation": "`re.split(r'\\s+', ...)` splits the string on sequences of one or more whitespace characters, returning `['NLP', 'is', 'fun']`.",
+    "topic": "Python re Code",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch01_50",
+    "chapter": 1,
+    "question": "Which distance metric is defined as the number of positions at which two strings of EQUAL LENGTH differ?",
+    "options": [
+      "Cosine distance",
+      "Levenshtein distance",
+      "Hamming distance",
+      "Jaro-Winkler distance"
+    ],
+    "correct": 2,
+    "explanation": "Hamming distance strictly compares two strings of identical length and counts the number of mismatching character positions (substitutions only).",
+    "topic": "Distance Metrics",
+    "slide_ref": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_01",
+    "chapter": 2,
+    "question": "What is a statistical Language Model (LM)?",
+    "options": [
+      "A dictionary of syntax rules",
+      "A model that assigns a probability P(W) to a sequence of words",
+      "A spell checker for HTML",
+      "A parser that outputs trees only"
+    ],
+    "correct": 1,
+    "explanation": "A language model computes the probability of a sequence of words P(w1, w2, ..., wn) or predicts the next word P(wn | w1...wn-1).",
+    "topic": "LM Definition",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_02",
+    "chapter": 2,
+    "question": "What fundamental rule of probability decomposes the joint probability P(w1, ..., wn) into conditional probabilities?",
+    "options": [
+      "Chain Rule of Probability",
+      "Bayes' Rule",
+      "Law of Total Probability",
+      "Central Limit Theorem"
+    ],
+    "correct": 0,
+    "explanation": "The Chain Rule decomposes P(w1...wn) = P(w1)P(w2|w1)P(w3|w1,w2)...P(wn|w1...wn-1).",
+    "topic": "Probability Rules",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_03",
+    "chapter": 2,
+    "question": "What assumption is made by a Bigram model under the Markov Assumption?",
+    "options": [
+      "All words are completely independent",
+      "The probability depends on all previous words",
+      "The probability of the current word depends ONLY on the immediately preceding word P(wi | wi-1)",
+      "The probability depends on the next word"
+    ],
+    "correct": 2,
+    "explanation": "A bigram model approximates the history using a first-order Markov assumption: P(wi | w1...wi-1) ≈ P(wi | wi-1).",
+    "topic": "Markov Assumption",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_04",
+    "chapter": 2,
+    "question": "In an N-gram model, how many preceding words does an N-gram condition on?",
+    "options": [
+      "N - 1 words",
+      "N + 1 words",
+      "1 word only",
+      "N words"
+    ],
+    "correct": 0,
+    "explanation": "An N-gram model looks at a window of N words, so it conditions on the preceding N - 1 words.",
+    "topic": "Markov Assumption",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_05",
+    "chapter": 2,
+    "question": "How is the Maximum Likelihood Estimation (MLE) for a bigram probability P(wi | wi-1) calculated?",
+    "options": [
+      "Count(wi) / Count(wi-1)",
+      "Count(wi-1, wi) / N",
+      "Count(wi) / N",
+      "Count(wi-1, wi) / Count(wi-1)"
+    ],
+    "correct": 3,
+    "explanation": "Bigram MLE is the frequency of the pair (wi-1, wi) normalized by the frequency of the conditioning word wi-1.",
+    "topic": "MLE Estimation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch02_06",
+    "chapter": 2,
+    "question": "Why do we typically work in Log-probability space when calculating the probability of long sentences?",
+    "options": [
+      "To prevent numerical underflow caused by multiplying many small probabilities",
+      "To make probabilities negative",
+      "To avoid division by zero",
+      "To speed up GPU training by 100x"
+    ],
+    "correct": 0,
+    "explanation": "Multiplying many floating-point numbers between 0 and 1 causes floating-point underflow. Summing logs converts multiplication to addition and preserves precision.",
+    "topic": "Log Probability",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_07",
+    "chapter": 2,
+    "question": "What does Perplexity (PP) measure in evaluating Language Models?",
+    "options": [
+      "The vocabulary size",
+      "The grammatical accuracy of sentences",
+      "The training time per epoch",
+      "The inverse probability of the test set, normalized by word count (effective branching factor)"
+    ],
+    "correct": 3,
+    "explanation": "Perplexity PP(W) = P(w1...wN)^(-1/N). A lower perplexity indicates the model is less surprised by the test data, meaning a better model.",
+    "topic": "Perplexity",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch02_08",
+    "chapter": 2,
+    "question": "If a model predicts every word in a vocabulary of size |V| with uniform probability, what is its perplexity?",
+    "options": [
+      "1",
+      "log(|V|)",
+      "|V|",
+      "0"
+    ],
+    "correct": 2,
+    "explanation": "With uniform distribution over |V| choices, PP = (1/|V|)^(-1) = |V|. Perplexity represents the weighted average branching factor.",
+    "topic": "Perplexity",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_09",
+    "chapter": 2,
+    "question": "What is the major problem with pure Maximum Likelihood Estimation (MLE) in N-gram models?",
+    "options": [
+      "It requires too many neural network parameters",
+      "Zero probability problem: unseen n-grams in the test set receive probability 0, causing test perplexity to become infinite",
+      "It only works on binary data",
+      "It cannot calculate unigram probabilities"
+    ],
+    "correct": 1,
+    "explanation": "MLE assigns probability 0 to any word sequence not observed in the training corpus, which invalidates likelihood calculations on new data.",
+    "topic": "Zero Probability",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_10",
+    "chapter": 2,
+    "question": "What is the core idea of Laplace (Add-1) Smoothing?",
+    "options": [
+      "Add 1 to the test perplexity",
+      "Divide all counts by 2",
+      "Add 1 to all n-gram counts and add |V| to the denominator",
+      "Subtract 1 from all bigrams"
+    ],
+    "correct": 2,
+    "explanation": "Laplace smoothing pretends every n-gram was seen one more time: P_Laplace(wi|wi-1) = (Count(wi-1, wi) + 1) / (Count(wi-1) + |V|).",
+    "topic": "Smoothing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_11",
+    "chapter": 2,
+    "question": "Why is Laplace (Add-1) smoothing generally considered POOR for large vocabulary N-gram models?",
+    "options": [
+      "It causes negative probabilities",
+      "It cannot be computed in log space",
+      "It shifts far too much probability mass from observed n-grams to the massive number of unobserved n-grams (|V| is huge)",
+      "It requires O(N^3) memory"
+    ],
+    "correct": 2,
+    "explanation": "Since |V| is very large (e.g. 100,000), adding 1 to every unseen pair steals too much probability mass from frequent, authentic events.",
+    "topic": "Smoothing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_12",
+    "chapter": 2,
+    "question": "How does Add-k smoothing (Lidstone's law) improve upon Add-1 smoothing?",
+    "options": [
+      "It limits the vocabulary to k words",
+      "It drops counts less than k",
+      "It multiplies counts by k",
+      "It adds a small fractional constant k (e.g., k = 0.05 or 0.1) instead of 1"
+    ],
+    "correct": 3,
+    "explanation": "Add-k smoothing uses a tuned hyperparameter 0 < k < 1 to prevent moving excessive probability mass to unseen events.",
+    "topic": "Smoothing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch02_13",
+    "chapter": 2,
+    "question": "What is the principle behind Linear Interpolation smoothing?",
+    "options": [
+      "Replacing zeros with average word lengths",
+      "Combining probabilities from unigram, bigram, and trigram models with weighting coefficients lambda that sum to 1",
+      "Smoothing using polynomial spline curves",
+      "Interpolating between training loss and test loss"
+    ],
+    "correct": 1,
+    "explanation": "Interpolation blends higher-order and lower-order N-grams: P_interp(w|u,v) = λ3 P(w|u,v) + λ2 P(w|v) + λ1 P(w), where Σλ = 1.",
+    "topic": "Interpolation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_14",
+    "chapter": 2,
+    "question": "In Jelinek-Mercer linear interpolation, how are the lambda weights typically learned?",
+    "options": [
+      "By setting them all equal to 0.5",
+      "Using an Expectation-Maximization (EM) algorithm on held-out / development data",
+      "By calculating gradient on test data",
+      "Using random guessing"
+    ],
+    "correct": 1,
+    "explanation": "Lambda coefficients are tuned on held-out validation data to maximize the likelihood of unseen validation sentences.",
+    "topic": "Interpolation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_15",
+    "chapter": 2,
+    "question": "How does Katz Backoff differ from Linear Interpolation?",
+    "options": [
+      "Backoff deletes unseen words",
+      "Backoff uses the higher-order N-gram if its count is non-zero, and only backs off to lower-order models if count is zero (discounting observed counts)",
+      "Backoff only works with unigrams",
+      "Backoff always mixes all models together"
+    ],
+    "correct": 1,
+    "explanation": "Backoff uses the most specific model available and only falls back to lower-order models when higher-order evidence is absent.",
+    "topic": "Backoff",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_16",
+    "chapter": 2,
+    "question": "What does Good-Turing discounting use to estimate the probability of unseen events (N0)?",
+    "options": [
+      "A Gaussian prior",
+      "The size of the vocabulary",
+      "The average sentence length",
+      "The frequency of events that were observed exactly once (singletons, N1)"
+    ],
+    "correct": 3,
+    "explanation": "Good-Turing uses things seen once (N1) to estimate the probability mass of things never seen (N0).",
+    "topic": "Good-Turing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch02_17",
+    "chapter": 2,
+    "question": "What is a 'singleton' in corpus linguistics and Good-Turing smoothing?",
+    "options": [
+      "An N-gram that appears exactly once in the training corpus (r = 1)",
+      "A sentence containing one token",
+      "A single-letter word",
+      "An unigram with zero frequency"
+    ],
+    "correct": 0,
+    "explanation": "Singletons are N-grams with count r = 1, denoted as N1 in Good-Turing notation.",
+    "topic": "Good-Turing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_18",
+    "chapter": 2,
+    "question": "What innovative concept does Kneser-Ney smoothing introduce for lower-order backoff distributions?",
+    "options": [
+      "Exponential moving average",
+      "Cosine similarity discount",
+      "Continuation Probability: how likely a word is to complete an uncompleted novel context, rather than unigram raw frequency",
+      "Uniform random noise"
+    ],
+    "correct": 2,
+    "explanation": "Kneser-Ney recognizes that a word like 'York' may have high unigram frequency but almost always follows 'New'; continuation probability counts distinct histories.",
+    "topic": "Kneser-Ney",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_19",
+    "chapter": 2,
+    "question": "Why does Kneser-Ney smoothing consider the word 'Francisco' to have a LOW continuation probability despite high unigram count?",
+    "options": [
+      "Because it has too many syllables",
+      "Because it is an out-of-vocabulary token",
+      "Because it almost exclusively occurs after 'San' and rarely follows any other words",
+      "Because it is a proper noun"
+    ],
+    "correct": 2,
+    "explanation": "'Francisco' has a high raw count, but its continuation count is low because it only occurs in the specific context 'San Francisco'.",
+    "topic": "Kneser-Ney",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_20",
+    "chapter": 2,
+    "question": "What is the state-of-the-art smoothing technique among classical count-based N-gram language models?",
+    "options": [
+      "Add-1 Laplace smoothing",
+      "Modified Kneser-Ney smoothing",
+      "Uniform smoothing",
+      "Good-Turing without discounting"
+    ],
+    "correct": 1,
+    "explanation": "Interpolated Modified Kneser-Ney smoothing is widely acknowledged as the best-performing classical smoothing technique.",
+    "topic": "Kneser-Ney",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_21",
+    "chapter": 2,
+    "question": "What special pseudo-tokens are typically added to sentences when training N-gram models?",
+    "options": [
+      "<num> and <unk>",
+      "<head> and <tail>",
+      "<s> for start of sentence and </s> for end of sentence",
+      "<cls> and <sep> only"
+    ],
+    "correct": 2,
+    "explanation": "`<s>` and `</s>` model the probability of starting and concluding a sentence properly.",
+    "topic": "N-Gram Training",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_22",
+    "chapter": 2,
+    "question": "If bigram count C('<s>', 'The') = 50 and total sentence starts C('<s>') = 200, what is MLE P('The' | '<s>')?",
+    "options": [
+      "0.10",
+      "4.0",
+      "0.25",
+      "0.50"
+    ],
+    "correct": 2,
+    "explanation": "P(The | <s>) = 50 / 200 = 0.25.",
+    "topic": "MLE Estimation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_23",
+    "chapter": 2,
+    "question": "What happens to an N-gram model's parameter count as N increases from 2 to 3 to 4?",
+    "options": [
+      "It scales logarithmically",
+      "It decreases linearly",
+      "It stays constant at |V|",
+      "It grows exponentially (|V|^N), leading to severe memory consumption and data sparsity"
+    ],
+    "correct": 3,
+    "explanation": "The number of possible N-grams is |V|^N. For |V|=100,000, trigrams has 10^15 possible combinations, leading to immense sparsity.",
+    "topic": "Model Sparsity",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch02_24",
+    "chapter": 2,
+    "question": "How does an Out-Of-Vocabulary (OOV) word handled during testing in fixed-vocabulary N-gram models?",
+    "options": [
+      "Assigned probability 1.0",
+      "Ignored and deleted",
+      "Causes training to halt",
+      "Mapped to a special <UNK> (unknown word) token"
+    ],
+    "correct": 3,
+    "explanation": "Rare words below a frequency threshold in training are converted to `<UNK>`, allowing the model to assign probabilities to unknown words at test time.",
+    "topic": "OOV Handling",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch02_25",
+    "chapter": 2,
+    "question": "Which of the following sentences will receive HIGHER probability from an English bigram model?",
+    "options": [
+      "'dog loudly barked the'",
+      "'the dog barked loudly'",
+      "'barked the loudly dog'",
+      "'loudly the dog barked'"
+    ],
+    "correct": 1,
+    "explanation": "'the dog barked loudly' follows standard English syntax and common collocations, yielding much higher bigram likelihoods.",
+    "topic": "LM Evaluation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_26",
+    "chapter": 2,
+    "question": "What is extrinsic evaluation of a language model?",
+    "options": [
+      "Evaluating the LM by measuring improvement on an end task (e.g., Speech Recognition accuracy or Machine Translation BLEU)",
+      "Counting parameter size",
+      "Calculating perplexity on a test set",
+      "Measuring training time"
+    ],
+    "correct": 0,
+    "explanation": "Extrinsic evaluation embeds the LM in a downstream task application and evaluates task performance, unlike intrinsic perplexity.",
+    "topic": "Evaluation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_27",
+    "chapter": 2,
+    "question": "What is intrinsic evaluation of a language model?",
+    "options": [
+      "Measuring perplexity or cross-entropy directly on a held-out test corpus independent of downstream tasks",
+      "Testing grammar rules manually",
+      "Benchmarking inference FPS",
+      "Running a user survey"
+    ],
+    "correct": 0,
+    "explanation": "Intrinsic evaluation measures how well the LM predicts held-out text using Perplexity or Cross-Entropy without deploying the system.",
+    "topic": "Evaluation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_28",
+    "chapter": 2,
+    "question": "What is the relationship between Cross-Entropy H(W) and Perplexity PP(W)?",
+    "options": [
+      "PP(W) = log2(H(W))",
+      "PP(W) = H(W) / 2",
+      "PP(W) = 2^H(W)",
+      "PP(W) = 1 - H(W)"
+    ],
+    "correct": 2,
+    "explanation": "Perplexity is mathematically the exponentiation of cross-entropy: PP(W) = 2^H(W) (when log base 2 is used).",
+    "topic": "Information Theory",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_29",
+    "chapter": 2,
+    "question": "What is Shannon's method for visualizing language models?",
+    "options": [
+      "Drawing dependency trees",
+      "Generating random text by sampling words according to the model's conditional probabilities",
+      "Visualizing word vectors in 2D",
+      "Plotting loss curves"
+    ],
+    "correct": 1,
+    "explanation": "Claude Shannon proposed sampling the next word from the LM probability distribution iteratively to generate synthetic text.",
+    "topic": "Text Generation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_30",
+    "chapter": 2,
+    "question": "In a unigram language model, how is the probability of the sentence 'I love NLP' calculated?",
+    "options": [
+      "P('I') * P('love') * P('NLP')",
+      "P('NLP'|'I', 'love')",
+      "Count('I love NLP') / N",
+      "P('love'|'I') * P('NLP'|'love')"
+    ],
+    "correct": 0,
+    "explanation": "A unigram model assumes complete independence between words, multiplying each unigram probability: P(w1)*P(w2)*...*P(wn).",
+    "topic": "Unigram Model",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_31",
+    "chapter": 2,
+    "question": "What is the primary drawback of a Unigram language model?",
+    "options": [
+      "It completely ignores word order and syntactic context",
+      "It requires deep learning",
+      "It cannot be calculated on computers",
+      "Its perplexity is always 0"
+    ],
+    "correct": 0,
+    "explanation": "Unigrams ignore sequential structure, assigning identical probability to grammatical and scrambled sentences.",
+    "topic": "Unigram Model",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_32",
+    "chapter": 2,
+    "question": "If a trigram count C(w1, w2, w3) = 0, but bigram count C(w2, w3) = 15, what will Backoff do?",
+    "options": [
+      "Assign zero probability",
+      "Back off to use the smoothed bigram probability P(w3 | w2)",
+      "Delete w3",
+      "Throw an exception"
+    ],
+    "correct": 1,
+    "explanation": "Because the trigram was unseen, Backoff falls back to the lower-order bigram evidence.",
+    "topic": "Backoff",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_33",
+    "chapter": 2,
+    "question": "In Good-Turing smoothing, what is the formula for the adjusted count r* for an N-gram with raw count r?",
+    "options": [
+      "r* = (r + 1) * (N_{r+1} / N_r)",
+      "r* = r - 0.75",
+      "r* = r / |V|",
+      "r* = r + 1"
+    ],
+    "correct": 0,
+    "explanation": "Good-Turing replaces count r with r* = (r+1) * N_{r+1} / N_r.",
+    "topic": "Good-Turing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_34",
+    "chapter": 2,
+    "question": "Why can Good-Turing discounting fail for very high frequency counts r?",
+    "options": [
+      "It divides by zero for r=1",
+      "For large r, N_r can be zero or noisy because very few items have exact high frequencies",
+      "Large r numbers cannot be represented in binary",
+      "High frequency words are deleted"
+    ],
+    "correct": 1,
+    "explanation": "Because high-count bins are sparse (e.g. N_500 might be 0 while N_501 is 1), Simple Good-Turing uses linear regression smoothing for N_r.",
+    "topic": "Good-Turing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_35",
+    "chapter": 2,
+    "question": "What does Absolute Discounting subtract from every non-zero count?",
+    "options": [
+      "The square root of count",
+      "A fixed discount parameter d (typically between 0.5 and 0.9)",
+      "The sentence length",
+      "The vocabulary size |V|"
+    ],
+    "correct": 1,
+    "explanation": "Absolute discounting subtracts a constant d from every positive count: (C(u,w) - d) / C(u).",
+    "topic": "Discounting",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_36",
+    "chapter": 2,
+    "question": "In Absolute Discounting, what is done with the total discounted probability mass?",
+    "options": [
+      "It is given only to the <UNK> token",
+      "It is redistributed to lower-order models multiplied by an unreserved weight",
+      "It is added to the unigram of 'the'",
+      "It is discarded"
+    ],
+    "correct": 1,
+    "explanation": "The subtracted probability mass is gathered and redistributed to the lower-order distribution.",
+    "topic": "Discounting",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_37",
+    "chapter": 2,
+    "question": "What is a Trigram model's conditioning context for the word 'learning' in 'machine learning algorithms'?",
+    "options": [
+      "'algorithms'",
+      "'machine'",
+      "'machine learning'",
+      "('machine', 'learning')"
+    ],
+    "correct": 1,
+    "explanation": "Wait, for P('algorithms' | 'machine', 'learning'), the context is ('machine', 'learning'). For 'learning' in 'deep machine learning', context is ('deep', 'machine').",
+    "topic": "Trigram Context",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_38",
+    "chapter": 2,
+    "question": "For the sequence '<s> deep learning is awesome </s>', what is the trigram predicting 'is'?",
+    "options": [
+      "P(is | deep, learning)",
+      "P(is | learning)",
+      "P(is | <s>, deep)",
+      "P(learning | deep, is)"
+    ],
+    "correct": 0,
+    "explanation": "In trigrams, the target word 'is' is conditioned on the two previous words: 'deep' and 'learning'.",
+    "topic": "Trigram Context",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_39",
+    "chapter": 2,
+    "question": "What is the effect of setting k = 0 in Add-k smoothing?",
+    "options": [
+      "Perplexity becomes 1",
+      "It reduces to unsmoothed Maximum Likelihood Estimation (MLE)",
+      "It results in uniform distribution",
+      "It reduces to Laplace smoothing"
+    ],
+    "correct": 1,
+    "explanation": "When k=0, no pseudo-counts are added, recovering raw MLE.",
+    "topic": "Smoothing",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_40",
+    "chapter": 2,
+    "question": "How is the vocabulary |V| determined when training N-gram models?",
+    "options": [
+      "Generated dynamically at test time",
+      "Fixed from a pre-determined dictionary or created by keeping words above a frequency threshold in training data",
+      "By querying Google Search",
+      "Always fixed at exactly 1,000 words"
+    ],
+    "correct": 1,
+    "explanation": "Vocabulary is built from words exceeding a frequency cutoff (e.g. count >= 3), with remaining rare words converted to `<UNK>`.",
+    "topic": "Vocabulary",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_41",
+    "chapter": 2,
+    "question": "What is a closed vocabulary assumption in language modeling?",
+    "options": [
+      "Words cannot be translated",
+      "The test set is assumed to contain NO unknown words (all words known in advance)",
+      "All sentences have equal length",
+      "The vocabulary contains exactly 26 letters"
+    ],
+    "correct": 1,
+    "explanation": "Closed vocabulary assumes test text will never introduce Out-Of-Vocabulary tokens.",
+    "topic": "Vocabulary",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_42",
+    "chapter": 2,
+    "question": "What is an open vocabulary assumption in language modeling?",
+    "options": [
+      "Case is ignored",
+      "The model anticipates unknown words by explicitly including an <UNK> token",
+      "Punctuation is excluded",
+      "The vocabulary is infinite in memory"
+    ],
+    "correct": 1,
+    "explanation": "Open vocabulary systems explicitly model unseen words via `<UNK>` or subword tokens.",
+    "topic": "Vocabulary",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_43",
+    "chapter": 2,
+    "question": "Which N-gram model has the SMALLEST storage footprint in memory?",
+    "options": [
+      "Trigram model",
+      "Bigram model",
+      "Unigram model",
+      "5-gram model"
+    ],
+    "correct": 2,
+    "explanation": "A unigram model only stores |V| probabilities, whereas higher-order models store tables with up to |V|^N entries.",
+    "topic": "Model Complexity",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_44",
+    "chapter": 2,
+    "question": "If model A has perplexity 65 and model B has perplexity 120 on the same test set, which model is superior?",
+    "options": [
+      "Model A (lower perplexity indicates higher likelihood and better predictive power)",
+      "Both are identical",
+      "Perplexity cannot compare models",
+      "Model B"
+    ],
+    "correct": 0,
+    "explanation": "Lower perplexity reflects higher test data probability and lower predictive uncertainty.",
+    "topic": "Model Comparison",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch02_45",
+    "chapter": 2,
+    "question": "Why cannot perplexity comparisons be made between two models trained with DIFFERENT vocabularies?",
+    "options": [
+      "Perplexity is illegal to compute on different vocabularies",
+      "Perplexity is normalized per word, so an artificial small vocabulary model can achieve deceptively low perplexity by assigning high probability to <UNK>",
+      "Perplexity requires identical sentence counts",
+      "Different vocabularies have different CPU clocks"
+    ],
+    "correct": 1,
+    "explanation": "A model with a small vocabulary has fewer alternatives to distribute probability across, making perplexity artificially lower.",
+    "topic": "Model Comparison",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_46",
+    "chapter": 2,
+    "question": "What is the branching factor interpretation of a perplexity of 100?",
+    "options": [
+      "The sentence length is 100 words",
+      "The training took 100 seconds",
+      "The model is as confused as if it had to select among 100 equally likely words at each step",
+      "The model made 100 errors"
+    ],
+    "correct": 2,
+    "explanation": "Perplexity equals the effective branching factor: PP=100 means the model uncertainty is equivalent to picking uniformly from 100 choices.",
+    "topic": "Perplexity Interpretation",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_47",
+    "chapter": 2,
+    "question": "How does pruning help deploy N-gram models on mobile devices?",
+    "options": [
+      "By removing all vowels",
+      "By converting text to audio",
+      "By removing low-probability or low-count N-grams that contribute marginally to accuracy (e.g. Stolcke entropy pruning)",
+      "By dividing counts by 10"
+    ],
+    "correct": 2,
+    "explanation": "Language model pruning deletes redundant or low-impact N-grams to drastically compress memory footprint.",
+    "topic": "Model Pruning",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch02_48",
+    "chapter": 2,
+    "question": "Which tool is a standard open-source toolkit for building classical statistical N-gram language models?",
+    "options": [
+      "WordNet CLI",
+      "SRILM or KenLM",
+      "Scikit-Learn SGD",
+      "TensorFlow Lite only"
+    ],
+    "correct": 1,
+    "explanation": "KenLM and SRILM are the benchmark C++ toolkits for building, estimating, and querying smoothed N-gram language models.",
+    "topic": "NLP Toolkits",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_49",
+    "chapter": 2,
+    "question": "Can N-gram models effectively capture syntactic agreement across 15 intervening words (e.g. 'The **dog** that chased the cats across the yard **was** barking')?",
+    "options": [
+      "Yes, if smoothed with Laplace",
+      "No, because N-grams have a strictly bounded local context window (N-1 words)",
+      "Yes, N-grams have infinite memory",
+      "Yes, using log probabilities"
+    ],
+    "correct": 1,
+    "explanation": "N-grams are blind to dependencies outside their N-word window, a major motivation for neural models like Transformers.",
+    "topic": "Model Limitations",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch02_50",
+    "chapter": 2,
+    "question": "In the sentence 'The cat sat on the mat', what are the unique bigrams with <s> and </s>?",
+    "options": [
+      "('<s>', 'The'), ('The', 'cat'), ('cat', 'sat'), ('sat', 'on'), ('on', 'the'), ('the', 'mat'), ('mat', '</s>')",
+      "('<s>', '</s>')",
+      "('The', 'cat'), ('cat', 'sat')",
+      "('The', 'mat'), ('sat', 'cat'), ('on', 'mat')"
+    ],
+    "correct": 0,
+    "explanation": "With sentence boundaries, every adjacent pair forms a bigram starting from `(<s>, The)` and ending with `(mat, </s>)`.",
+    "topic": "Bigram Counting",
+    "slide_ref": "02. N-Gram Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_01",
+    "chapter": 3,
+    "question": "What does Bayes' Theorem calculate for a document d and class c?",
+    "options": [
+      "P(c|d) = P(d|c) * P(d)",
+      "P(c|d) = P(c) / P(d)",
+      "P(c|d) = P(d) - P(c)",
+      "P(c|d) = P(d|c) * P(c) / P(d)"
+    ],
+    "correct": 3,
+    "explanation": "Bayes' Theorem: P(c|d) = P(d|c)P(c) / P(d). In classification, P(d) is identical for all classes and can be dropped.",
+    "topic": "Bayes Theorem",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_02",
+    "chapter": 3,
+    "question": "What is the 'Naive' conditional independence assumption in Naive Bayes?",
+    "options": [
+      "All documents have identical length",
+      "The prior probability is always 0.5",
+      "Words never appear in the same sentence",
+      "Word probabilities are conditionally independent of each other given the class: P(w1...wn|c) = P(w1|c)*...*P(wn|c)"
+    ],
+    "correct": 3,
+    "explanation": "Naive Bayes assumes that given the document class c, feature words occur completely independently of each other.",
+    "topic": "Independence Assumption",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_03",
+    "chapter": 3,
+    "question": "What is the Maximum A Posteriori (MAP) decision rule in Naive Bayes classification?",
+    "options": [
+      "Choose class c that minimizes probability",
+      "Choose class c that maximizes P(c) * PROD P(wi|c)",
+      "Select class randomly",
+      "Choose the class with the longest name"
+    ],
+    "correct": 1,
+    "explanation": "c_MAP = argmax_c [ log P(c) + Σ log P(wi|c) ].",
+    "topic": "MAP Rule",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_04",
+    "chapter": 3,
+    "question": "How is the Prior Probability P(c) estimated in Naive Bayes?",
+    "options": [
+      "Always set to 0.5",
+      "Number of words in class c",
+      "Length of document / vocabulary size",
+      "Number of documents in class c divided by total number of training documents (N_c / N_total)"
+    ],
+    "correct": 3,
+    "explanation": "Prior P(c) is the proportion of training documents belonging to class c.",
+    "topic": "Prior Estimation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_05",
+    "chapter": 3,
+    "question": "What happens in Naive Bayes if a test word w was NEVER observed in class c during training (Count(w, c) = 0) without smoothing?",
+    "options": [
+      "The word is replaced by a number",
+      "P(w|c) = 0, which zeroes out the entire product for class c (zero likelihood problem)",
+      "It raises a syntax error",
+      "The model ignores that word only"
+    ],
+    "correct": 1,
+    "explanation": "Multiplying by zero wipes out the entire class probability P(c|d) = 0, regardless of all other words.",
+    "topic": "Zero Probability",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_06",
+    "chapter": 3,
+    "question": "What is the Laplace (Add-1) smoothed likelihood formula for P(w|c) in Multinomial Naive Bayes?",
+    "options": [
+      "Count(w, c) / |V|",
+      "(Count(w, c) + 1) / (Σ Count(w', c) + |V|)",
+      "(Count(w, c) + 1) / (Count(w, c) + 1)",
+      "(Count(w, c) + 1) / N_docs"
+    ],
+    "correct": 1,
+    "explanation": "Laplace smoothing adds 1 to numerator and |V| (vocabulary size) to denominator to ensure non-zero probabilities.",
+    "topic": "Laplace Smoothing",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_07",
+    "chapter": 3,
+    "question": "Why do we perform Naive Bayes calculations in Log-Space: log P(c) + Σ log P(wi|c)?",
+    "options": [
+      "To avoid floating-point underflow caused by multiplying many small fractional probabilities",
+      "Because log space requires no additions",
+      "To convert negative values into positive ones",
+      "To increase classification accuracy by 50%"
+    ],
+    "correct": 0,
+    "explanation": "Summing logarithms prevents tiny floating-point fractions from underflowing to zero in computer memory.",
+    "topic": "Log Space",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_08",
+    "chapter": 3,
+    "question": "How does Bag-of-Words (BoW) represent a text document?",
+    "options": [
+      "As a parse tree",
+      "As an audio waveform",
+      "As an unordered collection of word frequencies, completely disregarding word order and syntax",
+      "As a list of synonyms"
+    ],
+    "correct": 2,
+    "explanation": "Bag-of-Words retains word counts while discarding word sequence, grammar, and word position.",
+    "topic": "Bag of Words",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_09",
+    "chapter": 3,
+    "question": "How is Negation handled in sentiment analysis with Naive Bayes (e.g. Das & Chen 2001 heuristic)?",
+    "options": [
+      "Converting all words to uppercase",
+      "Multiplying probabilities by -1",
+      "Deleting all negated words",
+      "Appending a 'NOT_' prefix to every word between a negation token (e.g. 'not', 'no') and the next punctuation mark"
+    ],
+    "correct": 3,
+    "explanation": "Appending 'NOT_' (e.g. 'not like this' -> 'not NOT_like NOT_this') creates distinct lexical features that preserve negative sentiment.",
+    "topic": "Negation Handling",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_10",
+    "chapter": 3,
+    "question": "In text classification evaluation, what is Precision?",
+    "options": [
+      "False Positives / Total",
+      "(TP + TN) / Total",
+      "True Positives / (True Positives + False Negatives)",
+      "True Positives / (True Positives + False Positives)"
+    ],
+    "correct": 3,
+    "explanation": "Precision measures exactness: out of all items the classifier predicted as positive, how many were actually positive.",
+    "topic": "Precision",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_11",
+    "chapter": 3,
+    "question": "In text classification evaluation, what is Recall (Sensitivity)?",
+    "options": [
+      "True Positives / (True Positives + False Negatives)",
+      "(TP + TN) / Total",
+      "True Positives / (True Positives + False Positives)",
+      "False Negatives / Total"
+    ],
+    "correct": 0,
+    "explanation": "Recall measures completeness: out of all actual positive items in the dataset, how many did the classifier catch.",
+    "topic": "Recall",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_12",
+    "chapter": 3,
+    "question": "What is the F1-Score?",
+    "options": [
+      "The arithmetic mean: (Precision + Recall) / 2",
+      "Precision divided by Recall",
+      "The harmonic mean of Precision and Recall: 2 * (Precision * Recall) / (Precision + Recall)",
+      "The difference: Precision - Recall"
+    ],
+    "correct": 2,
+    "explanation": "F1-Score is the harmonic mean of precision and recall, balancing false positives and false negatives.",
+    "topic": "F1-Score",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_13",
+    "chapter": 3,
+    "question": "Why is Harmonic Mean used for F1-Score instead of Arithmetic Mean?",
+    "options": [
+      "Harmonic mean penalizes extreme imbalances (if either Precision or Recall is close to 0, F1 approaches 0)",
+      "Harmonic mean is faster to compute",
+      "Harmonic mean is always greater than 1",
+      "Arithmetic mean cannot handle decimals"
+    ],
+    "correct": 0,
+    "explanation": "If a model predicts all positives (Recall=1.0, Precision=0.01), arithmetic mean is 0.505, but harmonic mean correctly drops to 0.02.",
+    "topic": "F1-Score",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_14",
+    "chapter": 3,
+    "question": "What is Macro-averaging in multiclass classification evaluation?",
+    "options": [
+      "Compute metric (e.g. F1) independently for each class, then take the unweighted average across all classes",
+      "Pool all decisions together and compute global metric",
+      "Average only the top 2 classes",
+      "Weight classes by their sample size"
+    ],
+    "correct": 0,
+    "explanation": "Macro-average treats all classes equally regardless of frequency, highlighting performance on minority classes.",
+    "topic": "Averaging Metrics",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_15",
+    "chapter": 3,
+    "question": "What is Micro-averaging in multiclass classification evaluation?",
+    "options": [
+      "Pool total TP, FP, FN counts globally across all classes, then calculate global Precision and Recall",
+      "Calculate metric on the largest class only",
+      "Multiply class scores together",
+      "Average class F1 scores unweighted"
+    ],
+    "correct": 0,
+    "explanation": "Micro-average sums all TP, FP, FN globally, giving greater weight to majority classes.",
+    "topic": "Averaging Metrics",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_16",
+    "chapter": 3,
+    "question": "What is a Confusion Matrix?",
+    "options": [
+      "A list of misspelled words",
+      "A matrix of document lengths",
+      "A neural network architecture",
+      "A table layout that visualizes the distribution of actual vs predicted classes (TP, FP, FN, TN)"
+    ],
+    "correct": 3,
+    "explanation": "A confusion matrix shows counts of true vs predicted labels across all classes.",
+    "topic": "Confusion Matrix",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_17",
+    "chapter": 3,
+    "question": "What is a False Positive (Type I Error) in spam detection?",
+    "options": [
+      "A legitimate ham email incorrectly classified as spam",
+      "A spam email that slipped into the inbox",
+      "A spam email correctly caught",
+      "An email with attachments"
+    ],
+    "correct": 0,
+    "explanation": "False Positive means the model falsely predicted the positive condition (Spam) for a negative instance (Ham).",
+    "topic": "Error Analysis",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_18",
+    "chapter": 3,
+    "question": "What is a False Negative (Type II Error) in spam detection?",
+    "options": [
+      "A bounced email",
+      "A deleted email",
+      "A spam email that the model failed to detect and allowed into the inbox (classified as Ham)",
+      "A legitimate email marked as spam"
+    ],
+    "correct": 2,
+    "explanation": "False Negative means the model predicted negative (Ham) when the ground truth was positive (Spam).",
+    "topic": "Error Analysis",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_19",
+    "chapter": 3,
+    "question": "What is the difference between Multinomial Naive Bayes and Bernoulli Naive Bayes?",
+    "options": [
+      "Multinomial NB only works on numbers",
+      "Multinomial NB uses Gaussian curves",
+      "Bernoulli NB can only predict 1 class",
+      "Multinomial NB models term frequencies (word counts), while Bernoulli NB models binary term presence/absence (0 or 1)"
+    ],
+    "correct": 3,
+    "explanation": "Multinomial NB models count vectors, while Bernoulli NB models boolean indicators of whether words occur in documents.",
+    "topic": "NB Variants",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_20",
+    "chapter": 3,
+    "question": "When is Bernoulli Naive Bayes particularly useful?",
+    "options": [
+      "For short texts (like tweets or SMS messages) where word counts rarely exceed 1",
+      "For 500-page books",
+      "For video processing",
+      "When vocabulary size is over 10 million"
+    ],
+    "correct": 0,
+    "explanation": "Bernoulli NB excels on short documents where repeated word frequency is rare and presence/absence is the dominant signal.",
+    "topic": "NB Variants",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_21",
+    "chapter": 3,
+    "question": "In text classification, what is Cross-Validation (e.g. 5-fold CV)?",
+    "options": [
+      "Partitioning data into K folds, training on K-1 folds, testing on the remaining fold, and averaging over K iterations",
+      "Testing the model on training data 5 times",
+      "Validating code syntax across operating systems",
+      "Translating data between two languages"
+    ],
+    "correct": 0,
+    "explanation": "K-fold cross-validation evaluates model generalization by cycling through train/test partitions.",
+    "topic": "Validation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_22",
+    "chapter": 3,
+    "question": "Why should Feature Selection or Stopword Removal NEVER be fit on the test set?",
+    "options": [
+      "It is permitted and recommended",
+      "Because test sets do not have words",
+      "Because the computer will run out of RAM",
+      "To prevent Data Leakage: testing must strictly evaluate generalization on unseen data"
+    ],
+    "correct": 3,
+    "explanation": "Fitting vocabulary or preprocessing on test data leaks test distribution information, producing overly optimistic performance.",
+    "topic": "Data Leakage",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_23",
+    "chapter": 3,
+    "question": "What is the Accuracy metric, and when is it MISLEADING?",
+    "options": [
+      "Accuracy = TP/Total; misleading on small datasets",
+      "Accuracy is never misleading",
+      "Accuracy = (TP+TN)/Total; it is misleading on severely imbalanced datasets (e.g., 99% negative class)",
+      "Accuracy = FP/Total; misleading on balanced data"
+    ],
+    "correct": 2,
+    "explanation": "In a dataset with 99% ham and 1% spam, a dumb classifier predicting all 'ham' achieves 99% accuracy while catching zero spam.",
+    "topic": "Accuracy",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_24",
+    "chapter": 3,
+    "question": "What is Binarized (Boolean) Multinomial Naive Bayes?",
+    "options": [
+      "Restricting classification to 2 words",
+      "Converting all words to zeros",
+      "Training only on weekends",
+      "Clipping word counts in documents to at most 1 before running Multinomial Naive Bayes"
+    ],
+    "correct": 3,
+    "explanation": "Binarized Multinomial NB clips word frequencies at 1 (Count = min(1, Count)), which often outperforms standard Multinomial NB in sentiment analysis.",
+    "topic": "NB Variants",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_25",
+    "chapter": 3,
+    "question": "Why does Binarized Multinomial NB often perform better than raw word count NB in sentiment classification?",
+    "options": [
+      "Because repeating a word like 'fantastic' 5 times does not make a review 5 times more positive, and presence is a cleaner signal than raw count",
+      "Because it uses fewer slides",
+      "Because word counts cannot be divided",
+      "Because computers prefer boolean values"
+    ],
+    "correct": 0,
+    "explanation": "In sentiment analysis, whether a word occurs is more informative than how many times it was repeated.",
+    "topic": "Sentiment Analysis",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_26",
+    "chapter": 3,
+    "question": "What is Stratified K-Fold Cross Validation?",
+    "options": [
+      "Dividing folds randomly without replacement",
+      "Sorting sentences by length",
+      "A cross-validation scheme where each fold preserves approximately the same percentage of samples for each class as the complete set",
+      "Cross-validation using GPU strata"
+    ],
+    "correct": 2,
+    "explanation": "Stratification ensures minority class proportions remain consistent across all train and validation splits.",
+    "topic": "Validation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_27",
+    "chapter": 3,
+    "question": "If Class 1 has 10 TP, 5 FP, and 5 FN, what is its F1-Score?",
+    "options": [
+      "0.50",
+      "1.0",
+      "0.667 (Precision = 10/15 = 0.67, Recall = 10/15 = 0.67, F1 = 0.67)",
+      "0.80"
+    ],
+    "correct": 2,
+    "explanation": "Precision = 10 / (10+5) = 2/3. Recall = 10 / (10+5) = 2/3. F1 = 2 * (2/3 * 2/3) / (4/3) = 2/3 ≈ 0.667.",
+    "topic": "Calculation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_28",
+    "chapter": 3,
+    "question": "In Naive Bayes, does the denominator P(d) affect which class has the highest posterior probability?",
+    "options": [
+      "No, because P(d) is identical for all classes c and acts only as a normalization constant",
+      "Yes, it changes the argmax",
+      "Only when |V| > 1000",
+      "Yes, it flips the sign"
+    ],
+    "correct": 0,
+    "explanation": "Since P(d) = Σ_c P(d|c)P(c) is constant across all candidate classes for a given document d, it can be dropped from argmax.",
+    "topic": "MAP Rule",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_29",
+    "chapter": 3,
+    "question": "Which of the following is an advantage of Naive Bayes classifiers?",
+    "options": [
+      "Extremely fast training and inference with linear scaling O(N*d) and low memory requirements",
+      "Captures complex word interactions and deep semantics",
+      "Never needs smoothing",
+      "Requires millions of parameters"
+    ],
+    "correct": 0,
+    "explanation": "Naive Bayes trains in a single pass over the corpus by counting frequencies, making it exceptionally fast and efficient.",
+    "topic": "Model Properties",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_30",
+    "chapter": 3,
+    "question": "Which of the following is a known disadvantage of Naive Bayes?",
+    "options": [
+      "It underestimates correlations between features due to the independence assumption, producing poorly calibrated probabilities (overconfident near 0 and 1)",
+      "It cannot handle multiple classes",
+      "It requires 1000 GPUs to train",
+      "It only accepts numerical inputs"
+    ],
+    "correct": 0,
+    "explanation": "Because it multiplies correlated probabilities as if they were independent, Naive Bayes output probabilities tend to be pushed toward 0 or 1.",
+    "topic": "Model Limitations",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_31",
+    "chapter": 3,
+    "question": "What is Sentiment Analysis (Opinion Mining)?",
+    "options": [
+      "Extracting grammatical verb phrases",
+      "The computational study of opinions, sentiments, and emotions expressed in text toward entities or topics",
+      "Translating text into French",
+      "Counting characters per paragraph"
+    ],
+    "correct": 1,
+    "explanation": "Sentiment analysis classifies subjective polarity (positive, negative, neutral) or emotional states from natural language.",
+    "topic": "Sentiment Analysis",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_32",
+    "chapter": 3,
+    "question": "What is Aspect-Based Sentiment Analysis (ABSA)?",
+    "options": [
+      "Identifying both specific targets/aspects of an entity (e.g., 'battery life', 'screen') and the sentiment polarity toward each aspect",
+      "Calculating sentiment of entire books only",
+      "Analyzing only the title",
+      "Ignoring all nouns in text"
+    ],
+    "correct": 0,
+    "explanation": "ABSA recognizes fine-grained sentiment toward distinct attributes (e.g. 'The food was great (+), but the service was terrible (-)').",
+    "topic": "Sentiment Analysis",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_33",
+    "chapter": 3,
+    "question": "What is document frequency (DF) of a word?",
+    "options": [
+      "The position of the word in a sentence",
+      "The number of documents in the collection that contain the word",
+      "The word's length in letters",
+      "The total occurrences of the word across the whole corpus"
+    ],
+    "correct": 1,
+    "explanation": "Document Frequency df(t) is the count of distinct documents containing term t.",
+    "topic": "Feature Selection",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_34",
+    "chapter": 3,
+    "question": "Why are words with VERY HIGH document frequency often removed as stopwords in text classification?",
+    "options": [
+      "Because they are too long",
+      "Because they are misspelled",
+      "Because they cause zero division",
+      "Because they appear in almost every document and therefore have near-zero discriminative power between classes"
+    ],
+    "correct": 3,
+    "explanation": "Terms appearing in 90%+ of documents (like 'the', 'is') do not help distinguish positive from negative classes.",
+    "topic": "Feature Selection",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_35",
+    "chapter": 3,
+    "question": "In scikit-learn, which class implements Multinomial Naive Bayes?",
+    "options": [
+      "sklearn.tree.NBClassifier",
+      "sklearn.naive_bayes.MultinomialNB",
+      "sklearn.linear_model.NaiveBayes",
+      "sklearn.svm.MultinomialNB"
+    ],
+    "correct": 1,
+    "explanation": "`from sklearn.naive_bayes import MultinomialNB` is the standard scikit-learn class.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_36",
+    "chapter": 3,
+    "question": "What parameter in `MultinomialNB(alpha=1.0)` controls additive (Laplace/Lidstone) smoothing in scikit-learn?",
+    "options": [
+      "smooth_param",
+      "laplace_weight",
+      "alpha",
+      "k_factor"
+    ],
+    "correct": 2,
+    "explanation": "The `alpha` parameter controls additive smoothing (alpha=1.0 is standard Laplace smoothing; alpha < 1.0 is Lidstone smoothing).",
+    "topic": "Scikit-Learn",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_37",
+    "chapter": 3,
+    "question": "If training data has 60 positive documents and 40 negative documents, what is prior P(Positive)?",
+    "options": [
+      "0.40",
+      "0.60",
+      "0.50",
+      "1.50"
+    ],
+    "correct": 1,
+    "explanation": "P(Positive) = 60 / (60 + 40) = 60 / 100 = 0.60.",
+    "topic": "Prior Estimation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_38",
+    "chapter": 3,
+    "question": "If vocabulary size |V| = 5, total words in class Positive = 20, and Count('great', Positive) = 4, what is Laplace smoothed P('great' | Positive)?",
+    "options": [
+      "(4 + 1) / (20 + 5) = 5 / 25 = 0.20",
+      "5 / 20 = 0.25",
+      "4 / 20 = 0.20",
+      "4 / 25 = 0.16"
+    ],
+    "correct": 0,
+    "explanation": "P_Laplace('great'|Pos) = (4 + 1) / (20 + |V|) = 5 / (20 + 5) = 5 / 25 = 0.20.",
+    "topic": "Calculation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_39",
+    "chapter": 3,
+    "question": "What is a Cohen's Kappa score used for in text classification annotation?",
+    "options": [
+      "Testing CPU speed",
+      "Evaluating word vector similarity",
+      "Calculating GPU utilization",
+      "Measuring Inter-Annotator Agreement (agreement between human labellers above chance)"
+    ],
+    "correct": 3,
+    "explanation": "Cohen's Kappa measures the reliability of human label agreement while accounting for chance agreement.",
+    "topic": "Annotation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_40",
+    "chapter": 3,
+    "question": "What is the primary role of a Gold Standard (Ground Truth) dataset?",
+    "options": [
+      "A model pre-trained on Wikipedia",
+      "A dataset containing gold mining reports",
+      "A carefully human-annotated benchmark dataset against which model predictions are evaluated",
+      "A dataset with zero positive examples"
+    ],
+    "correct": 2,
+    "explanation": "The gold standard provides validated ground-truth labels for reliable evaluation.",
+    "topic": "Evaluation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_41",
+    "chapter": 3,
+    "question": "Can Naive Bayes handle continuous numeric features directly?",
+    "options": [
+      "No, Naive Bayes only accepts letters",
+      "Only if numbers are converted to images",
+      "Only using BERT",
+      "Yes, using Gaussian Naive Bayes (modeling feature values with Gaussian normal distributions)"
+    ],
+    "correct": 3,
+    "explanation": "GaussianNB models continuous features by estimating the mean and variance for each class.",
+    "topic": "NB Variants",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_42",
+    "chapter": 3,
+    "question": "What is the effect of setting alpha=0 in `MultinomialNB(alpha=0)`?",
+    "options": [
+      "Uniform output probabilities",
+      "All weights become infinite",
+      "No smoothing is applied (pure Maximum Likelihood Estimation)",
+      "Laplace smoothing with weight 0.5"
+    ],
+    "correct": 2,
+    "explanation": "Setting alpha=0 eliminates additive smoothing, risking zero-probability issues on unseen words.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_43",
+    "chapter": 3,
+    "question": "Which of the following text classification tasks is typically modeled as Multi-Label classification?",
+    "options": [
+      "Language detection (English vs French)",
+      "Single star rating (1, 2, 3, 4, 5)",
+      "Binary Spam vs Ham detection",
+      "Assigning multiple news genre tags (e.g. 'Politics' AND 'Economy') to a single news article"
+    ],
+    "correct": 3,
+    "explanation": "Multi-label classification assigns zero, one, or more labels simultaneously to each instance.",
+    "topic": "Classification Types",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_44",
+    "chapter": 3,
+    "question": "What is the difference between Multi-Class and Multi-Label classification?",
+    "options": [
+      "Multi-Class only has 2 classes",
+      "They are identical terms",
+      "Multi-Class assigns exactly ONE label out of K mutually exclusive classes; Multi-Label can assign multiple labels simultaneously",
+      "Multi-Label cannot be evaluated with F1"
+    ],
+    "correct": 2,
+    "explanation": "In multi-class, classes are mutually exclusive (e.g. Cat vs Dog). In multi-label, categories can co-exist (e.g. Horror AND Comedy).",
+    "topic": "Classification Types",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch03_45",
+    "chapter": 3,
+    "question": "If precision is 1.0 and recall is 0.5, what is the F1-score?",
+    "options": [
+      "0.50",
+      "2 * (1.0 * 0.5) / (1.0 + 0.5) = 1.0 / 1.5 = 0.667",
+      "0.75",
+      "1.00"
+    ],
+    "correct": 1,
+    "explanation": "F1 = 2 * (1.0 * 0.5) / (1.5) = 2/3 ≈ 0.667.",
+    "topic": "Calculation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_46",
+    "chapter": 3,
+    "question": "Why does Naive Bayes perform surprisingly well in practice despite its unrealistic independence assumption?",
+    "options": [
+      "Because all words have equal frequency",
+      "Because computers correct the probabilities automatically",
+      "Because language actually has independent words",
+      "Because classification only requires the correct class to have the HIGHEST probability (correct argmax ranking), not perfectly calibrated probability values"
+    ],
+    "correct": 3,
+    "explanation": "Domingos & Pazzani (1997) proved that optimal decision boundaries often match even when probability estimates are poorly calibrated.",
+    "topic": "Model Theory",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch03_47",
+    "chapter": 3,
+    "question": "What is the ROC curve (Receiver Operating Characteristic)?",
+    "options": [
+      "A plot of True Positive Rate (Recall) vs False Positive Rate at various classification threshold settings",
+      "A tree showing word senses",
+      "A plot of word frequencies",
+      "A plot of training loss over time"
+    ],
+    "correct": 0,
+    "explanation": "The ROC curve plots TPR vs FPR across all possible decision thresholds, with Area Under the Curve (AUC) measuring discriminative power.",
+    "topic": "Evaluation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_48",
+    "chapter": 3,
+    "question": "What does an Area Under the ROC Curve (AUC-ROC) of 0.5 represent?",
+    "options": [
+      "Performance no better than random guessing",
+      "Zero false positives",
+      "Perfect classification",
+      "100% accuracy"
+    ],
+    "correct": 0,
+    "explanation": "An AUC of 0.5 indicates a completely uninformative model equivalent to a coin toss; AUC=1.0 is perfect.",
+    "topic": "Evaluation",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch03_49",
+    "chapter": 3,
+    "question": "In text classification, what is Lexicon-based classification?",
+    "options": [
+      "Translating words into Latin",
+      "Classifying text polarity by aggregating predefined positive and negative word lists without training a machine learning model",
+      "Training deep neural networks on lexicons",
+      "Parsing sentences using CFG"
+    ],
+    "correct": 1,
+    "explanation": "Lexicon-based approaches sum positive and negative valence scores from dictionaries like VADER or SentiWordNet without supervised training.",
+    "topic": "Lexicon Methods",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch03_50",
+    "chapter": 3,
+    "question": "What is Subjectivity Detection in Sentiment Analysis?",
+    "options": [
+      "Counting pronouns",
+      "Classifying whether a sentence expresses an opinion/subjective view or objective factual information",
+      "Detecting the subject of a sentence",
+      "Finding passive voice"
+    ],
+    "correct": 1,
+    "explanation": "Subjectivity classification filters out objective facts ('The movie is 2 hours long') before analyzing sentiment in opinionated text ('The movie is boring').",
+    "topic": "Sentiment Analysis",
+    "slide_ref": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_01",
+    "chapter": 4,
+    "question": "What type of machine learning model is Logistic Regression?",
+    "options": [
+      "A generative clustering algorithm",
+      "A discriminative linear classifier that estimates the conditional probability P(y=1|x)",
+      "A rule-based parsing system",
+      "An unsupervised dimensionality reduction tool"
+    ],
+    "correct": 1,
+    "explanation": "Logistic Regression is a discriminative classifier that directly models the posterior probability P(y|x) using a linear combination of features passed through a sigmoid function.",
+    "topic": "Model Overview",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_02",
+    "chapter": 4,
+    "question": "What is the mathematical definition of the standard Sigmoid (Logistic) activation function?",
+    "options": [
+      "sigma(z) = e^z / (1 - e^z)",
+      "sigma(z) = 1 / (1 + e^(-z))",
+      "sigma(z) = (e^z - e^(-z)) / 2",
+      "sigma(z) = max(0, z)"
+    ],
+    "correct": 1,
+    "explanation": "The sigmoid function sigma(z) = 1 / (1 + exp(-z)) maps any real-valued number into the probability interval (0, 1).",
+    "topic": "Sigmoid Function",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_03",
+    "chapter": 4,
+    "question": "What is the output of the sigmoid function when its input z = 0?",
+    "options": [
+      "-1.0",
+      "1.0",
+      "0.5",
+      "0.0"
+    ],
+    "correct": 2,
+    "explanation": "sigma(0) = 1 / (1 + e^0) = 1 / (1 + 1) = 0.5.",
+    "topic": "Sigmoid Properties",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_04",
+    "chapter": 4,
+    "question": "What is the range of values produced by the Sigmoid function for any real input z in (-infinity, +infinity)?",
+    "options": [
+      "Between -1 and 1, [-1, 1]",
+      "Strictly between 0 and 1, (0, 1)",
+      "From 0 to infinity, [0, inf)",
+      "All real numbers"
+    ],
+    "correct": 1,
+    "explanation": "The sigmoid function squashes inputs into the open interval (0, 1), making its output interpretable as a probability.",
+    "topic": "Sigmoid Properties",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_05",
+    "chapter": 4,
+    "question": "What is the mathematical derivative of the sigmoid function sigma(z) with respect to z?",
+    "options": [
+      "sigma'(z) = sigma(z)^2",
+      "sigma'(z) = 1 - sigma(z)",
+      "sigma'(z) = e^(-z)",
+      "sigma'(z) = sigma(z) * (1 - sigma(z))"
+    ],
+    "correct": 3,
+    "explanation": "A key property of sigmoid is its elegant derivative: d/dz sigma(z) = sigma(z) * (1 - sigma(z)).",
+    "topic": "Sigmoid Calculus",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_06",
+    "chapter": 4,
+    "question": "In Logistic Regression, what is the 'Odds' ratio of an event with probability p?",
+    "options": [
+      "p / (1 - p)",
+      "p * (1 - p)",
+      "(1 - p) / p",
+      "1 / p"
+    ],
+    "correct": 0,
+    "explanation": "Odds is defined as the ratio of the probability that the event occurs to the probability that it does not occur: p / (1 - p).",
+    "topic": "Odds and Logit",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_07",
+    "chapter": 4,
+    "question": "What is the Log-Odds (Logit) function?",
+    "options": [
+      "logit(p) = p / (1 - p)",
+      "logit(p) = exp(p)",
+      "logit(p) = ln(p / (1 - p))",
+      "logit(p) = 1 - p"
+    ],
+    "correct": 2,
+    "explanation": "The logit function is the natural logarithm of the odds: ln(p / (1 - p)), which equals the linear combination w * x + b.",
+    "topic": "Odds and Logit",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_08",
+    "chapter": 4,
+    "question": "What geometric shape is the decision boundary of binary Logistic Regression in feature space?",
+    "options": [
+      "A circle or ellipse",
+      "A linear hyperplane (a straight line in 2D, plane in 3D, hyperplane in nD)",
+      "A parabolic curve",
+      "A complex fractal"
+    ],
+    "correct": 1,
+    "explanation": "The decision boundary is defined by w * x + b = 0, which forms a linear hyperplane dividing the two classes.",
+    "topic": "Decision Boundary",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_09",
+    "chapter": 4,
+    "question": "By default, what decision threshold on P(y=1|x) is used to predict class 1 in binary classification?",
+    "options": [
+      "P(y=1|x) >= 0.9",
+      "P(y=1|x) >= 1.0",
+      "P(y=1|x) >= 0.5 (corresponding to z >= 0)",
+      "P(y=1|x) >= 0.1"
+    ],
+    "correct": 2,
+    "explanation": "The default classification threshold is 0.5; if P(y=1|x) >= 0.5 (or z >= 0), predict class 1; else predict class 0.",
+    "topic": "Decision Rule",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_10",
+    "chapter": 4,
+    "question": "Why is Mean Squared Error (MSE) NOT used as the loss function for Logistic Regression with sigmoid activation?",
+    "options": [
+      "MSE requires matrix inversion",
+      "MSE cannot compute floating-point numbers",
+      "MSE combined with sigmoid produces a non-convex loss surface with many local minima, making gradient descent unreliable",
+      "MSE always equals zero"
+    ],
+    "correct": 2,
+    "explanation": "Squaring the non-linear sigmoid causes the error surface to have multiple local minima; Cross-Entropy guarantees a strictly convex loss.",
+    "topic": "Loss Function",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_11",
+    "chapter": 4,
+    "question": "What is the loss function used to train Logistic Regression?",
+    "options": [
+      "Absolute L1 Loss",
+      "Hinge Loss",
+      "Binary Cross-Entropy Loss (Negative Log-Likelihood)",
+      "Mean Squared Error"
+    ],
+    "correct": 2,
+    "explanation": "Binary Cross-Entropy Loss: L(y_hat, y) = - [y * log(y_hat) + (1 - y) * log(1 - y_hat)].",
+    "topic": "Loss Function",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_12",
+    "chapter": 4,
+    "question": "When the true label y = 1 and the predicted probability y_hat = 0.99, what is the Binary Cross-Entropy Loss?",
+    "options": [
+      "-1.0",
+      "Very close to 0 (-log(0.99) ≈ 0.01)",
+      "1.0",
+      "Infinity"
+    ],
+    "correct": 1,
+    "explanation": "When y=1, loss = -log(y_hat). As y_hat approaches 1, -log(y_hat) approaches 0, indicating minimal penalty for confident correct prediction.",
+    "topic": "Cross-Entropy",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_13",
+    "chapter": 4,
+    "question": "When the true label y = 1 and the predicted probability y_hat = 0.001, what is the Binary Cross-Entropy Loss?",
+    "options": [
+      "Very large (-log(0.001) ≈ 6.91), heavily penalizing the confident incorrect prediction",
+      "0.0",
+      "0.5",
+      "-0.001"
+    ],
+    "correct": 0,
+    "explanation": "Cross-entropy heavily penalizes confident but incorrect predictions, tending toward infinity as y_hat approaches 0 for true y=1.",
+    "topic": "Cross-Entropy",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_14",
+    "chapter": 4,
+    "question": "What is the gradient of the Cross-Entropy loss with respect to weight w_j in Logistic Regression?",
+    "options": [
+      "dL/dw_j = (y_hat - y) * x_j",
+      "dL/dw_j = y_hat * y * x_j",
+      "dL/dw_j = (y_hat - y) / x_j",
+      "dL/dw_j = x_j^2"
+    ],
+    "correct": 0,
+    "explanation": "The derivative of Cross-Entropy with sigmoid simplifies remarkably to (y_hat - y) * x_j: the prediction error times the input feature.",
+    "topic": "Gradient Descent",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_15",
+    "chapter": 4,
+    "question": "In Gradient Descent, what is the weight update rule for weight w_j with learning rate eta?",
+    "options": [
+      "w_j <- w_j + eta * (y_hat - y) * x_j",
+      "w_j <- w_j * eta",
+      "w_j <- (y_hat - y) / eta",
+      "w_j <- w_j - eta * (y_hat - y) * x_j"
+    ],
+    "correct": 3,
+    "explanation": "Gradient descent updates parameters in the direction opposite to the gradient: w_j <- w_j - eta * dL/dw_j.",
+    "topic": "Gradient Descent",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_16",
+    "chapter": 4,
+    "question": "What happens if the learning rate eta is set TOO LARGE during gradient descent?",
+    "options": [
+      "The model underfits immediately",
+      "Weights are set to zero",
+      "The optimization may overshoot the minimum and diverge (loss increases or oscillates wildly)",
+      "Training completes in exactly 1 step"
+    ],
+    "correct": 2,
+    "explanation": "An excessively large learning rate causes gradient steps to overshoot the valley of the loss function, causing divergence.",
+    "topic": "Optimization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_17",
+    "chapter": 4,
+    "question": "What happens if the learning rate eta is set TOO SMALL during gradient descent?",
+    "options": [
+      "Training will progress extremely slowly and may take an impractical amount of time to converge",
+      "The model overfits immediately",
+      "Weights explode to infinity",
+      "The loss becomes negative"
+    ],
+    "correct": 0,
+    "explanation": "A tiny learning rate takes minuscule steps, requiring enormous numbers of epochs to reach the minimum.",
+    "topic": "Optimization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_18",
+    "chapter": 4,
+    "question": "What is Stochastic Gradient Descent (SGD)?",
+    "options": [
+      "Computing gradients on the entire dataset at once",
+      "Updating model weights after computing the gradient on a SINGLE random training example at each step",
+      "Randomly guessing weights without gradients",
+      "Training only on weekends"
+    ],
+    "correct": 1,
+    "explanation": "SGD updates parameters after every single training example, offering fast updates and the ability to escape saddle points.",
+    "topic": "SGD",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_19",
+    "chapter": 4,
+    "question": "What is Mini-batch Gradient Descent?",
+    "options": [
+      "Training on 1 sample per week",
+      "Computing gradients and updating weights on small batches of samples (e.g., 32, 64, or 128 samples)",
+      "Training without a loss function",
+      "Training on the entire dataset only"
+    ],
+    "correct": 1,
+    "explanation": "Mini-batch SGD strikes the optimal balance between computational vectorization on GPUs and gradient variance.",
+    "topic": "Mini-batch SGD",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_20",
+    "chapter": 4,
+    "question": "What is the purpose of Regularization in Logistic Regression?",
+    "options": [
+      "To increase vocabulary size",
+      "To make training faster",
+      "To prevent Overfitting by penalizing excessively large weights",
+      "To convert binary labels to multiclass"
+    ],
+    "correct": 2,
+    "explanation": "Regularization adds a penalty term to the loss function to constrain weight magnitudes, preventing the model from fitting training noise.",
+    "topic": "Regularization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_21",
+    "chapter": 4,
+    "question": "What penalty does L2 Regularization (Ridge / Weight Decay) add to the objective function?",
+    "options": [
+      "lambda/2 * SUM(w_j^2)",
+      "lambda / SUM(w_j)",
+      "lambda * SUM(|w_j|)",
+      "lambda * max(w_j)"
+    ],
+    "correct": 0,
+    "explanation": "L2 regularization penalizes the sum of squared weights: (lambda/2) * ||w||_2^2.",
+    "topic": "L2 Regularization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_22",
+    "chapter": 4,
+    "question": "What penalty does L1 Regularization (Lasso) add to the objective function?",
+    "options": [
+      "lambda * log(w_j)",
+      "lambda * SUM(|w_j|)",
+      "lambda/2 * SUM(w_j^2)",
+      "lambda * SUM(w_j^3)"
+    ],
+    "correct": 1,
+    "explanation": "L1 regularization penalizes the sum of absolute weight values: lambda * ||w||_1.",
+    "topic": "L1 Regularization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_23",
+    "chapter": 4,
+    "question": "What distinct property does L1 Regularization have compared to L2 Regularization?",
+    "options": [
+      "It keeps all weights non-zero",
+      "It cannot be used with gradient descent",
+      "It requires complex numbers",
+      "It induces Sparsity: driving many feature weights strictly to 0, performing automatic feature selection"
+    ],
+    "correct": 3,
+    "explanation": "Because the L1 diamond contour has sharp corners on the coordinate axes, it frequently drives irrelevant feature weights exactly to zero.",
+    "topic": "L1 Regularization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_24",
+    "chapter": 4,
+    "question": "In probabilistic terms, L2 regularization corresponds to placing what prior distribution on the weights?",
+    "options": [
+      "A Bernoulli distribution",
+      "A Poisson distribution",
+      "A Uniform distribution",
+      "A Gaussian (Normal) distribution with zero mean: w ~ N(0, sigma^2)"
+    ],
+    "correct": 3,
+    "explanation": "Maximum A Posteriori (MAP) estimation with a zero-mean Gaussian prior on weights is mathematically equivalent to L2 regularization.",
+    "topic": "Bayesian View",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_25",
+    "chapter": 4,
+    "question": "In probabilistic terms, L1 regularization corresponds to placing what prior distribution on the weights?",
+    "options": [
+      "A Gaussian distribution",
+      "A Beta distribution",
+      "A Laplace (double exponential) distribution with zero mean",
+      "A Gamma distribution"
+    ],
+    "correct": 2,
+    "explanation": "MAP estimation with a zero-mean Laplace prior on weights is mathematically equivalent to L1 regularization.",
+    "topic": "Bayesian View",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_26",
+    "chapter": 4,
+    "question": "In scikit-learn's `LogisticRegression(C=1.0)`, what does the parameter C represent?",
+    "options": [
+      "The learning rate",
+      "The maximum number of iterations",
+      "Inverse of regularization strength: C = 1 / lambda (smaller C means STRONGER regularization)",
+      "The number of classes"
+    ],
+    "correct": 2,
+    "explanation": "In scikit-learn, C = 1/lambda. Smaller C values increase regularization strength, penalizing large weights more severely.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_27",
+    "chapter": 4,
+    "question": "If you set `C = 1e-4` in scikit-learn LogisticRegression, what is the expected effect on the weights?",
+    "options": [
+      "No regularization is applied",
+      "Weights will be heavily shrunk toward zero (very strong regularization), preventing overfitting but risking underfitting",
+      "Weights will explode to infinity",
+      "All weights become negative"
+    ],
+    "correct": 1,
+    "explanation": "A tiny C value implies massive regularization penalty (lambda -> infinity), forcing weights close to zero.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_28",
+    "chapter": 4,
+    "question": "If you set `C = 1e5` in scikit-learn LogisticRegression, what is the expected effect?",
+    "options": [
+      "All weights become zero",
+      "The model underfits completely",
+      "Training takes 0 seconds",
+      "Virtually NO regularization is applied; weights are free to grow large to fit training data"
+    ],
+    "correct": 3,
+    "explanation": "A very large C value effectively disables the regularization penalty, allowing the model to fit training data without constraint.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_29",
+    "chapter": 4,
+    "question": "What activation function generalizes the Sigmoid function to MULTICLASS classification (K > 2 classes)?",
+    "options": [
+      "ReLU function",
+      "Step function",
+      "Tanh function",
+      "Softmax function"
+    ],
+    "correct": 3,
+    "explanation": "Softmax generalizes sigmoid to K classes: P(y=c|x) = exp(z_c) / SUM_j exp(z_j), producing a valid probability distribution.",
+    "topic": "Softmax Regression",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_30",
+    "chapter": 4,
+    "question": "What is the Softmax formula for class c among K classes?",
+    "options": [
+      "softmax(z)_c = z_c / SUM z_j",
+      "softmax(z)_c = 1 / (1 + e^(-z_c))",
+      "softmax(z)_c = e^(z_c) / SUM_{j=1}^K e^(z_j)",
+      "softmax(z)_c = e^(z_c) * K"
+    ],
+    "correct": 2,
+    "explanation": "Softmax exponentiates logits z_c and normalizes by the sum of exponentiated logits across all classes.",
+    "topic": "Softmax Regression",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_31",
+    "chapter": 4,
+    "question": "What is the sum of all outputs produced by the Softmax function over all classes K?",
+    "options": [
+      "K",
+      "Infinity",
+      "Exactly 1.0",
+      "0.0"
+    ],
+    "correct": 2,
+    "explanation": "Because each element is normalized by the total sum, SUM_c softmax(z)_c = 1.0.",
+    "topic": "Softmax Regression",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_32",
+    "chapter": 4,
+    "question": "What loss function is used for Multiclass Logistic Regression with Softmax?",
+    "options": [
+      "Binary Hinge Loss",
+      "Categorical Cross-Entropy Loss: - SUM_{c=1}^K y_c * log(y_hat_c)",
+      "K-Means Inertia",
+      "Mean Squared Error"
+    ],
+    "correct": 1,
+    "explanation": "Categorical Cross-Entropy measures the divergence between the true one-hot vector y and predicted probabilities y_hat.",
+    "topic": "Softmax Regression",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_33",
+    "chapter": 4,
+    "question": "What is the difference between Generative models (e.g. Naive Bayes) and Discriminative models (e.g. Logistic Regression)?",
+    "options": [
+      "Generative models cannot classify text",
+      "They are identical mathematically",
+      "Discriminative models cannot use features",
+      "Generative models model the joint probability P(x, y); Discriminative models model conditional probability P(y|x) directly"
+    ],
+    "correct": 3,
+    "explanation": "Discriminative models focus purely on the boundary separating classes P(y|x) without modeling how input data x is generated.",
+    "topic": "Generative vs Discriminative",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_34",
+    "chapter": 4,
+    "question": "When training data is VERY SMALL, which model often performs better according to Ng & Jordan (2001)?",
+    "options": [
+      "Naive Bayes often reaches its asymptotic error faster with fewer training examples than Logistic Regression",
+      "Logistic Regression always wins",
+      "Unsupervised clustering",
+      "Deep Transformers with 100B parameters"
+    ],
+    "correct": 0,
+    "explanation": "Ng & Jordan showed Naive Bayes converges to its asymptotic error with O(log d) samples, whereas Logistic Regression requires O(d) samples.",
+    "topic": "Model Comparison",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_35",
+    "chapter": 4,
+    "question": "When training data is LARGE, which model typically achieves higher asymptotic accuracy?",
+    "options": [
+      "Naive Bayes",
+      "Logistic Regression, because it does not assume feature independence and can learn optimal weights for correlated features",
+      "A coin toss",
+      "Unsmoothed Bigrams"
+    ],
+    "correct": 1,
+    "explanation": "With abundant data, Logistic Regression outperforms Naive Bayes because it relaxes the naive conditional independence assumption.",
+    "topic": "Model Comparison",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_36",
+    "chapter": 4,
+    "question": "If two text features x1 and x2 are IDENTICAL (perfectly correlated copies), what happens in Naive Bayes vs Logistic Regression?",
+    "options": [
+      "Naive Bayes ignores both features",
+      "Logistic Regression multiplies the probability by 4",
+      "Naive Bayes double-counts the evidence; Logistic Regression splits the weight between them (e.g., w1=w/2, w2=w/2)",
+      "Both crash with zero division"
+    ],
+    "correct": 2,
+    "explanation": "Naive Bayes assumes independence and doubles the log-likelihood of duplicate features; Logistic Regression adjusts weights jointly.",
+    "topic": "Correlated Features",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_37",
+    "chapter": 4,
+    "question": "Can Logistic Regression learn NON-LINEAR decision boundaries in the original feature space?",
+    "options": [
+      "Yes, by introducing feature interactions (e.g. x1 * x2) or polynomial feature combinations",
+      "Only if trained on Linux",
+      "No, it is strictly forbidden in math",
+      "Only using unigrams"
+    ],
+    "correct": 0,
+    "explanation": "Adding non-linear feature transformations (polynomial features, kernel tricks) allows linear models to separate non-linear data.",
+    "topic": "Feature Engineering",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_38",
+    "chapter": 4,
+    "question": "In text classification with Logistic Regression, what are common feature representations?",
+    "options": [
+      "Image pixel values only",
+      "TF-IDF vectors, N-gram counts, sentiment lexicon counts, document length, punctuation frequency",
+      "Audio sample rates",
+      "Raw HTML bytes"
+    ],
+    "correct": 1,
+    "explanation": "Logistic regression can seamlessly combine heterogeneous features: bag-of-words, TF-IDF, sentiment scores, and metadata.",
+    "topic": "Feature Engineering",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_39",
+    "chapter": 4,
+    "question": "What is Feature Scaling / Normalization (e.g., StandardScaler), and why is it important for Logistic Regression with regularization?",
+    "options": [
+      "It removes stopwords",
+      "It scales features to have mean 0 and variance 1; without it, features with larger scales are unfairly penalized less by L1/L2 regularization",
+      "It converts letters to uppercase",
+      "It multiplies weights by 100"
+    ],
+    "correct": 1,
+    "explanation": "Regularization penalizes weight magnitude uniformly; unscaled features with large raw values result in tiny weights that escape penalties.",
+    "topic": "Preprocessing",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_40",
+    "chapter": 4,
+    "question": "What is the One-vs-Rest (OvR / One-vs-All) strategy for multiclass classification with binary Logistic Regression?",
+    "options": [
+      "Train 1 classifier with K outputs",
+      "Train K separate binary classifiers, one for each class vs all other classes, and pick the class with highest probability",
+      "Run K-Means first",
+      "Train K*(K-1)/2 classifiers"
+    ],
+    "correct": 1,
+    "explanation": "OvR trains K independent binary classifiers (class k vs not class k) and assigns the instance to the classifier outputting highest confidence.",
+    "topic": "Multiclass Strategies",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_41",
+    "chapter": 4,
+    "question": "What is the One-vs-One (OvO) strategy for multiclass classification with K classes?",
+    "options": [
+      "Train 1 classifier",
+      "Train K * (K - 1) / 2 binary classifiers for every pair of classes and use majority voting",
+      "Train K classifiers",
+      "Randomly pair classes"
+    ],
+    "correct": 1,
+    "explanation": "OvO trains a separate classifier for each distinct pair of classes, tallying votes across all K*(K-1)/2 models.",
+    "topic": "Multiclass Strategies",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_42",
+    "chapter": 4,
+    "question": "How does early stopping prevent overfitting in Logistic Regression trained with gradient descent?",
+    "options": [
+      "It terminates whenever training loss reaches 0",
+      "It stops training after exactly 3 seconds",
+      "It monitors validation loss after each epoch and stops training when validation loss stops improving",
+      "It sets learning rate to 0 immediately"
+    ],
+    "correct": 2,
+    "explanation": "Early stopping halts optimization before the weights adapt to idiosyncrasies and noise in the training set.",
+    "topic": "Optimization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_43",
+    "chapter": 4,
+    "question": "What is the effect of class imbalance (e.g. 95% negative, 5% positive) on Logistic Regression?",
+    "options": [
+      "It increases precision on the minority class",
+      "The model tends to predict the majority negative class, leading to poor recall on the minority positive class",
+      "Weights become NaN",
+      "The loss becomes negative"
+    ],
+    "correct": 1,
+    "explanation": "Without adjustments, standard loss minimization favors the majority class, sacrificing minority class detection.",
+    "topic": "Class Imbalance",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_44",
+    "chapter": 4,
+    "question": "How can class imbalance be mitigated in scikit-learn `LogisticRegression`?",
+    "options": [
+      "Set `class_weight='balanced'`, which automatically weights the loss inversely proportional to class frequencies",
+      "Increase learning rate to 100",
+      "Use L1 penalty only",
+      "Delete all positive samples"
+    ],
+    "correct": 0,
+    "explanation": "`class_weight='balanced'` assigns higher loss penalties to errors on minority class samples.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_45",
+    "chapter": 4,
+    "question": "If a feature has a weight w_j = 0 in a trained Logistic Regression model, what is its influence on predictions?",
+    "options": [
+      "It doubles the loss",
+      "Zero influence: the feature contributes nothing to the logit z or the predicted probability",
+      "It makes the probability 0.5",
+      "It flips the prediction"
+    ],
+    "correct": 1,
+    "explanation": "Because z = SUM w_i * x_i + b, if w_j = 0, the term w_j * x_j = 0 regardless of the feature value x_j.",
+    "topic": "Weights Interpretation",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch04_46",
+    "chapter": 4,
+    "question": "If a feature 'excellent' has weight w = +2.5 in a sentiment model, what does an increase of 1 in 'excellent' count do to the odds of Positive?",
+    "options": [
+      "It multiplies the odds of Positive by e^(2.5) ≈ 12.18 (Odds Ratio = e^w)",
+      "It adds 2.5 to the probability",
+      "It increases the probability by 2.5%",
+      "It multiplies odds by 2.5"
+    ],
+    "correct": 0,
+    "explanation": "In logistic regression, the exponentiated coefficient exp(w_j) is the Odds Ratio: a unit increase in x_j multiplies odds by e^w_j.",
+    "topic": "Odds Ratio",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch04_47",
+    "chapter": 4,
+    "question": "What does the bias term b (intercept) in Logistic Regression represent?",
+    "options": [
+      "The learning rate",
+      "The number of training samples",
+      "The baseline log-odds of class 1 when all input features x are equal to zero",
+      "The maximum possible weight"
+    ],
+    "correct": 2,
+    "explanation": "When x = 0, z = b, so sigma(b) is the baseline prior probability when no feature signal is present.",
+    "topic": "Model Parameters",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch04_48",
+    "chapter": 4,
+    "question": "Which solver in scikit-learn's `LogisticRegression` supports BOTH L1 and L2 regularization as well as ElasticNet?",
+    "options": [
+      "'lbfgs'",
+      "'newton-cg'",
+      "'liblinear'",
+      "'saga'"
+    ],
+    "correct": 3,
+    "explanation": "The 'saga' solver is a fast stochastic average gradient descent variant supporting L1, L2, ElasticNet, and multinomial loss.",
+    "topic": "Scikit-Learn Solvers",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_49",
+    "chapter": 4,
+    "question": "What is ElasticNet regularization in Logistic Regression?",
+    "options": [
+      "A method without penalties",
+      "A deep neural network layer",
+      "An algorithm for stretching vectors",
+      "A convex combination of both L1 and L2 penalties: r * L1 + (1 - r)/2 * L2"
+    ],
+    "correct": 3,
+    "explanation": "ElasticNet combines the feature selection of L1 with the grouping and stability benefits of L2.",
+    "topic": "Regularization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch04_50",
+    "chapter": 4,
+    "question": "What is the primary stopping criterion for Gradient Descent optimization in Logistic Regression?",
+    "options": [
+      "When epoch count reaches 1,000,000",
+      "When the change in loss |L_{t} - L_{t-1}| or gradient norm ||dL/dw|| falls below a tolerance threshold epsilon (e.g. 1e-4)",
+      "When all weights become equal",
+      "When CPU temperature exceeds 80C"
+    ],
+    "correct": 1,
+    "explanation": "Optimization stops when gradients approach zero (loss plateaus) or max_iter is reached.",
+    "topic": "Optimization",
+    "slide_ref": "04. Logistic Regression.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_01",
+    "chapter": 5,
+    "question": "Who coined the famous linguistic phrase: 'You shall know a word by the company it keeps' (1957)?",
+    "options": [
+      "J.R. Firth",
+      "Alan Turing",
+      "Claude Shannon",
+      "Noam Chomsky"
+    ],
+    "correct": 0,
+    "explanation": "British linguist J.R. Firth formulated the Distributional Hypothesis, which forms the theoretical foundation of modern vector semantics.",
+    "topic": "Distributional Hypothesis",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_02",
+    "chapter": 5,
+    "question": "What is the core premise of the Distributional Hypothesis in lexical semantics?",
+    "options": [
+      "Words that occur in similar linguistic contexts tend to have similar meanings",
+      "All words have exactly one meaning",
+      "Words with similar spelling are always synonyms",
+      "Words can only be defined by grammar rules"
+    ],
+    "correct": 0,
+    "explanation": "The distributional hypothesis states that the degree of semantic similarity between two words is a function of the similarity of their linguistic distributions.",
+    "topic": "Distributional Hypothesis",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_03",
+    "chapter": 5,
+    "question": "What does a Term-Document Matrix represent?",
+    "options": [
+      "A 2D matrix where rows represent words, columns represent documents, and cells contain word frequencies/weights",
+      "A matrix of stop words",
+      "A dependency tree matrix",
+      "A list of document authors"
+    ],
+    "correct": 0,
+    "explanation": "In a term-document matrix of size |V| x |D|, row vectors represent words across documents, and column vectors represent documents in vocabulary space.",
+    "topic": "Vector Space Model",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_04",
+    "chapter": 5,
+    "question": "What does a Word-Word (Term-Term) Co-occurrence Matrix represent?",
+    "options": [
+      "A table of POS tags",
+      "A dictionary of translations",
+      "A matrix of document lengths",
+      "A square matrix of size |V| x |V| where cell (i, j) counts how often word i and word j co-occur within a context window"
+    ],
+    "correct": 3,
+    "explanation": "A word-word matrix captures how often words appear within a context window of +/- k words across the corpus, producing word semantic vectors.",
+    "topic": "Co-occurrence Matrix",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_05",
+    "chapter": 5,
+    "question": "What is the formula for Term Frequency - Inverse Document Frequency (TF-IDF)?",
+    "options": [
+      "tf-idf(t, d) = tf(t, d) + idf(t)",
+      "tf-idf(t, d) = tf(t, d) / idf(t)",
+      "tf-idf(t, d) = idf(t) - tf(t, d)",
+      "tf-idf(t, d) = tf(t, d) * idf(t)"
+    ],
+    "correct": 3,
+    "explanation": "TF-IDF multiplies term frequency tf(t, d) by inverse document frequency idf(t).",
+    "topic": "TF-IDF",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_06",
+    "chapter": 5,
+    "question": "How is the standard Inverse Document Frequency (IDF) of a term t calculated across N documents?",
+    "options": [
+      "idf(t) = log10(N / df(t))",
+      "idf(t) = N * df(t)",
+      "idf(t) = log10(df(t))",
+      "idf(t) = df(t) / N"
+    ],
+    "correct": 0,
+    "explanation": "IDF measures term specificity: idf(t) = log(N / df(t)). Ubiquitous terms appearing in all N documents get idf = log(1) = 0.",
+    "topic": "TF-IDF",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_07",
+    "chapter": 5,
+    "question": "Why does the word 'the' typically receive a TF-IDF weight of ZERO (or near zero) in a corpus?",
+    "options": [
+      "Because it appears in almost every document, making df(t) = N and idf(t) = log(N/N) = log(1) = 0",
+      "Because TF-IDF automatically deletes words with 3 letters",
+      "Because 'the' is an illegal token",
+      "Because term frequency is zero"
+    ],
+    "correct": 0,
+    "explanation": "When a word appears in all documents, df=N, giving idf = log(1) = 0, which suppresses non-informative stopwords.",
+    "topic": "TF-IDF",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_08",
+    "chapter": 5,
+    "question": "What is Pointwise Mutual Information (PMI) between word w and context word c?",
+    "options": [
+      "PMI(w, c) = P(w) / P(c)",
+      "PMI(w, c) = log2( P(w) + P(c) )",
+      "PMI(w, c) = P(w, c) * P(w)",
+      "PMI(w, c) = log2( P(w, c) / (P(w) * P(c)) )"
+    ],
+    "correct": 3,
+    "explanation": "PMI quantifies whether two words co-occur much more frequently than expected by pure chance: P(w,c) / [P(w)P(c)].",
+    "topic": "PMI",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_09",
+    "chapter": 5,
+    "question": "What problem does Positive Pointwise Mutual Information (PPMI) solve?",
+    "options": [
+      "PMI cannot handle positive numbers",
+      "PMI is too slow to compute",
+      "Negative PMI values are noisy and unreliable due to sparse co-occurrences of rare words; PPMI replaces all negative values with 0",
+      "PMI cannot be computed in Python"
+    ],
+    "correct": 2,
+    "explanation": "PPMI(w, c) = max(0, PMI(w, c)), eliminating unreliable negative values resulting from pairs that rarely or never co-occur.",
+    "topic": "PPMI",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_10",
+    "chapter": 5,
+    "question": "What is the formula for the Cosine Similarity between two vectors u and v?",
+    "options": [
+      "cos(u, v) = (u . v) / 2",
+      "cos(u, v) = (u . v) / (||u|| * ||v||)",
+      "cos(u, v) = ||u|| - ||v||",
+      "cos(u, v) = u . v"
+    ],
+    "correct": 1,
+    "explanation": "Cosine similarity computes the dot product of two vectors normalized by the product of their L2 Euclidean norms.",
+    "topic": "Cosine Similarity",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_11",
+    "chapter": 5,
+    "question": "Why is Cosine Similarity preferred over Dot Product for measuring text document similarity?",
+    "options": [
+      "Cosine similarity is faster",
+      "Cosine similarity normalizes for document length, preventing long documents from having falsely high similarity simply due to high word counts",
+      "Dot product only works on 2D vectors",
+      "Dot product is always negative"
+    ],
+    "correct": 1,
+    "explanation": "Dividing by vector lengths ensures that a long document and a short document covering the same topic receive high similarity.",
+    "topic": "Cosine Similarity",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_12",
+    "chapter": 5,
+    "question": "What is the range of Cosine Similarity for non-negative vectors (such as raw counts or TF-IDF weights)?",
+    "options": [
+      "[-infinity, +infinity]",
+      "[0.0, 1.0]",
+      "[0, infinity)",
+      "[-1.0, 1.0]"
+    ],
+    "correct": 1,
+    "explanation": "Because raw term counts and TF-IDF vectors are non-negative, the angle between them is at most 90 degrees, bounding cosine similarity between 0 and 1.",
+    "topic": "Cosine Similarity",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_13",
+    "chapter": 5,
+    "question": "What is a Dense Word Embedding compared to a Sparse Vector representation?",
+    "options": [
+      "A low-dimensional (e.g. 100-300D) vector of continuous real numbers where most values are non-zero",
+      "A string of characters",
+      "A vector containing only 0 and 1",
+      "A vector with 1,000,000 dimensions"
+    ],
+    "correct": 0,
+    "explanation": "Dense embeddings (like Word2Vec) pack semantic information into dense vectors of dimension 100–300, avoiding high-dimensional sparsity.",
+    "topic": "Dense Embeddings",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_14",
+    "chapter": 5,
+    "question": "Which of the following is a key advantage of dense embeddings over sparse one-hot / co-occurrence vectors?",
+    "options": [
+      "They generalize better to unseen texts and avoid the curse of dimensionality by capturing latent semantic relationships",
+      "They require zero memory",
+      "They eliminate all nouns",
+      "They have infinite dimensions"
+    ],
+    "correct": 0,
+    "explanation": "Dense vectors capture shared semantic dimensions (e.g. 'cat' and 'dog' have nearby vectors), enabling neural models to generalize.",
+    "topic": "Dense Embeddings",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_15",
+    "chapter": 5,
+    "question": "What are the two primary model architectures introduced in Word2Vec (Mikolov et al., 2013)?",
+    "options": [
+      "K-Means and Hierarchical",
+      "Continuous Bag-of-Words (CBOW) and Skip-Gram",
+      "TF-IDF and PPMI",
+      "BERT and GPT"
+    ],
+    "correct": 1,
+    "explanation": "Mikolov et al. (2013) introduced CBOW (predict target from context) and Skip-Gram (predict context from target).",
+    "topic": "Word2Vec",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_16",
+    "chapter": 5,
+    "question": "What is the objective of the Continuous Bag-of-Words (CBOW) model in Word2Vec?",
+    "options": [
+      "Translate words into French",
+      "Predict document sentiment",
+      "Predict the surrounding context words given the center word",
+      "Predict the center target word w_t given the surrounding context words within window +/- k"
+    ],
+    "correct": 3,
+    "explanation": "CBOW takes the average of context word vectors to predict the probability of the center word.",
+    "topic": "CBOW",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_17",
+    "chapter": 5,
+    "question": "What is the objective of the Skip-Gram model in Word2Vec?",
+    "options": [
+      "Predict document topic",
+      "Predict the surrounding context words within window +/- k given the center target word w_t",
+      "Predict the center word from context",
+      "Count characters in words"
+    ],
+    "correct": 1,
+    "explanation": "Skip-gram uses the center word vector to predict each context word in the surrounding window.",
+    "topic": "Skip-Gram",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_18",
+    "chapter": 5,
+    "question": "Why is standard Softmax computationally prohibitive when training Word2Vec on large vocabularies (|V| = 1,000,000)?",
+    "options": [
+      "Computing the denominator requires summing over all |V| words in the vocabulary for every single training word, taking O(|V|) time",
+      "Vocabularies cannot exceed 100 words",
+      "Softmax cannot run on GPUs",
+      "Softmax produces negative probabilities"
+    ],
+    "correct": 0,
+    "explanation": "The normalizer SUM_{w in V} exp(u_w . v_c) requires computing dot products over the entire vocabulary at every step, causing severe computational bottlenecks.",
+    "topic": "Negative Sampling",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_19",
+    "chapter": 5,
+    "question": "How does Skip-Gram with Negative Sampling (SGNS) solve the computational bottleneck of standard Softmax?",
+    "options": [
+      "It uses PCA instead of neural networks",
+      "It eliminates the loss function",
+      "It reduces vocabulary to 10 words",
+      "It reformulates the problem as binary logistic regression: distinguish true co-occurring pairs from k randomly drawn 'negative' noise words"
+    ],
+    "correct": 3,
+    "explanation": "SGNS trains binary classifiers to predict 1 for true (word, context) pairs and 0 for k randomly sampled noise pairs.",
+    "topic": "Negative Sampling",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_20",
+    "chapter": 5,
+    "question": "In SGNS, what distribution is commonly used to draw negative sample words?",
+    "options": [
+      "Gaussian normal distribution",
+      "Uniform distribution 1/|V|",
+      "Unigram distribution raised to the 3/4 power: P_n(w) proportional to U(w)^0.75",
+      "Alphabetical order"
+    ],
+    "correct": 2,
+    "explanation": "Exponentiating unigram frequencies by 0.75 boosts the sampling probability of rare words relative to very frequent stopwords.",
+    "topic": "Negative Sampling",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_21",
+    "chapter": 5,
+    "question": "How many negative samples k are typically chosen per positive word pair in SGNS for large datasets?",
+    "options": [
+      "0",
+      "2 to 5 for large datasets (or 5 to 20 for smaller datasets)",
+      "Exactly equal to |V|",
+      "100,000"
+    ],
+    "correct": 1,
+    "explanation": "Mikolov et al. showed that k = 2-5 negative samples suffice for large datasets, while k = 5-20 is effective for smaller corpora.",
+    "topic": "Negative Sampling",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_22",
+    "chapter": 5,
+    "question": "What famous semantic vector arithmetic relationship emerged from Word2Vec embeddings?",
+    "options": [
+      "vec('Paris') / vec('France') = 1",
+      "vec('Apple') * vec('Banana') = vec('Fruit')",
+      "vec('Dog') + vec('Cat') = vec('Fish')",
+      "vec('King') - vec('Man') + vec('Woman') ≈ vec('Queen')"
+    ],
+    "correct": 3,
+    "explanation": "Word2Vec vectors capture linear relational analogies such that gender and capital-city vectors align directionally.",
+    "topic": "Vector Arithmetic",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_23",
+    "chapter": 5,
+    "question": "In vector space, how is an analogy query 'A is to B as C is to ?' answered using embeddings?",
+    "options": [
+      "x = vec(A) / vec(B)",
+      "argmax_x [ cos(x, vec(B) - vec(A) + vec(C)) ]",
+      "x = min(vec(A), vec(B))",
+      "vec(A) + vec(B) + vec(C)"
+    ],
+    "correct": 1,
+    "explanation": "The 3CosAdd method finds word x maximizing cosine similarity to (v_B - v_A + v_C), excluding A, B, and C.",
+    "topic": "Analogies",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_24",
+    "chapter": 5,
+    "question": "How does GloVe (Global Vectors for Word Representation, Pennington et al., 2014) differ from Word2Vec?",
+    "options": [
+      "GloVe fits log-bilinear model directly on global word-word co-occurrence matrix counts rather than streaming local window samples",
+      "GloVe uses pure one-hot vectors",
+      "GloVe only runs on CPUs",
+      "GloVe cannot compute word similarities"
+    ],
+    "correct": 0,
+    "explanation": "GloVe combines global matrix factorization techniques with local context window architectures.",
+    "topic": "GloVe",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_25",
+    "chapter": 5,
+    "question": "What loss function does GloVe minimize?",
+    "options": [
+      "Hinge loss",
+      "Weighted least squares loss on the difference between dot products w_i . w_j and log co-occurrence counts log(X_ij)",
+      "K-Means inertia",
+      "Binary cross-entropy"
+    ],
+    "correct": 1,
+    "explanation": "GloVe minimizes J = SUM f(X_ij) * (w_i . w_j + b_i + b_j - log(X_ij))^2 with a weighting function f(X_ij).",
+    "topic": "GloVe",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_26",
+    "chapter": 5,
+    "question": "What major limitation of Word2Vec and GloVe does FastText (Bojanowski et al., 2017) overcome?",
+    "options": [
+      "FastText cannot run on GPU",
+      "Out-Of-Vocabulary (OOV) words: FastText represents words as bags of character n-grams, enabling vector generation for unseen words",
+      "FastText does not use vectors",
+      "FastText only works on English"
+    ],
+    "correct": 1,
+    "explanation": "FastText represents each word as a bag of character n-grams (e.g., 'where' -> '<wh', 'whe', 'her', 'ere', 're>'), generalizing to rare and unseen words.",
+    "topic": "FastText",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_27",
+    "chapter": 5,
+    "question": "In FastText, how is the embedding vector for the word 'apple' constructed?",
+    "options": [
+      "By summing the vectors of its character n-grams (e.g., '<ap', 'app', 'ppl', 'ple', 'le>') plus the special whole-word vector",
+      "By looking up an ASCII table",
+      "By computing TF-IDF only",
+      "By concatenating letters"
+    ],
+    "correct": 0,
+    "explanation": "The final representation in FastText is the sum of vectors of all constituent subword character n-grams.",
+    "topic": "FastText",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_28",
+    "chapter": 5,
+    "question": "What is the difference between First-Order Co-occurrence (Syntagmatic) and Second-Order Co-occurrence (Paradigmatic)?",
+    "options": [
+      "Syntagmatic means synonyms; Paradigmatic means antonyms",
+      "Syntagmatic is only used in grammar",
+      "Syntagmatic words directly co-occur together (e.g. 'write' and 'letter'); Paradigmatic words occur in similar contexts but not necessarily together (e.g. 'cat' and 'dog')",
+      "They are identical"
+    ],
+    "correct": 2,
+    "explanation": "Syntagmatic reflects associative collocation in the same sentence; paradigmatic reflects substitutability in similar contexts.",
+    "topic": "Semantic Relations",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_29",
+    "chapter": 5,
+    "question": "What is Intrinsic Evaluation of word embeddings?",
+    "options": [
+      "Deploying in Google Search",
+      "Counting the number of vectors",
+      "Measuring training time",
+      "Testing embeddings on word similarity benchmarks (e.g. WordSim-353, SimLex-999) and analogy tasks (e.g. Google Analogy Test)"
+    ],
+    "correct": 3,
+    "explanation": "Intrinsic evaluation computes correlation between cosine similarity and human judgment scores on curated word pairs.",
+    "topic": "Evaluation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_30",
+    "chapter": 5,
+    "question": "What is Extrinsic Evaluation of word embeddings?",
+    "options": [
+      "Printing word vectors to screen",
+      "Calculating vector norms",
+      "Running unit tests",
+      "Using the embeddings as input features in downstream NLP tasks (NER, sentiment analysis, text classification) and measuring task accuracy"
+    ],
+    "correct": 3,
+    "explanation": "Extrinsic evaluation measures how much pre-trained embeddings improve the performance of real-world end applications.",
+    "topic": "Evaluation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_31",
+    "chapter": 5,
+    "question": "What is the Euclidean Distance between two vectors u = [1, 2] and v = [4, 6]?",
+    "options": [
+      "7.0",
+      "sqrt((4-1)^2 + (6-2)^2) = sqrt(9 + 16) = sqrt(25) = 5.0",
+      "3.0",
+      "25.0"
+    ],
+    "correct": 1,
+    "explanation": "Euclidean distance ||u - v||_2 = sqrt(3^2 + 4^2) = sqrt(25) = 5.0.",
+    "topic": "Calculation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_32",
+    "chapter": 5,
+    "question": "What is the Dot Product of vectors u = [2, 3] and v = [4, -1]?",
+    "options": [
+      "5 / 11",
+      "(2*4) + (3*-1) = 8 - 3 = 5",
+      "-5",
+      "11"
+    ],
+    "correct": 1,
+    "explanation": "u . v = (2 * 4) + (3 * -1) = 8 - 3 = 5.",
+    "topic": "Calculation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_33",
+    "chapter": 5,
+    "question": "If two non-zero vectors u and v are ORTHOGONAL (perpendicular, 90 degrees), what is their Cosine Similarity?",
+    "options": [
+      "-1.0",
+      "1.0",
+      "0.0",
+      "0.5"
+    ],
+    "correct": 2,
+    "explanation": "Orthogonal vectors have dot product 0, so cos(u, v) = 0 / (||u|| * ||v||) = 0.0.",
+    "topic": "Cosine Properties",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_34",
+    "chapter": 5,
+    "question": "If vector u is a scalar multiple of vector v in the same direction (u = 2v), what is their Cosine Similarity?",
+    "options": [
+      "0.5",
+      "0.0",
+      "1.0",
+      "2.0"
+    ],
+    "correct": 2,
+    "explanation": "Vectors pointing in the exact same direction have an angle of 0 degrees, so cos(0) = 1.0.",
+    "topic": "Cosine Properties",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_35",
+    "chapter": 5,
+    "question": "What is the dimensionality of classic Word2Vec embeddings in typical pretrained releases (e.g. Google News Word2Vec)?",
+    "options": [
+      "100,000 dimensions",
+      "10 dimensions",
+      "300 dimensions",
+      "1 dimension"
+    ],
+    "correct": 2,
+    "explanation": "The canonical Google News Word2Vec model uses dense vectors of 300 dimensions across 3 million words.",
+    "topic": "Word2Vec",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_36",
+    "chapter": 5,
+    "question": "What does t-SNE (t-Distributed Stochastic Neighbor Embedding) commonly do in word embedding analysis?",
+    "options": [
+      "Projects high-dimensional word vectors (e.g. 300D) down to 2D or 3D for interactive visualization while preserving local neighborhoods",
+      "Calculates TF-IDF",
+      "Removes stop words",
+      "Translates words into Chinese"
+    ],
+    "correct": 0,
+    "explanation": "t-SNE is a non-linear dimensionality reduction technique widely used to inspect semantic clusters in 2D scatter plots.",
+    "topic": "Visualization",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_37",
+    "chapter": 5,
+    "question": "In scikit-learn, which class converts a collection of raw text documents into a TF-IDF matrix?",
+    "options": [
+      "sklearn.preprocessing.Tfidf",
+      "sklearn.feature_extraction.text.TfidfVectorizer",
+      "sklearn.linear_model.TfidfVectorizer",
+      "sklearn.cluster.TfidfVectorizer"
+    ],
+    "correct": 1,
+    "explanation": "`TfidfVectorizer` combines CountVectorizer and TfidfTransformer into a single pipeline component.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_38",
+    "chapter": 5,
+    "question": "What does the parameter `ngram_range=(1, 2)` do in `TfidfVectorizer`?",
+    "options": [
+      "Removes the first 2 words",
+      "Extracts both unigrams (single words) and bigrams (word pairs) as features",
+      "Extracts only words with 1 or 2 letters",
+      "Limits documents to 2 lines"
+    ],
+    "correct": 1,
+    "explanation": "`ngram_range=(1, 2)` extracts both unigrams and contiguous bigram phrases into the vocabulary.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_39",
+    "chapter": 5,
+    "question": "What does `sublinear_tf=True` in scikit-learn's `TfidfVectorizer` do?",
+    "options": [
+      "Removes negative frequencies",
+      "Squares the term frequency",
+      "Divides tf by 2",
+      "Replaces term frequency tf with 1 + log(tf) for tf > 0, dampening the effect of very high term counts"
+    ],
+    "correct": 3,
+    "explanation": "Sublinear TF scaling applies logarithmic dampening (1 + log(tf)) so that a word occurring 20 times is not 20 times as important as one occurring once.",
+    "topic": "TF-IDF Variants",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_40",
+    "chapter": 5,
+    "question": "Can static word embeddings like Word2Vec and GloVe assign DIFFERENT vectors to the word 'apple' in 'apple fruit' vs 'Apple iPhone'?",
+    "options": [
+      "Yes, they automatically adjust per sentence",
+      "No, static word embeddings assign a SINGLE fixed vector per vocabulary word regardless of context (polysemy limitation)",
+      "Yes, using FastText",
+      "Yes, using CBOW only"
+    ],
+    "correct": 1,
+    "explanation": "Static embeddings suffer from polysemy conflation: multiple meanings of a word are collapsed into a single vector.",
+    "topic": "Embedding Limitations",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch05_41",
+    "chapter": 5,
+    "question": "Which model family solved the polysemy conflation limitation by generating DYNAMIC CONTEXTUALIZED embeddings?",
+    "options": [
+      "Transformers and Pre-trained LMs like BERT and ELMo",
+      "PPMI Matrices",
+      "GloVe 300D",
+      "Word2Vec Skip-Gram"
+    ],
+    "correct": 0,
+    "explanation": "Contextualized representations (ELMo, BERT) dynamically adjust token vectors based on the entire surrounding sentence.",
+    "topic": "Contextualized Vectors",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_42",
+    "chapter": 5,
+    "question": "In Word2Vec, what are the two weight matrices learned during training?",
+    "options": [
+      "Weight matrix and Bias vector only",
+      "Encoder matrix and Decoder matrix",
+      "Positive matrix and Negative matrix",
+      "Target word matrix W (center words) and Context word matrix W' (context words)"
+    ],
+    "correct": 3,
+    "explanation": "Word2Vec maintains an input embedding matrix W and an output context matrix W', typically using W as the final word embeddings.",
+    "topic": "Word2Vec Architecture",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_43",
+    "chapter": 5,
+    "question": "What happens to words that appear extremely frequently (like 'the', 'of') in Word2Vec training?",
+    "options": [
+      "They are placed in a separate dictionary",
+      "They are assigned infinite weights",
+      "They stop the training process",
+      "They are Subsampled during training with a probability formula based on frequency P(w) to accelerate learning and improve vector quality"
+    ],
+    "correct": 3,
+    "explanation": "Mikolov et al. applied subsampling to discard frequent words with probability P(w) = 1 - sqrt(t / f(w)), speeding up training.",
+    "topic": "Word2Vec Optimization",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_44",
+    "chapter": 5,
+    "question": "What is Latent Semantic Analysis (LSA / LSI)?",
+    "options": [
+      "Applying Singular Value Decomposition (SVD) to a term-document or co-occurrence matrix to project it into a low-rank semantic space",
+      "Writing regex rules for synonyms",
+      "Tokenizing with BPE",
+      "Clustering words using K-Means"
+    ],
+    "correct": 0,
+    "explanation": "LSA applies truncated SVD (X ≈ U Σ V^T) to reduce dimensionality and discover latent semantic concepts.",
+    "topic": "Dimensionality Reduction",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_45",
+    "chapter": 5,
+    "question": "In WordNet-based similarity vs Vector-based similarity, what is the main advantage of vector models?",
+    "options": [
+      "Vectors only work on small vocabularies",
+      "Vectors have no mathematical formulas",
+      "Vectors are learned automatically from raw unannotated text corpora without requiring expensive human-crafted taxonomic ontologies",
+      "Vectors are 100% human-verified"
+    ],
+    "correct": 2,
+    "explanation": "Distributed vector representations scale automatically to massive corpora without human labor.",
+    "topic": "Vector Semantics",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_46",
+    "chapter": 5,
+    "question": "If word A has vector [3, 0] and word B has vector [0, 4], what is their Cosine Similarity?",
+    "options": [
+      "1.0",
+      "0.75",
+      "0.5",
+      "0.0 (they are completely orthogonal)"
+    ],
+    "correct": 3,
+    "explanation": "Dot product = (3*0) + (0*4) = 0. Cosine similarity = 0 / (3 * 4) = 0.0.",
+    "topic": "Calculation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch05_47",
+    "chapter": 5,
+    "question": "What is the normalized L2 norm of the vector [3, 4]?",
+    "options": [
+      "25.0",
+      "7.0",
+      "5.0 (sqrt(3^2 + 4^2) = sqrt(25) = 5.0)",
+      "1.0"
+    ],
+    "correct": 2,
+    "explanation": "||v||_2 = sqrt(9 + 16) = 5.0.",
+    "topic": "Calculation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_48",
+    "chapter": 5,
+    "question": "What is the L2 unit vector corresponding to [3, 4]?",
+    "options": [
+      "[3/5, 4/5] = [0.6, 0.8]",
+      "[9, 16]",
+      "[0.5, 0.5]",
+      "[1, 1]"
+    ],
+    "correct": 0,
+    "explanation": "Dividing each component by norm 5.0 gives [0.6, 0.8]. Its norm is sqrt(0.36 + 0.64) = 1.0.",
+    "topic": "Calculation",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch05_49",
+    "chapter": 5,
+    "question": "Which cosine similarity value indicates two vectors point in OPPOSITE directions?",
+    "options": [
+      "0.0",
+      "0.5",
+      "-1.0",
+      "1.0"
+    ],
+    "correct": 2,
+    "explanation": "A cosine similarity of -1.0 means an angle of 180 degrees (diametrically opposed vectors).",
+    "topic": "Cosine Properties",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch05_50",
+    "chapter": 5,
+    "question": "Why does FastText perform especially well on morphologically rich languages like Turkish, German, and Finnish?",
+    "options": [
+      "Because it ignores suffixes",
+      "Because it disables embeddings",
+      "Because it uses Latin alphabet only",
+      "Because it shares subword n-gram representations across compound words and inflected word forms"
+    ],
+    "correct": 3,
+    "explanation": "In agglutinative languages with extensive inflection and compounding, subword sharing allows FastText to generalize effectively.",
+    "topic": "FastText",
+    "slide_ref": "05. Vector Semantics and Embeddings.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_01",
+    "chapter": 6,
+    "question": "What type of learning problem is Document Clustering?",
+    "options": [
+      "Unsupervised learning: finding natural groupings of unlabelled text documents without predefined class tags",
+      "Reinforcement learning with rewards",
+      "Supervised classification with cross-entropy",
+      "Rule-based regex matching"
+    ],
+    "correct": 0,
+    "explanation": "Clustering is unsupervised learning: discovering latent structures and groupings in data without human-provided class labels.",
+    "topic": "Clustering Overview",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_02",
+    "chapter": 6,
+    "question": "What is the primary objective of the K-Means clustering algorithm?",
+    "options": [
+      "Sort documents alphabetically",
+      "Find the maximum spanning tree",
+      "Classify text into spam or ham",
+      "Partition n objects into K clusters such that each object belongs to the cluster with the nearest mean (centroid), minimizing within-cluster variance (SSE)"
+    ],
+    "correct": 3,
+    "explanation": "K-Means minimizes the Sum of Squared Errors (SSE / Inertia) between points and their assigned cluster centroids.",
+    "topic": "K-Means",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_03",
+    "chapter": 6,
+    "question": "What is the formula for the Sum of Squared Errors (SSE / Inertia) in K-Means?",
+    "options": [
+      "SSE = SUM mu_k / K",
+      "SSE = SUM_{k=1}^K K^2",
+      "SSE = SUM_{k=1}^K SUM_{x in C_k} ||x - mu_k||^2",
+      "SSE = max(x - mu_k)"
+    ],
+    "correct": 2,
+    "explanation": "Inertia/SSE sums the squared Euclidean distances from every data point x to its assigned cluster centroid mu_k.",
+    "topic": "K-Means Objective",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_04",
+    "chapter": 6,
+    "question": "What are the two alternating steps in the standard Lloyd's K-Means algorithm?",
+    "options": [
+      "Forward pass and Backward pass",
+      "Assignment step (assign each point to nearest centroid) and Update step (recalculate centroids as the mean of assigned points)",
+      "Encoding step and Decoding step",
+      "Split step and Merge step"
+    ],
+    "correct": 1,
+    "explanation": "Lloyd's algorithm alternates between assigning points to the closest centroid and recomputing centroids until convergence.",
+    "topic": "K-Means Algorithm",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_05",
+    "chapter": 6,
+    "question": "What is a common convergence / stopping condition for K-Means?",
+    "options": [
+      "Centroids do not change positions (or change by less than a tiny epsilon) or cluster assignments remain identical between iterations",
+      "When runtime reaches 1 hour",
+      "When K reaches 0",
+      "When all points are deleted"
+    ],
+    "correct": 0,
+    "explanation": "K-Means converges when cluster memberships stabilize and centroid coordinates shift by less than a tolerance threshold.",
+    "topic": "K-Means Algorithm",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_06",
+    "chapter": 6,
+    "question": "Is K-Means guaranteed to find the GLOBAL minimum of the SSE objective function?",
+    "options": [
+      "No, K-Means converges to a LOCAL minimum and is sensitive to initial centroid placement",
+      "Yes, it is mathematically proven to always reach global minimum",
+      "Yes, if K is an odd number",
+      "Yes, if using cosine distance"
+    ],
+    "correct": 0,
+    "explanation": "K-Means objective is non-convex; different random initializations can lead to different local optima.",
+    "topic": "K-Means Convergence",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_07",
+    "chapter": 6,
+    "question": "How does the K-Means++ initialization algorithm improve upon standard random initialization?",
+    "options": [
+      "It places all centroids at the origin",
+      "It uses the first K documents",
+      "It spreads out initial centroids by choosing subsequent seeds with probability proportional to the squared distance from the closest existing centroid",
+      "It clusters using a neural network"
+    ],
+    "correct": 2,
+    "explanation": "K-Means++ seeds centroids far away from one another, providing provable O(log K) competitive bounds and faster convergence.",
+    "topic": "K-Means++",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_08",
+    "chapter": 6,
+    "question": "What is the Elbow Method used for in K-Means clustering?",
+    "options": [
+      "Heuristically choosing the optimal number of clusters K by plotting SSE against K and finding the 'elbow' point where the rate of decrease sharply bends",
+      "Finding the fastest CPU core",
+      "Removing outliers",
+      "Evaluating precision"
+    ],
+    "correct": 0,
+    "explanation": "The elbow point represents a balance where adding further clusters yields diminishing returns in variance reduction.",
+    "topic": "Determining K",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_09",
+    "chapter": 6,
+    "question": "What is the Silhouette Coefficient s(i) for a single data point i?",
+    "options": [
+      "s(i) = a(i) / b(i)",
+      "s(i) = (b(i) - a(i)) / max(a(i), b(i)), where a(i) is mean intra-cluster distance and b(i) is mean nearest-cluster distance",
+      "s(i) = b(i) - a(i)",
+      "s(i) = a(i) + b(i)"
+    ],
+    "correct": 1,
+    "explanation": "Silhouette score contrasts the tightness of the point's own cluster a(i) against the separation to the nearest alternative cluster b(i).",
+    "topic": "Silhouette Score",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_10",
+    "chapter": 6,
+    "question": "What is the range of the Silhouette Coefficient?",
+    "options": [
+      "[0.0, 1.0]",
+      "[0, infinity)",
+      "[-1.0, +1.0]",
+      "[-infinity, +infinity]"
+    ],
+    "correct": 2,
+    "explanation": "Silhouette values range from -1 (poor assignment, point closer to neighboring cluster) to +1 (dense, well-separated cluster).",
+    "topic": "Silhouette Score",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_11",
+    "chapter": 6,
+    "question": "What does a Silhouette Coefficient close to +1 indicate?",
+    "options": [
+      "The sample is an outlier",
+      "The cluster has only 1 sample",
+      "The sample is misclassified",
+      "The sample is far away from neighboring clusters and very close to samples in its own cluster (excellent clustering)"
+    ],
+    "correct": 3,
+    "explanation": "A value near +1 indicates optimal clustering: high intra-cluster cohesion and strong inter-cluster separation.",
+    "topic": "Silhouette Score",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_12",
+    "chapter": 6,
+    "question": "What does a negative Silhouette Coefficient (near -1) indicate?",
+    "options": [
+      "The sample has zero features",
+      "The sample is closer to a neighboring cluster than to its assigned cluster (likely assigned to the wrong cluster)",
+      "The clustering is perfect",
+      "The distance metric is wrong"
+    ],
+    "correct": 1,
+    "explanation": "Negative silhouette scores signal that points would be better off assigned to an alternative neighboring cluster.",
+    "topic": "Silhouette Score",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_13",
+    "chapter": 6,
+    "question": "What is Hierarchical Clustering?",
+    "options": [
+      "A method that requires K to be known beforehand",
+      "A family of clustering algorithms that builds a nested hierarchy of clusters represented visually as a tree (dendrogram)",
+      "A linear regression algorithm",
+      "A single-layer neural net"
+    ],
+    "correct": 1,
+    "explanation": "Hierarchical clustering constructs a tree-like nested decomposition of clusters without pre-specifying K.",
+    "topic": "Hierarchical Clustering",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_14",
+    "chapter": 6,
+    "question": "What is Agglomerative Hierarchical Clustering?",
+    "options": [
+      "A 'top-down' approach",
+      "A random sorting algorithm",
+      "A method using K-Means centroids",
+      "A 'bottom-up' approach: each document starts in its own cluster, and the closest pairs of clusters are iteratively merged"
+    ],
+    "correct": 3,
+    "explanation": "Agglomerative clustering starts with N single-item clusters and iteratively merges the most similar pairs until one root cluster remains.",
+    "topic": "Hierarchical Clustering",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_15",
+    "chapter": 6,
+    "question": "What is Divisive Hierarchical Clustering?",
+    "options": [
+      "A bottom-up approach",
+      "A matrix multiplication tool",
+      "A 'top-down' approach: all documents start in one giant cluster and are recursively split into smaller clusters",
+      "A method for drawing circles"
+    ],
+    "correct": 2,
+    "explanation": "Divisive clustering starts with the entire dataset in a single cluster and recursively partitions clusters down to individuals.",
+    "topic": "Hierarchical Clustering",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_16",
+    "chapter": 6,
+    "question": "What is a Dendrogram?",
+    "options": [
+      "A scatter plot of centroids",
+      "A confusion matrix",
+      "A histogram of word lengths",
+      "A 2D tree diagram that illustrates the arrangement of clusters produced by hierarchical clustering and the distance/height at which merges occur"
+    ],
+    "correct": 3,
+    "explanation": "A dendrogram illustrates the sequence of hierarchical merges/splits, with branch heights reflecting the distance between merged clusters.",
+    "topic": "Dendrogram",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_17",
+    "chapter": 6,
+    "question": "How is a flat partition of K clusters extracted from a Dendrogram?",
+    "options": [
+      "By counting leaf nodes",
+      "By deleting the root",
+      "By taking the logarithm of heights",
+      "By making a horizontal cut across the dendrogram at a chosen distance threshold or level"
+    ],
+    "correct": 3,
+    "explanation": "Cutting the dendrogram horizontally at a specific threshold partitions the tree into distinct disjoint subtrees (clusters).",
+    "topic": "Dendrogram",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_18",
+    "chapter": 6,
+    "question": "In Agglomerative clustering, what is Single Linkage (Minimum Linkage)?",
+    "options": [
+      "Maximum distance between points",
+      "Average distance between all pairs",
+      "Distance between two clusters is defined as the MINIMUM distance between any single point in cluster A and any single point in cluster B",
+      "Distance between centroids"
+    ],
+    "correct": 2,
+    "explanation": "Single linkage: D(A, B) = min_{x in A, y in B} dist(x, y).",
+    "topic": "Linkage Criteria",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_19",
+    "chapter": 6,
+    "question": "What is the major vulnerability of Single Linkage clustering?",
+    "options": [
+      "It cannot run on small data",
+      "Chaining effect: elongated, straggly clusters formed by chains of close points bridging distinct groups",
+      "It divides by zero",
+      "It forces all clusters to be spherical"
+    ],
+    "correct": 1,
+    "explanation": "Single linkage is prone to the 'chaining phenomenon', merging separate clusters through thin intermediary noise bridges.",
+    "topic": "Linkage Criteria",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_20",
+    "chapter": 6,
+    "question": "In Agglomerative clustering, what is Complete Linkage (Maximum Linkage)?",
+    "options": [
+      "Average distance",
+      "Distance between two clusters is defined as the MAXIMUM distance between any point in cluster A and any point in cluster B",
+      "Minimum distance between points",
+      "Distance to origin"
+    ],
+    "correct": 1,
+    "explanation": "Complete linkage: D(A, B) = max_{x in A, y in B} dist(x, y).",
+    "topic": "Linkage Criteria",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_21",
+    "chapter": 6,
+    "question": "What type of clusters does Complete Linkage tend to produce?",
+    "options": [
+      "Only 1 cluster",
+      "Overlapping clusters",
+      "Chained string-like clusters",
+      "Compact, spherical clusters of roughly equal diameter, robust against chaining"
+    ],
+    "correct": 3,
+    "explanation": "By considering the maximum pair distance, complete linkage resists chaining and enforces compact cluster boundaries.",
+    "topic": "Linkage Criteria",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_22",
+    "chapter": 6,
+    "question": "In Agglomerative clustering, what is Average Linkage (UPGMA)?",
+    "options": [
+      "Median of centroids",
+      "Distance between two clusters is the AVERAGE of all pairwise distances between points in cluster A and points in cluster B",
+      "Maximum pairwise distance",
+      "Minimum pairwise distance"
+    ],
+    "correct": 1,
+    "explanation": "Average linkage: D(A, B) = (1 / (|A|*|B|)) * SUM_{x in A} SUM_{y in B} dist(x, y).",
+    "topic": "Linkage Criteria",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_23",
+    "chapter": 6,
+    "question": "In Agglomerative clustering, what is Ward's Method (Ward Linkage)?",
+    "options": [
+      "Merges the pair of clusters that minimizes the total increase in within-cluster variance (SSE) after merging",
+      "Maximizes distance between points",
+      "Uses Manhattan distance only",
+      "Randomly merges clusters"
+    ],
+    "correct": 0,
+    "explanation": "Ward's hierarchical method minimizes the objective function identical to K-Means: within-cluster sum of squares.",
+    "topic": "Ward Linkage",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_24",
+    "chapter": 6,
+    "question": "What is the time complexity of naive Agglomerative Hierarchical Clustering with N data points?",
+    "options": [
+      "O(N^3) or O(N^2 log N) with priority queues",
+      "O(1)",
+      "O(N)",
+      "O(log N)"
+    ],
+    "correct": 0,
+    "explanation": "Maintaining and updating the distance matrix across N merges requires at least O(N^2) space and O(N^2 log N) or O(N^3) time.",
+    "topic": "Complexity",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_25",
+    "chapter": 6,
+    "question": "Why is K-Means computationally more scalable than Hierarchical Clustering for large document collections (e.g., N = 100,000 documents)?",
+    "options": [
+      "K-Means does not calculate distances",
+      "Hierarchical clustering only accepts integers",
+      "Hierarchical clustering only runs on CPU",
+      "K-Means has linear time complexity per iteration O(K * N * d), whereas hierarchical clustering requires at least O(N^2) pairwise distance storage"
+    ],
+    "correct": 3,
+    "explanation": "K-Means scales as O(K*N*d*iterations), which is vastly more efficient for large N than constructing an N x N distance matrix.",
+    "topic": "Scalability",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_26",
+    "chapter": 6,
+    "question": "What distance metric is typically most appropriate for clustering high-dimensional text TF-IDF vectors?",
+    "options": [
+      "Hamming Distance",
+      "Cosine Distance (1 - Cosine Similarity)",
+      "Manhattan Distance",
+      "Euclidean Distance without normalization"
+    ],
+    "correct": 1,
+    "explanation": "Cosine distance normalizes for varying document lengths, focusing on topical orientation rather than document size.",
+    "topic": "Distance Metrics",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_27",
+    "chapter": 6,
+    "question": "What is Spherical K-Means?",
+    "options": [
+      "K-Means restricted to 3D earth coordinates",
+      "A variation of K-Means where document vectors and centroids are normalized to unit L2 length, and cosine similarity is maximized",
+      "K-Means using circles",
+      "K-Means on audio signals"
+    ],
+    "correct": 1,
+    "explanation": "Spherical K-Means normalizes vectors to the unit hypersphere and updates centroids by averaging and re-normalizing.",
+    "topic": "Spherical K-Means",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_28",
+    "chapter": 6,
+    "question": "What is an 'Outlier' in clustering, and how does it affect K-Means centroids?",
+    "options": [
+      "A point with zero weight",
+      "A distant anomalous point; it can severely pull cluster centroids away from genuine data clusters because Euclidean distance squares errors",
+      "A point that speeds up convergence",
+      "An unigram token"
+    ],
+    "correct": 1,
+    "explanation": "Because SSE squares distances, an extreme outlier exerts disproportionate pull on the mean centroid.",
+    "topic": "Outliers",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_29",
+    "chapter": 6,
+    "question": "What is K-Medoids (PAM - Partitioning Around Medoids)?",
+    "options": [
+      "A hierarchical clustering method",
+      "A robust clustering algorithm that chooses actual data points (medoids) as cluster centers rather than mathematical means",
+      "K-Means with medians only",
+      "A supervised algorithm"
+    ],
+    "correct": 1,
+    "explanation": "K-Medoids uses real dataset exemplars as centers, making it substantially more robust to noise and outliers than K-Means.",
+    "topic": "K-Medoids",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_30",
+    "chapter": 6,
+    "question": "What is DBSCAN (Density-Based Spatial Clustering of Applications with Noise)?",
+    "options": [
+      "A density-based clustering algorithm that groups together closely packed points and marks points in low-density regions as outliers",
+      "A hierarchical method",
+      "A variant of Naive Bayes",
+      "A supervised parser"
+    ],
+    "correct": 0,
+    "explanation": "DBSCAN finds arbitrarily shaped clusters based on density parameters (eps and min_samples) without requiring K in advance.",
+    "topic": "DBSCAN",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_31",
+    "chapter": 6,
+    "question": "What is an advantage of DBSCAN over K-Means for text clustering?",
+    "options": [
+      "DBSCAN only works on text",
+      "DBSCAN produces a dendrogram",
+      "DBSCAN is always faster",
+      "DBSCAN does NOT require pre-specifying K and can discover arbitrarily shaped clusters while explicitly identifying noise documents"
+    ],
+    "correct": 3,
+    "explanation": "DBSCAN handles noise and non-globular cluster geometries, automatically determining cluster count.",
+    "topic": "DBSCAN",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_32",
+    "chapter": 6,
+    "question": "What are the two key parameters in DBSCAN?",
+    "options": [
+      "learning rate and epochs",
+      "alpha and lambda",
+      "K and max_iter",
+      "epsilon (eps - radius of neighborhood) and min_samples (minimum points to form a dense region)"
+    ],
+    "correct": 3,
+    "explanation": "DBSCAN defines clusters using neighborhood radius eps and density threshold min_samples.",
+    "topic": "DBSCAN",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_33",
+    "chapter": 6,
+    "question": "In text clustering evaluation, what is an Extrinsic (External) evaluation metric?",
+    "options": [
+      "Counting the number of clusters",
+      "Calculating silhouette score",
+      "Measuring within-cluster SSE",
+      "A metric that compares cluster outputs to ground-truth human category labels (e.g. Purity, Normalized Mutual Information - NMI, Adjusted Rand Index - ARI)"
+    ],
+    "correct": 3,
+    "explanation": "External metrics measure agreement against known gold-standard category annotations.",
+    "topic": "Cluster Evaluation",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_34",
+    "chapter": 6,
+    "question": "In text clustering evaluation, what is an Intrinsic (Internal) evaluation metric?",
+    "options": [
+      "Calculating accuracy against human labels",
+      "A metric that evaluates clustering quality using only data geometry without external labels (e.g. Silhouette Score, Davies-Bouldin Index, Inertia)",
+      "Comparing against Wikipedia categories",
+      "Measuring BLEU score"
+    ],
+    "correct": 1,
+    "explanation": "Internal metrics evaluate cluster compactness and inter-cluster separation without needing ground-truth labels.",
+    "topic": "Cluster Evaluation",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_35",
+    "chapter": 6,
+    "question": "What is Cluster Purity in external clustering evaluation?",
+    "options": [
+      "The number of unique words",
+      "The silhouette score",
+      "The average document length",
+      "The percentage of total data points that belong to the dominant ground-truth class within their assigned cluster"
+    ],
+    "correct": 3,
+    "explanation": "Purity assigns each cluster to its most frequent class label and divides the count of correctly assigned points by N.",
+    "topic": "Cluster Purity",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_36",
+    "chapter": 6,
+    "question": "Why is Cluster Purity an imperfect metric on its own?",
+    "options": [
+      "Because setting K = N (each point in its own cluster) achieves a deceptively perfect Purity of 1.0",
+      "Because purity is always negative",
+      "Because it ignores majority classes",
+      "Because purity cannot be computed"
+    ],
+    "correct": 0,
+    "explanation": "Purity trivially increases with K; at K=N, purity is 100%, offering no penalty for over-clustering.",
+    "topic": "Cluster Purity",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_37",
+    "chapter": 6,
+    "question": "What does the Adjusted Rand Index (ARI) measure in cluster evaluation?",
+    "options": [
+      "The similarity between cluster assignments and true labels, corrected for chance agreements (ranging from 0 for random to 1 for perfect match)",
+      "The GPU execution time",
+      "The ratio of vocabulary to documents",
+      "The number of singletons"
+    ],
+    "correct": 0,
+    "explanation": "ARI measures pair agreements between clusterings, adjusting for the expected baseline of random label pairings.",
+    "topic": "Adjusted Rand Index",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_38",
+    "chapter": 6,
+    "question": "What is Normalized Mutual Information (NMI)?",
+    "options": [
+      "An information-theoretic external metric scaling mutual information between clusters and true labels into [0, 1]",
+      "The cosine distance between centroids",
+      "The ratio of TF to IDF",
+      "The perplexity of a cluster"
+    ],
+    "correct": 0,
+    "explanation": "NMI evaluates the shared information content between clusterings, normalized by cluster entropies.",
+    "topic": "NMI",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_39",
+    "chapter": 6,
+    "question": "What is Topic Modeling (e.g. Latent Dirichlet Allocation - LDA)?",
+    "options": [
+      "A dependency parser",
+      "A probabilistic generative model that discovers abstract latent 'topics' (word distributions) across a collection of documents",
+      "A classification model for sentiment",
+      "A spelling correction tool"
+    ],
+    "correct": 1,
+    "explanation": "LDA assumes documents are mixtures of topics, and each topic is a probability distribution over words.",
+    "topic": "Topic Modeling",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_40",
+    "chapter": 6,
+    "question": "How does LDA Topic Modeling differ from Hard K-Means clustering?",
+    "options": [
+      "LDA does not use words",
+      "LDA is 'soft' clustering: a document can exhibit multiple topics with varying proportions (e.g. 60% Sports, 40% Finance)",
+      "LDA only allows 1 topic per document",
+      "LDA requires ground-truth labels"
+    ],
+    "correct": 1,
+    "explanation": "Hard clustering assigns a document to exactly one cluster, while LDA models documents as probabilistic topic mixtures.",
+    "topic": "Topic Modeling",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_41",
+    "chapter": 6,
+    "question": "In scikit-learn, which class implements the K-Means clustering algorithm?",
+    "options": [
+      "sklearn.naive_bayes.KMeans",
+      "sklearn.tree.KMeans",
+      "sklearn.linear_model.KMeans",
+      "sklearn.cluster.KMeans"
+    ],
+    "correct": 3,
+    "explanation": "`from sklearn.cluster import KMeans` is the standard scikit-learn class.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_42",
+    "chapter": 6,
+    "question": "In scikit-learn's `KMeans`, what parameter controls the number of cluster centroids to find?",
+    "options": [
+      "n_classes",
+      "n_clusters",
+      "k_centroids",
+      "n_groups"
+    ],
+    "correct": 1,
+    "explanation": "`n_clusters` specifies the number of clusters K to form and centroids to generate.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_43",
+    "chapter": 6,
+    "question": "What does the attribute `kmeans.inertia_` store after fitting in scikit-learn?",
+    "options": [
+      "The training time",
+      "The silhouette score",
+      "The number of iterations",
+      "The Sum of Squared Distances of samples to their closest cluster center (SSE)"
+    ],
+    "correct": 3,
+    "explanation": "`inertia_` returns the final within-cluster sum of squared errors.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_44",
+    "chapter": 6,
+    "question": "In scikit-learn, which module provides `AgglomerativeClustering`?",
+    "options": [
+      "sklearn.cluster.AgglomerativeClustering",
+      "sklearn.manifold.Agglomerative",
+      "sklearn.tree.AgglomerativeClustering",
+      "sklearn.decomposition.AgglomerativeClustering"
+    ],
+    "correct": 0,
+    "explanation": "`from sklearn.cluster import AgglomerativeClustering`.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_45",
+    "chapter": 6,
+    "question": "What parameter in `AgglomerativeClustering` determines the distance metric between clusters ('ward', 'complete', 'average', 'single')?",
+    "options": [
+      "merge_rule",
+      "metric_type",
+      "linkage",
+      "affinity"
+    ],
+    "correct": 2,
+    "explanation": "The `linkage` parameter specifies which linkage criterion to use.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_46",
+    "chapter": 6,
+    "question": "How can text clusters be interpreted or labeled automatically for humans?",
+    "options": [
+      "By translating centroids to ASCII",
+      "By identifying the top TF-IDF words or words closest to the centroid in each cluster",
+      "By reading the entire corpus manually",
+      "By sorting document IDs"
+    ],
+    "correct": 1,
+    "explanation": "Extracting terms with highest TF-IDF or highest centroid weight provides representative topic summaries.",
+    "topic": "Cluster Interpretation",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch06_47",
+    "chapter": 6,
+    "question": "What is the effect of curse of dimensionality on Euclidean distance in text clustering?",
+    "options": [
+      "As dimensionality increases, the ratio of distances between the nearest and farthest neighbors approaches 1, making distance distinction fragile",
+      "Vectors become 1D",
+      "Distances become negative",
+      "Calculations speed up 1000x"
+    ],
+    "correct": 0,
+    "explanation": "In ultra-high dimensions (e.g. 50,000 words), Euclidean distances concentrate, making Cosine similarity or SVD reduction essential.",
+    "topic": "High-Dimensionality",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch06_48",
+    "chapter": 6,
+    "question": "Why is Latent Semantic Analysis (LSA / TruncatedSVD) frequently applied BEFORE running K-Means on text?",
+    "options": [
+      "To remove all numbers",
+      "To convert text into sentences",
+      "To reduce sparsity and noise, speeding up K-Means distance calculations while capturing latent semantic synonyms",
+      "To increase vocabulary size"
+    ],
+    "correct": 2,
+    "explanation": "TruncatedSVD projects sparse TF-IDF vectors into 100-300 dense dimensions, mitigating the curse of dimensionality.",
+    "topic": "Dimensionality Reduction",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch06_49",
+    "chapter": 6,
+    "question": "What does the Davies-Bouldin Index measure in clustering?",
+    "options": [
+      "The number of iterations",
+      "The training loss of BERT",
+      "The accuracy on test set",
+      "The similarity between each cluster and its most similar one; LOWER values indicate better clustering (tighter clusters, further apart)"
+    ],
+    "correct": 3,
+    "explanation": "The Davies-Bouldin index evaluates average similarity of each cluster to its nearest neighbor, with lower values indicating better separation.",
+    "topic": "Cluster Evaluation",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch06_50",
+    "chapter": 6,
+    "question": "If a dataset has 3 tight, well-separated clusters, what would you expect the Silhouette Score to be?",
+    "options": [
+      "100.0",
+      "0.0 exactly",
+      "Negative, close to -0.8",
+      "High, close to 0.7 - 0.9"
+    ],
+    "correct": 3,
+    "explanation": "Tight and well-separated clusters yield high positive silhouette scores reflecting strong cohesion and high separation.",
+    "topic": "Silhouette Score",
+    "slide_ref": "06. Clustering for Text Similarity.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_01",
+    "chapter": 7,
+    "question": "What landmark 2017 paper by Vaswani et al. introduced the Transformer architecture?",
+    "options": [
+      "'Distributed Representations of Words and Phrases'",
+      "'Deep Residual Learning for Image Recognition'",
+      "'BERT: Pre-training of Deep Bidirectional Transformers'",
+      "'Attention Is All You Need'"
+    ],
+    "correct": 3,
+    "explanation": "Vaswani et al. (2017) published 'Attention Is All You Need', revolutionizing NLP by eliminating recurrence and convolution.",
+    "topic": "Transformer History",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_02",
+    "chapter": 7,
+    "question": "What is the primary computational limitation of Recurrent Neural Networks (RNNs/LSTMs) that Transformers overcome?",
+    "options": [
+      "RNNs have zero parameters",
+      "Sequential processing: RNNs must compute hidden state h_t step-by-step from h_{t-1}, preventing parallel computation across the sequence on GPUs",
+      "RNNs cannot run on GPUs",
+      "RNNs only accept 1 word"
+    ],
+    "correct": 1,
+    "explanation": "RNNs are fundamentally sequential (O(T) time steps), creating a severe training bottleneck on modern parallel hardware.",
+    "topic": "Motivation",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_03",
+    "chapter": 7,
+    "question": "What problem in RNNs causes them to struggle with relationships between words separated by 50+ tokens?",
+    "options": [
+      "Negative activations",
+      "Lack of vocabulary",
+      "Vanishing and exploding gradients over long backpropagation paths through time",
+      "Overfitting to nouns"
+    ],
+    "correct": 2,
+    "explanation": "Repeated matrix multiplications over long recurrent chains cause gradients to vanish or explode, degrading long-range memory.",
+    "topic": "Motivation",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_04",
+    "chapter": 7,
+    "question": "What is the theoretical path length between any two tokens in a Transformer self-attention layer?",
+    "options": [
+      "O(log N)",
+      "O(N^2)",
+      "O(N): linear with sequence length",
+      "O(1): constant distance, connecting any pair of words directly regardless of position"
+    ],
+    "correct": 3,
+    "explanation": "Self-attention computes direct pairwise attention scores between all positions, giving maximum path length O(1).",
+    "topic": "Self-Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_05",
+    "chapter": 7,
+    "question": "What are the three core vector representations computed for each token in Self-Attention?",
+    "options": [
+      "Noun, Verb, and Adjective",
+      "Query (Q), Key (K), and Value (V)",
+      "Weight, Bias, and Activation",
+      "Input, Hidden, and Output"
+    ],
+    "correct": 1,
+    "explanation": "Self-attention transforms input embeddings into Query, Key, and Value vectors using learned projection matrices W^Q, W^K, W^V.",
+    "topic": "QKV Mechanism",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_06",
+    "chapter": 7,
+    "question": "In the Query-Key-Value retrieval analogy, what does the 'Query' represent?",
+    "options": [
+      "The database index of other words",
+      "The current token's request or search probe looking for relevant context across the sequence",
+      "The classification label",
+      "The information content to be extracted"
+    ],
+    "correct": 1,
+    "explanation": "Query represents the active token querying other tokens for relevant contextual information.",
+    "topic": "QKV Mechanism",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_07",
+    "chapter": 7,
+    "question": "In the Query-Key-Value retrieval analogy, what does the 'Key' represent?",
+    "options": [
+      "The label or address of a target token used to match against queries",
+      "The text to be generated",
+      "The tokenizer type",
+      "The learning rate"
+    ],
+    "correct": 0,
+    "explanation": "Keys serve as feature identifiers that are compared against queries via dot products to compute attention weights.",
+    "topic": "QKV Mechanism",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_08",
+    "chapter": 7,
+    "question": "In the Query-Key-Value retrieval analogy, what does the 'Value' represent?",
+    "options": [
+      "The index number",
+      "The gradient magnitude",
+      "The actual contextual content/information extracted and aggregated once attention weights are assigned",
+      "The sentence length"
+    ],
+    "correct": 2,
+    "explanation": "Value contains the substantive feature representation that is weighted and summed to form the output.",
+    "topic": "QKV Mechanism",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_09",
+    "chapter": 7,
+    "question": "What is the mathematical formula for Scaled Dot-Product Attention?",
+    "options": [
+      "Attention(Q, K, V) = (Q * K) / V",
+      "Attention(Q, K, V) = softmax( (Q * K^T) / sqrt(d_k) ) * V",
+      "Attention(Q, K, V) = softmax(Q + K) + V",
+      "Attention(Q, K, V) = Q * K^T * V"
+    ],
+    "correct": 1,
+    "explanation": "Scaled dot-product attention computes softmax of normalized dot products (QK^T / sqrt(d_k)) multiplied by V.",
+    "topic": "Attention Formula",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_10",
+    "chapter": 7,
+    "question": "Why is the dot product Q * K^T divided by the scaling factor sqrt(d_k)?",
+    "options": [
+      "To prevent the dot products from growing excessively large for high dimensions d_k, which pushes the Softmax into regions with vanishingly small gradients",
+      "To convert negative values into positive",
+      "To make attention symmetric",
+      "To divide by the batch size"
+    ],
+    "correct": 0,
+    "explanation": "For large d_k, dot products grow large in magnitude, causing softmax to yield extremely peaked distributions with near-zero gradients.",
+    "topic": "Scaling Factor",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_11",
+    "chapter": 7,
+    "question": "If d_k = 64, what is the scaling factor sqrt(d_k)?",
+    "options": [
+      "8",
+      "4",
+      "16",
+      "64"
+    ],
+    "correct": 0,
+    "explanation": "sqrt(64) = 8. Dot products are divided by 8 before applying softmax.",
+    "topic": "Attention Formula",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_12",
+    "chapter": 7,
+    "question": "What is the shape of the attention score matrix (Q * K^T) for a sequence of length L?",
+    "options": [
+      "d_k x d_k",
+      "1 x L",
+      "L x d_k",
+      "L x L"
+    ],
+    "correct": 3,
+    "explanation": "Multiplying Q (L x d_k) by K^T (d_k x L) produces a square matrix of size L x L representing pairwise scores between all tokens.",
+    "topic": "Attention Dimensions",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_13",
+    "chapter": 7,
+    "question": "What does each row in the normalized attention matrix softmax(Q * K^T / sqrt(d_k)) represent?",
+    "options": [
+      "The loss of each word",
+      "A one-hot vector",
+      "A probability distribution over all tokens in the sequence summing to 1.0",
+      "A vector of word counts"
+    ],
+    "correct": 2,
+    "explanation": "Softmax is applied row-wise, ensuring that attention weights assigned by token i to all tokens j sum to 1.0.",
+    "topic": "Attention Weights",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_14",
+    "chapter": 7,
+    "question": "What is Multi-Head Attention?",
+    "options": [
+      "Using multiple tokenizers",
+      "Running attention on multiple GPUs",
+      "Stacking 100 RNNs",
+      "Linearly projecting Q, K, V into h different subspaces, performing attention in parallel on each head, concatenating outputs, and projecting with W^O"
+    ],
+    "correct": 3,
+    "explanation": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions.",
+    "topic": "Multi-Head Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_15",
+    "chapter": 7,
+    "question": "In the original Transformer base model, if d_model = 512 and number of heads h = 8, what is the dimension of each head d_k?",
+    "options": [
+      "d_k = 512 / 8 = 64",
+      "d_k = 512",
+      "d_k = 128",
+      "d_k = 8"
+    ],
+    "correct": 0,
+    "explanation": "d_k = d_v = d_model / h = 512 / 8 = 64.",
+    "topic": "Multi-Head Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_16",
+    "chapter": 7,
+    "question": "What is the benefit of Multi-Head Attention over Single-Head Attention with the same total dimension?",
+    "options": [
+      "It avoids matrix multiplication",
+      "It eliminates the need for GPUs",
+      "Different heads can specialize in tracking different linguistic relationships simultaneously (e.g. one head tracks syntactic subjects, another tracks coreference)",
+      "It reduces parameter count to 0"
+    ],
+    "correct": 2,
+    "explanation": "Multiple heads enable diversified attention patterns capturing distinct syntactic, semantic, and positional relations.",
+    "topic": "Multi-Head Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_17",
+    "chapter": 7,
+    "question": "Why is Positional Encoding necessary in the Transformer architecture?",
+    "options": [
+      "To make sentence lengths equal",
+      "To avoid division by zero",
+      "Because computers cannot count words",
+      "Self-attention is completely permutation-invariant (order-agnostic); without positional encoding, 'dog bites man' and 'man bites dog' would produce identical representations"
+    ],
+    "correct": 3,
+    "explanation": "Self-attention does not inherently encode sequence order. Positional encodings must be injected so the model knows word positions.",
+    "topic": "Positional Encoding",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_18",
+    "chapter": 7,
+    "question": "What type of positional encoding did the original Vaswani et al. (2017) Transformer propose?",
+    "options": [
+      "Learned one-hot integers",
+      "Random Gaussian noise",
+      "Ascending binary numbers",
+      "Fixed sinusoidal encodings using sine and cosine functions of different frequencies"
+    ],
+    "correct": 3,
+    "explanation": "Sinusoidal positional encoding uses sin(pos / 10000^(2i/d)) and cos(pos / 10000^(2i/d)), allowing the model to easily learn relative positions.",
+    "topic": "Positional Encoding",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_19",
+    "chapter": 7,
+    "question": "How are Positional Encodings combined with input word token embeddings in the Transformer?",
+    "options": [
+      "Concatenated, doubling the dimension",
+      "Multiplied element-wise",
+      "Divided by position",
+      "Added element-wise: Input_Embedding + Positional_Encoding"
+    ],
+    "correct": 3,
+    "explanation": "Positional encodings have the same dimension d_model as token embeddings and are directly added together.",
+    "topic": "Positional Encoding",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_20",
+    "chapter": 7,
+    "question": "What two sub-layers are present in every standard Transformer Encoder layer?",
+    "options": [
+      "Multi-Head Self-Attention and a Position-wise Feed-Forward Network (FFN)",
+      "Softmax and Sigmoid",
+      "Convolution and Pooling",
+      "LSTM and GRU"
+    ],
+    "correct": 0,
+    "explanation": "Each encoder layer contains: 1) Multi-Head Self-Attention, and 2) Position-wise Feed-Forward Network (FFN).",
+    "topic": "Encoder Architecture",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_21",
+    "chapter": 7,
+    "question": "What technique is used around each sub-layer in the Transformer to stabilize deep network training?",
+    "options": [
+      "Residual (skip) connection followed by Layer Normalization: LayerNorm(x + Sublayer(x))",
+      "Dropout only",
+      "Batch Normalization",
+      "Weight clipping"
+    ],
+    "correct": 0,
+    "explanation": "Residual connections (He et al., 2016) prevent vanishing gradients in deep stacks of 12+ layers.",
+    "topic": "Residual Connections",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_22",
+    "chapter": 7,
+    "question": "What is the difference between Layer Normalization (LayerNorm) and Batch Normalization (BatchNorm)?",
+    "options": [
+      "BatchNorm is used only for text",
+      "LayerNorm requires batch size > 1000",
+      "LayerNorm normalizes across the feature dimension for each individual sample independently; BatchNorm normalizes across the batch dimension",
+      "They are identical mathematically"
+    ],
+    "correct": 2,
+    "explanation": "LayerNorm computes mean and variance across hidden features per token, making it invariant to batch size and sequence length.",
+    "topic": "Layer Normalization",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_23",
+    "chapter": 7,
+    "question": "What activation function was used in the Feed-Forward Network (FFN) of the original Transformer?",
+    "options": [
+      "Tanh",
+      "Sigmoid",
+      "ReLU (max(0, x))",
+      "Linear"
+    ],
+    "correct": 2,
+    "explanation": "The original Transformer FFN used two linear transformations with a ReLU activation in between: FFN(x) = max(0, x W1 + b1) W2 + b2.",
+    "topic": "Feed-Forward Network",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_24",
+    "chapter": 7,
+    "question": "In modern Transformers (like BERT, GPT, LLaMA), what activation functions have largely replaced standard ReLU?",
+    "options": [
+      "LeakyReLU 0.5",
+      "Step function",
+      "GELU (Gaussian Error Linear Unit) or SwiGLU",
+      "Sigmoid"
+    ],
+    "correct": 2,
+    "explanation": "GELU provides smoother non-linear gating and has become the de facto standard activation in modern LLMs.",
+    "topic": "Modern Activations",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_25",
+    "chapter": 7,
+    "question": "What is the role of the Causal (Look-ahead / Autoregressive) Mask in the Transformer DECODER?",
+    "options": [
+      "It deletes nouns",
+      "It masks out future positions (setting attention scores to -infinity) to ensure predictions for position t can only depend on known outputs at positions < t",
+      "It hides punctuation marks",
+      "It prevents GPU overheating"
+    ],
+    "correct": 1,
+    "explanation": "In text generation, causal masking prevents the decoder from 'cheating' by peeking at future tokens during training.",
+    "topic": "Decoder Architecture",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_26",
+    "chapter": 7,
+    "question": "What value is added to masked positions before Softmax to ensure their attention probability becomes ZERO?",
+    "options": [
+      "Negative Infinity (-inf, or a very large negative number like -1e9)",
+      "0.0",
+      "1.0",
+      "-1.0"
+    ],
+    "correct": 0,
+    "explanation": "Since e^(-inf) = 0, setting attention logits to -inf forces the softmax probability to exactly 0.",
+    "topic": "Masking",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_27",
+    "chapter": 7,
+    "question": "What is Cross-Attention (Encoder-Decoder Attention) in the Transformer?",
+    "options": [
+      "Attention without Values",
+      "Attention where Queries come from the previous decoder layer, while Keys and Values come from the final encoder output",
+      "Attention between two different languages",
+      "Attention across two different GPUs"
+    ],
+    "correct": 1,
+    "explanation": "Cross-attention enables the decoder to attend to relevant source representations produced by the encoder.",
+    "topic": "Cross-Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_28",
+    "chapter": 7,
+    "question": "How many identical layers were stacked in the original base Transformer Encoder and Decoder?",
+    "options": [
+      "N = 24 layers",
+      "N = 100 layers",
+      "N = 6 layers each",
+      "N = 1 layer"
+    ],
+    "correct": 2,
+    "explanation": "The original base Transformer stacked N = 6 encoder layers and N = 6 decoder layers.",
+    "topic": "Transformer Specs",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_29",
+    "chapter": 7,
+    "question": "What is the time complexity of Self-Attention with respect to sequence length N?",
+    "options": [
+      "O(1)",
+      "O(N^2) quadratic time complexity (computing all N x N pairwise dot products)",
+      "O(log N)",
+      "O(N) linear time"
+    ],
+    "correct": 1,
+    "explanation": "Computing the N x N attention matrix requires O(N^2 * d) operations, which becomes a bottleneck for long sequences (e.g. > 8K tokens).",
+    "topic": "Attention Complexity",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_30",
+    "chapter": 7,
+    "question": "Which of the following models is an ENCODER-ONLY Transformer architecture?",
+    "options": [
+      "T5",
+      "GPT-3",
+      "Original Transformer",
+      "BERT (Bidirectional Encoder Representations from Transformers)"
+    ],
+    "correct": 3,
+    "explanation": "BERT uses only the Transformer Encoder, processing full bidirectional context simultaneously.",
+    "topic": "Model Taxonomy",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_31",
+    "chapter": 7,
+    "question": "Which of the following models is a DECODER-ONLY Transformer architecture?",
+    "options": [
+      "ELECTRA",
+      "BERT",
+      "GPT (Generative Pre-trained Transformer)",
+      "RoBERTa"
+    ],
+    "correct": 2,
+    "explanation": "GPT uses an autoregressive decoder stack with causal masking for left-to-right text generation.",
+    "topic": "Model Taxonomy",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_32",
+    "chapter": 7,
+    "question": "Which of the following models is an ENCODER-DECODER Transformer architecture?",
+    "options": [
+      "LLaMA",
+      "BERT",
+      "T5 (Text-to-Text Transfer Transformer) and BART",
+      "GPT-2"
+    ],
+    "correct": 2,
+    "explanation": "T5 and BART preserve the dual encoder-decoder design for seq2seq tasks like translation and summarization.",
+    "topic": "Model Taxonomy",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_33",
+    "chapter": 7,
+    "question": "Why is an Encoder-only model (like BERT) NOT naturally suited for free-form text generation?",
+    "options": [
+      "Because it is non-causal and bidirectional, meaning it is trained to represent text rather than predict subsequent tokens autoregressively",
+      "Because it outputs images",
+      "Because it has no parameters",
+      "Because it only accepts 1 word"
+    ],
+    "correct": 0,
+    "explanation": "Bidirectional encoders lack causal masking, making left-to-right sequential token generation unnatural and slow.",
+    "topic": "Model Taxonomy",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_34",
+    "chapter": 7,
+    "question": "Why is a Decoder-only model (like GPT) called 'Autoregressive'?",
+    "options": [
+      "It generates text token-by-token, conditioning each new token on the sequence of previously generated tokens: P(w_t | w_{<t})",
+      "It trains without data",
+      "It runs automatic regression tests",
+      "It has no weights"
+    ],
+    "correct": 0,
+    "explanation": "Autoregressive models consume their own past outputs as inputs for generating subsequent steps.",
+    "topic": "Autoregressive Models",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_35",
+    "chapter": 7,
+    "question": "What is the Pre-training and Fine-tuning paradigm in modern NLP?",
+    "options": [
+      "Train only with regex rules",
+      "Train from scratch on every new task",
+      "Pre-train a massive foundation model on unlabelled text via self-supervised objectives, then fine-tune on smaller task-specific labelled datasets",
+      "Train without backpropagation"
+    ],
+    "correct": 2,
+    "explanation": "Self-supervised pre-training learns rich linguistic representations on billions of tokens, which transfer effectively to downstream tasks with minimal fine-tuning.",
+    "topic": "Transfer Learning",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_36",
+    "chapter": 7,
+    "question": "What is a Self-Supervised learning task?",
+    "options": [
+      "Training with zero data",
+      "A task where supervision labels are generated automatically from the raw data itself (e.g. predicting masked words or next words) without human annotation",
+      "Supervision by senior engineers",
+      "Supervision without loss"
+    ],
+    "correct": 1,
+    "explanation": "Self-supervision creates training targets from unlabelled text (e.g. Next-Token Prediction, Masked LM).",
+    "topic": "Self-Supervised Learning",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_37",
+    "chapter": 7,
+    "question": "What is Rotary Position Embedding (RoPE)?",
+    "options": [
+      "A modern relative positional encoding technique that incorporates position information by rotating query and key vectors in complex 2D planes",
+      "A circular neural network",
+      "Adding random integers",
+      "A tokenizer method"
+    ],
+    "correct": 0,
+    "explanation": "RoPE (Su et al., 2021) encodes relative position via rotation matrices, widely adopted in LLaMA, Mistral, and modern LLMs.",
+    "topic": "Modern Positional Encoding",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_38",
+    "chapter": 7,
+    "question": "What is FlashAttention (Dao et al., 2022)?",
+    "options": [
+      "An approximate pruning tool",
+      "An exact, IO-aware GPU memory tiling algorithm that computes self-attention without materializing the massive N x N intermediate matrix in HBM",
+      "A smaller tokenizer",
+      "A new activation function"
+    ],
+    "correct": 1,
+    "explanation": "FlashAttention optimizes GPU SRAM reads/writes, yielding 2-4x speedups and dramatically reduced memory for self-attention.",
+    "topic": "Modern Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_39",
+    "chapter": 7,
+    "question": "What is Multi-Query Attention (MQA) and Grouped-Query Attention (GQA)?",
+    "options": [
+      "Multi-GPU attention",
+      "Attention on multiple queries at once",
+      "Attention without Softmax",
+      "Techniques where multiple Query heads share a SINGLE Key-Value head (MQA) or a few groups of KV heads (GQA) to drastically reduce KV-cache memory during inference"
+    ],
+    "correct": 3,
+    "explanation": "GQA (used in LLaMA-2/3) reduces the memory bandwidth bottleneck of the KV-cache during generation.",
+    "topic": "Modern Attention",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_40",
+    "chapter": 7,
+    "question": "What is the KV-Cache in Transformer autoregressive inference?",
+    "options": [
+      "A database of sentences",
+      "A hardware CPU cache",
+      "A disk cache for weights",
+      "Caching previously computed Key and Value vectors in GPU memory so they do not need to be recomputed for previous tokens at each new step"
+    ],
+    "correct": 3,
+    "explanation": "KV-caching ensures each newly generated token only computes attention against cached past keys and values in O(N) instead of O(N^2).",
+    "topic": "Inference Optimization",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_41",
+    "chapter": 7,
+    "question": "What is the dimension of the intermediate layer in the Position-wise Feed-Forward Network relative to d_model in the original Transformer?",
+    "options": [
+      "Equal to d_model",
+      "4 times d_model (d_ff = 4 * d_model = 2048 when d_model = 512)",
+      "Half of d_model",
+      "100 times d_model"
+    ],
+    "correct": 1,
+    "explanation": "The standard Transformer FFN expands the dimension by a factor of 4 (from 512 to 2048) before projecting back to 512.",
+    "topic": "Feed-Forward Network",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_42",
+    "chapter": 7,
+    "question": "What is the role of Dropout in the Transformer architecture?",
+    "options": [
+      "Speeding up training",
+      "Translating words",
+      "Regularization: randomly zeroing activations with probability p (e.g., 0.1) during training to prevent co-adaptation of features",
+      "Removing stopwords"
+    ],
+    "correct": 2,
+    "explanation": "Dropout is applied to sub-layer outputs, attention weights, and embeddings to prevent overfitting.",
+    "topic": "Regularization",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_43",
+    "chapter": 7,
+    "question": "In Transformer self-attention, does token A's attention weight on token B equal token B's attention weight on token A?",
+    "options": [
+      "Yes, because of LayerNorm",
+      "No, self-attention is generally ASYMMETRIC because Query_A . Key_B does not equal Query_B . Key_A",
+      "Yes, if d_k is even",
+      "Yes, dot products are always symmetric"
+    ],
+    "correct": 1,
+    "explanation": "Because Q and K use different projection matrices W^Q != W^K, attention(A -> B) is not equal to attention(B -> A).",
+    "topic": "Attention Properties",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_44",
+    "chapter": 7,
+    "question": "What is the output dimension of a Multi-Head Attention layer with sequence length L and model dimension d_model?",
+    "options": [
+      "h x L",
+      "d_model x d_model",
+      "L x d_model",
+      "L x L"
+    ],
+    "correct": 2,
+    "explanation": "Multi-Head Attention projects concatenated heads back to d_model, preserving the tensor shape (Batch, L, d_model).",
+    "topic": "Tensor Shapes",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch07_45",
+    "chapter": 7,
+    "question": "How does the Transformer handle variable-length sequences within a single mini-batch?",
+    "options": [
+      "By padding shorter sequences with a special <PAD> token and applying a padding mask to ignore pad tokens in self-attention",
+      "By deleting sentences",
+      "By training on 1 word at a time",
+      "By truncating all sentences to 1 word"
+    ],
+    "correct": 0,
+    "explanation": "Padding masks ensure <PAD> tokens receive zero attention weight and contribute no information to valid tokens.",
+    "topic": "Padding & Masking",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_46",
+    "chapter": 7,
+    "question": "What is Teacher Forcing during Transformer decoder training?",
+    "options": [
+      "Using a pre-trained model as a loss",
+      "Training on teacher lectures",
+      "Having a human supervise the training",
+      "Feeding the ground-truth target tokens (shifted right) into the decoder input rather than using model-generated tokens from previous steps"
+    ],
+    "correct": 3,
+    "explanation": "Teacher forcing allows all decoder positions to be trained in parallel during training using ground truth.",
+    "topic": "Teacher Forcing",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_47",
+    "chapter": 7,
+    "question": "Can the Transformer Encoder process an entire sentence of 512 tokens simultaneously during training?",
+    "options": [
+      "No, it must process word by word",
+      "Only with batch size 1",
+      "Only on Sundays",
+      "Yes, all tokens are processed in parallel through matrix multiplications across the sequence dimension"
+    ],
+    "correct": 3,
+    "explanation": "Unlike RNNs, the Transformer processes the entire sequence in parallel across all time steps.",
+    "topic": "Parallelism",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch07_48",
+    "chapter": 7,
+    "question": "What is Pre-LayerNorm vs Post-LayerNorm in Transformer architectures?",
+    "options": [
+      "They are identical",
+      "Pre-LN applies LayerNorm BEFORE each sublayer (x + Sublayer(LN(x))), improving gradient flow and training stability without warm-up",
+      "Post-LN is an image technique",
+      "Pre-LN normalizes text before tokenization"
+    ],
+    "correct": 1,
+    "explanation": "Modern LLMs universally adopt Pre-LN (or RMSNorm) because it enables much more stable optimization than the original Post-LN.",
+    "topic": "Modern Architecture",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch07_49",
+    "chapter": 7,
+    "question": "What is RMSNorm (Root Mean Square Normalization)?",
+    "options": [
+      "A computationally lighter variant of LayerNorm that normalizes by the root mean square without subtracting the mean",
+      "Normalization using audio decibels",
+      "A metric for translation",
+      "A tokenizer"
+    ],
+    "correct": 0,
+    "explanation": "RMSNorm simplifies LayerNorm by enforcing scale invariance without shifting by the mean, speeding up computation.",
+    "topic": "Modern Architecture",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch07_50",
+    "chapter": 7,
+    "question": "What is the primary reason the Transformer became the foundational backbone of modern generative AI?",
+    "options": [
+      "It has no math formulas",
+      "It was invented by a university",
+      "Its high parallelizability on GPUs and remarkable empirical scaling laws: performance predictably improves with more compute, data, and parameters",
+      "It requires zero training data"
+    ],
+    "correct": 2,
+    "explanation": "Transformers scale effectively across orders of magnitude in compute, parameters, and tokens (Kaplan et al., 2020).",
+    "topic": "Transformer Impact",
+    "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_01",
+    "chapter": 8,
+    "question": "What does the acronym BERT stand for (Devlin et al., 2018)?",
+    "options": [
+      "Bidirectional Encoder Representations from Transformers",
+      "Binary Encoded Recurrent Tree",
+      "Basic Entity Recognition Transformer",
+      "Bi-directional Error Reduction Tool"
+    ],
+    "correct": 0,
+    "explanation": "BERT stands for Bidirectional Encoder Representations from Transformers.",
+    "topic": "BERT Overview",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_02",
+    "chapter": 8,
+    "question": "What is the core structural difference between BERT's architecture and the original Vaswani et al. Transformer?",
+    "options": [
+      "BERT uses ONLY the Transformer Encoder stack, processing context bidirectionally",
+      "BERT uses RNN layers",
+      "BERT uses only the Decoder",
+      "BERT has no attention layers"
+    ],
+    "correct": 0,
+    "explanation": "BERT is an encoder-only model that allows every token to attend bidirectionally to all other tokens in the sequence.",
+    "topic": "BERT Architecture",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_03",
+    "chapter": 8,
+    "question": "What are the two model sizes released in the original BERT paper?",
+    "options": [
+      "BERT-Mini (1M params) and BERT-Max (100B params)",
+      "BERT-1 and BERT-2",
+      "BERT-Base (12 layers, 768 hidden, 12 heads, 110M params) and BERT-Large (24 layers, 1024 hidden, 16 heads, 340M params)",
+      "BERT-Small and BERT-Huge"
+    ],
+    "correct": 2,
+    "explanation": "BERT-Base contains 12 layers (110M parameters) and BERT-Large contains 24 layers (340M parameters).",
+    "topic": "BERT Specs",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_04",
+    "chapter": 8,
+    "question": "What three embedding vectors are summed together to create BERT's input representation for each token?",
+    "options": [
+      "Token Embeddings + Segment Embeddings + Position Embeddings",
+      "Query + Key + Value",
+      "Word Embeddings + Syntax Embeddings + Document Embeddings",
+      "TF + IDF + PPMI"
+    ],
+    "correct": 0,
+    "explanation": "BERT's input representation E is the element-wise sum of Token, Segment, and Position embeddings.",
+    "topic": "Input Representation",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_05",
+    "chapter": 8,
+    "question": "What is the purpose of the special token `[CLS]` placed at the beginning of every BERT input sequence?",
+    "options": [
+      "It divides words into syllables",
+      "Its final hidden state vector serves as the aggregated sequence-level representation for classification tasks",
+      "It marks the end of a sentence",
+      "It masks unknown words"
+    ],
+    "correct": 1,
+    "explanation": "The final hidden state corresponding to `[CLS]` (h_[CLS]) is fed into a classification head for sentence-level tasks.",
+    "topic": "Special Tokens",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_06",
+    "chapter": 8,
+    "question": "What is the purpose of the special token `[SEP]` in BERT?",
+    "options": [
+      "It normalizes numbers",
+      "It acts as a separator between two sentences (e.g. Question and Passage) and marks the end of the input sequence",
+      "It applies dropout",
+      "It classifies sentiment"
+    ],
+    "correct": 1,
+    "explanation": "`[SEP]` separates sentence pairs (e.g. `[CLS] Premise [SEP] Hypothesis [SEP]`) and delimits sequence boundaries.",
+    "topic": "Special Tokens",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_07",
+    "chapter": 8,
+    "question": "What subword tokenization algorithm does BERT use?",
+    "options": [
+      "WordPiece (using '##' to denote subwords that continue a previous word)",
+      "SentencePiece unigram",
+      "Porter Stemmer",
+      "Byte-Pair Encoding (BPE)"
+    ],
+    "correct": 0,
+    "explanation": "BERT uses WordPiece tokenization with a vocabulary of ~30,000 tokens, prefixing continuation subwords with '##'.",
+    "topic": "WordPiece",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_08",
+    "chapter": 8,
+    "question": "What are the two self-supervised pre-training objectives used to train original BERT?",
+    "options": [
+      "Autoregressive generation and Contrastive loss",
+      "K-Means and Softmax",
+      "Masked Language Model (MLM) and Next Sentence Prediction (NSP)",
+      "Skip-gram and CBOW"
+    ],
+    "correct": 2,
+    "explanation": "BERT is pre-trained simultaneously on Masked Language Model (MLM) and Next Sentence Prediction (NSP).",
+    "topic": "Pre-training Objectives",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_09",
+    "chapter": 8,
+    "question": "In BERT's Masked Language Model (MLM), what overall percentage of input tokens are selected for masking?",
+    "options": [
+      "50% of all tokens",
+      "5% of all tokens",
+      "15% of all tokens",
+      "100% of all tokens"
+    ],
+    "correct": 2,
+    "explanation": "BERT randomly selects 15% of all WordPiece tokens in the sequence to be corrupted and predicted.",
+    "topic": "Masked LM",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_10",
+    "chapter": 8,
+    "question": "Among the 15% of tokens selected for masking in BERT, how are they modified according to the 80/10/10 rule?",
+    "options": [
+      "100% replaced with [MASK]",
+      "50% [MASK], 50% unchanged",
+      "80% deleted, 20% replaced",
+      "80% replaced with [MASK], 10% replaced with a random word, 10% kept unchanged"
+    ],
+    "correct": 3,
+    "explanation": "To mitigate mismatch between pre-training and fine-tuning (where [MASK] never appears), 10% are replaced with random words and 10% remain intact.",
+    "topic": "80/10/10 Rule",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_11",
+    "chapter": 8,
+    "question": "Why does BERT keep 10% of the masked tokens UNCHANGED during MLM pre-training?",
+    "options": [
+      "To bias the representation toward the actual observed word, preventing the encoder from only learning representations for [MASK]",
+      "To increase vocabulary size",
+      "To save GPU memory",
+      "Because of a bug in the code"
+    ],
+    "correct": 0,
+    "explanation": "If only [MASK] tokens were predicted, the model would only learn contextual representations when [MASK] is present; keeping 10% unchanged forces true representation maintenance.",
+    "topic": "80/10/10 Rule",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_12",
+    "chapter": 8,
+    "question": "What is the task in Next Sentence Prediction (NSP)?",
+    "options": [
+      "Generate the next sentence autoregressively",
+      "Binary classification: predict whether Sentence B is the actual next sentence that follows Sentence A in the original text (IsNext vs NotNext)",
+      "Translate Sentence B to French",
+      "Count words in Sentence B"
+    ],
+    "correct": 1,
+    "explanation": "NSP trains the model to understand sentence relationships: 50% of the time B follows A (IsNext), 50% of the time B is a random sentence (NotNext).",
+    "topic": "Next Sentence Prediction",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_13",
+    "chapter": 8,
+    "question": "What loss function is minimized during BERT pre-training?",
+    "options": [
+      "Perplexity loss",
+      "Mean squared error",
+      "Hinge loss",
+      "The sum of the Masked LM cross-entropy loss and the Next Sentence Prediction binary cross-entropy loss"
+    ],
+    "correct": 3,
+    "explanation": "L_total = L_MLM + L_NSP: cross-entropy over masked vocabulary tokens plus binary cross-entropy on sentence adjacency.",
+    "topic": "Pre-training Loss",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_14",
+    "chapter": 8,
+    "question": "How is BERT fine-tuned for Single-Sentence Text Classification (e.g. Sentiment Analysis on SST-2)?",
+    "options": [
+      "Feed the final hidden vector of the `[CLS]` token (h_[CLS]) into a task-specific linear classifier layer W * h + b and train with cross-entropy",
+      "Extract TF-IDF vectors from BERT",
+      "Pass all tokens to a decoder",
+      "Generate text word-by-word"
+    ],
+    "correct": 0,
+    "explanation": "A single linear projection layer is added on top of the `[CLS]` vector, fine-tuning all model weights end-to-end.",
+    "topic": "Fine-Tuning Tasks",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_15",
+    "chapter": 8,
+    "question": "How is BERT formatted for Sentence-Pair Classification (e.g. Natural Language Inference on MNLI)?",
+    "options": [
+      "Train two separate BERT models",
+      "Concatenate sentences with a plus sign",
+      "Input format: `[CLS] Premise [SEP] Hypothesis [SEP]`, with Segment A for premise and Segment B for hypothesis; classify using `[CLS]`",
+      "Pass premise through encoder and hypothesis through decoder"
+    ],
+    "correct": 2,
+    "explanation": "Both sentences are packed into a single sequence separated by `[SEP]`, allowing cross-attention between sentences across all 12 layers.",
+    "topic": "Fine-Tuning Tasks",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_16",
+    "chapter": 8,
+    "question": "How is BERT fine-tuned for Named Entity Recognition (NER / Token Classification)?",
+    "options": [
+      "Run K-Means on embeddings",
+      "Pass the final hidden state vector h_i of each individual token through a linear classifier layer to predict BIO entity labels",
+      "Use only the `[CLS]` token",
+      "Use only the `[SEP]` token"
+    ],
+    "correct": 1,
+    "explanation": "Each token position outputs a representation h_i, which is classified into entity categories (e.g., B-PER, I-PER, O).",
+    "topic": "Token Classification",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_17",
+    "chapter": 8,
+    "question": "How does BERT perform Extractive Question Answering on the SQuAD dataset?",
+    "options": [
+      "Look up the answer in Google Search",
+      "Classify question into True/False only",
+      "Generate the answer character by character",
+      "Input `[CLS] Question [SEP] Passage [SEP]`; compute dot products between passage token vectors and learned Start/End vectors to find span boundaries"
+    ],
+    "correct": 3,
+    "explanation": "BERT scores every passage token as a potential answer start position and end position using learned start and end parameter vectors.",
+    "topic": "Extractive QA",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_18",
+    "chapter": 8,
+    "question": "What is the maximum sequence length (in WordPiece tokens) that standard BERT can process?",
+    "options": [
+      "512 tokens",
+      "Infinite tokens",
+      "100 tokens",
+      "4,096 tokens"
+    ],
+    "correct": 0,
+    "explanation": "Standard BERT was pre-trained with learned positional embeddings up to a maximum context window of 512 tokens.",
+    "topic": "BERT Limitations",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_19",
+    "chapter": 8,
+    "question": "Why does standard BERT scale poorly beyond 512 tokens?",
+    "options": [
+      "The self-attention mechanism requires O(N^2) memory and compute with respect to sequence length N",
+      "Because WordPiece only has 512 tokens",
+      "BERT cannot read long sentences",
+      "GPU drivers crash at 513 tokens"
+    ],
+    "correct": 0,
+    "explanation": "The quadratic complexity of full pairwise attention makes scaling to thousands of tokens computationally demanding.",
+    "topic": "Attention Bottleneck",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_20",
+    "chapter": 8,
+    "question": "How does RoBERTa (Liu et al., 2019) modify the original BERT pre-training recipe?",
+    "options": [
+      "It replaces attention with convolution",
+      "It uses only 1 layer",
+      "It adds an LSTM decoder",
+      "It removes the Next Sentence Prediction (NSP) objective, uses Dynamic Masking, trains on larger batches for longer, and uses much more data"
+    ],
+    "correct": 3,
+    "explanation": "RoBERTa demonstrated that removing NSP and training with larger batches, dynamic masking, and 160GB of text substantially outperforms BERT.",
+    "topic": "RoBERTa",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_21",
+    "chapter": 8,
+    "question": "What is Dynamic Masking in RoBERTa compared to Static Masking in BERT?",
+    "options": [
+      "Masking patterns are generated on-the-fly every time a sequence is fed to the model, rather than duplicating data with static masks 10 times during preprocessing",
+      "Masking only vowels",
+      "Masking without random words",
+      "Masking entire sentences"
+    ],
+    "correct": 0,
+    "explanation": "Dynamic masking generates new random mask patterns across epochs, exposing the model to vastly more masked variations.",
+    "topic": "Dynamic Masking",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_22",
+    "chapter": 8,
+    "question": "What parameter reduction techniques does ALBERT (Lan et al., 2019) introduce?",
+    "options": [
+      "Factorized embedding parameterization (decoupling embedding size E from hidden size H) and cross-layer parameter sharing",
+      "Deleting the FFN layer",
+      "Using 8-bit integers only",
+      "Pruning all attention heads"
+    ],
+    "correct": 0,
+    "explanation": "ALBERT shares parameters across all layers and factors the embedding matrix (V x E, E x H), reducing parameters by up to 90%.",
+    "topic": "ALBERT",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_23",
+    "chapter": 8,
+    "question": "What is DistilBERT (Sanh et al., 2019)?",
+    "options": [
+      "A BERT model with 100 layers",
+      "A translation of BERT into C++",
+      "A distilled, compressed version of BERT that is 40% smaller and 60% faster while retaining 97% of BERT's language understanding capabilities",
+      "A model trained only on tweets"
+    ],
+    "correct": 2,
+    "explanation": "DistilBERT uses Knowledge Distillation from a BERT-Base teacher into a 6-layer student model.",
+    "topic": "Knowledge Distillation",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_24",
+    "chapter": 8,
+    "question": "What is Knowledge Distillation in deep learning?",
+    "options": [
+      "Training a compact 'student' model to reproduce the soft probability distribution (logits) of a large 'teacher' model",
+      "Converting weights to text",
+      "Reading Wikipedia articles",
+      "Pruning zero weights"
+    ],
+    "correct": 0,
+    "explanation": "Knowledge distillation transfers the dark knowledge (soft output distribution) of an ensemble or large teacher to a lightweight student.",
+    "topic": "Knowledge Distillation",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_25",
+    "chapter": 8,
+    "question": "What is ELECTRA (Clark et al., 2020)?",
+    "options": [
+      "A pre-training approach using Replaced Token Detection: a discriminator predicts whether each token was replaced by a small generator or is authentic",
+      "A rule-based parsing engine",
+      "A solar-powered Transformer",
+      "An electric car chatbot"
+    ],
+    "correct": 0,
+    "explanation": "ELECTRA replaces MLM with a binary discriminator task trained on all tokens (not just 15%), improving sample efficiency.",
+    "topic": "ELECTRA",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_26",
+    "chapter": 8,
+    "question": "What is the primary motivation for Parameter-Efficient Fine-Tuning (PEFT)?",
+    "options": [
+      "PEFT eliminates the loss function",
+      "PEFT requires no training data",
+      "Full fine-tuning is illegal",
+      "Fine-tuning all parameters of massive LLMs is computationally expensive and requires storing a separate massive checkpoint for every single task"
+    ],
+    "correct": 3,
+    "explanation": "PEFT freezes the base foundation model and trains a tiny fraction of parameters (<1%), saving huge amounts of memory and storage.",
+    "topic": "PEFT Motivation",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_27",
+    "chapter": 8,
+    "question": "How does LoRA (Low-Rank Adaptation, Hu et al., 2021) work?",
+    "options": [
+      "It trains using genetic algorithms",
+      "It rounds weights to integers",
+      "It drops half the layers",
+      "It freezes the pre-trained model weights W_0 and injects trainable rank-decomposition matrices Delta W = B * A, where rank r << d"
+    ],
+    "correct": 3,
+    "explanation": "LoRA decomposes weight updates into two low-rank matrices Delta W = B * A (r << d), reducing trainable parameters by 10,000x.",
+    "topic": "LoRA",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_28",
+    "chapter": 8,
+    "question": "In LoRA with rank r = 8, hidden dimension d = 4096, what is the parameter count of matrices A and B for one linear layer?",
+    "options": [
+      "4096 params",
+      "8 params",
+      "A has 4096 * 8 = 32,768 params; B has 8 * 4096 = 32,768 params; Total = 65,536 (compared to 16,777,216 for full W)",
+      "16 million params"
+    ],
+    "correct": 2,
+    "explanation": "Decomposing 4096x4096 into (4096x8) and (8x4096) reduces parameters from 16.7M down to just 65.5K (a 99.6% reduction).",
+    "topic": "LoRA Calculation",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_29",
+    "chapter": 8,
+    "question": "Can LoRA weights be merged directly back into the original base weights W_0 for zero-latency inference?",
+    "options": [
+      "Only if quantized to 2 bits",
+      "Yes: W_new = W_0 + B * A can be computed once before deployment, incurring zero additional inference latency",
+      "No, LoRA requires a separate GPU",
+      "No, it causes NaN errors"
+    ],
+    "correct": 1,
+    "explanation": "Because matrix addition is associative, W_new = W_0 + BA merges into a standard linear layer with zero inference overhead.",
+    "topic": "LoRA Deployment",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_30",
+    "chapter": 8,
+    "question": "What are Adapter layers in Parameter-Efficient Fine-Tuning (Houlsby et al., 2019)?",
+    "options": [
+      "Hardware cables connecting GPUs",
+      "Audio adapters",
+      "Small bottleneck feed-forward sub-layers inserted after attention and FFN layers while freezing original Transformer weights",
+      "Special tokenizers"
+    ],
+    "correct": 2,
+    "explanation": "Adapters insert small bottleneck layers (down-projection, non-linearity, up-projection) between Transformer sub-layers.",
+    "topic": "Adapters",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_31",
+    "chapter": 8,
+    "question": "What is Prefix Tuning (Li & Liang, 2021)?",
+    "options": [
+      "Prepending continuous, trainable task-specific virtual prefix vectors to the Keys and Values in every attention layer while freezing model weights",
+      "Renaming files",
+      "Tokenizing with prefixes only",
+      "Adding words to the start of a prompt"
+    ],
+    "correct": 0,
+    "explanation": "Prefix tuning prepends learnable continuous vectors to K and V states in attention layers.",
+    "topic": "Prefix Tuning",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_32",
+    "chapter": 8,
+    "question": "What is Prompt Tuning (Lester et al., 2021)?",
+    "options": [
+      "Sorting sentences by length",
+      "Prepending learnable continuous embedding tokens strictly to the input sequence embedding layer while keeping the entire model frozen",
+      "Engineering regex rules",
+      "Writing better English instructions for ChatGPT"
+    ],
+    "correct": 1,
+    "explanation": "Prompt tuning optimizes continuous soft prompt vectors at the input embedding level only, freezing all Transformer weights.",
+    "topic": "Prompt Tuning",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_33",
+    "chapter": 8,
+    "question": "What benchmark suite is widely used to evaluate general language understanding capabilities across 9 NLU tasks?",
+    "options": [
+      "MNIST",
+      "ImageNet",
+      "GLUE (General Language Understanding Evaluation) and SuperGLUE",
+      "BLEU-100"
+    ],
+    "correct": 2,
+    "explanation": "GLUE and SuperGLUE aggregate classification tasks (MNLI, QQP, SST-2, CoLA, STS-B, RTE, etc.) to benchmark NLU models.",
+    "topic": "GLUE Benchmark",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_34",
+    "chapter": 8,
+    "question": "What is the typical learning rate used when fine-tuning BERT on downstream tasks?",
+    "options": [
+      "Large learning rates: 0.1 to 1.0",
+      "Small learning rates: between 2e-5 and 5e-5",
+      "Negative learning rates: -0.01",
+      "100.0"
+    ],
+    "correct": 1,
+    "explanation": "Because BERT is already pre-trained, fine-tuning requires very gentle weight updates (2e-5 to 5e-5) to avoid catastrophic forgetting.",
+    "topic": "Fine-Tuning Hyperparameters",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_35",
+    "chapter": 8,
+    "question": "What is Catastrophic Forgetting during neural network fine-tuning?",
+    "options": [
+      "When a computer runs out of RAM",
+      "When the model deletes its weights",
+      "A hardware memory crash",
+      "The tendency of a model to abruptly lose previously acquired general linguistic knowledge when trained intensely on a specific downstream task"
+    ],
+    "correct": 3,
+    "explanation": "Catastrophic forgetting occurs when new weight updates overwrite the pre-trained feature representations.",
+    "topic": "Fine-Tuning Challenges",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_36",
+    "chapter": 8,
+    "question": "What is Linear Probing vs Full Fine-Tuning?",
+    "options": [
+      "Linear probing uses no linear algebra",
+      "Linear probing freezes all pre-trained Transformer weights and only trains the final linear classification head; Full fine-tuning updates all weights",
+      "Full fine-tuning only trains the first layer",
+      "They are identical"
+    ],
+    "correct": 1,
+    "explanation": "Linear probing tests the inherent quality of frozen features; full fine-tuning adapts the entire backbone to the target task.",
+    "topic": "Fine-Tuning Strategies",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_37",
+    "chapter": 8,
+    "question": "What is Warmup in the learning rate schedule for Transformer fine-tuning?",
+    "options": [
+      "Linearly increasing the learning rate from 0 to its maximum target value over the first several hundred steps before decaying it",
+      "Pre-processing text on CPU",
+      "Training without backpropagation",
+      "Heating the GPU before running code"
+    ],
+    "correct": 0,
+    "explanation": "Learning rate warmup prevents unstable gradients from destabilizing pre-trained weights in early optimization steps.",
+    "topic": "Optimization",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_38",
+    "chapter": 8,
+    "question": "In extractive question answering, what does the model output if the answer to a question is NOT contained in the passage?",
+    "options": [
+      "It returns an empty string from the dictionary",
+      "The start and end pointers both point to the `[CLS]` token position (indicating unanswerable question)",
+      "It guesses a random word",
+      "It throws an exception"
+    ],
+    "correct": 1,
+    "explanation": "In SQuAD 2.0, unanswerable questions are trained to assign maximum start and end probabilities to index 0 (`[CLS]`).",
+    "topic": "Extractive QA",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_39",
+    "chapter": 8,
+    "question": "What is Cross-Lingual Language Modeling (e.g., mBERT, XLM-RoBERTa)?",
+    "options": [
+      "Translating every sentence into English first",
+      "Pre-training a single shared Transformer encoder on text from 100+ languages simultaneously using a shared multilingual subword vocabulary",
+      "Training 100 independent BERT models",
+      "Using Google Translate API"
+    ],
+    "correct": 1,
+    "explanation": "Multilingual BERT and XLM-R learn cross-lingual representations across 100+ languages without explicit parallel translation pairs.",
+    "topic": "Cross-Lingual BERT",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_40",
+    "chapter": 8,
+    "question": "What is the Hugging Face Transformers library?",
+    "options": [
+      "The leading open-source Python ecosystem for building, downloading, training, and deploying pre-trained Transformer models (`from transformers import ...`)",
+      "A hardware robot controller",
+      "A proprietary Google software",
+      "A database engine"
+    ],
+    "correct": 0,
+    "explanation": "Hugging Face `transformers` is the standard open-source library for BERT, GPT, T5, and thousands of pre-trained models.",
+    "topic": "Hugging Face",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_41",
+    "chapter": 8,
+    "question": "In Hugging Face, which class automatically loads the appropriate classification head for BERT sequence classification?",
+    "options": [
+      "AutoModelForSequenceClassification",
+      "AutoConfigOnly",
+      "AutoModelForCausalLM",
+      "AutoTokenizer"
+    ],
+    "correct": 0,
+    "explanation": "`AutoModelForSequenceClassification.from_pretrained('bert-base-uncased')` loads BERT with a classification linear layer.",
+    "topic": "Hugging Face",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_42",
+    "chapter": 8,
+    "question": "What does the 'uncased' suffix in `bert-base-uncased` mean?",
+    "options": [
+      "The model has no casing constraints",
+      "The model does not use case statements",
+      "The model is not wrapped in a case",
+      "The text was lowercased and accents stripped before WordPiece tokenization"
+    ],
+    "correct": 3,
+    "explanation": "`uncased` means all text was normalized to lowercase during preprocessing, whereas `cased` preserves original capitalization.",
+    "topic": "BERT Variants",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_43",
+    "chapter": 8,
+    "question": "Why is `bert-base-cased` preferred for Named Entity Recognition (NER)?",
+    "options": [
+      "Because NER requires uppercase labels",
+      "Because uncased models cannot output text",
+      "Because capitalization provides strong signals for detecting proper names of persons, organizations, and locations",
+      "Because cased models are 2x faster"
+    ],
+    "correct": 2,
+    "explanation": "Capital letters distinguish entities ('Washington' person/city vs 'washing' verb), making cased models superior for NER.",
+    "topic": "BERT Variants",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_44",
+    "chapter": 8,
+    "question": "What is Weight Decay in AdamW optimizer during Transformer training?",
+    "options": [
+      "Deleting random layers",
+      "A decoupled L2 regularization technique that subtracts a fraction of weights directly at each update, fixing weight decay integration in Adam",
+      "Corrupted weights decaying on disk",
+      "Reducing learning rate to zero"
+    ],
+    "correct": 1,
+    "explanation": "Loshchilov & Hutter (2019) showed standard Adam incorrectly mixes L2 penalties with moving averages; AdamW decouples weight decay.",
+    "topic": "AdamW Optimizer",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_45",
+    "chapter": 8,
+    "question": "What is Mixed Precision Training (FP16 / BF16)?",
+    "options": [
+      "Training on two computers",
+      "Training without decimals",
+      "Mixing integers and floats",
+      "Using 16-bit floating-point numbers for weights and activations while maintaining 32-bit master weights, cutting VRAM by ~50% and speeding up Tensor Cores"
+    ],
+    "correct": 3,
+    "explanation": "Mixed precision (FP16/BF16) halves GPU memory footprint and exploits hardware Tensor Cores for massive throughput gains.",
+    "topic": "Training Optimization",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_46",
+    "chapter": 8,
+    "question": "What is Sentence-BERT (SBERT, Reimers & Gurevych, 2019)?",
+    "options": [
+      "A text generation tool",
+      "BERT trained only on single words",
+      "A parser for syntax",
+      "A modification of BERT using siamese network structures to derive semantically meaningful sentence embeddings that can be compared via Cosine Similarity"
+    ],
+    "correct": 3,
+    "explanation": "Standard BERT requires passing sentence pairs together; SBERT produces independent sentence embeddings for fast vector search.",
+    "topic": "Sentence-BERT",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch08_47",
+    "chapter": 8,
+    "question": "Why cannot standard BERT produce standalone sentence embeddings efficiently for semantic search across 10,000 documents?",
+    "options": [
+      "Finding the most similar pair would require passing all 10,000 * 9,999 / 2 ≈ 50 million pairs through BERT individually, taking hours",
+      "Because BERT only accepts 1 document",
+      "Because BERT cannot calculate cosine",
+      "Because BERT vectors are 1D"
+    ],
+    "correct": 0,
+    "explanation": "Pairwise cross-encoder classification has O(N^2) combinatorial overhead; SBERT solves this by computing embeddings once in O(N).",
+    "topic": "Sentence-BERT",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch08_48",
+    "chapter": 8,
+    "question": "What pooling strategy is commonly used in SBERT to derive a fixed-size sentence vector from BERT's token outputs?",
+    "options": [
+      "Taking the first letter",
+      "Multiplying all vectors",
+      "Mean Pooling: taking the average of all contextual token vectors across the sentence",
+      "Summing token lengths"
+    ],
+    "correct": 2,
+    "explanation": "Mean pooling over all output token vectors generally yields more semantically representative sentence vectors than h_[CLS].",
+    "topic": "Sentence-BERT",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch08_49",
+    "chapter": 8,
+    "question": "What is Quantization (e.g. INT8, INT4 / bitsandbytes) in deep learning inference?",
+    "options": [
+      "Dividing model by 8",
+      "Compressing model weights from 16-bit or 32-bit floating point down to 8-bit or 4-bit integers with minimal loss in accuracy",
+      "Training for 4 epochs only",
+      "Deleting 50% of the words"
+    ],
+    "correct": 1,
+    "explanation": "Quantization compresses model memory footprint by 2x to 4x, allowing large Transformer models to run on consumer GPUs.",
+    "topic": "Quantization",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch08_50",
+    "chapter": 8,
+    "question": "What is the primary difference between Fine-Tuning and Pre-Training?",
+    "options": [
+      "Pre-training requires human labels",
+      "Pre-training learns general language features from huge unlabelled corpora; Fine-tuning adapts those features to a specific task using labelled data",
+      "Fine-tuning takes 100x longer",
+      "They use completely different architectures"
+    ],
+    "correct": 1,
+    "explanation": "Pre-training is general self-supervised representation learning; fine-tuning is task-specific supervised adaptation.",
+    "topic": "Transfer Learning",
+    "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_01",
+    "chapter": 9,
+    "question": "What are the three historical paradigms of Machine Translation in chronological order?",
+    "options": [
+      "Neural MT -> Rule-Based MT -> SMT",
+      "Regex MT -> Vector MT -> Transformer MT",
+      "Rule-Based MT (RBMT) -> Statistical MT (SMT) -> Neural MT (NMT)",
+      "SMT -> NMT -> RBMT"
+    ],
+    "correct": 2,
+    "explanation": "Machine translation evolved from linguistic rule-based systems (1950s-1980s) to statistical models (1990s-2010s) and deep neural models (2014-present).",
+    "topic": "MT History",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_02",
+    "chapter": 9,
+    "question": "What is the Noisy Channel Model formulation in Statistical Machine Translation (translating foreign sentence F to English E)?",
+    "options": [
+      "E_hat = argmax_E [ P(E) - P(F) ]",
+      "E_hat = argmax_E [ P(E|F) / P(F) ]",
+      "E_hat = argmax_E [ P(F|E) * P(E) ]",
+      "E_hat = P(F) * P(E)"
+    ],
+    "correct": 2,
+    "explanation": "Under the noisy channel model, Bayes' rule decomposes translation into: P(F|E) (Translation Model) * P(E) (Language Model).",
+    "topic": "Noisy Channel Model",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_03",
+    "chapter": 9,
+    "question": "In the SMT noisy channel model, what is the role of the Language Model P(E)?",
+    "options": [
+      "It aligns source words to target words",
+      "It ensures fluency and grammatical naturalness in the target language (learned from unlabelled monolingual target text)",
+      "It calculates BLEU score",
+      "It translates nouns only"
+    ],
+    "correct": 1,
+    "explanation": "The language model P(E) measures how natural and fluent the target sentence is in English.",
+    "topic": "Noisy Channel Model",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_04",
+    "chapter": 9,
+    "question": "In the SMT noisy channel model, what is the role of the Translation Model P(F|E)?",
+    "options": [
+      "It removes stopwords",
+      "It ensures adequacy and semantic fidelity: how likely the foreign text F translates the English text E (learned from parallel bilingual corpora)",
+      "It checks English spelling",
+      "It parses grammar trees"
+    ],
+    "correct": 1,
+    "explanation": "The translation model P(F|E) guarantees that the meaning of the source sentence is faithfully preserved.",
+    "topic": "Noisy Channel Model",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_05",
+    "chapter": 9,
+    "question": "What is a Parallel Corpus (Bilingual Bitext) in Machine Translation?",
+    "options": [
+      "Two separate monolingual books",
+      "A dictionary of single words",
+      "A collection of paired texts where each sentence in language A is aligned with its corresponding translation in language B",
+      "A corpus without punctuation"
+    ],
+    "correct": 2,
+    "explanation": "Parallel corpora (like Europarl or UN proceedings) provide sentence-aligned translation pairs used to train MT systems.",
+    "topic": "Parallel Corpora",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_06",
+    "chapter": 9,
+    "question": "What is Word Alignment in Statistical Machine Translation?",
+    "options": [
+      "Specifying which word in the source sentence corresponds to which word in the target sentence",
+      "Aligning text to the left margin",
+      "Sorting words alphabetically",
+      "Removing vowels from words"
+    ],
+    "correct": 0,
+    "explanation": "Word alignment identifies mapping links between source tokens and target tokens within parallel sentence pairs.",
+    "topic": "Word Alignment",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_07",
+    "chapter": 9,
+    "question": "Can a single source word align to MULTIPLE target words (one-to-many alignment)?",
+    "options": [
+      "Only in poetry",
+      "Yes (e.g., German 'aussteigen' aligns to English 'get off' or 'step out')",
+      "No, alignment is strictly 1-to-1 in math",
+      "Only if both words have equal length"
+    ],
+    "correct": 1,
+    "explanation": "Alignments can be 1-to-1, 1-to-many, many-to-1, or null (words with no translation counterpart).",
+    "topic": "Word Alignment",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_08",
+    "chapter": 9,
+    "question": "What famous series of statistical alignment models was developed by IBM researchers (Brown et al., 1993)?",
+    "options": [
+      "BERT-1 through 5",
+      "IBM Models 1 through 5",
+      "T5 Models",
+      "GPT-1 through 5"
+    ],
+    "correct": 1,
+    "explanation": "The classic IBM Models 1-5 formalize generative alignment mechanisms from lexical translation to fertility and distortion.",
+    "topic": "IBM Models",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_09",
+    "chapter": 9,
+    "question": "What is Phrase-Based Statistical Machine Translation (PBSMT)?",
+    "options": [
+      "Translating using grammar rules only",
+      "Translating whole books at once",
+      "Translating contiguous multi-word sequences (phrases) rather than single words, capturing local idioms and reorderings",
+      "Translating only noun phrases"
+    ],
+    "correct": 2,
+    "explanation": "PBSMT translates variable-length word chunks, preserving local context and idioms much better than word-by-word models.",
+    "topic": "Phrase-Based SMT",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_10",
+    "chapter": 9,
+    "question": "What algorithm is used in SMT to find the highest-scoring target sentence among millions of possibilities?",
+    "options": [
+      "Binary search",
+      "Breadth-first exhaustive search",
+      "Bubble sort",
+      "Beam Search decoding over a translation lattice/hypotheses graph"
+    ],
+    "correct": 3,
+    "explanation": "Beam search prunes unpromising translation hypotheses to find the most probable sentence in polynomial time.",
+    "topic": "SMT Decoding",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_11",
+    "chapter": 9,
+    "question": "What is the Sequence-to-Sequence (Seq2Seq) architecture for Neural Machine Translation (Sutskever et al., 2014)?",
+    "options": [
+      "A clustering algorithm",
+      "A single linear regression model",
+      "A decision tree",
+      "An Encoder RNN that encodes the source sentence into a context vector, and a Decoder RNN that generates target words token-by-token"
+    ],
+    "correct": 3,
+    "explanation": "Seq2Seq uses an encoder network to read source input and a decoder network conditioned on the representation to generate output.",
+    "topic": "Seq2Seq",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_12",
+    "chapter": 9,
+    "question": "What was the fatal 'Information Bottleneck' of the original Seq2Seq RNN model without attention?",
+    "options": [
+      "Context vectors could not be saved to disk",
+      "The entire source sentence (regardless of length, even 60 words) had to be compressed into a single fixed-size hidden vector c, causing catastrophic performance drops on long sentences",
+      "Calculations were too fast",
+      "RNNs could only generate 1 word"
+    ],
+    "correct": 1,
+    "explanation": "Compressing arbitrary-length sequences into a fixed-dimensional vector inevitably loses fine-grained source details.",
+    "topic": "Attention Motivation",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_13",
+    "chapter": 9,
+    "question": "How did Bahdanau et al. (2014) resolve the information bottleneck in Neural Machine Translation?",
+    "options": [
+      "By doubling the size of the vocabulary",
+      "By deleting long sentences",
+      "By introducing the Attention Mechanism: allowing the decoder to dynamically attend to all encoder hidden states at every generation step",
+      "By translating backwards only"
+    ],
+    "correct": 2,
+    "explanation": "Bahdanau attention computes dynamic context vectors as weighted sums over all encoder states for each generated word.",
+    "topic": "Attention Mechanism",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_14",
+    "chapter": 9,
+    "question": "In Bahdanau attention, how is the dynamic context vector c_i computed at decoder step i?",
+    "options": [
+      "As a weighted sum of encoder hidden states: c_i = SUM_{j=1}^Tx alpha_{ij} * h_j",
+      "By averaging all words",
+      "By taking the last encoder state only",
+      "By multiplying by a random number"
+    ],
+    "correct": 0,
+    "explanation": "c_i is the linear combination of encoder states h_j weighted by alignment probabilities alpha_{ij}.",
+    "topic": "Attention Formula",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_15",
+    "chapter": 9,
+    "question": "What is the difference between Bahdanau (Additive) Attention and Luong (Multiplicative) Attention?",
+    "options": [
+      "Bahdanau uses a feed-forward layer with tanh (v^T tanh(W s + U h)); Luong uses dot products or bilinear matrix multiplication (s^T W h)",
+      "Bahdanau uses numbers; Luong uses text",
+      "They are identical formulas",
+      "Luong only works on GPUs"
+    ],
+    "correct": 0,
+    "explanation": "Luong attention simplifies score calculation to dot-product or general matrix product s^T W h, which is faster to compute.",
+    "topic": "Attention Variants",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_16",
+    "chapter": 9,
+    "question": "What does an Attention Alignment Matrix visualize in Machine Translation?",
+    "options": [
+      "A soft alignment heatmap showing which source words the decoder focused on when generating each target word",
+      "The loss curve over epochs",
+      "The GPU memory graph",
+      "The vocabulary frequency distribution"
+    ],
+    "correct": 0,
+    "explanation": "Attention weights alpha_{ij} display an intuitive alignment map showing correspondences (e.g. French 'la maison blanche' to English 'the white house').",
+    "topic": "Attention Visualization",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_17",
+    "chapter": 9,
+    "question": "In greedy decoding for NMT, how is the next word chosen at step t?",
+    "options": [
+      "Pick a random word",
+      "Pick the longest word",
+      "Pick the single word with the HIGHEST probability: w_t = argmax P(w | y_{<t}, x)",
+      "Pick the word with the lowest probability"
+    ],
+    "correct": 2,
+    "explanation": "Greedy search chooses the locally optimal token at each step, which may lead to globally sub-optimal translations.",
+    "topic": "Decoding Strategies",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_18",
+    "chapter": 9,
+    "question": "Why is Greedy Search often sub-optimal in machine translation?",
+    "options": [
+      "It requires 100 GPUs",
+      "It outputs only punctuation",
+      "A high-probability word early on might lead to disastrous low-probability options later, but greedy search can never backtrack to correct early mistakes",
+      "It is non-deterministic"
+    ],
+    "correct": 2,
+    "explanation": "Greedy decoding lacks global foresight and cannot recover if an early choice sends the generator down a bad branch.",
+    "topic": "Decoding Strategies",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_19",
+    "chapter": 9,
+    "question": "How does Beam Search decoding improve upon Greedy Search?",
+    "options": [
+      "It maintains the top B most probable partial hypotheses (beam width B) at each time step, exploring multiple candidate paths simultaneously",
+      "It translates from right to left",
+      "It randomly deletes bad words",
+      "It tries every single possible sentence in the language"
+    ],
+    "correct": 0,
+    "explanation": "Beam search balances quality and search tractability by retaining the B best cumulative paths at each step.",
+    "topic": "Beam Search",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_20",
+    "chapter": 9,
+    "question": "What is Beam Width (B) in Beam Search?",
+    "options": [
+      "The thickness of the GPU cable",
+      "The maximum sentence length",
+      "The size of the vocabulary",
+      "The number of top hypotheses maintained at each step of decoding (typically B = 4 to 10 in NMT)"
+    ],
+    "correct": 3,
+    "explanation": "Beam width B determines how many alternative partial sequences are tracked in parallel.",
+    "topic": "Beam Search",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_21",
+    "chapter": 9,
+    "question": "What happens to Beam Search when Beam Width B = 1?",
+    "options": [
+      "It generates an infinite sentence",
+      "It becomes exhaustive search",
+      "It crashes",
+      "It becomes identical to standard Greedy Search"
+    ],
+    "correct": 3,
+    "explanation": "When B=1, the algorithm only retains the single best candidate at each step, matching greedy decoding.",
+    "topic": "Beam Search",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_22",
+    "chapter": 9,
+    "question": "Why do standard Beam Search algorithms use a Length Penalty?",
+    "options": [
+      "To speed up decoding",
+      "Because multiplying probabilities < 1 penalizes longer sentences, causing beam search to unfairly favor unnaturally short translations",
+      "To make sentences longer than 1000 words",
+      "To count words in target text"
+    ],
+    "correct": 1,
+    "explanation": "Dividing cumulative log probability by a length normalization factor (e.g. ((5 + len)/6)^alpha) prevents short-sentence bias.",
+    "topic": "Beam Search",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_23",
+    "chapter": 9,
+    "question": "When does a hypothesis in Beam Search stop generating further words?",
+    "options": [
+      "After exactly 5 words",
+      "When the model outputs the special end-of-sequence token `</s>` or `<EOS>`, or when max length is reached",
+      "When a period is reached",
+      "When memory runs out"
+    ],
+    "correct": 1,
+    "explanation": "Emitting `<EOS>` marks a completed hypothesis, which is placed in the final completed candidate pool.",
+    "topic": "Beam Search",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_24",
+    "chapter": 9,
+    "question": "What is the most widely used automatic evaluation metric for Machine Translation?",
+    "options": [
+      "Accuracy",
+      "Perplexity",
+      "F1-Score",
+      "BLEU (Bilingual Evaluation Understudy, Papineni et al., 2002)"
+    ],
+    "correct": 3,
+    "explanation": "BLEU is the standard benchmark metric used across MT research to score machine translations against human references.",
+    "topic": "BLEU Score",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_25",
+    "chapter": 9,
+    "question": "What does BLEU measure?",
+    "options": [
+      "Spelling error percentage",
+      "Translation time per sentence",
+      "Modified n-gram precision between candidate translation and reference translations, combined with a Brevity Penalty",
+      "Grammar rule correctness"
+    ],
+    "correct": 2,
+    "explanation": "BLEU evaluates n-gram overlap (typically unigrams up to 4-grams) with reference translations, scaled by a brevity penalty.",
+    "topic": "BLEU Score",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_26",
+    "chapter": 9,
+    "question": "What is Modified N-gram Precision in BLEU?",
+    "options": [
+      "Ignoring all nouns",
+      "N-gram counts are clipped to the maximum count of that n-gram in any single reference translation to prevent repeated false matches",
+      "Counting all words twice",
+      "Dividing counts by 4"
+    ],
+    "correct": 1,
+    "explanation": "Clipping prevents degenerate translations (like 'the the the the') from scoring a false 100% precision.",
+    "topic": "BLEU Score",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_27",
+    "chapter": 9,
+    "question": "If a candidate translation repeats 'the' 7 times: 'the the the the the the the', and reference has 'the' twice, what is candidate's clipped count for BLEU?",
+    "options": [
+      "0",
+      "1",
+      "7",
+      "Clipped count is 2 (yielding precision 2/7 ≈ 0.28 instead of 7/7 = 1.0)"
+    ],
+    "correct": 3,
+    "explanation": "Count is clipped to reference maximum (2), effectively penalizing repetitive hallucination.",
+    "topic": "BLEU Calculation",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_28",
+    "chapter": 9,
+    "question": "What is the Brevity Penalty (BP) in BLEU?",
+    "options": [
+      "A penalty for using numbers",
+      "A penalty factor BP <= 1 that reduces the score if the candidate translation length c is shorter than effective reference length r: BP = exp(1 - r/c)",
+      "A penalty for long sentences",
+      "A bonus for short sentences"
+    ],
+    "correct": 1,
+    "explanation": "BP = 1 if c > r, and BP = exp(1 - r/c) if c <= r, preventing models from cheating by outputting only 1 or 2 high-precision words.",
+    "topic": "BLEU Brevity Penalty",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_29",
+    "chapter": 9,
+    "question": "What is the range of a BLEU score?",
+    "options": [
+      "0.0 to 1.0 (often reported on a 0 to 100 scale)",
+      "-1.0 to 1.0",
+      "[-infinity, 0]",
+      "0 to infinity"
+    ],
+    "correct": 0,
+    "explanation": "BLEU ranges from 0 to 1 (or 0 to 100%), with higher scores indicating closer match to reference translations.",
+    "topic": "BLEU Properties",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_30",
+    "chapter": 9,
+    "question": "Can a translation be fluent and semantically correct but still achieve a LOW BLEU score?",
+    "options": [
+      "Yes, if the translation uses valid synonyms and phrasing that differ from the specific reference human translations provided",
+      "Only if text is poetry",
+      "No, BLEU is perfect",
+      "Only if translated to Latin"
+    ],
+    "correct": 0,
+    "explanation": "BLEU relies on exact n-gram matching; valid lexical substitutions ('couch' vs 'sofa') receive zero credit unless present in references.",
+    "topic": "BLEU Limitations",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_31",
+    "chapter": 9,
+    "question": "How does the METEOR metric improve upon BLEU?",
+    "options": [
+      "It only checks spelling",
+      "It evaluates both Precision and Recall using harmonic mean, and supports Stemming and WordNet Synonyms for match matching",
+      "It measures GPU temperature",
+      "It eliminates references entirely"
+    ],
+    "correct": 1,
+    "explanation": "METEOR incorporates stemming, synonym matching via WordNet, and unigram recall, correlating better with human judgment.",
+    "topic": "METEOR Metric",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_32",
+    "chapter": 9,
+    "question": "What is TER (Translation Edit Rate)?",
+    "options": [
+      "The percentage of capitalized words",
+      "The training error rate",
+      "The minimum number of edit operations (insertions, deletions, substitutions, and phrase shifts) needed to convert candidate into reference, normalized by reference length",
+      "The time to edit a translation"
+    ],
+    "correct": 2,
+    "explanation": "TER measures human post-editing effort: lower TER indicates fewer corrections needed to achieve reference quality.",
+    "topic": "TER Metric",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_33",
+    "chapter": 9,
+    "question": "What are modern neural evaluation metrics for MT (e.g. COMET, BLEURT)?",
+    "options": [
+      "Trained neural cross-encoders that evaluate semantic similarity directly in contextual embedding space, correlating much higher with human ratings than BLEU",
+      "Simple regex scripts",
+      "Rules counting verbs",
+      "FastText cosine only"
+    ],
+    "correct": 0,
+    "explanation": "COMET and BLEURT use pre-trained cross-lingual Transformers trained on human Direct Assessment ratings to evaluate translations.",
+    "topic": "Neural MT Metrics",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_34",
+    "chapter": 9,
+    "question": "What is Back-Translation (Sennrich et al., 2016) in Neural Machine Translation?",
+    "options": [
+      "Translating massive target-language monolingual text BACK into source language using an intermediate model to create synthetic parallel training data",
+      "Translating twice through French",
+      "Decoding from right to left",
+      "Translating words in reverse letter order"
+    ],
+    "correct": 0,
+    "explanation": "Back-translation creates high-quality synthetic parallel bitext from plentiful monolingual data, substantially boosting NMT accuracy.",
+    "topic": "Back-Translation",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_35",
+    "chapter": 9,
+    "question": "Why is Subword Tokenization (BPE / WordPiece / SentencePiece) ESSENTIAL for modern NMT?",
+    "options": [
+      "It replaces grammar rules",
+      "It requires no CPU",
+      "It makes sentences 10x shorter",
+      "It solves the Out-Of-Vocabulary (OOV) problem and handles rare inflections, productive compounding, and transliterations in open vocabularies"
+    ],
+    "correct": 3,
+    "explanation": "Subword segmentation enables open-vocabulary translation, gracefully handling compound words, morphology, and named entities.",
+    "topic": "Subword Tokenization",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_36",
+    "chapter": 9,
+    "question": "What is Zero-Shot Translation in multilingual NMT (e.g. Johnson et al., 2017)?",
+    "options": [
+      "Translating with 0 parameters",
+      "The ability of a single multilingual model to translate between language pair A and B without ever having seen direct parallel training data for A->B",
+      "Translating in 0 seconds",
+      "Translating without a computer"
+    ],
+    "correct": 1,
+    "explanation": "A multilingual model trained on English<->French and English<->German can translate directly between French and German without French-German bitext.",
+    "topic": "Multilingual NMT",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_37",
+    "chapter": 9,
+    "question": "How does a multilingual NMT model know which target language to translate into?",
+    "options": [
+      "It translates into all languages at once",
+      "The user speaks into the microphone",
+      "It guesses randomly",
+      "A special language indicator token (e.g. `<2es>`, `<2de>`) is prepended to the source input sequence"
+    ],
+    "correct": 3,
+    "explanation": "Prepending a target language tag `<2lang>` guides the decoder to generate in the specified target language.",
+    "topic": "Multilingual NMT",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_38",
+    "chapter": 9,
+    "question": "What is the primary architectural difference between Google's GNMT (2016) and modern Transformer-based NMT?",
+    "options": [
+      "GNMT used deep stacked LSTM networks with residual connections; modern NMT uses Transformer self-attention without recurrence",
+      "GNMT used rule-based syntax",
+      "Modern NMT uses decision trees",
+      "GNMT had no attention"
+    ],
+    "correct": 0,
+    "explanation": "GNMT relied on 8-layer stacked bidirectional LSTMs; the 2017 Transformer completely superseded it due to superior speed and scaling.",
+    "topic": "NMT Architectures",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_39",
+    "chapter": 9,
+    "question": "What is Hallucination in Neural Machine Translation?",
+    "options": [
+      "When the GPU runs out of VRAM",
+      "When translation is 100% accurate",
+      "When the model generates fluent, grammatically sound text that is completely detached or fabricated relative to the source input",
+      "When the model crashes"
+    ],
+    "correct": 2,
+    "explanation": "Hallucination refers to generating content that is unfaithful to the source, a known risk in autoregressive generation.",
+    "topic": "NMT Failure Modes",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_40",
+    "chapter": 9,
+    "question": "What is Exposure Bias in autoregressive NMT training?",
+    "options": [
+      "During training, the decoder always sees ground-truth previous tokens (Teacher Forcing), but during testing, it feeds on its own potentially erroneous previous predictions",
+      "Over-exposing camera frames",
+      "Training on unlabelled data",
+      "Exposing the model to light"
+    ],
+    "correct": 0,
+    "explanation": "Discrepancy between teacher forcing at training and autoregressive rollout at test time can cause error propagation.",
+    "topic": "Exposure Bias",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_41",
+    "chapter": 9,
+    "question": "How does Minimum Bayes Risk (MBR) decoding differ from standard Beam Search in MT?",
+    "options": [
+      "MBR picks the shortest sentence",
+      "MBR uses greedy search only",
+      "MBR generates multiple candidate translations and selects the one with the highest expected utility / consensus against all other candidates",
+      "MBR uses no probability"
+    ],
+    "correct": 2,
+    "explanation": "MBR decoding optimizes consensus under an evaluation metric (like BLEU or COMET) over a sampled candidate pool.",
+    "topic": "MBR Decoding",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_42",
+    "chapter": 9,
+    "question": "What is Document-Level Machine Translation?",
+    "options": [
+      "Translating PDF files only",
+      "Translating 1 word at a time",
+      "Translating sentences within the broader context of surrounding paragraphs/documents to resolve discourse phenomena (pronoun coreference, coherence, tense)",
+      "Translating document filenames"
+    ],
+    "correct": 2,
+    "explanation": "Document-level MT considers multi-sentence context to ensure consistent terminology and correct cross-sentence pronouns.",
+    "topic": "Document-Level MT",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_43",
+    "chapter": 9,
+    "question": "If candidate translation has 10 words and reference translation has 12 words, what is the Brevity Penalty (BP)?",
+    "options": [
+      "1.0",
+      "1.2",
+      "0.0",
+      "exp(1 - 12/10) = exp(-0.2) ≈ 0.8187"
+    ],
+    "correct": 3,
+    "explanation": "Because c (10) < r (12), BP = exp(1 - 12/10) = exp(-0.2) ≈ 0.8187.",
+    "topic": "BLEU Calculation",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_44",
+    "chapter": 9,
+    "question": "If candidate translation has 15 words and reference translation has 12 words, what is the Brevity Penalty (BP)?",
+    "options": [
+      "1.0 (no penalty when candidate is equal to or longer than reference)",
+      "exp(1 - 12/15)",
+      "0.5",
+      "1.25"
+    ],
+    "correct": 0,
+    "explanation": "When candidate length c >= reference length r, the brevity penalty is exactly 1.0 (no penalty applied).",
+    "topic": "BLEU Brevity Penalty",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch09_45",
+    "chapter": 9,
+    "question": "Why does BLEU use GEOMETRIC mean of n-gram precisions instead of arithmetic mean?",
+    "options": [
+      "Because geometric mean is easier to add",
+      "Because geometric mean ignores precision",
+      "Because arithmetic mean cannot handle decimals",
+      "Geometric mean ensures that if precision for ANY higher-order n-gram (e.g. 4-gram) is ZERO, the overall BLEU score becomes ZERO"
+    ],
+    "correct": 3,
+    "explanation": "exp(SUM w_n log p_n) enforces that candidate translations must demonstrate fluency across all evaluated n-gram orders.",
+    "topic": "BLEU Score",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_46",
+    "chapter": 9,
+    "question": "In smoothing BLEU for short sentences where 4-gram precision is 0, what is typically done?",
+    "options": [
+      "Deleting the sentence",
+      "Chen & Cherry smoothing: adding small epsilon counts or pseudo-counts to prevent the entire product from dropping to zero",
+      "Setting BLEU to 100",
+      "Removing 4-grams"
+    ],
+    "correct": 1,
+    "explanation": "Smoothing methods (like Chen & Cherry 2014) ensure short sentences without 4-gram matches still receive informative scores.",
+    "topic": "BLEU Smoothing",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_47",
+    "chapter": 9,
+    "question": "What is Corpus-Level BLEU vs Sentence-Level BLEU?",
+    "options": [
+      "Corpus-level only evaluates nouns",
+      "Sentence-level has no brevity penalty",
+      "They are identical in value",
+      "Corpus-level BLEU sums n-gram matches across the entire corpus before computing precision; Sentence-level computes BLEU per sentence and averages"
+    ],
+    "correct": 3,
+    "explanation": "Official BLEU benchmarks are computed at the corpus level to avoid zero-precision instability on short sentences.",
+    "topic": "BLEU Evaluation",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch09_48",
+    "chapter": 9,
+    "question": "What is Post-Editing in professional translation workflows?",
+    "options": [
+      "Proofreading grammar only",
+      "Translating without computers",
+      "Human professional translators reviewing and correcting raw MT engine outputs to achieve publication grade",
+      "Editing source documents before translation"
+    ],
+    "correct": 2,
+    "explanation": "Machine Translation Post-Editing (MTPE) combines machine generation speed with human fidelity verification.",
+    "topic": "Translation Workflows",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch09_49",
+    "chapter": 9,
+    "question": "What is Direct Translation in early rule-based MT architectures?",
+    "options": [
+      "Translating directly through thought",
+      "Word-by-word dictionary translation with minimal grammatical adjustment, without an abstract syntactic intermediate representation",
+      "Using deep neural networks",
+      "Translating without electricity"
+    ],
+    "correct": 1,
+    "explanation": "Direct MT translates directly from source surface forms to target surface forms using bilingual dictionaries and local reordering rules.",
+    "topic": "RBMT Architectures",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch09_50",
+    "chapter": 9,
+    "question": "What is the Interlingua approach in Rule-Based Machine Translation?",
+    "options": [
+      "Parsing source text into a language-independent semantic representation (Interlingua) from which target text is generated",
+      "Translating using internet slang",
+      "Translating speech directly to video",
+      "Translating via English as intermediate"
+    ],
+    "correct": 0,
+    "explanation": "Interlingua represents universal meaning independently of source and target languages, requiring N analyzers and N generators for N languages.",
+    "topic": "RBMT Architectures",
+    "slide_ref": "09. Machine Translation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_01",
+    "chapter": 10,
+    "question": "What are the two primary categories of conversational agents (dialogue systems)?",
+    "options": [
+      "Task-Oriented Dialogue Systems and Open-Domain (Chit-Chat) Chatbots",
+      "Text chatbots and Binary chatbots",
+      "Hardware chatbots and Software chatbots",
+      "Single-turn and Zero-turn systems"
+    ],
+    "correct": 0,
+    "explanation": "Dialogue systems split broadly into goal-driven task-oriented agents (booking flights) and conversational chit-chat agents (open social engagement).",
+    "topic": "System Types",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_02",
+    "chapter": 10,
+    "question": "What was ELIZA (Weizenbaum, 1966)?",
+    "options": [
+      "A database query engine",
+      "An early rule-based chatbot simulating a Rogerian psychotherapist via keyword spotting and pattern-matching reflection rules",
+      "A machine translation system",
+      "A deep neural network for speech"
+    ],
+    "correct": 1,
+    "explanation": "ELIZA matched sentence patterns and reflected users' phrases back as questions without genuine semantic understanding.",
+    "topic": "ELIZA",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_03",
+    "chapter": 10,
+    "question": "What technique did ELIZA use to turn a user statement like 'You are being difficult' into 'What makes you think I am being difficult'?",
+    "options": [
+      "Deep semantic parsing",
+      "K-Means clustering",
+      "Regex pattern matching with pronoun reflection (mapping 'you' -> 'I', 'are' -> 'am')",
+      "First-order logic deduction"
+    ],
+    "correct": 2,
+    "explanation": "ELIZA relied on syntactic substitution tables (reflection rules) mapping second-person pronouns to first-person and vice versa.",
+    "topic": "ELIZA",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_04",
+    "chapter": 10,
+    "question": "What is the 'ELIZA Effect' in human-computer interaction?",
+    "options": [
+      "A computer monitor refresh failure",
+      "A bug in regex parsing",
+      "When chatbots run out of memory",
+      "The psychological tendency of humans to anthropomorphize computers and attribute human-like intelligence, empathy, and understanding to simple automated software"
+    ],
+    "correct": 3,
+    "explanation": "The ELIZA effect describes people attributing deep feelings and genuine comprehension to superficial conversational scripts.",
+    "topic": "ELIZA Effect",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_05",
+    "chapter": 10,
+    "question": "What was PARRY (Colby, 1971)?",
+    "options": [
+      "A speech synthesizer",
+      "A chess-playing computer",
+      "A chatbot designed to simulate a person with paranoid schizophrenia, incorporating internal emotional variables (anger, fear, mistrust)",
+      "A flight booking agent"
+    ],
+    "correct": 2,
+    "explanation": "PARRY simulated paranoia by tracking internal variables like fear and anger that altered dialogue behavior dynamically.",
+    "topic": "Early Chatbots",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_06",
+    "chapter": 10,
+    "question": "What is an Information Retrieval (IR) based chatbot?",
+    "options": [
+      "A grammar checker",
+      "A rule-based compiler",
+      "A system that matches user queries against a database of pre-existing questions/answers using vector similarity (e.g. TF-IDF, Cosine) and retrieves the best matching answer",
+      "A chatbot that generates novel text token-by-token"
+    ],
+    "correct": 2,
+    "explanation": "IR chatbots store question-answer pairs and return the response corresponding to the question most similar to the user input.",
+    "topic": "IR Chatbots",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_07",
+    "chapter": 10,
+    "question": "What is the Frame-and-Slot architecture (e.g. GUS, Bobrow et al., 1977) in Task-Oriented Dialogue Systems?",
+    "options": [
+      "A method for sorting words",
+      "A picture frame for photos",
+      "A neural network layer",
+      "A knowledge structure (frame) containing predefined slots (attributes) that the system must fill with values to complete a task"
+    ],
+    "correct": 3,
+    "explanation": "Frame-based architectures represent the task state as slots (e.g. origin, destination, date) that must be populated through dialogue.",
+    "topic": "Frame-Based Systems",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_08",
+    "chapter": 10,
+    "question": "In a flight booking system, what are examples of 'Slots' in a Frame?",
+    "options": [
+      "Departure City, Arrival City, Travel Date, Seating Class, Number of Passengers",
+      "Token, Lemma, POS",
+      "Subject, Verb, Object",
+      "Query, Key, Value"
+    ],
+    "correct": 0,
+    "explanation": "Slots represent task-specific parameters required to query back-end databases or API endpoints.",
+    "topic": "Frame-Based Systems",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_09",
+    "chapter": 10,
+    "question": "What are the five core modular components of a classical Task-Oriented Dialogue pipeline?",
+    "options": [
+      "Tokenizer -> Stemmer -> Classifier -> Loss -> Output",
+      "Regex -> Tree -> Vector -> Matrix -> Answer",
+      "ASR -> NLU -> Dialogue State Tracking (DST) -> Dialogue Policy Manager -> Natural Language Generation (NLG)",
+      "Audio -> Video -> Image -> Text -> Print"
+    ],
+    "correct": 2,
+    "explanation": "The standard modular architecture runs: ASR (speech-to-text) -> NLU (intents & slots) -> DST (state) -> Policy (action) -> NLG (text).",
+    "topic": "Dialogue Architecture",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_10",
+    "chapter": 10,
+    "question": "What are the two core tasks performed by the Natural Language Understanding (NLU) module in task-oriented systems?",
+    "options": [
+      "Perplexity calculation and Smoothing",
+      "Intent Determination (Classification) and Slot Filling (Entity Extraction)",
+      "Syntactic parsing and POS tagging only",
+      "Spelling correction and Translation"
+    ],
+    "correct": 1,
+    "explanation": "NLU takes user utterances and predicts: 1) Intent (what the user wants to do), and 2) Slots (extracted parameter entities).",
+    "topic": "NLU Components",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_11",
+    "chapter": 10,
+    "question": "If a user says 'Book a flight from Boston to Seattle tomorrow', what is the Intent and what are the Slots?",
+    "options": [
+      "Intent: Greeting; Slots: None",
+      "Intent: BookFlight; Slots: {From_City: 'Boston', To_City: 'Seattle', Date: 'tomorrow'}",
+      "Intent: CancelFlight; Slots: {'Seattle'}",
+      "Intent: WeatherCheck; Slots: {'Boston'}"
+    ],
+    "correct": 1,
+    "explanation": "NLU identifies the primary action (BookFlight) and extracts key entity parameters with their slot labels.",
+    "topic": "NLU Components",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_12",
+    "chapter": 10,
+    "question": "What tagging scheme is standardly used to formulate Slot Filling as a sequence labeling task?",
+    "options": [
+      "Binary 0/1 only",
+      "Tree parsing only",
+      "RGB tagging",
+      "BIO (Begin, Inside, Outside) tagging scheme"
+    ],
+    "correct": 3,
+    "explanation": "Slot filling is trained as sequence tagging: B-DepartCity, I-DepartCity, O, using models like BiLSTM-CRF or BERT.",
+    "topic": "Slot Filling",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_13",
+    "chapter": 10,
+    "question": "What is Dialogue State Tracking (DST)?",
+    "options": [
+      "Tracking the user's GPS coordinates",
+      "Monitoring CPU clock speeds",
+      "Recording audio files to hard drive",
+      "Maintaining an accurate record of all accumulated slot values and user constraints across multiple conversational turns"
+    ],
+    "correct": 3,
+    "explanation": "DST updates the dialogue state after every turn, handling corrections, additions, and confirmations across the conversation history.",
+    "topic": "Dialogue State Tracking",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_14",
+    "chapter": 10,
+    "question": "What is the role of the Dialogue Policy Manager in a task-oriented system?",
+    "options": [
+      "Correcting audio volume",
+      "Formatting text font",
+      "Deciding what action the system should take next (e.g. Ask for missing slot, Confirm details, Query database, Complete transaction)",
+      "Translating into German"
+    ],
+    "correct": 2,
+    "explanation": "Dialogue policy maps the current dialogue state to the next system Dialogue Act / Action.",
+    "topic": "Dialogue Policy",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_15",
+    "chapter": 10,
+    "question": "What is Natural Language Generation (NLG) in dialogue systems?",
+    "options": [
+      "Parsing SQL queries",
+      "Transforming abstract system dialogue acts and database results into fluent, natural conversational text for the user",
+      "Extracting named entities",
+      "Listening to user microphone input"
+    ],
+    "correct": 1,
+    "explanation": "NLG produces human-understandable text from structural system actions (e.g., `Ask(Depart_Date)` -> 'What date do you want to fly?').",
+    "topic": "NLG",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_16",
+    "chapter": 10,
+    "question": "What is a Dialogue Act (Speech Act)?",
+    "options": [
+      "A phonetic sound",
+      "A legal contract",
+      "A theatrical play script",
+      "The pragmatic communicative intention of an utterance (e.g., Statement, Question, Directive, Greeting, Apology, Acknowledge)"
+    ],
+    "correct": 3,
+    "explanation": "Speech act theory (Austin, Searle) categorizes utterances by their illocutionary function in conversation.",
+    "topic": "Dialogue Acts",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_17",
+    "chapter": 10,
+    "question": "In dialogue act classification, what act represents an utterance like 'Yes, that is correct'?",
+    "options": [
+      "REQUEST",
+      "GREETING",
+      "INFORM",
+      "AFFIRM (or CONFIRM)"
+    ],
+    "correct": 3,
+    "explanation": "AFFIRM/CONFIRM explicitly validates a prior system question or confirmation prompt.",
+    "topic": "Dialogue Acts",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_18",
+    "chapter": 10,
+    "question": "What is an Adjacency Pair in conversation analysis?",
+    "options": [
+      "Two adjacent slides",
+      "A two-part conversational sequence where the first turn constrains the expected type of the second turn (e.g. Question -> Answer, Greeting -> Greeting)",
+      "A bigram model",
+      "Two words next to each other in a sentence"
+    ],
+    "correct": 1,
+    "explanation": "Adjacency pairs are normative conversational expectations: an Offer expects Accept/Decline; a Question expects an Answer.",
+    "topic": "Conversation Analysis",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_19",
+    "chapter": 10,
+    "question": "What are Grice's Maxims of Cooperative Conversation (Grice, 1975)?",
+    "options": [
+      "Query, Key, Value, Attention",
+      "Quantity (informative), Quality (truthful), Relation (relevant), and Manner (clear and orderly)",
+      "Input, Hidden, Output, Activation",
+      "Grammar, Spelling, Punctuation, Length"
+    ],
+    "correct": 1,
+    "explanation": "Philosopher Paul Grice defined four conversational maxims that rational speakers assume each other follow.",
+    "topic": "Grice's Maxims",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_20",
+    "chapter": 10,
+    "question": "Which Gricean maxim is violated if a chatbot gives a 500-word essay in response to a simple 'What time is it?' question?",
+    "options": [
+      "Maxim of Quantity (make your contribution as informative as required, but NOT more informative than required)",
+      "Maxim of Relation",
+      "Maxim of Manner",
+      "Maxim of Quality"
+    ],
+    "correct": 0,
+    "explanation": "Giving vastly more information than needed violates the Maxim of Quantity.",
+    "topic": "Grice's Maxims",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_21",
+    "chapter": 10,
+    "question": "What is Grounding in human-computer conversation?",
+    "options": [
+      "The interactive process of establishing mutual understanding / Common Ground between dialogue participants",
+      "Connecting electrical cables to earth",
+      "Running gradient descent",
+      "Storing data on hard disk"
+    ],
+    "correct": 0,
+    "explanation": "Grounding ensures both speaker and listener agree on what has been communicated (via backchannels, confirmations, clarification).",
+    "topic": "Grounding",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_22",
+    "chapter": 10,
+    "question": "What is Explicit Confirmation in dialogue systems?",
+    "options": [
+      "Assuming the value is correct without asking",
+      "Sending an email",
+      "Directly asking the user to confirm an extracted value before proceeding (e.g., 'Did you say Seattle?')",
+      "Printing logs"
+    ],
+    "correct": 2,
+    "explanation": "Explicit confirmation prompts the user for a direct yes/no validation, maximizing accuracy at the expense of conversation length.",
+    "topic": "Confirmation Strategies",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_23",
+    "chapter": 10,
+    "question": "What is Implicit Confirmation in dialogue systems?",
+    "options": [
+      "Never confirming anything",
+      "Proceeding with the next prompt while echoing the recognized value (e.g., 'Booking flight to Seattle. What date would you like to depart?')",
+      "Cancelling the order",
+      "Asking the user to sign a paper"
+    ],
+    "correct": 1,
+    "explanation": "Implicit confirmation combines acknowledgment with the next request, making dialogue faster and more natural.",
+    "topic": "Confirmation Strategies",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_24",
+    "chapter": 10,
+    "question": "What is a Clarification Question in dialogue management?",
+    "options": [
+      "A targeted prompt generated when user input is ambiguous or acoustic confidence is below a threshold (e.g., 'Did you mean Boston or Austin?')",
+      "Asking what language they speak",
+      "A random question",
+      "Asking the user for their password"
+    ],
+    "correct": 0,
+    "explanation": "Clarification questions resolve acoustic confusion or semantic ambiguity before errors propagate.",
+    "topic": "Dialogue Management",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_25",
+    "chapter": 10,
+    "question": "What is Mixed-Initiative Dialogue?",
+    "options": [
+      "A dialogue where only the user speaks",
+      "A dialogue where BOTH the system and the user can steer the conversation, provide unsolicited information, or change topics dynamically",
+      "A dialogue between two robots",
+      "A dialogue where only the computer speaks"
+    ],
+    "correct": 1,
+    "explanation": "In mixed-initiative dialogue, either party can initiate actions or introduce new constraints at any turn.",
+    "topic": "Dialogue Initiative",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_26",
+    "chapter": 10,
+    "question": "What is System-Initiative Dialogue?",
+    "options": [
+      "The user controls everything",
+      "The system strictly controls the dialogue flow by asking questions that the user must answer directly (e.g., rigid phone trees / IVR)",
+      "Both participate equally",
+      "A free-form chat"
+    ],
+    "correct": 1,
+    "explanation": "System-initiative restricts user inputs to specific expected slot fillers, minimizing recognition error at the cost of flexibility.",
+    "topic": "Dialogue Initiative",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_27",
+    "chapter": 10,
+    "question": "What is User-Initiative Dialogue?",
+    "options": [
+      "A silent system",
+      "The system asks all questions",
+      "The user asks free-form questions or commands, and the system responds without taking the initiative to ask follow-up questions",
+      "Both speak simultaneously"
+    ],
+    "correct": 2,
+    "explanation": "In user-initiative systems (like search engines or simple voice assistants), the user directs every interaction.",
+    "topic": "Dialogue Initiative",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_28",
+    "chapter": 10,
+    "question": "What machine learning framework is commonly used to train autonomous Dialogue Policy Managers through trial-and-error interaction?",
+    "options": [
+      "Linear Regression",
+      "Naive Bayes only",
+      "Reinforcement Learning (e.g. Markov Decision Processes - MDP / POMDP, Q-Learning)",
+      "Unsupervised K-Means"
+    ],
+    "correct": 2,
+    "explanation": "Reinforcement Learning optimizes dialogue policies by rewarding successful task completion and penalizing long turns.",
+    "topic": "Reinforcement Learning",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_29",
+    "chapter": 10,
+    "question": "In an MDP (Markov Decision Process) dialogue policy, what is the Reward Signal typically based on?",
+    "options": [
+      "Vocabulary size",
+      "CPU temperature",
+      "Number of characters generated",
+      "Positive reward for successful task completion (+20) and a small negative penalty (-1) per turn to encourage brief, efficient dialogues"
+    ],
+    "correct": 3,
+    "explanation": "Rewarding task success while penalizing turn length trains policies that solve problems quickly and effectively.",
+    "topic": "Reinforcement Learning",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_30",
+    "chapter": 10,
+    "question": "What is a POMDP (Partially Observable Markov Decision Process) in dialogue systems?",
+    "options": [
+      "A framework that explicitly models uncertainty about the true dialogue state (maintaining a probability distribution / belief state over states)",
+      "An image recognition tool",
+      "A deterministic system",
+      "A system without memory"
+    ],
+    "correct": 0,
+    "explanation": "POMDP maintains belief distributions over slot values, making dialogue management robust to noisy speech recognition errors.",
+    "topic": "POMDP",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_31",
+    "chapter": 10,
+    "question": "How does a Modern Generative LLM-based Chatbot (e.g. ChatGPT, Claude) fundamentally differ from classical pipeline dialogue systems?",
+    "options": [
+      "It uses only regular expressions",
+      "It is an end-to-end neural network generating responses autoregressively from conversational history, without separate NLU/DST/Policy/NLG modules",
+      "It cannot understand English",
+      "It has no weights"
+    ],
+    "correct": 1,
+    "explanation": "Modern generative agents replace handcrafted pipeline stages with an end-to-end autoregressive language model.",
+    "topic": "Generative Agents",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_32",
+    "chapter": 10,
+    "question": "What is the 'Dull Response Problem' commonly observed in early neural chit-chat models?",
+    "options": [
+      "Models repeating the alphabet",
+      "Models crashing after 2 turns",
+      "Models generating text in foreign languages",
+      "Models frequently generating generic, uninformative replies like 'I don't know', 'Me too', or 'That is cool' because they have high average likelihood across corpora"
+    ],
+    "correct": 3,
+    "explanation": "Maximum likelihood training encourages safe, high-frequency responses that fit any context, producing boring conversations.",
+    "topic": "Generative Challenges",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_33",
+    "chapter": 10,
+    "question": "What is Persona Consistency in conversational agents?",
+    "options": [
+      "Matching the user's voice",
+      "Changing names every turn",
+      "Ensuring the agent maintains a coherent identity, background facts, and personality traits across all conversation turns",
+      "Translating persona into French"
+    ],
+    "correct": 2,
+    "explanation": "Persona consistency prevents the agent from contradicting its own previous statements (e.g., claiming to have a dog, then saying it has no pets).",
+    "topic": "Persona Consistency",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_34",
+    "chapter": 10,
+    "question": "What is Multi-Turn Context Tracking in generative dialogue systems?",
+    "options": [
+      "Deleting history after every turn",
+      "Restarting the model on each turn",
+      "Appending previous conversation turns (User and Assistant history) into the prompt context window to enable coherent multi-turn reasoning",
+      "Translating history into binary"
+    ],
+    "correct": 2,
+    "explanation": "Generative models maintain coherence across turns by concatenating dialogue history into the Transformer input context.",
+    "topic": "Multi-Turn Context",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_35",
+    "chapter": 10,
+    "question": "What is RAG (Retrieval-Augmented Generation) in modern enterprise chatbots?",
+    "options": [
+      "Training an LLM from scratch daily",
+      "Using regex rules to replace databases",
+      "Retrieving relevant factual documents from an external knowledge base and feeding them as context into an LLM prompt to ground answers in real data",
+      "Generating text without an LLM"
+    ],
+    "correct": 2,
+    "explanation": "RAG combines IR retrieval with generative LLMs, ensuring factual accuracy and reducing hallucination.",
+    "topic": "RAG Architecture",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_36",
+    "chapter": 10,
+    "question": "What is Hallucination in conversational agents?",
+    "options": [
+      "The generation of plausible-sounding but factually false, inaccurate, or ungrounded assertions",
+      "Generating emojis only",
+      "A system crash",
+      "Generating audio instead of text"
+    ],
+    "correct": 0,
+    "explanation": "Hallucination is the generation of untrue content stated with high linguistic confidence.",
+    "topic": "Hallucination",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_37",
+    "chapter": 10,
+    "question": "What is the Turing Test (Alan Turing, 1950)?",
+    "options": [
+      "A test of memory size",
+      "A grammar test",
+      "A test of a machine's ability to exhibit intelligent behavior indistinguishable from that of a human through text conversation",
+      "A speed benchmark for CPUs"
+    ],
+    "correct": 2,
+    "explanation": "The Turing Test evaluates if a human judge conversing via text cannot reliably tell whether the conversational partner is human or machine.",
+    "topic": "Turing Test",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_38",
+    "chapter": 10,
+    "question": "What is the Loebner Prize?",
+    "options": [
+      "A prize for writing poems",
+      "A prize for fastest GPU",
+      "A Nobel prize in physics",
+      "An annual competition that awarded prizes to chatbots considered by human judges to be the most human-like under Turing Test conditions"
+    ],
+    "correct": 3,
+    "explanation": "The Loebner Prize was the famous annual Turing Test competition for conversational software.",
+    "topic": "Turing Test",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_39",
+    "chapter": 10,
+    "question": "What is the Role of System Prompts / Instruction Tuning in conversational LLMs?",
+    "options": [
+      "Deleting user data",
+      "Compiling Python code",
+      "Allocating GPU memory",
+      "Establishing safety boundaries, behavioral tone, role/persona, and output formatting guidelines for the assistant"
+    ],
+    "correct": 3,
+    "explanation": "System instructions steer model behavior, tone, constraints, and safety guidelines across conversational sessions.",
+    "topic": "Instruction Tuning",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch10_40",
+    "chapter": 10,
+    "question": "What is Reinforcement Learning from Human Feedback (RLHF)?",
+    "options": [
+      "Aligning LLM dialogue responses with human preferences (Helpful, Honest, Harmless) using a learned Reward Model trained on human preference comparisons",
+      "Having humans manually write all chatbot responses",
+      "A rule-based spellchecker",
+      "Training without neural nets"
+    ],
+    "correct": 0,
+    "explanation": "RLHF optimizes policy generation against a human-preference reward model using algorithms like PPO.",
+    "topic": "RLHF",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_41",
+    "chapter": 10,
+    "question": "In task-oriented systems, what is a Fallback Strategy when NLU fails to understand user intent?",
+    "options": [
+      "Crashing the application",
+      "Pretending the order was placed",
+      "Asking the user to rephrase, offering suggested option buttons, or gracefully transferring to a human customer service agent",
+      "Hanging up immediately"
+    ],
+    "correct": 2,
+    "explanation": "Graceful degradation ensures conversational recovery when confidence scores fall below acceptable thresholds.",
+    "topic": "Error Handling",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_42",
+    "chapter": 10,
+    "question": "What is Co-reference Resolution in multi-turn dialogue (e.g. 'How much does it cost? Book it.')?",
+    "options": [
+      "Determining what entity pronouns like 'it' refer to from previous dialogue turns",
+      "Splitting sentences into words",
+      "Translating pronouns",
+      "Counting words in sentences"
+    ],
+    "correct": 0,
+    "explanation": "Coreference resolution links pronouns and anaphoric expressions back to previously discussed entities in the dialogue history.",
+    "topic": "Coreference",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_43",
+    "chapter": 10,
+    "question": "What is Over-generation and Re-ranking in Template-based NLG?",
+    "options": [
+      "Generating 0 words",
+      "Sorting words alphabetically",
+      "Generating multiple diverse candidate sentences and using a language model or heuristic ranker to select the most natural, fluent output",
+      "Generating sentences forever"
+    ],
+    "correct": 2,
+    "explanation": "Over-generation produces candidate variations; re-ranking picks the candidate scoring best for fluency and grammar.",
+    "topic": "NLG",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_44",
+    "chapter": 10,
+    "question": "What is the difference between Open-Loop and Closed-Loop evaluation of dialogue systems?",
+    "options": [
+      "They are identical",
+      "Open-loop uses GPUs; closed-loop uses CPUs",
+      "Open-loop evaluates components in isolation (e.g. NLU intent accuracy on a static test set); Closed-loop evaluates end-to-end task completion with human or simulated users",
+      "Open-loop requires internet; closed-loop runs offline"
+    ],
+    "correct": 2,
+    "explanation": "Open-loop tests modules on static benchmarks; closed-loop tests full multi-turn conversational interaction dynamically.",
+    "topic": "Evaluation",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_45",
+    "chapter": 10,
+    "question": "What is Task Completion Rate (Success Rate) in task-oriented dialogue evaluation?",
+    "options": [
+      "The number of words typed",
+      "The percentage of dialogues in which the system successfully achieved the user's intended goal (e.g. valid flight booked)",
+      "The BLEU score",
+      "The speed of the CPU"
+    ],
+    "correct": 1,
+    "explanation": "Task success is the ultimate extrinsic performance metric for task-oriented conversational agents.",
+    "topic": "Evaluation",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_46",
+    "chapter": 10,
+    "question": "What is Average Turn Count in dialogue evaluation?",
+    "options": [
+      "The number of users",
+      "The total words spoken",
+      "The average number of conversational exchanges taken to complete a task; fewer turns generally indicates a more efficient dialogue policy",
+      "The time in seconds"
+    ],
+    "correct": 2,
+    "explanation": "Minimizing turn count while maintaining high success rate reflects an efficient, cooperative conversational policy.",
+    "topic": "Evaluation",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_47",
+    "chapter": 10,
+    "question": "What is User Satisfaction Score (e.g. CSAT) in dialogue evaluation?",
+    "options": [
+      "The number of errors logged",
+      "Subjective ratings (e.g. 1-5 stars) collected from human users immediately following conversational interactions",
+      "The computer memory usage",
+      "The BLEU score"
+    ],
+    "correct": 1,
+    "explanation": "CSAT measures subjective user satisfaction, helpfulness, and perceived conversational naturalness.",
+    "topic": "Evaluation",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch10_48",
+    "chapter": 10,
+    "question": "What is Slot Filling confidence score calibration used for?",
+    "options": [
+      "Deciding when to turn off the computer",
+      "Coloring the user interface",
+      "Determining whether to accept a slot value directly, ask for confirmation, or trigger a clarification question based on model confidence",
+      "Measuring audio volume"
+    ],
+    "correct": 2,
+    "explanation": "Calibrated confidence enables dynamic policy decisions: high confidence accepts directly; medium confirms; low clarifies.",
+    "topic": "Confidence Calibration",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch10_49",
+    "chapter": 10,
+    "question": "Can modern LLM chatbots execute API actions in real-world systems?",
+    "options": [
+      "Yes, through Function Calling / Tool Use, where the LLM outputs structured JSON specifying the tool name and arguments to execute",
+      "No, LLMs can only print text and can never trigger software functions",
+      "Only if compiled in C",
+      "Only using punch cards"
+    ],
+    "correct": 0,
+    "explanation": "Modern LLMs generate structured tool calls that external runtime environments execute, connecting models to databases and APIs.",
+    "topic": "Tool Use / Function Calling",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch10_50",
+    "chapter": 10,
+    "question": "What is Safety Guardrailing (e.g., Llama Guard, NeMo Guardrails) in enterprise chatbots?",
+    "options": [
+      "Independent classifier layers and rules that filter toxic, harmful, illegal, or out-of-domain prompts and responses",
+      "Physical computer cases",
+      "Antivirus software only",
+      "Password encryption only"
+    ],
+    "correct": 0,
+    "explanation": "Guardrails inspect inputs and outputs to ensure enterprise conversations adhere to safety policies and privacy standards.",
+    "topic": "Safety & Guardrails",
+    "slide_ref": "10. Chatbot and Dialogue Systems.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_01",
+    "chapter": 11,
+    "question": "What is a Context-Free Grammar (CFG), also known as Phrase Structure Grammar?",
+    "options": [
+      "A formal grammar 4-tuple G = (V_N, V_T, R, S) consisting of non-terminals, terminals, rewrite production rules, and a start symbol",
+      "A regex with quantifiers only",
+      "A dictionary of synonyms",
+      "A matrix of word counts"
+    ],
+    "correct": 0,
+    "explanation": "A CFG defines syntax via production rules A -> alpha where A is a single non-terminal and alpha is a string of terminals and non-terminals.",
+    "topic": "CFG Definition",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_02",
+    "chapter": 11,
+    "question": "In CFG formal notation, what are 'Terminals' (V_T)?",
+    "options": [
+      "Punctuation marks only",
+      "The start symbol S",
+      "The actual surface lexical words / vocabulary symbols of the language (leaf nodes in parse trees)",
+      "Grammatical categories like NP and VP"
+    ],
+    "correct": 2,
+    "explanation": "Terminals are the basic word tokens of the language, appearing only as leaves in the syntactic derivation tree.",
+    "topic": "CFG Components",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_03",
+    "chapter": 11,
+    "question": "In CFG formal notation, what are 'Non-terminals' (V_N)?",
+    "options": [
+      "Surface words in the sentence",
+      "ASCII characters",
+      "Syntactic variables representing constituent phrases or grammatical categories (e.g. S, NP, VP, PP, Nominal)",
+      "Numbers only"
+    ],
+    "correct": 2,
+    "explanation": "Non-terminals represent constituent syntactic abstractions that can be rewritten into other symbols.",
+    "topic": "CFG Components",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_04",
+    "chapter": 11,
+    "question": "What is the typical Start Symbol (S) in standard syntactic CFGs for natural language?",
+    "options": [
+      "S (representing Sentence)",
+      "VP (Verb Phrase)",
+      "ROOT",
+      "NP (Noun Phrase)"
+    ],
+    "correct": 0,
+    "explanation": "In linguistic CFGs, the top-level start symbol is S, denoting a complete sentence.",
+    "topic": "CFG Components",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_05",
+    "chapter": 11,
+    "question": "Which of the following is a standard CFG production rule for a basic Sentence?",
+    "options": [
+      "S -> NP VP",
+      "S -> Det Noun",
+      "S -> Adjective Adverb",
+      "S -> Verb NP"
+    ],
+    "correct": 0,
+    "explanation": "The canonical rule S -> NP VP states that a sentence consists of a Noun Phrase followed by a Verb Phrase.",
+    "topic": "Phrase Structure Rules",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_06",
+    "chapter": 11,
+    "question": "What is a Noun Phrase (NP) in phrase structure grammar?",
+    "options": [
+      "A constituent phrase whose head is a noun (e.g. 'the black cat', 'John', 'a delicious apple')",
+      "A sentence without verbs",
+      "A phrase starting with a preposition",
+      "A single verb"
+    ],
+    "correct": 0,
+    "explanation": "Noun Phrases function as subjects, objects, or predicatives, centered around a head noun.",
+    "topic": "Phrase Structure Rules",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_07",
+    "chapter": 11,
+    "question": "What is a Verb Phrase (VP)?",
+    "options": [
+      "A constituent phrase centered around a head verb and its verbal arguments/complements (e.g. 'eats an apple', 'slept soundly')",
+      "A complete paragraph",
+      "A list of adjectives",
+      "A sequence of nouns"
+    ],
+    "correct": 0,
+    "explanation": "Verb Phrases express the action or state and encompass the verb plus its direct/indirect objects and modifiers.",
+    "topic": "Phrase Structure Rules",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_08",
+    "chapter": 11,
+    "question": "What is a Prepositional Phrase (PP)?",
+    "options": [
+      "A single preposition",
+      "A constituent consisting of a Preposition followed by a Noun Phrase: PP -> P NP (e.g. 'in the room', 'with a telescope')",
+      "A phrase without prepositions",
+      "A pronoun"
+    ],
+    "correct": 1,
+    "explanation": "Prepositional Phrases are formed by a preposition governing a noun phrase complement: PP -> P NP.",
+    "topic": "Phrase Structure Rules",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_09",
+    "chapter": 11,
+    "question": "What is Structural Ambiguity in syntactic parsing?",
+    "options": [
+      "A sentence translated into two languages",
+      "A sentence with no verbs",
+      "A spelling error in a word",
+      "A single surface sentence having multiple distinct, valid syntactic parse trees with different semantic interpretations"
+    ],
+    "correct": 3,
+    "explanation": "Structural ambiguity arises when grammar rules permit more than one structural derivation for the exact same word sequence.",
+    "topic": "Syntactic Ambiguity",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_10",
+    "chapter": 11,
+    "question": "In the classic sentence 'I saw the man with a telescope', what causes the structural ambiguity?",
+    "options": [
+      "Prepositional Phrase (PP) Attachment Ambiguity: 'with a telescope' can attach to the VP (instrument of seeing) OR to the NP (the man possesses the telescope)",
+      "The word 'telescope' is unknown",
+      "Lack of punctuation",
+      "The word 'saw' is misspelled"
+    ],
+    "correct": 0,
+    "explanation": "PP-attachment is a notorious ambiguity: attaching to VP means using the telescope to see; attaching to NP means the man has a telescope.",
+    "topic": "PP-Attachment",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_11",
+    "chapter": 11,
+    "question": "What is Coordination Ambiguity (e.g. 'old men and women')?",
+    "options": [
+      "Misplaced apostrophes",
+      "Ambiguity in the scope of a conjunction: does 'old' modify only 'men' [ [old men] and [women] ] or both [ old [men and women] ]?",
+      "Translating conjunctions",
+      "Using too many commas"
+    ],
+    "correct": 1,
+    "explanation": "Coordination ambiguity concerns how far a modifying adjective or clause extends across coordinating conjunctions like 'and'.",
+    "topic": "Syntactic Ambiguity",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_12",
+    "chapter": 11,
+    "question": "Why does the number of possible parse trees grow exponentially with sentence length (Catalan numbers)?",
+    "options": [
+      "Because words have many letters",
+      "Because computers slow down",
+      "Because nested combinations of PP-attachments and coordinations multiply combinatorially: C_n = (2n)! / ((n+1)! * n!)",
+      "Because grammars delete rules"
+    ],
+    "correct": 2,
+    "explanation": "Attachment ambiguities exhibit Catalan progression; a sentence with 4 PPs can yield 14 trees, 5 PPs yield 42 trees, 10 PPs yield 16,796 trees.",
+    "topic": "Parsing Complexity",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_13",
+    "chapter": 11,
+    "question": "Why is naive top-down or bottom-up recursive backtracking parsing impractical for natural language?",
+    "options": [
+      "It divides by zero",
+      "It recomputes identical sub-phrases repeatedly and has exponential time complexity O(2^N) or worse",
+      "It only accepts sentences of 3 words",
+      "It cannot run on Linux"
+    ],
+    "correct": 1,
+    "explanation": "Exhaustive backtracking re-parses the same constituent phrases repeatedly upon failure, leading to exponential explosion.",
+    "topic": "Parsing Algorithms",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_14",
+    "chapter": 11,
+    "question": "What algorithmic paradigm solves the inefficiency of recursive backtracking in parsing?",
+    "options": [
+      "Binary Search",
+      "Greedy Search",
+      "Genetic Algorithms",
+      "Dynamic Programming (Chart Parsing): storing solutions to sub-problems in a table/chart so they are solved only once"
+    ],
+    "correct": 3,
+    "explanation": "Dynamic programming parsers store parsed constituents in a chart table, enabling polynomial-time parsing.",
+    "topic": "Dynamic Programming",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_15",
+    "chapter": 11,
+    "question": "What is Chomsky Normal Form (CNF)?",
+    "options": [
+      "A grammar without nouns",
+      "A grammar with 1 rule only",
+      "A grammar written in binary",
+      "A standardized CFG format where every rule is strictly of the form A -> B C (two non-terminals) OR A -> a (a single terminal)"
+    ],
+    "correct": 3,
+    "explanation": "In CNF, all productions are strictly binary branching (A -> B C) or unitary lexical (A -> a).",
+    "topic": "Chomsky Normal Form",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_16",
+    "chapter": 11,
+    "question": "Can any arbitrary Context-Free Grammar be converted into an equivalent Chomsky Normal Form grammar?",
+    "options": [
+      "No, only English grammars can",
+      "No, it is mathematically impossible",
+      "Yes, any CFG can be converted to CNF while generating the exact same language (weak equivalence)",
+      "Only for grammars with <= 5 rules"
+    ],
+    "correct": 2,
+    "explanation": "Through standard transformations (eliminating epsilon rules, unit rules, and binarizing long rules), any CFG transforms into CNF.",
+    "topic": "Chomsky Normal Form",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_17",
+    "chapter": 11,
+    "question": "In converting a rule A -> B C D into CNF, what is done?",
+    "options": [
+      "Deleting D",
+      "Binarization: introducing a dummy intermediate non-terminal X1: A -> B X1 and X1 -> C D",
+      "Merging B, C, D into one word",
+      "Moving A to the end"
+    ],
+    "correct": 1,
+    "explanation": "Long rules with >= 3 symbols on the RHS are decomposed into a cascade of binary productions using new auxiliary non-terminals.",
+    "topic": "CNF Conversion",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_18",
+    "chapter": 11,
+    "question": "What is an Unit Production in CFG, and how is it eliminated for CNF?",
+    "options": [
+      "A rule with 1 terminal",
+      "A rule that starts with S",
+      "A rule used once",
+      "A rule of the form A -> B (one non-terminal to another); eliminated by rewriting A directly to all expansions of B"
+    ],
+    "correct": 3,
+    "explanation": "Unit productions A -> B are flattened by replacing them with A -> gamma for all rules B -> gamma.",
+    "topic": "CNF Conversion",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_19",
+    "chapter": 11,
+    "question": "What is an Epsilon (lambda) production: A -> epsilon?",
+    "options": [
+      "A rule where a non-terminal rewrites to the empty string",
+      "A rule producing vowels",
+      "A rule with error",
+      "A rule without non-terminals"
+    ],
+    "correct": 0,
+    "explanation": "Epsilon productions derive the empty string and must be eliminated during CNF conversion.",
+    "topic": "CNF Conversion",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_20",
+    "chapter": 11,
+    "question": "What is the CKY (Cocke-Kasami-Younger) algorithm?",
+    "options": [
+      "A sentiment classifier",
+      "A top-down predictive parser",
+      "A bottom-up dynamic programming chart parsing algorithm that parses sentences in O(N^3) time using a grammar in Chomsky Normal Form",
+      "A spell checker"
+    ],
+    "correct": 2,
+    "explanation": "CKY fills a triangular (N+1) x (N+1) chart table bottom-up, finding all valid constituents for every subspan.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_21",
+    "chapter": 11,
+    "question": "What is the input requirement for the standard CKY parsing algorithm?",
+    "options": [
+      "The vocabulary must be 100 words",
+      "The grammar MUST be in Chomsky Normal Form (CNF)",
+      "The grammar must have no terminals",
+      "The sentence must have no nouns"
+    ],
+    "correct": 1,
+    "explanation": "CKY fundamentally relies on binary branching and single terminal rules defined by CNF.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_22",
+    "chapter": 11,
+    "question": "What is the time complexity of the CKY algorithm for a sentence of length N with grammar size |R|?",
+    "options": [
+      "O(2^N)",
+      "O(N * log N)",
+      "O(N^2)",
+      "O(N^3 * |R|)"
+    ],
+    "correct": 3,
+    "explanation": "CKY has three nested loops over span length, start position, and split point k, yielding O(N^3 * |R|) time complexity.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_23",
+    "chapter": 11,
+    "question": "What does cell table[i, j] in the CKY chart represent?",
+    "options": [
+      "The probability of word j",
+      "The number of verbs",
+      "The word frequency of word i",
+      "The set of all non-terminal categories that can derive the substring of words from index i to index j"
+    ],
+    "correct": 3,
+    "explanation": "Cell [i, j] stores non-terminals that span the yield from position i to j.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_24",
+    "chapter": 11,
+    "question": "In CKY, how is cell table[i, j] filled for a span of length >= 2?",
+    "options": [
+      "By guessing randomly",
+      "By reading the dictionary",
+      "By asking the user",
+      "By checking all split points k (i < k < j) to see if B in table[i, k] and C in table[k, j] match a rule A -> B C"
+    ],
+    "correct": 3,
+    "explanation": "For every split point k, CKY tests if constituent B from [i, k] and C from [k, j] combine via rule A -> B C into A at [i, j].",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_25",
+    "chapter": 11,
+    "question": "In CKY, how is cell table[i-1, i] (the base diagonal) initialized?",
+    "options": [
+      "With empty sets",
+      "With zeros",
+      "With the start symbol S",
+      "With all non-terminals A that derive the single word w_i via lexical rule A -> w_i"
+    ],
+    "correct": 3,
+    "explanation": "The base diagonal corresponds to single-word spans of length 1, populated directly from lexical rules A -> word.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_26",
+    "chapter": 11,
+    "question": "How does CKY recognize whether an entire sentence of length N is syntactically VALID?",
+    "options": [
+      "If the start symbol S is present in the top-right cell table[0, N]",
+      "If the diagonal is empty",
+      "If the chart has no empty cells",
+      "If all cells contain S"
+    ],
+    "correct": 0,
+    "explanation": "If start symbol S spans the entire sentence from index 0 to N (cell [0, N]), the sentence is grammatically accepted.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_27",
+    "chapter": 11,
+    "question": "How are actual Parse Trees reconstructed from a completed CKY recognition table?",
+    "options": [
+      "By taking the diagonal",
+      "Trees cannot be recovered",
+      "By maintaining Backpointers in each cell recording which rule and which split point k derived each non-terminal, and backtracking from S",
+      "By re-parsing the sentence with regex"
+    ],
+    "correct": 2,
+    "explanation": "Backpointers stored during chart filling enable recursive tree reconstruction starting from S in cell [0, N].",
+    "topic": "CKY Algorithm",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_28",
+    "chapter": 11,
+    "question": "What is a Probabilistic Context-Free Grammar (PCFG)?",
+    "options": [
+      "A grammar with random rules",
+      "A rule-less system",
+      "A grammar for lottery numbers",
+      "A CFG where each production rule A -> alpha is assigned a conditional probability P(alpha | A) such that SUM P(alpha | A) = 1"
+    ],
+    "correct": 3,
+    "explanation": "PCFGs augment CFG rules with probabilities, assigning a probability to each complete parse tree T: P(T) = PROD P(rule_i).",
+    "topic": "PCFG",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_29",
+    "chapter": 11,
+    "question": "How is the probability of a complete parse tree T calculated in a PCFG?",
+    "options": [
+      "The probability of the longest word",
+      "The product of the probabilities of all production rules used in its derivation: P(T) = PROD_{r in T} P(r)",
+      "The sum of all rule probabilities",
+      "The average of rule probabilities"
+    ],
+    "correct": 1,
+    "explanation": "Under rule independence assumptions, the tree probability is the product of all constituent rule probabilities.",
+    "topic": "PCFG",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_30",
+    "chapter": 11,
+    "question": "How does a PCFG resolve Structural Ambiguity among multiple valid parse trees for a sentence?",
+    "options": [
+      "By picking the shortest tree",
+      "Randomly",
+      "By picking the tree with the most nouns",
+      "By selecting the parse tree T with the HIGHEST probability: T_best = argmax_T P(T | S)"
+    ],
+    "correct": 3,
+    "explanation": "The Maximum A Posteriori (MAP) parse selects the tree with the highest generative probability under the PCFG.",
+    "topic": "PCFG Disambiguation",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_31",
+    "chapter": 11,
+    "question": "What algorithm finds the most probable parse tree in a PCFG in O(N^3) time?",
+    "options": [
+      "K-Means",
+      "Dijkstra algorithm",
+      "Probabilistic CKY (Viterbi CKY) algorithm",
+      "Gradient Descent"
+    ],
+    "correct": 2,
+    "explanation": "Probabilistic CKY stores max-probabilities and argmax backpointers in each chart cell, analogous to the Viterbi algorithm for HMMs.",
+    "topic": "PCFG Parsing",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_32",
+    "chapter": 11,
+    "question": "What is the Earley Parser (Jay Earley, 1970)?",
+    "options": [
+      "A sentiment classifier",
+      "A spelling checker",
+      "A top-down chart parsing dynamic programming algorithm that parses arbitrary CFGs (without converting to CNF) in O(N^3) general time and O(N) for unambiguous grammars",
+      "A bottom-up parser only"
+    ],
+    "correct": 2,
+    "explanation": "The Earley parser operates on unmodified CFGs using dotted rules and three operations: Predictor, Scanner, and Completer.",
+    "topic": "Earley Parser",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_33",
+    "chapter": 11,
+    "question": "In the Earley parser, what does the 'Dot' in a Dotted Rule (e.g. `VP -> V . NP, [0, 1]`) signify?",
+    "options": [
+      "The current parsing progress: symbols to the left of the dot have been recognized, while symbols to the right are predicted/expected",
+      "A syntax error",
+      "A period ending the sentence",
+      "A multiplication symbol"
+    ],
+    "correct": 0,
+    "explanation": "The dot marks the current position within the production rule: left is recognized history, right is upcoming expectation.",
+    "topic": "Earley Parser",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_34",
+    "chapter": 11,
+    "question": "What are the three core operators in the Earley parsing algorithm?",
+    "options": [
+      "Encoder, Decoder, Attention",
+      "Shift, Reduce, Accept",
+      "Predictor, Scanner, and Completer",
+      "Query, Key, Value"
+    ],
+    "correct": 2,
+    "explanation": "Earley advances parse states using: Predictor (predicts non-terminals), Scanner (reads matching words), Completer (advances completed rules).",
+    "topic": "Earley Operators",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_35",
+    "chapter": 11,
+    "question": "In the Earley parser, what does the PREDICTOR operator do?",
+    "options": [
+      "Predicts the next sentence",
+      "When the dot is before a non-terminal (A -> alpha . B beta), it adds new states for all rules B -> . gamma starting at the current position",
+      "Predicts the weather",
+      "Predicts model loss"
+    ],
+    "correct": 1,
+    "explanation": "Predictor generates top-down expectations for expanding non-terminal B.",
+    "topic": "Earley Operators",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_36",
+    "chapter": 11,
+    "question": "In the Earley parser, what does the SCANNER operator do?",
+    "options": [
+      "Scans for computer viruses",
+      "Scans paper documents",
+      "When the dot is before a terminal word that matches the next input word, it advances the dot past the word into the next chart state set",
+      "Scans for capital letters"
+    ],
+    "correct": 2,
+    "explanation": "Scanner matches terminal expectations against actual surface input tokens, moving the dot past the terminal.",
+    "topic": "Earley Operators",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_37",
+    "chapter": 11,
+    "question": "In the Earley parser, what does the COMPLETER operator do?",
+    "options": [
+      "Deletes empty rules",
+      "Completes the training process",
+      "When a rule's dot reaches the end (B -> gamma .), it finds all previous states that were waiting for B and advances their dots past B",
+      "Auto-completes search queries"
+    ],
+    "correct": 2,
+    "explanation": "Completer applies bottom-up completion: once B is fully parsed, it advances all parent rules waiting for B.",
+    "topic": "Earley Operators",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_38",
+    "chapter": 11,
+    "question": "What standard evaluation methodology is used to evaluate constituency parsers against human treebanks?",
+    "options": [
+      "PARSEVAL metrics (Black et al., 1991): Labeled Precision, Labeled Recall, and F1 over constituent brackets",
+      "Perplexity",
+      "Word Error Rate",
+      "BLEU score"
+    ],
+    "correct": 0,
+    "explanation": "PARSEVAL evaluates overlap between predicted constituent brackets (Label, Start, End) and gold treebank brackets.",
+    "topic": "PARSEVAL",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_39",
+    "chapter": 11,
+    "question": "In PARSEVAL evaluation, what defines a single 'Constituent Bracket'?",
+    "options": [
+      "A word and its POS tag",
+      "A sentence boundary",
+      "A punctuation mark",
+      "A 3-tuple: (Non-Terminal Label, Start Index, End Index), e.g. ('NP', 2, 5)"
+    ],
+    "correct": 3,
+    "explanation": "A bracket specifies the constituent phrase category and the exact span of words it covers.",
+    "topic": "PARSEVAL",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_40",
+    "chapter": 11,
+    "question": "What is Labeled Precision (LP) in PARSEVAL?",
+    "options": [
+      "(Number of correct brackets in candidate parse) / (Total number of brackets in candidate parse)",
+      "Total trees / Total sentences",
+      "Candidate words / Reference words",
+      "Correct words / Total words"
+    ],
+    "correct": 0,
+    "explanation": "LP measures what proportion of constituents predicted by the parser match gold constituents in label, start, and end.",
+    "topic": "PARSEVAL",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_41",
+    "chapter": 11,
+    "question": "What is Labeled Recall (LR) in PARSEVAL?",
+    "options": [
+      "(Number of correct brackets in candidate parse) / (Total number of brackets in gold standard tree)",
+      "Accuracy of POS tags",
+      "Gold brackets / Candidate brackets",
+      "Number of sentences parsed"
+    ],
+    "correct": 0,
+    "explanation": "LR measures what proportion of gold human-annotated constituents were successfully recovered by the parser.",
+    "topic": "PARSEVAL",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch11_42",
+    "chapter": 11,
+    "question": "What is a Crossing Bracket in PARSEVAL evaluation?",
+    "options": [
+      "A parenthetical remark",
+      "A syntax error in code",
+      "When a predicted bracket overlaps the boundary of a gold bracket without one being strictly nested inside the other (e.g. (2, 5) and (4, 7))",
+      "A bracket with a typo"
+    ],
+    "correct": 2,
+    "explanation": "Crossing brackets represent structural boundary violations where phrase boundaries cross illegitimately.",
+    "topic": "PARSEVAL",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch11_43",
+    "chapter": 11,
+    "question": "What famous human-annotated constituency corpus developed at the University of Pennsylvania is the standard benchmark for English parsing?",
+    "options": [
+      "Wikipedia Dump",
+      "The Brown Corpus",
+      "WordNet",
+      "The Penn Treebank (PTB)"
+    ],
+    "correct": 3,
+    "explanation": "The Penn Treebank (Marcus et al., 1993) contains ~40,000 sentences from the Wall Street Journal annotated with constituency trees.",
+    "topic": "Treebanks",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_44",
+    "chapter": 11,
+    "question": "What is a major limitation of standard unlexicalized PCFGs?",
+    "options": [
+      "They have no probabilities",
+      "They cannot parse sentences with > 3 words",
+      "They only run on CPUs",
+      "They lack Lexical Sensitivity: rule probabilities do not depend on specific words, failing to resolve lexical attachment preferences (e.g., 'eat pizza with a fork' vs 'eat pizza with olives')"
+    ],
+    "correct": 3,
+    "explanation": "Unlexicalized PCFGs treat all nouns identically, unable to distinguish between 'fork' (instrument) and 'olives' (topping).",
+    "topic": "PCFG Limitations",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_45",
+    "chapter": 11,
+    "question": "How does a Lexicalized PCFG (e.g. Collins Parser, Charniak Parser) solve the lack of lexical sensitivity?",
+    "options": [
+      "By removing non-terminals",
+      "By using one-hot vectors",
+      "By translating words to Latin",
+      "By associating each non-terminal with its lexical Head Word: e.g. VP[ate] -> V[ate] NP[pizza] PP[fork]"
+    ],
+    "correct": 3,
+    "explanation": "Lexicalized PCFGs propagate head words up the tree using head rules, conditioning attachment decisions on lexical affinity.",
+    "topic": "Lexicalized Parsing",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_46",
+    "chapter": 11,
+    "question": "What is Parent Annotation in PCFG grammar refinement?",
+    "options": [
+      "Annotating the author of the sentence",
+      "Adding parenthetical comments",
+      "Removing non-terminals",
+      "Splitting non-terminal categories by conditioning them on their parent node (e.g. NP^S vs NP^VP)"
+    ],
+    "correct": 3,
+    "explanation": "Parent annotation (Johnson, 1998) captures external syntactic distribution differences (e.g. subject NPs vs object NPs).",
+    "topic": "Grammar Refinement",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_47",
+    "chapter": 11,
+    "question": "Can a constituency parse tree be converted into a Dependency parse tree?",
+    "options": [
+      "Only for English",
+      "Yes, by identifying the head child for every constituent rule using Head Finding Rules and drawing directed edges from heads to dependents",
+      "Only using deep neural networks",
+      "No, they are mathematically incompatible"
+    ],
+    "correct": 1,
+    "explanation": "Standard head-percolation tables (e.g. Magerman, Collins) convert phrase trees into dependency graphs deterministically.",
+    "topic": "Tree Conversion",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_48",
+    "chapter": 11,
+    "question": "What is an EBNF (Extended Backus-Naur Form) optional element in grammar rules?",
+    "options": [
+      "A required element",
+      "A deleted element",
+      "A repeating element",
+      "Square brackets [ ... ] denoting an element that can occur 0 or 1 time"
+    ],
+    "correct": 3,
+    "explanation": "In EBNF, `[Det]` denotes an optional determiner, matching 0 or 1 time.",
+    "topic": "CFG Notation",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch11_49",
+    "chapter": 11,
+    "question": "What does the Kleene Star `*` denote in an Extended CFG rule like `NP -> Det Noun*`?",
+    "options": [
+      "Exactly one noun",
+      "Zero or more repetitions of the Noun non-terminal",
+      "No nouns allowed",
+      "A required noun"
+    ],
+    "correct": 1,
+    "explanation": "Kleene star denotes zero or more repetitions of the symbol in grammar rules.",
+    "topic": "CFG Notation",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch11_50",
+    "chapter": 11,
+    "question": "Why have neural dependency parsers largely surpassed classical constituency parsers in many practical NLP applications?",
+    "options": [
+      "Constituency trees are illegal to compute",
+      "Dependency trees directly encode predicate-argument relationships (semantic relations) and are much more computationally efficient to parse (linear time)",
+      "Constituency parsers cannot handle English",
+      "Dependency parsing does not require computers"
+    ],
+    "correct": 1,
+    "explanation": "Dependency representations map closer to semantic who-did-what-to-whom relations and parse in linear time with transition models.",
+    "topic": "Constituency vs Dependency",
+    "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_01",
+    "chapter": 12,
+    "question": "What is the fundamental difference between Constituency Parsing and Dependency Parsing?",
+    "options": [
+      "Dependency parsing only works on verbs",
+      "They are identical mathematically",
+      "Constituency parsing has no trees",
+      "Constituency parses into nested phrasal constituents with non-terminals; Dependency links words directly via directed typed grammatical relations (Head -> Dependent)"
+    ],
+    "correct": 3,
+    "explanation": "Dependency parsing models syntactic structure as direct binary head-dependent relations between words without phrasal non-terminals.",
+    "topic": "Constituency vs Dependency",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_02",
+    "chapter": 12,
+    "question": "In a dependency relation Head -> Dependent, what is the role of the 'Head' (Governor)?",
+    "options": [
+      "The subordinate word",
+      "The syntactically dominant word that determines the syntactic category and semantic core of the phrase",
+      "The word with the most letters",
+      "The first word in the sentence"
+    ],
+    "correct": 1,
+    "explanation": "The head (governor) is the structural parent; the dependent modifies or complements the head.",
+    "topic": "Dependency Basics",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_03",
+    "chapter": 12,
+    "question": "What is the artificial ROOT node added to dependency trees?",
+    "options": [
+      "A special dummy root node that serves as the unique structural parent of the main predicate/verb of the sentence",
+      "A punctuation mark",
+      "A null pointer",
+      "The last word in the file"
+    ],
+    "correct": 0,
+    "explanation": "The ROOT token provides a uniform origin for the tree, pointing to the main clausal head with the `root` relation.",
+    "topic": "Dependency Basics",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_04",
+    "chapter": 12,
+    "question": "What are the formal structural constraints of a standard Dependency Tree?",
+    "options": [
+      "Multiple heads allowed per word",
+      "Single Head (each word has exactly one head), Connected (all words reachable from ROOT), and Acyclic (no loops)",
+      "Cycles permitted",
+      "Disconnected islands allowed"
+    ],
+    "correct": 1,
+    "explanation": "A valid dependency parse must be a rooted, connected, acyclic directed tree where every word has exactly one incoming edge.",
+    "topic": "Tree Constraints",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_05",
+    "chapter": 12,
+    "question": "In Universal Dependencies (UD), what relation labels the grammatical subject of a clause?",
+    "options": [
+      "`nsubj` (nominal subject)",
+      "`obj`",
+      "`amod`",
+      "`advmod`"
+    ],
+    "correct": 0,
+    "explanation": "`nsubj` marks the nominal subject (e.g. 'She' in 'She reads books').",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_06",
+    "chapter": 12,
+    "question": "In Universal Dependencies (UD), what relation labels the direct object of a verb?",
+    "options": [
+      "`iobj`",
+      "`nsubj`",
+      "`obj` (direct object)",
+      "`det`"
+    ],
+    "correct": 2,
+    "explanation": "`obj` designates the primary nominal object of a transitive verb (e.g. 'books' in 'She reads books').",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_07",
+    "chapter": 12,
+    "question": "In Universal Dependencies, what relation labels an adjectival modifier of a noun?",
+    "options": [
+      "`advmod`",
+      "`nmod`",
+      "`compound`",
+      "`amod` (e.g. 'red' in 'red apple')"
+    ],
+    "correct": 3,
+    "explanation": "`amod` denotes an adjective modifying a noun head.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_08",
+    "chapter": 12,
+    "question": "In Universal Dependencies, what relation labels an adverb modifying a verb or adjective?",
+    "options": [
+      "`nsubj`",
+      "`aux`",
+      "`advmod` (e.g. 'quickly' in 'runs quickly')",
+      "`amod`"
+    ],
+    "correct": 2,
+    "explanation": "`advmod` marks adverbial modifiers specifying manner, degree, or time.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_09",
+    "chapter": 12,
+    "question": "In Universal Dependencies, what relation labels a Determiner (e.g. 'the', 'a') modifying a noun?",
+    "options": [
+      "`amod`",
+      "`case`",
+      "`nummod`",
+      "`det`"
+    ],
+    "correct": 3,
+    "explanation": "`det` links determiners and articles to the noun they modify.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_10",
+    "chapter": 12,
+    "question": "In Universal Dependencies, what relation labels a preposition modifying a noun phrase?",
+    "options": [
+      "`root`",
+      "`prep`",
+      "`nsubj`",
+      "`case` (treating the noun as head and the preposition as a case-marking dependent)"
+    ],
+    "correct": 3,
+    "explanation": "UD adopts a content-head philosophy: content words are heads, so prepositions are labeled `case` dependent on the noun.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_11",
+    "chapter": 12,
+    "question": "In the sentence 'The chef cooked a delicious meal', what is the root of the dependency tree?",
+    "options": [
+      "'delicious'",
+      "'chef'",
+      "'cooked'",
+      "'meal'"
+    ],
+    "correct": 2,
+    "explanation": "The finite main verb 'cooked' is the central predicate of the clause, attached directly to ROOT.",
+    "topic": "Dependency Examples",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_12",
+    "chapter": 12,
+    "question": "In the sentence 'The chef cooked a delicious meal', what is the head of 'chef'?",
+    "options": [
+      "'cooked' (with relation `nsubj`)",
+      "'meal'",
+      "'ROOT'",
+      "'The'"
+    ],
+    "correct": 0,
+    "explanation": "'chef' is the nominal subject (`nsubj`) governed by the predicate 'cooked'.",
+    "topic": "Dependency Examples",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_13",
+    "chapter": 12,
+    "question": "In the sentence 'The chef cooked a delicious meal', what is the head of 'delicious'?",
+    "options": [
+      "'meal' (with relation `amod`)",
+      "'cooked'",
+      "'chef'",
+      "'a'"
+    ],
+    "correct": 0,
+    "explanation": "'delicious' is an adjectival modifier (`amod`) modifying the head noun 'meal'.",
+    "topic": "Dependency Examples",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_14",
+    "chapter": 12,
+    "question": "What is a Projective Dependency Tree?",
+    "options": [
+      "A tree where, when words are placed in linear order, no dependency arcs cross each other (every word's descendants form a contiguous substring)",
+      "A tree with 1 branch",
+      "A tree projected onto a 3D wall",
+      "A tree with no nouns"
+    ],
+    "correct": 0,
+    "explanation": "Projectivity means dependency edges do not cross when drawn above the linear word sequence.",
+    "topic": "Projectivity",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_15",
+    "chapter": 12,
+    "question": "What is a Non-Projective Dependency Tree?",
+    "options": [
+      "A tree with spelling mistakes",
+      "A tree without a root",
+      "A tree containing crossing dependency arcs when words are laid out in linear sentence order",
+      "A tree with cyclical loops"
+    ],
+    "correct": 2,
+    "explanation": "Non-projective structures have crossing arcs, commonly caused by long-distance wh-movement, scrambling, or free word order.",
+    "topic": "Projectivity",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_16",
+    "chapter": 12,
+    "question": "In English, which of the following constructions typically produces a Non-Projective dependency tree?",
+    "options": [
+      "Wh-extraction / topicalization (e.g., 'Which book did you say that you read yesterday?')",
+      "Simple subject-verb-object ('I ate lunch')",
+      "Prepositional phrases",
+      "Adjective-noun pairs ('cold winter')"
+    ],
+    "correct": 0,
+    "explanation": "Long-distance extraction moves the wh-element across clausal boundaries, creating crossing dependency links.",
+    "topic": "Projectivity",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_17",
+    "chapter": 12,
+    "question": "Why are languages with flexible / free word order (like Czech, Latin, Russian) difficult for projective parsers?",
+    "options": [
+      "Because they have no grammar",
+      "Because computers cannot read Slavic fonts",
+      "Because flexible word order creates frequent non-projective crossing dependency links across the sentence",
+      "Because they do not have vowels"
+    ],
+    "correct": 2,
+    "explanation": "High proportions of sentences in free word-order languages violate projectivity constraints.",
+    "topic": "Projectivity",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_18",
+    "chapter": 12,
+    "question": "What are the three core data structures in a Transition-Based (Shift-Reduce) dependency parser?",
+    "options": [
+      "A Queue, a Tree, and an Array",
+      "A Compiler, a Linker, and a Loader",
+      "A Hash Table, a Cache, and a Matrix",
+      "A Stack (sigma), a Buffer (beta), and a Set of Dependency Arcs (A)"
+    ],
+    "correct": 3,
+    "explanation": "Transition-based parsers maintain: Stack (words currently being processed), Buffer (unseen words), and Arc set (constructed edges).",
+    "topic": "Transition-Based Parsing",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_19",
+    "chapter": 12,
+    "question": "In the Arc-Standard transition system (Nivre, 2004), what are the three basic actions?",
+    "options": [
+      "INSERT, DELETE, REPLACE",
+      "FORWARD, BACKWARD, STOP",
+      "SHIFT, LEFT-ARC_r, and RIGHT-ARC_r",
+      "PUSH, POP, SWAP"
+    ],
+    "correct": 2,
+    "explanation": "Arc-Standard transitions: SHIFT (buffer to stack), LEFT-ARC (s1 -> s2, pop s2), RIGHT-ARC (s2 -> s1, pop s1).",
+    "topic": "Arc-Standard",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_20",
+    "chapter": 12,
+    "question": "In Arc-Standard parsing, what does the SHIFT action do?",
+    "options": [
+      "Draws a dependency arrow",
+      "Finishes the parse",
+      "Removes the first word from the front of the Buffer and pushes it onto the top of the Stack",
+      "Pops the stack"
+    ],
+    "correct": 2,
+    "explanation": "SHIFT transfers the lead token b_1 from the buffer onto the top of stack s_1.",
+    "topic": "Arc-Standard",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_21",
+    "chapter": 12,
+    "question": "In Arc-Standard parsing, what does the LEFT-ARC_r action do?",
+    "options": [
+      "Draws arrow from buffer",
+      "Pushes a word",
+      "Asserts dependency edge s1 -> s2 with label r (top of stack governs second word on stack) and POPS s2 from the stack",
+      "Pops s1"
+    ],
+    "correct": 2,
+    "explanation": "LEFT-ARC creates an edge from stack top s_1 to second word s_2 and removes dependent s_2 from the stack.",
+    "topic": "Arc-Standard",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_22",
+    "chapter": 12,
+    "question": "In Arc-Standard parsing, what does the RIGHT-ARC_r action do?",
+    "options": [
+      "Pops s2",
+      "Clears the buffer",
+      "Deletes s2",
+      "Asserts dependency edge s2 -> s1 with label r (second word on stack governs top of stack) and POPS s1 from the stack"
+    ],
+    "correct": 3,
+    "explanation": "RIGHT-ARC creates an edge from second word s_2 to stack top s_1 and removes dependent s_1 from the stack.",
+    "topic": "Arc-Standard",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_23",
+    "chapter": 12,
+    "question": "Why can an Arc-Standard parser NOT apply RIGHT-ARC to word s1 until s1 has collected ALL of its own dependents?",
+    "options": [
+      "Because s1 must be deleted first",
+      "Because the buffer becomes empty",
+      "Because right arcs are illegal early on",
+      "Because RIGHT-ARC immediately POPS s1 from the stack, so s1 can never again serve as a head to receive further dependents"
+    ],
+    "correct": 3,
+    "explanation": "Popping s1 upon RIGHT-ARC means s1 is permanently removed from the stack, requiring all its right children to be attached beforehand.",
+    "topic": "Arc-Standard",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_24",
+    "chapter": 12,
+    "question": "What is the time complexity of Arc-Standard parsing for a sentence of length N?",
+    "options": [
+      "O(N^3)",
+      "O(N) linear time (exactly 2N transitions: N shifts and N reductions)",
+      "O(2^N)",
+      "O(N^2)"
+    ],
+    "correct": 1,
+    "explanation": "Every word is shifted once and popped once, bounding total parsing time strictly to 2N transitions.",
+    "topic": "Complexity",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_25",
+    "chapter": 12,
+    "question": "Can the standard Arc-Standard algorithm produce Non-Projective dependency trees?",
+    "options": [
+      "No, standard Arc-Standard is strictly limited to projective dependency trees",
+      "Only with 100 GPUs",
+      "Yes, it parses all non-projective trees",
+      "Only in Latin"
+    ],
+    "correct": 0,
+    "explanation": "The stack reduction mechanism in Arc-Standard cannot create crossing arcs without special extensions (like a SWAP transition).",
+    "topic": "Arc-Standard",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_26",
+    "chapter": 12,
+    "question": "How does the Arc-Eager transition system (Nivre, 2003) differ from Arc-Standard?",
+    "options": [
+      "Arc-Eager has no stack",
+      "Arc-Eager builds right-arcs eagerly BEFORE the dependent has collected all its children, using 4 actions: SHIFT, LEFT-ARC, RIGHT-ARC, and REDUCE",
+      "Arc-Eager does not use labels",
+      "Arc-Eager is O(N^3)"
+    ],
+    "correct": 1,
+    "explanation": "Arc-Eager allows right-dependents to remain on the stack to collect their own dependents before being explicitly reduced.",
+    "topic": "Arc-Eager",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_27",
+    "chapter": 12,
+    "question": "What does the REDUCE action do in Arc-Eager parsing?",
+    "options": [
+      "Clears the buffer",
+      "Pops the top of the stack (s1), permitted only if s1 has already been assigned a head",
+      "Inserts a token",
+      "Halts the parser"
+    ],
+    "correct": 1,
+    "explanation": "REDUCE removes the stack top once all its dependents have been collected, requiring s1 to already have an assigned head.",
+    "topic": "Arc-Eager",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_28",
+    "chapter": 12,
+    "question": "How is the next transition action chosen in a modern statistical transition-based dependency parser?",
+    "options": [
+      "The user types the command",
+      "A machine learning classifier (e.g. Neural Network / MLP) predicts the transition from features of the stack top, buffer front, and existing arcs",
+      "Alphabetical sorting",
+      "A coin toss"
+    ],
+    "correct": 1,
+    "explanation": "A trained classifier acts as an Oracle, scoring candidate transitions given the current parser configuration state.",
+    "topic": "Parser Oracle",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_29",
+    "chapter": 12,
+    "question": "What landmark neural dependency parser was introduced by Chen & Manning (2014)?",
+    "options": [
+      "A CFG parser",
+      "A BERT parser",
+      "A fast neural transition-based parser using dense embeddings of words, POS tags, and arc labels passed through a feed-forward neural net",
+      "A regex parser"
+    ],
+    "correct": 2,
+    "explanation": "Chen & Manning (2014) demonstrated that dense embeddings in a neural classifier outperformed sparse feature engineering at 1,000 words/sec.",
+    "topic": "Neural Dependency Parsing",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_30",
+    "chapter": 12,
+    "question": "How did Kiperwasser & Goldberg (2016) improve neural dependency parsing?",
+    "options": [
+      "By using N-grams only",
+      "By running on TPU",
+      "By using Bidirectional LSTMs (BiLSTM) to represent each word's contextual hidden state before feeding them into transition or graph parsers",
+      "By removing neural nets"
+    ],
+    "correct": 2,
+    "explanation": "BiLSTM encoders provide rich, unbounded contextual representations for each word position in the sentence.",
+    "topic": "Neural Dependency Parsing",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_31",
+    "chapter": 12,
+    "question": "What is Graph-Based Dependency Parsing (e.g. McDonald et al., 2005)?",
+    "options": [
+      "Scoring every possible directed edge (head -> dependent) in a complete graph and finding the Maximum Spanning Tree (MST)",
+      "A parser with a stack only",
+      "A parser using pie charts",
+      "A parser that creates graphs for social media"
+    ],
+    "correct": 0,
+    "explanation": "Graph-based parsing evaluates global tree scores by scoring individual edges or edge cliques across all pairs.",
+    "topic": "Graph-Based Parsing",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_32",
+    "chapter": 12,
+    "question": "What classic algorithm is used in Graph-Based parsing to find the directed Maximum Spanning Tree on non-projective graphs?",
+    "options": [
+      "Dijkstra algorithm",
+      "Kruskal algorithm",
+      "Floyd-Warshall algorithm",
+      "Chu-Liu-Edmonds algorithm"
+    ],
+    "correct": 3,
+    "explanation": "The Chu-Liu-Edmonds algorithm recursively resolves directed cycles to compute the optimal directed MST.",
+    "topic": "Graph-Based Parsing",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_33",
+    "chapter": 12,
+    "question": "What is the time complexity of projective graph-based parsing using the Eisner algorithm?",
+    "options": [
+      "O(N)",
+      "O(N^3) cubic time complexity",
+      "O(log N)",
+      "O(2^N)"
+    ],
+    "correct": 1,
+    "explanation": "Eisner's dynamic programming algorithm finds the maximum projective dependency tree in O(N^3) time.",
+    "topic": "Graph-Based Parsing",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_34",
+    "chapter": 12,
+    "question": "What state-of-the-art neural architecture for graph-based dependency parsing was introduced by Dozat & Manning (2016)?",
+    "options": [
+      "Single-layer perceptron",
+      "Deep Biaffine Attention parser: computing head and label scores between words using biaffine matrix transformations",
+      "K-Means parser",
+      "Naive Bayes parser"
+    ],
+    "correct": 1,
+    "explanation": "Biaffine attention parsers evaluate directed edge probabilities between all pairs via bilinear/biaffine matrix projections.",
+    "topic": "Biaffine Parser",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_35",
+    "chapter": 12,
+    "question": "What is UAS (Unlabeled Attachment Score) in dependency parsing evaluation?",
+    "options": [
+      "The percentage of words that are assigned the correct HEAD (parent index), ignoring the dependency relation label",
+      "The total number of sentences",
+      "The speed of the parser",
+      "The percentage of words spelled correctly"
+    ],
+    "correct": 0,
+    "explanation": "UAS evaluates structural topology: UAS = (Number of tokens with correct head) / (Total tokens).",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_36",
+    "chapter": 12,
+    "question": "What is LAS (Labeled Attachment Score) in dependency parsing evaluation?",
+    "options": [
+      "The percentage of words that are assigned BOTH the correct HEAD and the correct DEPENDENCY RELATION LABEL",
+      "Only the label accuracy",
+      "The BLEU score",
+      "The percentage of projective trees"
+    ],
+    "correct": 0,
+    "explanation": "LAS is the primary benchmark metric: LAS = (Number of tokens with correct head AND correct label) / (Total tokens).",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_37",
+    "chapter": 12,
+    "question": "Can UAS ever be LOWER than LAS on the same sentence?",
+    "options": [
+      "No, because LAS requires BOTH head AND label to be correct, so LAS is always less than or equal to UAS (LAS <= UAS)",
+      "Yes, on non-projective sentences",
+      "Yes, if using Arc-Eager",
+      "Yes, if labels are easy"
+    ],
+    "correct": 0,
+    "explanation": "Any token correct under LAS is by definition correct under UAS; thus UAS >= LAS always holds.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_38",
+    "chapter": 12,
+    "question": "What is the Exact Match (EM) metric in dependency parsing?",
+    "options": [
+      "The number of exact words in common",
+      "The dictionary size",
+      "The percentage of entire sentences whose complete dependency trees are 100% correct",
+      "The UAS score"
+    ],
+    "correct": 2,
+    "explanation": "Exact Match measures completely error-free sentences, a strict whole-sentence metric.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_39",
+    "chapter": 12,
+    "question": "If a 10-word sentence has 8 words with correct heads, and 7 of those 8 also have the correct relation label, what are UAS and LAS?",
+    "options": [
+      "UAS = 100%, LAS = 70%",
+      "UAS = 70%, LAS = 80%",
+      "UAS = 80% (8/10), LAS = 70% (7/10)",
+      "UAS = 80%, LAS = 80%"
+    ],
+    "correct": 2,
+    "explanation": "8 correct heads gives UAS = 8/10 = 0.80. 7 correct head+label pairs gives LAS = 7/10 = 0.70.",
+    "topic": "Calculation",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_40",
+    "chapter": 12,
+    "question": "Are Punctuation tokens typically included when computing official UAS and LAS benchmark scores?",
+    "options": [
+      "Always counted twice",
+      "Required to be roots",
+      "Usually EXCLUDED (punctuation marks like periods and commas are omitted from evaluation counts in standard benchmarks)",
+      "Given negative score"
+    ],
+    "correct": 2,
+    "explanation": "Standard parsing evaluations (e.g. CoNLL shared tasks) exclude punctuation tokens to avoid inflating scores.",
+    "topic": "Evaluation Conventions",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_41",
+    "chapter": 12,
+    "question": "What is the Universal Dependencies (UD) project?",
+    "options": [
+      "A dictionary of universal words",
+      "A translation software",
+      "A parser written in C++",
+      "An open community initiative developing cross-linguistically consistent dependency treebank annotation schemes across 100+ languages"
+    ],
+    "correct": 3,
+    "explanation": "Universal Dependencies provides consistent grammatical relations and treebanks across diverse language families.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_42",
+    "chapter": 12,
+    "question": "In Universal Dependencies, what relation connects coordinate clauses with conjunctions like 'and' or 'or'?",
+    "options": [
+      "`amod` and `advmod`",
+      "`nsubj` and `obj`",
+      "`root` and `det`",
+      "`conj` (conjunct, attached to the first coordinated element) and `cc` (coordinating conjunction attached to the conjunct)"
+    ],
+    "correct": 3,
+    "explanation": "In UD coordination, the first element is head, subsequent conjuncts are attached with `conj`, and conjunctions attach with `cc`.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_43",
+    "chapter": 12,
+    "question": "What is an Oracle in transition-based parser training?",
+    "options": [
+      "A human sitting at the terminal",
+      "A database server by Oracle Corp",
+      "A random number generator",
+      "An algorithm that determines the optimal sequence of gold transitions needed to produce a reference tree from training data"
+    ],
+    "correct": 3,
+    "explanation": "A training oracle derives the reference action sequence from gold treebanks to supervise the transition classifier.",
+    "topic": "Training Oracles",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_44",
+    "chapter": 12,
+    "question": "What is Dynamic Oracle training (Goldberg & Nivre, 2012)?",
+    "options": [
+      "An oracle running on GPU",
+      "An oracle that changes language",
+      "A static lookup table",
+      "An oracle that can guide the parser even after it makes a mistake, teaching it the best recovery path from non-gold configurations"
+    ],
+    "correct": 3,
+    "explanation": "Dynamic oracles mitigate error propagation by exposing the parser to flawed states during training.",
+    "topic": "Dynamic Oracles",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_45",
+    "chapter": 12,
+    "question": "In SpaCy, what dependency parser architecture is used under the hood?",
+    "options": [
+      "A CKY parser in CNF",
+      "A dictionary lookup",
+      "A transition-based neural parser using Tok2Vec/Transformer embeddings and a multi-task convolutional/attention stack",
+      "Pure regex matching"
+    ],
+    "correct": 2,
+    "explanation": "SpaCy's fast industrial parser uses a transition-based neural network architecture.",
+    "topic": "Industrial NLP",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_46",
+    "chapter": 12,
+    "question": "What Python attribute in SpaCy accesses a token's head word?",
+    "options": [
+      "`token.root`",
+      "`token.parent`",
+      "`token.head`",
+      "`token.governor`"
+    ],
+    "correct": 2,
+    "explanation": "In SpaCy, `token.head` returns the Token object representing the syntactic head.",
+    "topic": "SpaCy",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch12_47",
+    "chapter": 12,
+    "question": "What Python attribute in SpaCy accesses the dependency relation label of a token?",
+    "options": [
+      "`token.label_`",
+      "`token.relation`",
+      "`token.tag_`",
+      "`token.dep_`"
+    ],
+    "correct": 3,
+    "explanation": "`token.dep_` returns the string representation of the dependency relation (e.g. 'nsubj', 'dobj').",
+    "topic": "SpaCy",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch12_48",
+    "chapter": 12,
+    "question": "Why is Dependency Parsing favored over Constituency Parsing in downstream relation extraction and information extraction?",
+    "options": [
+      "Dependency parsing does not require trees",
+      "Dependency arcs provide direct syntactic bridges between entities (e.g., Subject -> Verb -> Object) without intervening phrase hierarchy",
+      "Dependency parsing uses no RAM",
+      "Constituency parsing cannot find verbs"
+    ],
+    "correct": 1,
+    "explanation": "Direct head-dependent paths between entities make extracting semantic triples (Subject, Predicate, Object) straightforward.",
+    "topic": "Downstream Applications",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch12_49",
+    "chapter": 12,
+    "question": "In dependency graph path analysis, what is the Shortest Dependency Path (SDP)?",
+    "options": [
+      "The shortest path of dependency edges connecting two named entities in a sentence, often used as features for Relation Extraction",
+      "The shortest word in a sentence",
+      "A path with no adjectives",
+      "The root node"
+    ],
+    "correct": 0,
+    "explanation": "Bunescu & Mooney (2005) showed the shortest dependency path between two entities captures the core relation semantics.",
+    "topic": "Relation Extraction",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch12_50",
+    "chapter": 12,
+    "question": "What is the typical LAS performance of modern state-of-the-art Transformer-based dependency parsers on the English Penn Treebank?",
+    "options": [
+      "Around 50% LAS",
+      "Over 94% - 96% LAS",
+      "Around 20% LAS",
+      "Exactly 100% LAS"
+    ],
+    "correct": 1,
+    "explanation": "Modern biaffine and fine-tuned Transformer parsers routinely achieve 94%–96%+ LAS on English benchmarks.",
+    "topic": "SOTA Performance",
+    "slide_ref": "12. Dependency Parsing.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_01",
+    "chapter": 13,
+    "question": "What is Computational Semantics?",
+    "options": [
+      "The study of computer hardware",
+      "Counting words in databases",
+      "Writing regular expressions",
+      "The study of how to automate the process of constructing and reasoning with meaning representations for natural language expressions"
+    ],
+    "correct": 3,
+    "explanation": "Computational semantics translates natural language into formal representations to automate semantic reasoning and inference.",
+    "topic": "Semantics Overview",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_02",
+    "chapter": 13,
+    "question": "What are the five core requirements for a Meaning Representation language?",
+    "options": [
+      "Input, Hidden, Output, Activation, Loss",
+      "Verifiability, Unambiguity, Canonical Form, Inference & Entailment, and Expressiveness",
+      "Tokens, Lemmas, POS, Heads, Labels",
+      "Speed, Syntax, Spelling, Grammar, Punctuation"
+    ],
+    "correct": 1,
+    "explanation": "A valid semantic representation must satisfy: verifiability, unambiguity, canonical form, inference/entailment, and expressive power.",
+    "topic": "Representation Requirements",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_03",
+    "chapter": 13,
+    "question": "What does the 'Verifiability' requirement of a meaning representation mean?",
+    "options": [
+      "The ability to check Python code syntax",
+      "The ability to determine the truth value of a representation relative to a knowledge base (model of the world)",
+      "Checking user passwords",
+      "Measuring CPU speed"
+    ],
+    "correct": 1,
+    "explanation": "Verifiability means comparing the formal expression against a state-of-affairs knowledge base to verify if it is True or False.",
+    "topic": "Representation Requirements",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_04",
+    "chapter": 13,
+    "question": "What does the 'Unambiguity' requirement mean in meaning representations?",
+    "options": [
+      "Words cannot be translated",
+      "The sentence must have no vowels",
+      "A formal representation must have exactly ONE unambiguous semantic interpretation, unlike natural language sentences",
+      "The text must be short"
+    ],
+    "correct": 2,
+    "explanation": "While natural language is rife with ambiguity, formal logic expressions must map to exactly one unambiguous semantic truth.",
+    "topic": "Representation Requirements",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_05",
+    "chapter": 13,
+    "question": "What is 'Canonical Form' in semantic representation?",
+    "options": [
+      "A mathematical matrix",
+      "Converting letters to lowercase",
+      "Alphabetical sorting",
+      "Different surface linguistic expressions meaning the same thing (e.g. Active vs Passive voice) should map to the exact same formal representation"
+    ],
+    "correct": 3,
+    "explanation": "Canonical form maps paraphrases like 'John loves Mary' and 'Mary is loved by John' to the identical predicate Loves(John, Mary).",
+    "topic": "Representation Requirements",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_06",
+    "chapter": 13,
+    "question": "What is 'Inference and Entailment' in formal semantics?",
+    "options": [
+      "Guessing words randomly",
+      "The ability to derive valid new logical conclusions from existing premises (e.g., from 'A car is a vehicle' and 'X is a car', infer 'X is a vehicle')",
+      "Detecting typos",
+      "Translating text into Spanish"
+    ],
+    "correct": 1,
+    "explanation": "Inference draws deductively sound conclusions from known factual assertions and rules.",
+    "topic": "Representation Requirements",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_07",
+    "chapter": 13,
+    "question": "What are Constants in First-Order Logic (FOL)?",
+    "options": [
+      "Grammar rules",
+      "Connective words like AND",
+      "Variables that change values",
+      "Symbols that refer to specific, individual objects or entities in the domain of discourse (e.g., `John`, `Mary`, `Table1`)"
+    ],
+    "correct": 3,
+    "explanation": "Constants name unique concrete or abstract individuals in the world.",
+    "topic": "First-Order Logic",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_08",
+    "chapter": 13,
+    "question": "What are Functions in First-Order Logic?",
+    "options": [
+      "Variables",
+      "Computer software programs",
+      "Operators that map one or more entities to another unique entity in the domain (e.g., `LocationOf(Paris) = France`)",
+      "Boolean True/False predicates"
+    ],
+    "correct": 2,
+    "explanation": "Functions return an entity object rather than a truth value.",
+    "topic": "First-Order Logic",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_09",
+    "chapter": 13,
+    "question": "What are Predicates in First-Order Logic?",
+    "options": [
+      "Numbers only",
+      "Relations or properties that map one or more terms to a Boolean truth value: True or False (e.g., `Student(John)`, `Loves(John, Mary)`)",
+      "Sentence punctuation",
+      "Pronouns"
+    ],
+    "correct": 1,
+    "explanation": "Predicates represent properties (arity 1) or relations (arity >= 2) that evaluate to True or False.",
+    "topic": "First-Order Logic",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_10",
+    "chapter": 13,
+    "question": "What are the standard Logical Connectives in First-Order Logic?",
+    "options": [
+      "Conjunction (AND / ^), Disjunction (OR / v), Negation (NOT / ~), Implication (=>), and Equivalence (<=>)",
+      "Shift, Reduce, Accept",
+      "Plus, Minus, Multiply, Divide",
+      "Dot, Star, Plus, Question mark"
+    ],
+    "correct": 0,
+    "explanation": "Logical connectives combine atomic propositions into complex compound formulas.",
+    "topic": "First-Order Logic",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_11",
+    "chapter": 13,
+    "question": "What does the Universal Quantifier (forall x) express?",
+    "options": [
+      "That no x exists",
+      "That a predicate holds true for EVERY entity x in the domain of discourse ('for all x')",
+      "That x is a number",
+      "That a predicate holds for at least one x"
+    ],
+    "correct": 1,
+    "explanation": "forall x P(x) asserts that property P holds across the entire universe of discourse.",
+    "topic": "Quantifiers",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_12",
+    "chapter": 13,
+    "question": "What does the Existential Quantifier (exists x) express?",
+    "options": [
+      "That a predicate holds true for AT LEAST ONE entity x in the domain ('there exists an x')",
+      "That a predicate holds for all x",
+      "That x is zero",
+      "That x is unique"
+    ],
+    "correct": 0,
+    "explanation": "exists x P(x) asserts the existence of at least one individual entity satisfying P.",
+    "topic": "Quantifiers",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_13",
+    "chapter": 13,
+    "question": "What logical connective is standardly paired with the Universal Quantifier (forall x)?",
+    "options": [
+      "Disjunction (v)",
+      "Equivalence (<=>) only",
+      "Implication (=>), e.g. forall x (Student(x) => Human(x))",
+      "Conjunction (^)"
+    ],
+    "correct": 2,
+    "explanation": "'Every student is human' translates to forall x (Student(x) => Human(x)). Pairing with ^ would falsely assert everything in the universe is a student.",
+    "topic": "Quantifier Patterns",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_14",
+    "chapter": 13,
+    "question": "What logical connective is standardly paired with the Existential Quantifier (exists x)?",
+    "options": [
+      "Negation (~)",
+      "Implication (=>)",
+      "Conjunction (^), e.g. exists x (Student(x) ^ Smart(x))",
+      "Equality (=)"
+    ],
+    "correct": 2,
+    "explanation": "'Some student is smart' translates to exists x (Student(x) ^ Smart(x)). Pairing with => is vacuously true for any non-student.",
+    "topic": "Quantifier Patterns",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_15",
+    "chapter": 13,
+    "question": "Why is pairing Existential Quantifier with Implication (exists x (P(x) => Q(x))) almost always a semantic BUG?",
+    "options": [
+      "Because P(x) must be a number",
+      "Because computers crash on =>",
+      "Because an implication A => B is vacuously TRUE whenever A is false; so exists x (P(x) => Q(x)) is trivially true as long as ANY object exists that is not P",
+      "Because exists cannot be combined with x"
+    ],
+    "correct": 2,
+    "explanation": "If exists x (Dog(x) => Flies(x)) is tested, any cat or table makes Dog(x) False, making the implication True vacuously.",
+    "topic": "Quantifier Bugs",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_16",
+    "chapter": 13,
+    "question": "What is Quantifier Scope Ambiguity in the sentence 'Every man loves a woman'?",
+    "options": [
+      "Whether 'loves' is past tense",
+      "Whether 'man' is a noun",
+      "Whether 'woman' is plural",
+      "Whether forall scopes over exists (each man loves a possibly different woman) OR exists scopes over forall (there is one single woman that all men love)"
+    ],
+    "correct": 3,
+    "explanation": "Scope ambiguity reflects two valid logical readings: forall m exists w Loves(m, w) vs exists w forall m Loves(m, w).",
+    "topic": "Scope Ambiguity",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_17",
+    "chapter": 13,
+    "question": "What is the Principle of Compositionality (Frege's Principle)?",
+    "options": [
+      "Sentences are made of words",
+      "The meaning of a complex expression is a function of the meanings of its syntactic parts and the syntactic rules used to combine them",
+      "All sentences have verbs",
+      "Computers compose songs"
+    ],
+    "correct": 1,
+    "explanation": "Gottlob Frege's principle states that whole sentence semantics is derived systematically from the meanings of its parts.",
+    "topic": "Compositionality",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_18",
+    "chapter": 13,
+    "question": "What formalism is commonly used to model semantic compositionality in formal syntax?",
+    "options": [
+      "Lambda (lambda) Calculus",
+      "Linear Programming",
+      "Fourier Transform",
+      "Relational Algebra"
+    ],
+    "correct": 0,
+    "explanation": "Lambda calculus provides functional abstraction and application to build sentence meanings compositionally from parse trees.",
+    "topic": "Lambda Calculus",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_19",
+    "chapter": 13,
+    "question": "What does Lambda Abstraction (lambda x. P(x)) create in Lambda Calculus?",
+    "options": [
+      "An empty string",
+      "A constant entity",
+      "A formal function that takes an argument x and returns P(x)",
+      "A truth value"
+    ],
+    "correct": 2,
+    "explanation": "Lambda abstraction defines an anonymous function waiting to consume an argument.",
+    "topic": "Lambda Calculus",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_20",
+    "chapter": 13,
+    "question": "What is Beta-Reduction (lambda-conversion) in Lambda Calculus?",
+    "options": [
+      "Deleting lambda symbols",
+      "Dividing by beta",
+      "Reducing the size of a file",
+      "The process of applying a lambda function to an argument by substituting the argument into the body of the function"
+    ],
+    "correct": 3,
+    "explanation": "Beta-reduction executes function application: (lambda x. P(x))(a) simplifies to P(a).",
+    "topic": "Beta-Reduction",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_21",
+    "chapter": 13,
+    "question": "What is the result of Beta-Reduction on: (lambda x. Loves(x, Mary))(John)?",
+    "options": [
+      "Loves(Mary, John)",
+      "Loves(John, Mary)",
+      "John(Mary)",
+      "Loves(x, John)"
+    ],
+    "correct": 1,
+    "explanation": "Substituting the argument 'John' in place of variable 'x' yields Loves(John, Mary).",
+    "topic": "Beta-Reduction",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_22",
+    "chapter": 13,
+    "question": "What is Alpha-Conversion in Lambda Calculus?",
+    "options": [
+      "Systematically renaming bound variables to avoid accidental variable name capture / collision: lambda x. P(x) <=> lambda y. P(y)",
+      "Sorting variables alphabetically",
+      "Converting code to C",
+      "Converting text to uppercase"
+    ],
+    "correct": 0,
+    "explanation": "Alpha-conversion renames bound dummy variables without changing the mathematical semantics of the function.",
+    "topic": "Alpha-Conversion",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_23",
+    "chapter": 13,
+    "question": "What is Model-Theoretic Semantics?",
+    "options": [
+      "Training machine learning models",
+      "A mathematical framework that defines meaning by evaluating the truth of expressions relative to a Model M = <D, I> (Domain of objects and Interpretation function)",
+      "Building 3D computer graphics models",
+      "Translating models into Python"
+    ],
+    "correct": 1,
+    "explanation": "Model theory grounds language meaning in truth conditions relative to an explicit mathematical model of the universe.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_24",
+    "chapter": 13,
+    "question": "In Model-Theoretic Semantics, what is the Domain of Discourse (D)?",
+    "options": [
+      "A programming scope",
+      "A dictionary of words",
+      "The set of all individual objects, entities, and concepts that exist in the modeled universe",
+      "A web domain like .com"
+    ],
+    "correct": 2,
+    "explanation": "The domain D is the universe of distinct entities about which statements can be made.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_25",
+    "chapter": 13,
+    "question": "In Model-Theoretic Semantics, what is the Interpretation Function (I)?",
+    "options": [
+      "A mapping that assigns constants to entities in D, and predicates to sets of entities or tuples of entities in D",
+      "A function that translates languages",
+      "A Python interpreter",
+      "A speech recognizer"
+    ],
+    "correct": 0,
+    "explanation": "Interpretation I maps formal symbols to their real-world denotations in the model.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_26",
+    "chapter": 13,
+    "question": "Under an interpretation I, what is the denotation of a 1-place predicate like `Student`?",
+    "options": [
+      "A sentence",
+      "A subset of entities in domain D that are students: I(Student) subset D",
+      "A true/false flag only",
+      "A single number"
+    ],
+    "correct": 1,
+    "explanation": "Unary predicates denote sets of individuals possessing that property.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_27",
+    "chapter": 13,
+    "question": "Under an interpretation I, what is the denotation of a 2-place relation like `Loves`?",
+    "options": [
+      "A dictionary",
+      "A set of ordered pairs of entities from D: I(Loves) subset (D x D)",
+      "A single entity",
+      "A number between 0 and 1"
+    ],
+    "correct": 1,
+    "explanation": "Binary predicates denote sets of ordered pairs (x, y) where x stands in that relation to y.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_28",
+    "chapter": 13,
+    "question": "What does it mean for a sentence S to be 'Satisfiable' in logic?",
+    "options": [
+      "The sentence has no verbs",
+      "The sentence is true in all possible models",
+      "The user is happy",
+      "There exists at least one Model M in which the sentence evaluates to TRUE"
+    ],
+    "correct": 3,
+    "explanation": "Satisfiability means a proposition can be true under at least one consistent state of affairs.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_29",
+    "chapter": 13,
+    "question": "What does it mean for a sentence S to be 'Valid' (a Tautology)?",
+    "options": [
+      "The sentence is short",
+      "The sentence has valid grammar",
+      "The sentence evaluates to TRUE in ALL possible models (e.g. P v ~P)",
+      "The sentence is true today"
+    ],
+    "correct": 2,
+    "explanation": "A valid formula (tautology) is true under every possible interpretation and model.",
+    "topic": "Model Theory",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_30",
+    "chapter": 13,
+    "question": "What is Semantic Parsing in NLP?",
+    "options": [
+      "The task of mapping a natural language sentence into a machine-interpretable formal meaning representation (e.g., SQL query, FOL, or lambda expression)",
+      "Translating into French",
+      "Parsing syntactic trees only",
+      "Checking spelling"
+    ],
+    "correct": 0,
+    "explanation": "Semantic parsing maps utterances into executable logical forms (e.g. converting 'What flights go to Boston?' into a SQL query).",
+    "topic": "Semantic Parsing",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_31",
+    "chapter": 13,
+    "question": "In Text-to-SQL semantic parsing, what is the target meaning representation?",
+    "options": [
+      "An executable SQL query (e.g., `SELECT flight_id FROM flights WHERE dest = 'BOS'`)",
+      "A WordNet synset",
+      "A parse tree",
+      "A TF-IDF vector"
+    ],
+    "correct": 0,
+    "explanation": "Text-to-SQL translates natural language questions into structured database query statements.",
+    "topic": "Semantic Parsing",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_32",
+    "chapter": 13,
+    "question": "How does Syntax-Driven Semantic Analysis construct meaning representations?",
+    "options": [
+      "By pairing a semantic lambda rule with each syntactic CFG rule, evaluating semantics compositional as the parse tree is constructed",
+      "By looking up words in a dictionary only",
+      "By ignoring syntax completely",
+      "Using Word2Vec cosine"
+    ],
+    "correct": 0,
+    "explanation": "Augmenting phrase structure rules with semantic attachments produces logical formulas compositionally from the tree.",
+    "topic": "Syntax-Driven Semantics",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_33",
+    "chapter": 13,
+    "question": "In syntax-driven semantics, if `NP -> John` has semantics `John`, and `VP -> sleeps` has semantics `lambda x. Sleeps(x)`, what is the semantics of `S -> NP VP`?",
+    "options": [
+      "Sleeps(x)",
+      "lambda x. John",
+      "John(Sleeps)",
+      "VP.sem(NP.sem) = (lambda x. Sleeps(x))(John) = Sleeps(John)"
+    ],
+    "correct": 3,
+    "explanation": "The verb phrase function consumes the subject entity to produce the complete proposition Sleeps(John).",
+    "topic": "Syntax-Driven Semantics",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_34",
+    "chapter": 13,
+    "question": "What is Event Semantics (Neo-Davidsonian Event Representation)?",
+    "options": [
+      "Deleting verbs from text",
+      "Representing events as numbers",
+      "Representing events as individual first-order entities (variables e) modified by role relations: exists e (Eating(e) ^ Eater(e, John) ^ Eaten(e, Apple))",
+      "Sorting events by date only"
+    ],
+    "correct": 2,
+    "explanation": "Davidson introduced event variables e, enabling clean handling of variable numbers of adverbial modifiers.",
+    "topic": "Event Semantics",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_35",
+    "chapter": 13,
+    "question": "What is the major advantage of Davidsonian Event representations over traditional multi-argument predicates?",
+    "options": [
+      "It solves the variable arity problem for optional modifiers (time, location, instrument) without needing infinite predicate overloads",
+      "It makes formulas shorter",
+      "It eliminates verbs",
+      "It requires no logic"
+    ],
+    "correct": 0,
+    "explanation": "Adverbs and prepositional modifiers become separate conjoined clauses modifying event variable e (e.g. Location(e, Kitchen)).",
+    "topic": "Event Semantics",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_36",
+    "chapter": 13,
+    "question": "What is Semantic Role Labeling (SRL)?",
+    "options": [
+      "Finding names of people",
+      "Checking grammar rules",
+      "Assigning POS tags to words",
+      "The task of identifying the predicate in a sentence and labeling the semantic roles (Agent, Patient, Instrument, Goal) played by each argument"
+    ],
+    "correct": 3,
+    "explanation": "SRL answers 'Who did what to whom, where, and when?' by mapping constituents to thematic roles.",
+    "topic": "Semantic Roles",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_37",
+    "chapter": 13,
+    "question": "In thematic role theory, what is an 'Agent'?",
+    "options": [
+      "The receiver of the action",
+      "The location",
+      "The entity that voluntarily initiates and performs the action of the verb",
+      "The tool used"
+    ],
+    "correct": 2,
+    "explanation": "The Agent is the deliberate doer or instigator of the action (e.g. 'The dog' in 'The dog bit the man').",
+    "topic": "Thematic Roles",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_38",
+    "chapter": 13,
+    "question": "In thematic role theory, what is a 'Patient' (or Theme)?",
+    "options": [
+      "The time of the action",
+      "The entity doing the action",
+      "The entity that undergoes the action or experiences a change of state",
+      "The person watching"
+    ],
+    "correct": 2,
+    "explanation": "The Patient/Theme is the affected object or entity acted upon (e.g. 'the ball' in 'John kicked the ball').",
+    "topic": "Thematic Roles",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_39",
+    "chapter": 13,
+    "question": "In thematic role theory, what is an 'Instrument'?",
+    "options": [
+      "The tool or means by which the action is performed (e.g., 'with a key' in 'John opened the door with a key')",
+      "The musical instrument",
+      "The location",
+      "The agent"
+    ],
+    "correct": 0,
+    "explanation": "The instrument is the cause or implement used by an agent to carry out the event.",
+    "topic": "Thematic Roles",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch13_40",
+    "chapter": 13,
+    "question": "What is FrameNet (Baker et al., 1998)?",
+    "options": [
+      "A translation database",
+      "A lexical database based on Frame Semantics, defining semantic frames (e.g. `Commercial_Transaction`) and frame elements (Buyer, Seller, Goods, Money)",
+      "A syntactic treebank",
+      "A network of computer cables"
+    ],
+    "correct": 1,
+    "explanation": "FrameNet indexes words evoking semantic frames and annotates their frame-specific participant roles.",
+    "topic": "FrameNet",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_41",
+    "chapter": 13,
+    "question": "What is PropBank (Proposition Bank, Palmer et al., 2005)?",
+    "options": [
+      "A sentiment dataset",
+      "A dictionary of synonyms",
+      "A bank of bank transaction records",
+      "A corpus annotating sentences with generalized semantic argument roles: ARG0 (Agent), ARG1 (Patient), ARG2 (Instrument/Attribute), etc."
+    ],
+    "correct": 3,
+    "explanation": "PropBank adds verb-specific argument annotations (Arg0, Arg1, Arg2) to the Penn Treebank syntax trees.",
+    "topic": "PropBank",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_42",
+    "chapter": 13,
+    "question": "In PropBank conventions, what role does `ARG0` typically represent?",
+    "options": [
+      "The Instrument",
+      "The Agent or experiencer (the prototypical subject)",
+      "The Patient or theme",
+      "The Location"
+    ],
+    "correct": 1,
+    "explanation": "PropBank assigns Arg0 to prototypical agents/causes, and Arg1 to patients/themes.",
+    "topic": "PropBank",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_43",
+    "chapter": 13,
+    "question": "What is Abstract Meaning Representation (AMR)?",
+    "options": [
+      "An audio file format",
+      "A CFG parse tree",
+      "A semantic formalism that represents the meaning of a sentence as a rooted, directed, edge-labeled graph abstracting away from syntactic variations",
+      "A vector of numbers"
+    ],
+    "correct": 2,
+    "explanation": "AMR represents sentence meaning as directed graphs linking concepts via PropBank roles and relations.",
+    "topic": "AMR",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_44",
+    "chapter": 13,
+    "question": "In AMR, does active 'The boy ate the apple' and passive 'The apple was eaten by the boy' produce different graphs?",
+    "options": [
+      "Yes, they produce completely different graphs",
+      "Only if boy is capitalized",
+      "Passive sentences cannot be represented",
+      "No, both produce the identical AMR semantic graph rooted at `eat-01` with `ARG0: boy` and `ARG1: apple`"
+    ],
+    "correct": 3,
+    "explanation": "AMR is canonical: surface syntactic variations map to identical semantic graphs.",
+    "topic": "AMR",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_45",
+    "chapter": 13,
+    "question": "What is the difference between Meaning and Reference (Intension vs Extension)?",
+    "options": [
+      "Extension is file size; Intension is file type",
+      "They are identical in logic",
+      "Intension is used only for verbs",
+      "Extension is the actual real-world object referred to; Intension is the conceptual meaning or condition that determines the referent"
+    ],
+    "correct": 3,
+    "explanation": "'Morning Star' and 'Evening Star' have the same extension (planet Venus) but different intensions (concepts).",
+    "topic": "Intension vs Extension",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch13_46",
+    "chapter": 13,
+    "question": "Can First-Order Logic easily express non-extensional beliefs like 'John believes that Santa Claus exists'?",
+    "options": [
+      "Only using unigrams",
+      "Yes, FOL handles beliefs trivially",
+      "No, because standard FOL is extensional and substituting equivalent terms or non-existent entities causes truth paradoxes (requires Modal Logic)",
+      "Only if John is defined as a constant"
+    ],
+    "correct": 2,
+    "explanation": "Belief and knowledge are intentional/modal attitudes where the substitution of co-referential terms fails (referential opacity).",
+    "topic": "Intensional Logic",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_47",
+    "chapter": 13,
+    "question": "What is Modal Logic?",
+    "options": [
+      "Logic using audio modes",
+      "Binary logic only",
+      "A branch of logic extending FOL with necessity (Box) and possibility (Diamond) modal operators to handle belief, knowledge, and time",
+      "Logic without predicates"
+    ],
+    "correct": 2,
+    "explanation": "Modal logic reasons about truth across possible worlds, accommodating necessity, knowledge, and belief.",
+    "topic": "Modal Logic",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_48",
+    "chapter": 13,
+    "question": "What is Entailment in Natural Language Inference (NLI)?",
+    "options": [
+      "P contradicts H",
+      "P and H have identical length",
+      "Premise P entails Hypothesis H if a human reading P would conclude that H is definitely true",
+      "P and H contain the same nouns"
+    ],
+    "correct": 2,
+    "explanation": "Textual entailment means the truth of the hypothesis follows necessarily from the premise.",
+    "topic": "NLI",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch13_49",
+    "chapter": 13,
+    "question": "What are the three classification labels in standard Natural Language Inference (e.g. SNLI, MNLI benchmarks)?",
+    "options": [
+      "Subject, Verb, Object",
+      "Entailment, Contradiction, and Neutral",
+      "True, False, Unknown",
+      "Positive, Negative, Neutral"
+    ],
+    "correct": 1,
+    "explanation": "NLI benchmarks categorize the relationship between premise and hypothesis as Entailment, Contradiction, or Neutral.",
+    "topic": "NLI",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch13_50",
+    "chapter": 13,
+    "question": "Why are logical semantic representations still essential alongside modern neural LLMs?",
+    "options": [
+      "They provide provable guarantees of correctness, formal verifiability for databases, interpretable reasoning traces, and exact query execution",
+      "Because logic was invented first",
+      "Because neural LLMs cannot output text",
+      "Because logic requires 0 memory"
+    ],
+    "correct": 0,
+    "explanation": "Formal semantics provides deterministic, verifiable guarantees critical for database queries, contracts, and knowledge graph reasoning.",
+    "topic": "Neuro-Symbolic NLP",
+    "slide_ref": "13. Locial Representations of Sentences Meaning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_01",
+    "chapter": 14,
+    "question": "What is the primary objective of Information Extraction (IE)?",
+    "options": [
+      "Formatting text into HTML",
+      "Translating text into Spanish",
+      "Transforming unstructured natural language text into structured relational data (e.g. database tables, knowledge graphs)",
+      "Compressing text files"
+    ],
+    "correct": 2,
+    "explanation": "Information Extraction converts raw text into structured machine-readable knowledge: entities, relations, and events.",
+    "topic": "IE Overview",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_02",
+    "chapter": 14,
+    "question": "What are the two foundational subtasks of an Information Extraction pipeline?",
+    "options": [
+      "Tokenization and Lemmatization only",
+      "Named Entity Recognition (NER) and Relation Extraction (RE)",
+      "Spelling correction and Translation",
+      "HTML parsing and CSS styling"
+    ],
+    "correct": 1,
+    "explanation": "Standard IE first recognizes entities (NER), then extracts semantic relationships between them (Relation Extraction).",
+    "topic": "IE Overview",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_03",
+    "chapter": 14,
+    "question": "What is Named Entity Recognition (NER)?",
+    "options": [
+      "Finding the name of the author of a book",
+      "Translating names into Latin",
+      "Counting how many nouns exist in text",
+      "Identifying spans of text representing proper nouns and classifying them into predefined types (Person, Organization, Location, Date, etc.)"
+    ],
+    "correct": 3,
+    "explanation": "NER locates entity mentions in running text and classifies them into categories like PER, ORG, LOC, GPE.",
+    "topic": "NER",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_04",
+    "chapter": 14,
+    "question": "In the BIO (IOB2) tagging scheme, what does the tag `B-PER` signify?",
+    "options": [
+      "A person who is bad",
+      "The Beginning token of a Person entity mention",
+      "A punctuation mark",
+      "An entity that is outside any name"
+    ],
+    "correct": 1,
+    "explanation": "`B-` marks the first token of a named entity span; subsequent tokens in the same span receive `I-` (Inside).",
+    "topic": "BIO Tagging",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_05",
+    "chapter": 14,
+    "question": "In BIO tagging, what does the tag `O` signify?",
+    "options": [
+      "An organization name",
+      "An optional word",
+      "An out-of-vocabulary word",
+      "Outside: the token is not part of any named entity mention"
+    ],
+    "correct": 3,
+    "explanation": "`O` indicates that a token does not belong to any recognized entity span.",
+    "topic": "BIO Tagging",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_06",
+    "chapter": 14,
+    "question": "What is the BIO tagging for the two-word name 'Elon Musk' as a person?",
+    "options": [
+      "'Elon' -> B-PER, 'Musk' -> B-PER",
+      "'Elon' -> B-PER, 'Musk' -> I-PER",
+      "'Elon' -> I-PER, 'Musk' -> I-PER",
+      "'Elon' -> PER, 'Musk' -> PER"
+    ],
+    "correct": 1,
+    "explanation": "Multi-token entities start with `B-` and continue with `I-` for all subsequent constituent tokens.",
+    "topic": "BIO Tagging",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_07",
+    "chapter": 14,
+    "question": "What is a Geo-Political Entity (GPE) in standard NER tagsets?",
+    "options": [
+      "A physical river or mountain only",
+      "A geographic region with an organized political system (e.g., countries, cities, states like 'Vietnam', 'Paris', 'California')",
+      "An international corporation",
+      "A military organization"
+    ],
+    "correct": 1,
+    "explanation": "GPE refers to political geographical units like countries and cities, distinguished from purely physical locations (LOC like 'Mount Everest').",
+    "topic": "NER Entity Types",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_08",
+    "chapter": 14,
+    "question": "Why is Conditional Random Fields (CRF) commonly placed on top of BiLSTM / BERT for NER sequence tagging?",
+    "options": [
+      "CRFs make neural networks 100x smaller",
+      "CRFs translate words",
+      "CRFs model transition dependencies between adjacent labels, preventing illegal sequences (e.g. forbidding `I-PER` immediately following `O`)",
+      "CRFs eliminate all non-terminals"
+    ],
+    "correct": 2,
+    "explanation": "Linear-chain CRFs enforce global label transition constraints, avoiding structurally invalid sequence tag combinations.",
+    "topic": "NER Architectures",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_09",
+    "chapter": 14,
+    "question": "What is Relation Extraction (RE)?",
+    "options": [
+      "Measuring cosine similarity",
+      "Extracting database passwords",
+      "Identifying and classifying the semantic relationship holding between two specified entities in text: R(e1, e2)",
+      "Connecting computers over WiFi"
+    ],
+    "correct": 2,
+    "explanation": "Relation extraction populates knowledge triples (Subject, Relation, Object), e.g. FounderOf(Steve_Jobs, Apple).",
+    "topic": "Relation Extraction",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_10",
+    "chapter": 14,
+    "question": "What are Hearst Patterns (Marti Hearst, 1992)?",
+    "options": [
+      "A method for clustering text",
+      "A pattern for testing CPU speed",
+      "Neural network attention patterns",
+      "Hand-crafted lexico-syntactic regex patterns used to discover Hyponymy / IS-A relationships (e.g., 'NP such as NP, NP and NP')"
+    ],
+    "correct": 3,
+    "explanation": "Hearst patterns match syntactic templates like 'X such as Y' or 'Y and other X' to extract taxonomy relations (Y is-a X).",
+    "topic": "Hearst Patterns",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_11",
+    "chapter": 14,
+    "question": "Which semantic relation is extracted by the pattern '... berries, such as strawberries and blueberries ...'?",
+    "options": [
+      "Hyponymy (IS-A): Strawberry is a Berry; Blueberry is a Berry",
+      "Synonymy",
+      "Antonymy",
+      "Part-Whole (Meronymy)"
+    ],
+    "correct": 0,
+    "explanation": "'such as' is a classic Hearst pattern expressing hyponymy (sub-type / category instance).",
+    "topic": "Hearst Patterns",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_12",
+    "chapter": 14,
+    "question": "What is the primary advantage of Hand-Written Pattern based relation extraction?",
+    "options": [
+      "No regex required",
+      "Zero human effort needed",
+      "High recall: it extracts 100% of all relations in text",
+      "High precision: when a pattern matches, the extracted relation is almost certainly correct"
+    ],
+    "correct": 3,
+    "explanation": "Hand-crafted patterns yield high-precision facts with interpretable extraction justifications.",
+    "topic": "Pattern-Based RE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_13",
+    "chapter": 14,
+    "question": "What is the primary drawback of Hand-Written Pattern based relation extraction?",
+    "options": [
+      "Low recall: human rules cannot anticipate all the diverse ways natural language expresses the same relation, and rules are expensive to write",
+      "Patterns crash computers",
+      "It requires 100 GPUs",
+      "The extractions are always wrong"
+    ],
+    "correct": 0,
+    "explanation": "Surface patterns suffer from low coverage/recall and cannot scale across hundreds of relational types.",
+    "topic": "Pattern-Based RE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_14",
+    "chapter": 14,
+    "question": "In Supervised Relation Extraction, what is the classification task?",
+    "options": [
+      "Extract text from PDF",
+      "Generate an entire Wikipedia page",
+      "Given a sentence with two identified entity mentions e1 and e2, classify their relationship into one of K predefined relation types (or 'None')",
+      "Predict whether a sentence is English"
+    ],
+    "correct": 2,
+    "explanation": "Supervised RE treats relation discovery as multi-class classification over entity pairs in context.",
+    "topic": "Supervised RE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_15",
+    "chapter": 14,
+    "question": "In feature-based relation extraction, what is the Shortest Dependency Path (SDP) feature?",
+    "options": [
+      "The length of the sentence",
+      "The path of dependency arcs connecting entity 1 and entity 2 in the dependency parse tree",
+      "The line number in the document",
+      "The number of letters between words"
+    ],
+    "correct": 1,
+    "explanation": "Bunescu & Mooney showed the shortest path in a dependency graph eliminates irrelevant fluff and isolates the relational predicate.",
+    "topic": "Shortest Dependency Path",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_16",
+    "chapter": 14,
+    "question": "How are entities demarcated when fine-tuning BERT for Relation Classification?",
+    "options": [
+      "By deleting all other words",
+      "By making entities uppercase",
+      "By inserting special Entity Marker tokens around mentions: e.g. `[E1] Tim Cook [/E1] is the CEO of [E2] Apple [/E2]`",
+      "By translating entities to French"
+    ],
+    "correct": 2,
+    "explanation": "Entity marker tokens allow the Transformer self-attention layers to identify the exact span locations of both arguments.",
+    "topic": "BERT for RE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_17",
+    "chapter": 14,
+    "question": "What is Semi-Supervised Bootstrapping for Relation Extraction (e.g. DIPRE, Snowball)?",
+    "options": [
+      "Using only supervised labels",
+      "Using Google Translate",
+      "Training a model with zero data",
+      "Starting with a small seed set of known entity pairs, searching the corpus for matching contexts, inducing patterns, finding new pairs, and repeating iteratively"
+    ],
+    "correct": 3,
+    "explanation": "Bootstrapping leverages dual expansion: seed tuples -> discover patterns -> discover new tuples -> discover new patterns.",
+    "topic": "Bootstrapping",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_18",
+    "chapter": 14,
+    "question": "What is 'Semantic Drift' in iterative bootstrapping algorithms like Snowball?",
+    "options": [
+      "When a computer clock desynchronizes",
+      "When embeddings rotate",
+      "When erroneous patterns introduce false entity pairs, which subsequently generate noisier patterns, causing the extractor to drift far off-topic",
+      "When words change meaning over 100 years"
+    ],
+    "correct": 2,
+    "explanation": "Semantic drift is error accumulation: an overly general pattern (e.g. 'X, Y') pollutes the seed pool, causing cascading extraction errors.",
+    "topic": "Bootstrapping Challenges",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_19",
+    "chapter": 14,
+    "question": "What is Distant Supervision for Relation Extraction (Mintz et al., 2009)?",
+    "options": [
+      "Aligning an existing Knowledge Base (e.g. Wikidata) with massive unlabelled text: assuming any sentence containing a known KB pair (e1, e2) expresses their relation",
+      "Supervising a student over Zoom",
+      "Using only dictionary definitions",
+      "Training models without electricity"
+    ],
+    "correct": 0,
+    "explanation": "Distant supervision automatically generates millions of weakly-labeled training sentences by cross-referencing KB facts with text.",
+    "topic": "Distant Supervision",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_20",
+    "chapter": 14,
+    "question": "What is the primary assumption of Distant Supervision?",
+    "options": [
+      "Every sentence has 5 relations",
+      "Knowledge bases are always 100% complete",
+      "Entities never appear together",
+      "If entity pair (e1, e2) participates in relation R in the Knowledge Base, ANY sentence mentioning both e1 and e2 MIGHT express relation R"
+    ],
+    "correct": 3,
+    "explanation": "Distant supervision assumes co-occurrence of known related entities in a sentence is likely an instance of that relationship.",
+    "topic": "Distant Supervision",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_21",
+    "chapter": 14,
+    "question": "What is the main problem with the naive Distant Supervision assumption?",
+    "options": [
+      "It cannot run on text",
+      "It only extracts 1 word",
+      "Noisy Labels (False Positives): two entities can co-occur in a sentence without expressing the KB relation (e.g., 'Obama was born in Hawaii' vs 'Obama visited Hawaii')",
+      "It requires millions of human annotators"
+    ],
+    "correct": 2,
+    "explanation": "Not all co-occurrences express the database relation; e.g. 'Jobs founded Apple' vs 'Jobs bought an Apple computer'.",
+    "topic": "Distant Supervision Noise",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_22",
+    "chapter": 14,
+    "question": "How does Multi-Instance Learning (MIL) reduce noise in Distant Supervision?",
+    "options": [
+      "Instead of assuming every sentence expresses the relation, it groups sentences mentioning (e1, e2) into a 'bag' and assumes AT LEAST ONE sentence expresses R",
+      "By running K-Means on words",
+      "By forcing sentences to be identical",
+      "By deleting 90% of the text"
+    ],
+    "correct": 0,
+    "explanation": "Multi-instance learning operates on bags of sentences, using attention or max-pooling to downweight non-expressing sentences.",
+    "topic": "Multi-Instance Learning",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_23",
+    "chapter": 14,
+    "question": "What is Open Information Extraction (Open IE)?",
+    "options": [
+      "Extracting text with open file handles",
+      "Extracting only open-source software names",
+      "Extracting text without grammar",
+      "Extracting arbitrary relational tuples (Argument1, Relation_Predicate, Argument2) directly from text without requiring a predefined schema or fixed relation list"
+    ],
+    "correct": 3,
+    "explanation": "Open IE scales to web-scale text by extracting open-vocabulary relational phrases (e.g. ('Aspirin', 'relieves', 'headaches')).",
+    "topic": "Open IE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_24",
+    "chapter": 14,
+    "question": "How does Open IE differ fundamentally from Traditional Supervised Relation Extraction?",
+    "options": [
+      "They are identical in scope",
+      "Open IE only works on English numbers",
+      "Traditional RE does not use computers",
+      "Traditional RE requires a small fixed inventory of relations (e.g. 20 types) defined beforehand; Open IE extracts relation strings dynamically from text"
+    ],
+    "correct": 3,
+    "explanation": "Traditional RE is closed-domain (predefined schema); Open IE is open-domain (relation phrases are surface lexical predicates).",
+    "topic": "Open IE vs Closed IE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_25",
+    "chapter": 14,
+    "question": "What was the ReVerb Open IE system (Fader et al., 2011)?",
+    "options": [
+      "A neural network that translates audio",
+      "A dependency tree parser",
+      "A speech synthesizer",
+      "A pattern-based Open IE system that enforces syntactic and lexical constraints (relation must start with a verb and satisfy POS patterns) to eliminate noisy relations"
+    ],
+    "correct": 3,
+    "explanation": "ReVerb enforced relational verb constraints to eliminate incoherent and uninformative extractions.",
+    "topic": "Open IE Systems",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_26",
+    "chapter": 14,
+    "question": "What are the two common failure modes of unconstrained Open Information Extraction?",
+    "options": [
+      "Grammar errors and spelling errors",
+      "Incoherent extractions (phrases that do not express a meaningful relation) and Uninformative extractions (omitting critical arguments)",
+      "Overheating and CPU throttling",
+      "System crashes and memory leaks"
+    ],
+    "correct": 1,
+    "explanation": "Unconstrained extractors often produce nonsensical fragments or drop necessary prepositions, leading to ungrounded claims.",
+    "topic": "Open IE Challenges",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_27",
+    "chapter": 14,
+    "question": "What is an Event in Information Extraction (ACE / ERE standards)?",
+    "options": [
+      "A mouse click in GUI",
+      "A specific occurrence involving participants, happening at a particular point in time or duration, that changes the state of the world",
+      "A calendar notification",
+      "A Python function call"
+    ],
+    "correct": 1,
+    "explanation": "An event is a structured occurrence (e.g. a marriage, an attack, an acquisition) anchored in text.",
+    "topic": "Event Extraction",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_28",
+    "chapter": 14,
+    "question": "What is an Event Trigger in Event Extraction?",
+    "options": [
+      "A click on a button",
+      "The specific word or phrase in text that most clearly evokes or signals the occurrence of the event (e.g. 'assassinated', 'fired', 'married')",
+      "A database trigger in SQL",
+      "A punctuation mark"
+    ],
+    "correct": 1,
+    "explanation": "The trigger word (typically a verb or nominalization) anchors the event type (e.g., 'assassinated' evokes `Life:Die`).",
+    "topic": "Event Trigger",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_29",
+    "chapter": 14,
+    "question": "In the sentence 'John F. Kennedy was assassinated in Dallas in 1963', what is the Event Trigger and Event Type?",
+    "options": [
+      "Trigger: 'was'; Type: Grammar",
+      "Trigger: '1963'; Type: Time",
+      "Trigger: 'assassinated'; Type: Life:Die (or Conflict:Attack)",
+      "Trigger: 'Dallas'; Type: Location"
+    ],
+    "correct": 2,
+    "explanation": "The lexical trigger 'assassinated' defines the event type Life:Die.",
+    "topic": "Event Examples",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_30",
+    "chapter": 14,
+    "question": "What are Event Arguments in Event Extraction?",
+    "options": [
+      "The entity mentions, temporal expressions, or values that participate in the event as specific roles",
+      "Disputes between users",
+      "Arguments in a Python script",
+      "The words following a comma"
+    ],
+    "correct": 0,
+    "explanation": "Event arguments are the participants, locations, instruments, and times involved in the event.",
+    "topic": "Event Arguments",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_31",
+    "chapter": 14,
+    "question": "In the sentence 'John F. Kennedy was assassinated in Dallas in 1963', what are the Argument Roles?",
+    "options": [
+      "Agent: 'John F. Kennedy', Place: '1963', Time: 'Dallas'",
+      "Subject: 'Kennedy', Verb: 'was'",
+      "Agent: 'Dallas', Object: '1963'",
+      "Victim: 'John F. Kennedy', Place: 'Dallas', Time: '1963'"
+    ],
+    "correct": 3,
+    "explanation": "Entities fill semantic roles defined by the event schema: Victim, Location, and Time.",
+    "topic": "Event Examples",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_32",
+    "chapter": 14,
+    "question": "What is the difference between an Event Mention and an Event Instance in event extraction?",
+    "options": [
+      "An Event Mention is a specific text occurrence in a document; an Event Instance is the real-world historical event that may be mentioned multiple times across documents",
+      "They are identical terms",
+      "Event Mention is only used for sports",
+      "Event Instance is a code object"
+    ],
+    "correct": 0,
+    "explanation": "Multiple news articles contain distinct mentions referencing the exact same underlying real-world event instance.",
+    "topic": "Event Coreference",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_33",
+    "chapter": 14,
+    "question": "What is Cross-Document Event Coreference Resolution?",
+    "options": [
+      "Sorting events by page number",
+      "Determining whether two event mentions across different documents or news outlets refer to the exact same real-world event",
+      "Checking if two files have the same size",
+      "Translating events into multiple languages"
+    ],
+    "correct": 1,
+    "explanation": "Cross-document event coreference clusters diverse textual reports into a single consolidated historical event record.",
+    "topic": "Event Coreference",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_34",
+    "chapter": 14,
+    "question": "What is Temporal Event Ordering in event extraction?",
+    "options": [
+      "Determining the chronological order / timeline in which extracted events occurred relative to each other (e.g., Event A happened BEFORE Event B)",
+      "Counting words per sentence",
+      "Adding timestamps to log files",
+      "Sorting words alphabetically"
+    ],
+    "correct": 0,
+    "explanation": "Temporal ordering reconstructs narrative timelines from linguistic cues and tense markers.",
+    "topic": "Temporal Ordering",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_35",
+    "chapter": 14,
+    "question": "What is a Knowledge Graph (e.g. Wikidata, Google Knowledge Graph, DBpedia)?",
+    "options": [
+      "A pie chart showing document sizes",
+      "A tree showing grammar rules",
+      "A multi-relational graph database where nodes represent entities and directed edges represent typed semantic relations: (Subject, Predicate, Object)",
+      "A neural network architecture"
+    ],
+    "correct": 2,
+    "explanation": "Knowledge graphs store factual world knowledge as interconnected relational triples: (h, r, t).",
+    "topic": "Knowledge Graphs",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_36",
+    "chapter": 14,
+    "question": "What is Knowledge Graph Completion (Link Prediction)?",
+    "options": [
+      "Adding more servers to a database",
+      "Predicting missing relational links between entities in a knowledge graph (e.g. given (Barack_Obama, BornIn, ?), predict Hawaii)",
+      "Drawing arrows on a screen",
+      "Translating graph nodes"
+    ],
+    "correct": 1,
+    "explanation": "Link prediction infers unrecorded relational facts by training on existing graph structure.",
+    "topic": "Knowledge Graphs",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_37",
+    "chapter": 14,
+    "question": "What are Knowledge Graph Embedding models (e.g. TransE, Bordes et al., 2013)?",
+    "options": [
+      "Models that parse trees",
+      "Models that project entities and relations into continuous vector spaces such that relation vectors represent translations: h + r ≈ t",
+      "One-hot encodings of nodes",
+      "Models that print graph images"
+    ],
+    "correct": 1,
+    "explanation": "TransE models relations as geometric translation vectors in vector space: head + relation ≈ tail.",
+    "topic": "Knowledge Graph Embeddings",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_38",
+    "chapter": 14,
+    "question": "In TransE, if the triple (France, CapitalCity, Paris) is true, what geometric relation should hold between their embedding vectors?",
+    "options": [
+      "vec(Paris) - vec(France) = 0",
+      "vec(France) + vec(CapitalCity) ≈ vec(Paris)",
+      "vec(France) * vec(CapitalCity) = 0",
+      "vec(CapitalCity) = 1"
+    ],
+    "correct": 1,
+    "explanation": "TransE enforces that the tail entity vector t is close to the head entity vector h translated by relation vector r: h + r ≈ t.",
+    "topic": "Knowledge Graph Embeddings",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_39",
+    "chapter": 14,
+    "question": "What is Entity Linking (Wikification / Entity Disambiguation)?",
+    "options": [
+      "Hyperlinking text on HTML pages",
+      "Translating entities to English",
+      "The task of resolving an entity mention in text (e.g., 'Paris') to its canonical entry in a knowledge base (e.g., Paris, France vs Paris Hilton)",
+      "Listing synonyms of words"
+    ],
+    "correct": 2,
+    "explanation": "Entity linking grounds ambiguous text mentions into unique Knowledge Base nodes.",
+    "topic": "Entity Linking",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_40",
+    "chapter": 14,
+    "question": "In Entity Linking, what is Candidate Generation?",
+    "options": [
+      "Creating random numbers",
+      "Generating new words",
+      "Retrieving a list of plausible candidate Knowledge Base entities that could match the surface string mention",
+      "Generating text with an LLM"
+    ],
+    "correct": 2,
+    "explanation": "Candidate generation searches the KB alias table to find all potential entities sharing the surface name.",
+    "topic": "Entity Linking",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_41",
+    "chapter": 14,
+    "question": "In Entity Linking, what is Candidate Disambiguation?",
+    "options": [
+      "Ranking candidate entities using surrounding context, coherence with other entities, and entity popularity to pick the single correct referent",
+      "Deleting candidate files",
+      "Asking the user to pick an entity",
+      "Picking the candidate with the shortest name"
+    ],
+    "correct": 0,
+    "explanation": "Disambiguation uses context compatibility (e.g. 'Eiffel Tower' in text indicates Paris, France rather than Paris, Texas).",
+    "topic": "Entity Linking",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_42",
+    "chapter": 14,
+    "question": "What is CoNLL-2003?",
+    "options": [
+      "A programming language",
+      "A dependency parser",
+      "A machine translation model",
+      "A standard benchmark corpus and shared task dataset for evaluating Named Entity Recognition across Person, Organization, Location, and Misc"
+    ],
+    "correct": 3,
+    "explanation": "CoNLL-2003 is the canonical benchmark dataset used for comparing NER models in NLP research.",
+    "topic": "NER Benchmarks",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_43",
+    "chapter": 14,
+    "question": "What is the typical F1 score achieved by state-of-the-art fine-tuned Transformer models on the CoNLL-2003 English NER benchmark?",
+    "options": [
+      "Around 30% F1",
+      "Exactly 100% F1",
+      "Over 93% to 94% F1 score",
+      "Around 60% F1"
+    ],
+    "correct": 2,
+    "explanation": "Pre-trained Transformer models (like RoBERTa-Large and LUKE) achieve ~94%+ F1 on English CoNLL-2003.",
+    "topic": "SOTA Performance",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch14_44",
+    "chapter": 14,
+    "question": "What is Nested (Overlapping) Named Entity Recognition?",
+    "options": [
+      "Recognizing entities that contain other entities within their span (e.g., '[Bank of [China]]' where China is GPE and Bank of China is ORG)",
+      "Entities with punctuation",
+      "Entities in other languages",
+      "Entities that are misspelled"
+    ],
+    "correct": 0,
+    "explanation": "Nested NER addresses hierarchical mentions where smaller entities are embedded inside larger ones, which standard BIO tagging cannot represent.",
+    "topic": "Nested NER",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_45",
+    "chapter": 14,
+    "question": "Why does standard BIO tagging FAIL on Nested Named Entities?",
+    "options": [
+      "Standard BIO tagging assigns exactly ONE tag per token, making it impossible to assign both 'B-GPE' and 'I-ORG' to the same word simultaneously",
+      "BIO tagging requires GPUs",
+      "BIO tagging is too slow",
+      "BIO tagging only works on lowercase text"
+    ],
+    "correct": 0,
+    "explanation": "Because sequence tagging assigns a single label per token, overlapping spans require span-based or hypergraph formulations.",
+    "topic": "Nested NER",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_46",
+    "chapter": 14,
+    "question": "What is Slot and Intent Extraction in dialogue systems an application of?",
+    "options": [
+      "Machine Translation",
+      "Perplexity evaluation",
+      "Clustering",
+      "Information Extraction (specifically Sequence Labeling for slots and Text Classification for intent)"
+    ],
+    "correct": 3,
+    "explanation": "Task-oriented dialogue NLU is a direct instantiation of Information Extraction techniques.",
+    "topic": "Applications",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_47",
+    "chapter": 14,
+    "question": "What is Zero-Shot Relation Extraction?",
+    "options": [
+      "Using regex rules only",
+      "Predicting whether a relation holds between entities using natural language relation descriptions or prompts without any labeled training pairs",
+      "Extracting relations in 0 seconds",
+      "Extracting relations with 0 CPU power"
+    ],
+    "correct": 1,
+    "explanation": "Zero-shot RE uses LLMs or NLI formulations to classify unseen relations guided only by descriptive task prompts.",
+    "topic": "Zero-Shot IE",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch14_48",
+    "chapter": 14,
+    "question": "What is Joint Entity and Relation Extraction?",
+    "options": [
+      "Translating entities and relations",
+      "Running NER on Monday and RE on Tuesday",
+      "Extracting entities without relations",
+      "Training a single end-to-end model that identifies entities and extracts relations simultaneously to prevent pipeline error propagation"
+    ],
+    "correct": 3,
+    "explanation": "Joint models eliminate cascading errors where an upstream NER mistake permanently prevents relation extraction.",
+    "topic": "Joint Modeling",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch14_49",
+    "chapter": 14,
+    "question": "In SpaCy, which component in the processing pipeline extracts named entities?",
+    "options": [
+      "`ner` (EntityRecognizer)",
+      "`lemmatizer`",
+      "`tagger`",
+      "`parser`"
+    ],
+    "correct": 0,
+    "explanation": "In SpaCy's pipeline, the `ner` component populates the `doc.ents` container with entity spans.",
+    "topic": "SpaCy",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch14_50",
+    "chapter": 14,
+    "question": "How do you access extracted named entities and their labels from a processed `doc` in SpaCy?",
+    "options": [
+      "Iterating through `doc.ents` and inspecting `ent.text` and `ent.label_`",
+      "`doc.words`",
+      "`doc.tokens`",
+      "`doc.sentences`"
+    ],
+    "correct": 0,
+    "explanation": "`for ent in doc.ents: print(ent.text, ent.label_)` extracts all recognized entity mentions and categories in SpaCy.",
+    "topic": "SpaCy",
+    "slide_ref": "14. Relation and Event Extraction.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_01",
+    "chapter": 15,
+    "question": "What is Temporal Information Extraction?",
+    "options": [
+      "Translating time into different languages",
+      "Measuring CPU clock frequency",
+      "Formatting time in CSS",
+      "The task of identifying temporal expressions, events, and anchoring/ordering them in chronological time"
+    ],
+    "correct": 3,
+    "explanation": "Temporal extraction identifies when events happen and determines chronological relationships between them.",
+    "topic": "Temporal Overview",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_02",
+    "chapter": 15,
+    "question": "What are the two foundational sub-tasks in processing temporal expressions?",
+    "options": [
+      "Clock synchronization and Stopwatch timing",
+      "POS tagging and Lemmatization only",
+      "Temporal Expression Recognition (Detection) and Temporal Normalization (Resolution)",
+      "Text translation and summarization"
+    ],
+    "correct": 2,
+    "explanation": "Systems first identify temporal text spans (detection), then convert them to standardized calendar formats (normalization).",
+    "topic": "Temporal Sub-tasks",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_03",
+    "chapter": 15,
+    "question": "What standard markup language and tag format is used to annotate temporal expressions in modern NLP?",
+    "options": [
+      "REGEX2",
+      "TIMEX3 (defined in the TimeML annotation standard)",
+      "XML_CLOCK",
+      "HTML5 <time>"
+    ],
+    "correct": 1,
+    "explanation": "TIMEX3 is the ISO-TimeML international standard specification for encoding temporal expressions.",
+    "topic": "TimeML & TIMEX3",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_04",
+    "chapter": 15,
+    "question": "What are the four primary semantic types of TIMEX3 expressions?",
+    "options": [
+      "Seconds, Minutes, Hours, Days",
+      "Date, Time, Duration, and Set",
+      "Morning, Afternoon, Evening, Night",
+      "Past, Present, Future, Conditional"
+    ],
+    "correct": 1,
+    "explanation": "TIMEX3 categorizes temporal phrases into: Date (calendar points), Time (time of day), Duration (intervals of time), and Set (recurring periods).",
+    "topic": "TIMEX3 Types",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_05",
+    "chapter": 15,
+    "question": "What is a 'Fully Specified' (Absolute) temporal expression?",
+    "options": [
+      "An expression without numbers",
+      "An expression whose calendar value is completely unambiguous without requiring reference to document context (e.g., 'July 4, 1776', '2024-10-26')",
+      "An expression like 'yesterday'",
+      "An expression like 'soon'"
+    ],
+    "correct": 1,
+    "explanation": "Absolute expressions specify exact calendar points independently of the utterance context.",
+    "topic": "Temporal Types",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_06",
+    "chapter": 15,
+    "question": "What is a 'Relative' (Deictic) temporal expression?",
+    "options": [
+      "An expression whose interpretation depends strictly on an anchor time, typically Document Creation Time (e.g., 'yesterday', 'next Monday', 'last year')",
+      "An expression naming a year directly",
+      "An expression in French",
+      "A mathematical formula"
+    ],
+    "correct": 0,
+    "explanation": "Relative expressions anchor their meaning relative to speech time or document creation time (DCT).",
+    "topic": "Temporal Types",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_07",
+    "chapter": 15,
+    "question": "What is a 'Duration' temporal expression?",
+    "options": [
+      "A timestamp",
+      "An expression indicating a span or length of time without specifying exact start or end points (e.g., 'for three hours', 'two months')",
+      "A calendar date",
+      "An expression like 'tomorrow'"
+    ],
+    "correct": 1,
+    "explanation": "Durations measure elapsed time intervals, encoded in ISO 8601 as `P...` (e.g. `P3H`, `P2M`).",
+    "topic": "Temporal Types",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_08",
+    "chapter": 15,
+    "question": "What is a 'Set' temporal expression in TIMEX3?",
+    "options": [
+      "An expression denoting periodic, recurring temporal occurrences (e.g., 'every Tuesday', 'monthly', 'twice a day')",
+      "A past event",
+      "A mathematical set of numbers",
+      "A single fixed date"
+    ],
+    "correct": 0,
+    "explanation": "Sets capture periodic frequencies and recurring events (e.g. `SET` type with periodicity quantifier).",
+    "topic": "TIMEX3 Types",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_09",
+    "chapter": 15,
+    "question": "What is Temporal Normalization (Resolution)?",
+    "options": [
+      "Mapping surface natural language expressions into standardized machine-readable ISO 8601 values (e.g. 'tomorrow' -> '2026-10-27')",
+      "Deleting all time words",
+      "Changing font sizes of dates",
+      "Calculating sentence duration"
+    ],
+    "correct": 0,
+    "explanation": "Temporal normalization resolves natural phrases to canonical calendar formats (e.g. `VAL='2026-10-27'`).",
+    "topic": "Temporal Normalization",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_10",
+    "chapter": 15,
+    "question": "What is the standard international format used for normalized dates in TIMEX3 values?",
+    "options": [
+      "MM/DD/YYYY",
+      "DD-MM-YYYY",
+      "ISO 8601 standard: YYYY-MM-DD (e.g., '2024-05-15')",
+      "Unix epoch timestamp only"
+    ],
+    "correct": 2,
+    "explanation": "TimeML mandates ISO 8601 `YYYY-MM-DD` for dates and `Thh:mm:ss` for times.",
+    "topic": "ISO 8601",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_11",
+    "chapter": 15,
+    "question": "What is the Document Creation Time (DCT)?",
+    "options": [
+      "The date of the first computer program",
+      "The time the computer was built",
+      "The time a user opened the PDF",
+      "The timestamp or date at which a text was authored or published, serving as the default anchor for relative temporal expressions"
+    ],
+    "correct": 3,
+    "explanation": "DCT provides the crucial reference point $t_0$ needed to anchor words like 'today', 'last week', and 'recently'.",
+    "topic": "Document Creation Time",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_12",
+    "chapter": 15,
+    "question": "If an article has DCT = '2026-10-26', what is the normalized TIMEX3 value for the phrase 'yesterday'?",
+    "options": [
+      "VAL='2026-10-27'",
+      "VAL='2026-10-26'",
+      "VAL='PAST'",
+      "VAL='2026-10-25'"
+    ],
+    "correct": 3,
+    "explanation": "Subtracting 1 day from the DCT anchor (2026-10-26) yields 2026-10-25.",
+    "topic": "Temporal Normalization",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_13",
+    "chapter": 15,
+    "question": "If an article has DCT = '2026-10-26', what is the normalized TIMEX3 value for 'three weeks ago'?",
+    "options": [
+      "VAL='2026-11-16'",
+      "VAL='2026-09-26'",
+      "VAL='2026-10-05'",
+      "VAL='P3W'"
+    ],
+    "correct": 2,
+    "explanation": "26 minus 21 days equals October 5, 2026: VAL='2026-10-05'.",
+    "topic": "Temporal Normalization",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_14",
+    "chapter": 15,
+    "question": "How is a Duration of 'two months' represented in ISO 8601 / TIMEX3 standard?",
+    "options": [
+      "VAL='DUR-60'",
+      "VAL='P2M' (Period of 2 Months)",
+      "VAL='T2M'",
+      "VAL='2-MONTHS'"
+    ],
+    "correct": 1,
+    "explanation": "ISO 8601 encodes periods/durations with prefix 'P': `P2M` denotes two months; `PT2M` denotes two minutes.",
+    "topic": "ISO 8601 Durations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_15",
+    "chapter": 15,
+    "question": "How is a recurring expression like 'every Friday' represented in TIMEX3?",
+    "options": [
+      "type='TIME'",
+      "type='DURATION'",
+      "type='DATE'",
+      "type='SET' value='XXXX-WXX-5' (or quantifier='EVERY')"
+    ],
+    "correct": 3,
+    "explanation": "Sets represent recurring frequencies; Friday is weekday 5 in ISO calendar notation.",
+    "topic": "TIMEX3 Sets",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_16",
+    "chapter": 15,
+    "question": "What famous interval temporal logic framework was developed by James Allen (1983)?",
+    "options": [
+      "Shannon's Information Theory",
+      "Chomsky's Hierarchy",
+      "Allen's Interval Algebra (defining 13 distinct qualitative temporal relations between time intervals)",
+      "Turing's Machine"
+    ],
+    "correct": 2,
+    "explanation": "Allen's Interval Algebra provides 13 mutually exclusive relations governing all qualitative relationships between two intervals.",
+    "topic": "Allen's Interval Algebra",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_17",
+    "chapter": 15,
+    "question": "How many basic qualitative temporal relations exist in Allen's Interval Algebra between two time intervals?",
+    "options": [
+      "7 relations",
+      "4 relations",
+      "24 relations",
+      "13 relations (6 relations, their 6 inverses, and 1 symmetric 'Equals' relation)"
+    ],
+    "correct": 3,
+    "explanation": "The 13 relations: Before/After, Meets/Met-by, Overlaps/Overlapped-by, Starts/Started-by, During/Contains, Finishes/Finished-by, Equals.",
+    "topic": "Allen's Interval Algebra",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_18",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what does 'Interval A BEFORE Interval B' mean?",
+    "options": [
+      "A and B start at the same time",
+      "Interval A ends strictly BEFORE Interval B starts (end(A) < start(B))",
+      "A is inside B",
+      "B ends before A starts"
+    ],
+    "correct": 1,
+    "explanation": "Before implies a non-zero time gap between the end of interval A and the beginning of interval B.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_19",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what is the inverse of the 'BEFORE' relation?",
+    "options": [
+      "MEETS",
+      "AFTER (end(B) < start(A))",
+      "EQUALS",
+      "DURING"
+    ],
+    "correct": 1,
+    "explanation": "If A is Before B, then B is After A.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_20",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what does 'Interval A MEETS Interval B' mean?",
+    "options": [
+      "A and B never touch",
+      "A is longer than B",
+      "A overlaps with B",
+      "Interval A ends at the EXACT same instant that Interval B begins (end(A) = start(B), with no gap)"
+    ],
+    "correct": 3,
+    "explanation": "Meets describes abutting intervals where the transition instant is identical (e.g. standing up meets walking).",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_21",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what does 'Interval A DURING Interval B' mean?",
+    "options": [
+      "A happens before B",
+      "A and B are identical",
+      "Interval A starts after B starts, and ends before B ends (A is strictly nested inside B)",
+      "B is shorter than A"
+    ],
+    "correct": 2,
+    "explanation": "During means A occurs entirely within the temporal boundaries of interval B.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_22",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what is the inverse of the 'DURING' relation?",
+    "options": [
+      "STARTS",
+      "CONTAINS (B contains A)",
+      "FINISHES",
+      "MEETS"
+    ],
+    "correct": 1,
+    "explanation": "If A is During B, then B Contains A.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_23",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what does 'Interval A OVERLAPS Interval B' mean?",
+    "options": [
+      "A is completely inside B",
+      "A and B end at the same time",
+      "A starts before B, B starts before A ends, and A ends before B ends",
+      "A and B do not overlap"
+    ],
+    "correct": 2,
+    "explanation": "Overlaps describes a partial intersection where A initiates prior to B and terminates before B completes.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_24",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what does 'Interval A STARTS Interval B' mean?",
+    "options": [
+      "A happens before B",
+      "A is longer than B",
+      "A ends when B ends",
+      "A and B share the exact same start time (start(A) = start(B)), but A ends before B ends"
+    ],
+    "correct": 3,
+    "explanation": "Starts means both intervals share an initial point, with A being a sub-interval of B.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_25",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, what does 'Interval A FINISHES Interval B' mean?",
+    "options": [
+      "A is longer than B",
+      "A finishes before B starts",
+      "A and B start together",
+      "A starts after B starts, but both intervals share the exact same end time (end(A) = end(B))"
+    ],
+    "correct": 3,
+    "explanation": "Finishes indicates distinct start times but a synchronized conclusion.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_26",
+    "chapter": 15,
+    "question": "In Allen's Interval Algebra, which relation is SYMMETRIC (equals its own inverse)?",
+    "options": [
+      "EQUALS (A = B: both start and end times are identical)",
+      "DURING",
+      "MEETS",
+      "BEFORE"
+    ],
+    "correct": 0,
+    "explanation": "If A Equals B, then B Equals A; it is the unique self-inverse relation among the 13.",
+    "topic": "Allen Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_27",
+    "chapter": 15,
+    "question": "What is Transitive Temporal Reasoning?",
+    "options": [
+      "Sorting events by size",
+      "Measuring speed of time",
+      "Translating calendar systems",
+      "Deducing unknown temporal relations by composing known relations (e.g. If Event A BEFORE Event B, and Event B BEFORE Event C, infer A BEFORE C)"
+    ],
+    "correct": 3,
+    "explanation": "Transitive inference computes the composition of relations (e.g., before o before = before) to discover implied orderings.",
+    "topic": "Temporal Reasoning",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_28",
+    "chapter": 15,
+    "question": "What is Temporal Closure in a temporal graph?",
+    "options": [
+      "Computing all logically entailed temporal relations across the graph using transitivity rules until no new relations can be inferred",
+      "Closing a file after reading",
+      "Terminating an event",
+      "Setting all dates to zero"
+    ],
+    "correct": 0,
+    "explanation": "Temporal closure expands the known constraint graph into a complete, consistent transitive closure.",
+    "topic": "Temporal Reasoning",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_29",
+    "chapter": 15,
+    "question": "What is TimeML?",
+    "options": [
+      "A database engine",
+      "A programming language like Python",
+      "A rich XML-based standard specification language for annotating events, temporal expressions, and temporal links in text",
+      "A clock synchronization tool"
+    ],
+    "correct": 2,
+    "explanation": "TimeML is the ISO-adopted standard markup language for temporal and event annotation.",
+    "topic": "TimeML Standards",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_30",
+    "chapter": 15,
+    "question": "In TimeML, what is an `EVENT` tag?",
+    "options": [
+      "A JavaScript event handler",
+      "A user click",
+      "A calendar invitation",
+      "An annotation element marking an action, occurrence, or state in text (e.g., `<EVENT eid='e1' class='OCCURRENCE'>arrived</EVENT>`)"
+    ],
+    "correct": 3,
+    "explanation": "The `EVENT` tag demarcates event trigger words with grammatical features like aspect, tense, and class.",
+    "topic": "TimeML Standards",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_31",
+    "chapter": 15,
+    "question": "In TimeML, what is a `TLINK` (Temporal Link)?",
+    "options": [
+      "A database foreign key",
+      "A relational tag that encodes a temporal relationship between two events or between an event and a time expression",
+      "A physical cable",
+      "A hyperlink to a website"
+    ],
+    "correct": 1,
+    "explanation": "`TLINK` represents relations like `relType='BEFORE'`, `relType='SIMULTANEOUS'`, connecting event IDs and timex IDs.",
+    "topic": "TimeML Standards",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_32",
+    "chapter": 15,
+    "question": "In TimeML, what is an `SLINK` (Subordination Link)?",
+    "options": [
+      "A relational tag encoding modal, evidential, or factual subordination (e.g. 'John said that Mary left')",
+      "A syntax bracket",
+      "A link to a slide",
+      "A shortcut on desktop"
+    ],
+    "correct": 0,
+    "explanation": "`SLINK` captures contexts where one event subordinates another under attitudes like belief, desire, or reporting.",
+    "topic": "TimeML Standards",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_33",
+    "chapter": 15,
+    "question": "What is TimeBank (Pustejovsky et al., 2003)?",
+    "options": [
+      "A dataset of banking transactions",
+      "A software license repository",
+      "A benchmark human-annotated corpus of English news articles annotated with TimeML tags (TIMEX3, EVENT, TLINK)",
+      "A bank that stores old clocks"
+    ],
+    "correct": 2,
+    "explanation": "TimeBank is the foundational gold-standard corpus for temporal information extraction and reasoning research.",
+    "topic": "TimeBank Corpus",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_34",
+    "chapter": 15,
+    "question": "What was the TempEval competition series (TempEval-1, 2, 3)?",
+    "options": [
+      "International shared task evaluations for benchmarking automated systems on temporal expression extraction, event identification, and temporal relation classification",
+      "A competition for fastest algorithms",
+      "A translation contest",
+      "A coding tournament"
+    ],
+    "correct": 0,
+    "explanation": "TempEval shared tasks standardized comparative evaluation for temporal information extraction systems.",
+    "topic": "TempEval",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_35",
+    "chapter": 15,
+    "question": "What is SUTime (Chang & Manning, 2012)?",
+    "options": [
+      "A sentiment dictionary",
+      "A neural network translation tool",
+      "A parser for syntax",
+      "A deterministic rule-based temporal tagger built on regular expressions over tokens (packaged within Stanford CoreNLP)"
+    ],
+    "correct": 3,
+    "explanation": "SUTime uses compositional regex rules over tokens and temporal arithmetic to detect and normalize TIMEX3 expressions.",
+    "topic": "Temporal Software",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_36",
+    "chapter": 15,
+    "question": "What is HeidelTime (Strötgen & Gertz, 2010)?",
+    "options": [
+      "A highly accurate, multilingual rule-based temporal tagger and normalizer based on pattern matching and domain heuristics",
+      "A German translation engine",
+      "A speech recognizer",
+      "A dependency parser"
+    ],
+    "correct": 0,
+    "explanation": "HeidelTime is a renowned multi-lingual temporal tagger that won top honors in TempEval benchmarks.",
+    "topic": "Temporal Software",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_37",
+    "chapter": 15,
+    "question": "In the sentence 'The company was founded in 1995 and acquired by Google in 2006', what is the TLINK relation between Founding and Acquisition?",
+    "options": [
+      "Founding happened AFTER Acquisition",
+      "Founding happened BEFORE Acquisition",
+      "Acquisition happened BEFORE Founding",
+      "Founding was SIMULTANEOUS with Acquisition"
+    ],
+    "correct": 1,
+    "explanation": "1995 precedes 2006, establishing the chronological relation Founding BEFORE Acquisition.",
+    "topic": "Temporal Relations",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_38",
+    "chapter": 15,
+    "question": "What is Point-Based Temporal Reasoning (e.g. Vilain & Kautz point algebra)?",
+    "options": [
+      "Using GPS coordinates",
+      "Modeling time with circles",
+      "Modeling time using instantaneous point instants (start time t_s, end time t_e) with relations <, =, > rather than atomic intervals",
+      "Calculating CPU points"
+    ],
+    "correct": 2,
+    "explanation": "Point algebra decomposes intervals into their endpoints, allowing efficient polynomial-time constraint satisfaction.",
+    "topic": "Temporal Logic",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_39",
+    "chapter": 15,
+    "question": "What is a Temporal Constraint Satisfaction Problem (TCSP)?",
+    "options": [
+      "A hardware clock constraint",
+      "A deadline for homework",
+      "A constraint satisfaction framework where variables represent time points or intervals, and constraints represent allowed temporal distances or orderings",
+      "A calendar scheduling bug"
+    ],
+    "correct": 2,
+    "explanation": "TCSP algorithms check consistency and compute valid event placements across temporal networks.",
+    "topic": "Temporal Reasoning",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_40",
+    "chapter": 15,
+    "question": "Why is Temporal Relation Extraction (TLINK classification) notoriously difficult for machine learning models?",
+    "options": [
+      "Because time words are illegal",
+      "Because models cannot subtract numbers",
+      "Because texts never mention time",
+      "Severe class imbalance (most pairs are vague or unrelated), long document-level distances between events, and frequent implicit world-knowledge requirements"
+    ],
+    "correct": 3,
+    "explanation": "Classifying TLINKs requires resolving subtle linguistic discourse cues and implicit temporal commonsense knowledge.",
+    "topic": "Temporal Challenges",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch15_41",
+    "chapter": 15,
+    "question": "What is an Anchored Event vs an Unanchored Event?",
+    "options": [
+      "An anchored event is linked to a specific calendar date/time (e.g. 'died on May 10'); an unanchored event has no explicit timestamp",
+      "An anchored event is written in HTML",
+      "An unanchored event has no verbs",
+      "They are identical"
+    ],
+    "correct": 0,
+    "explanation": "Anchored events have direct TLINKs to explicit TIMEX expressions, placing them on an absolute calendar timeline.",
+    "topic": "Event Anchoring",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_42",
+    "chapter": 15,
+    "question": "What is the difference between Tense and Aspect in linguistics?",
+    "options": [
+      "Tense locates an event in time relative to speech time (Past, Present, Future); Aspect describes the internal temporal contour or completion (Completed/Perfective vs Ongoing/Progressive)",
+      "Tense is for nouns; Aspect is for verbs",
+      "Aspect is only used in Slavic languages",
+      "They mean the exact same thing"
+    ],
+    "correct": 0,
+    "explanation": "Tense locates events chronologically; aspect characterizes whether the event is continuous, completed, or habitual.",
+    "topic": "Linguistic Concepts",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_43",
+    "chapter": 15,
+    "question": "In the sentence 'She was reading when the phone rang', what is the aspect of 'was reading'?",
+    "options": [
+      "Progressive / Imperfective (ongoing event providing temporal background)",
+      "Habitual",
+      "Perfective / Completed",
+      "Future"
+    ],
+    "correct": 0,
+    "explanation": "Past progressive ('was reading') indicates an ongoing, incomplete activity interrupted by the punctual event ('rang').",
+    "topic": "Linguistic Concepts",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_44",
+    "chapter": 15,
+    "question": "In the sentence 'She had finished her homework before dinner', what is the grammatical aspect of 'had finished'?",
+    "options": [
+      "Past Perfect (Pluperfect / Completed prior to a reference point)",
+      "Future Perfect",
+      "Simple Past",
+      "Present Continuous"
+    ],
+    "correct": 0,
+    "explanation": "Past perfect marks completion prior to another reference past time ('dinner').",
+    "topic": "Linguistic Concepts",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch15_45",
+    "chapter": 15,
+    "question": "What does the TIMEX3 tag `VAL='PRESENT_REF'` signify?",
+    "options": [
+      "A Christmas present",
+      "A past year",
+      "A reference to the current ongoing temporal moment (e.g. 'now', 'currently', 'at present')",
+      "A future appointment"
+    ],
+    "correct": 2,
+    "explanation": "Expressions like 'now' or 'currently' normalize to the special constant `PRESENT_REF`.",
+    "topic": "TIMEX3 Standards",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_46",
+    "chapter": 15,
+    "question": "In the phrase 'the second quarter of 2024', what is the normalized TIMEX3 value?",
+    "options": [
+      "VAL='2024-02'",
+      "VAL='Q2-2024'",
+      "VAL='2024-Q2'",
+      "VAL='2024-04'"
+    ],
+    "correct": 2,
+    "explanation": "ISO 8601 represents quarters as `YYYY-Q#`, so second quarter is `2024-Q2`.",
+    "topic": "ISO 8601 Quarters",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_47",
+    "chapter": 15,
+    "question": "In the phrase 'the summer of 2025', what is the normalized TIMEX3 value?",
+    "options": [
+      "VAL='2025-06'",
+      "VAL='2025-SEASON'",
+      "VAL='2025-SU'",
+      "VAL='SUMMER-2025'"
+    ],
+    "correct": 2,
+    "explanation": "ISO 8601 represents meteorological seasons using two-letter codes (e.g. `2025-SU` for summer, `2025-WI` for winter).",
+    "topic": "ISO 8601 Seasons",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_48",
+    "chapter": 15,
+    "question": "Can temporal reasoning detect inconsistencies in historical or narrative texts?",
+    "options": [
+      "Only using unigrams",
+      "Yes, by detecting directed cycles in temporal constraint graphs (e.g. Event A before B, B before C, and C before A is an impossible cycle)",
+      "No, logic cannot find cycles",
+      "Only if dates are written in French"
+    ],
+    "correct": 1,
+    "explanation": "Cycle detection in temporal graphs flags contradictory timelines where an event would have to precede itself.",
+    "topic": "Inconsistency Detection",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch15_49",
+    "chapter": 15,
+    "question": "What is Clinical Temporal Reasoning (e.g., in Electronic Health Records)?",
+    "options": [
+      "Billing insurance companies",
+      "Setting hospital visiting hours",
+      "Extracting timelines of symptoms, medication administrations, lab tests, and disease onsets to track medical patient trajectories",
+      "Measuring heart rate in real time"
+    ],
+    "correct": 2,
+    "explanation": "EHR timeline extraction is critical for clinical decision support, determining whether symptoms preceded or followed medication.",
+    "topic": "Applications",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch15_50",
+    "chapter": 15,
+    "question": "How do modern Large Language Models perform on temporal reasoning compared to specialized systems?",
+    "options": [
+      "LLMs are 100% perfect at time math",
+      "LLMs demonstrate strong zero-shot extraction abilities but still struggle with complex multi-step temporal arithmetic and transitive graph consistency",
+      "LLMs have zero temporal knowledge",
+      "LLMs cannot read dates"
+    ],
+    "correct": 1,
+    "explanation": "While LLMs recognize temporal expressions well, complex multi-hop temporal math and transitive ordering often require external symbolic solvers.",
+    "topic": "Modern LLMs",
+    "slide_ref": "15. Time and Temporal Reasoning.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_01",
+    "chapter": 16,
+    "question": "What is the distinction between a 'Word Form' and a 'Word Sense'?",
+    "options": [
+      "Word form is used only for verbs",
+      "They are identical concepts",
+      "Word sense is the language of origin",
+      "A Word Form is the orthographic/phonological realization (the printed spelling or spoken sound); a Word Sense is a specific discrete semantic meaning"
+    ],
+    "correct": 3,
+    "explanation": "A single word form (like 'bank') can express multiple distinct word senses (financial institution vs sloping river edge).",
+    "topic": "Lexical Semantics",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_02",
+    "chapter": 16,
+    "question": "What is Polysemy in lexical semantics?",
+    "options": [
+      "A word with no meaning",
+      "A foreign word",
+      "Two completely unrelated words with identical spelling",
+      "A single word form having multiple distinct but historically and conceptually RELATED meanings (e.g. 'school' as building vs institution vs body of students)"
+    ],
+    "correct": 3,
+    "explanation": "Polysemy describes related semantic extensions derived from a common metaphorical or metonymic core.",
+    "topic": "Sense Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_03",
+    "chapter": 16,
+    "question": "What is Homonymy in lexical semantics?",
+    "options": [
+      "Words that rhyme",
+      "Words with similar length",
+      "Words with identical meaning",
+      "Two completely UNRELATED meanings that accidentally share the exact same word form / spelling (e.g., 'bat' the flying mammal vs 'bat' baseball club)"
+    ],
+    "correct": 3,
+    "explanation": "Homonyms are distinct words with coincidental identical phonetic or orthographic surface forms.",
+    "topic": "Sense Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_04",
+    "chapter": 16,
+    "question": "What is a Homophone?",
+    "options": [
+      "Words spelled identically",
+      "A type of musical instrument",
+      "Two words that SOUND identical but have different spellings and different meanings (e.g., 'sea' and 'see', 'to', 'too', 'two')",
+      "A telephone call"
+    ],
+    "correct": 2,
+    "explanation": "Homophones share identical pronunciation despite disparate spellings and meanings.",
+    "topic": "Sense Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_05",
+    "chapter": 16,
+    "question": "What is a Homograph?",
+    "options": [
+      "Words that mean the same thing",
+      "Two words that are SPELLED identically but have different pronunciations and meanings (e.g., 'bass' fish vs 'bass' musical tone)",
+      "Words with no letters",
+      "Words that rhyme"
+    ],
+    "correct": 1,
+    "explanation": "Homographs share identical orthography but differ in phonology and semantics.",
+    "topic": "Sense Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_06",
+    "chapter": 16,
+    "question": "What is Synonymy?",
+    "options": [
+      "Words that mean the opposite",
+      "Words from the same language family",
+      "Two distinct word forms that can substitute for each other in linguistic contexts without altering the truth value of the sentence",
+      "Words with identical sound"
+    ],
+    "correct": 2,
+    "explanation": "Synonyms express identical or near-identical concepts (e.g. 'couch' and 'sofa').",
+    "topic": "Sense Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_07",
+    "chapter": 16,
+    "question": "What is Antonymy?",
+    "options": [
+      "Words that express OPPOSITE meanings along a semantic dimension",
+      "Words that are nouns",
+      "Words that mean the same",
+      "Words that are translated"
+    ],
+    "correct": 0,
+    "explanation": "Antonyms denote polar opposites (e.g. 'hot' vs 'cold', 'alive' vs 'dead').",
+    "topic": "Sense Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_08",
+    "chapter": 16,
+    "question": "What is the difference between Gradable Antonyms and Non-Gradable (Binary) Antonyms?",
+    "options": [
+      "Binary antonyms allow degrees of truth",
+      "They are identical in math",
+      "Gradable antonyms represent continuous scales with intermediate states ('hot' / 'warm' / 'cold'); Binary antonyms are mutually exclusive ('alive' vs 'dead')",
+      "Gradable antonyms are verbs; Binary are nouns"
+    ],
+    "correct": 2,
+    "explanation": "Gradable pairs admit comparatives and intermediates ('hotter', 'lukewarm'); binary complementary pairs do not ('*slightly dead').",
+    "topic": "Antonym Types",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_09",
+    "chapter": 16,
+    "question": "What are Converse (Relational) Antonyms?",
+    "options": [
+      "Words with no vowels",
+      "Pairs expressing opposite perspectives of the same relational action or event (e.g. 'buy' and 'sell', 'parent' and 'child', 'doctor' and 'patient')",
+      "Slang words",
+      "Synonyms"
+    ],
+    "correct": 1,
+    "explanation": "Converse antonyms describe reciprocal relationships: if X sells to Y, then Y buys from X.",
+    "topic": "Antonym Types",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_10",
+    "chapter": 16,
+    "question": "What is Hyponymy in lexical semantics?",
+    "options": [
+      "Words with opposite meanings",
+      "The part-whole relationship",
+      "The 'IS-A' relationship: word A is a hyponym of word B if A is a more specific sub-type or instance of B (e.g. 'robin' is a hyponym of 'bird')",
+      "Words with identical sounds"
+    ],
+    "correct": 2,
+    "explanation": "Hyponymy represents hierarchical taxonomic specialization: a mango IS-A fruit.",
+    "topic": "Taxonomic Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_11",
+    "chapter": 16,
+    "question": "What is Hypernymy (Superordinate)?",
+    "options": [
+      "The inverse of hyponymy: word B is a hypernym of word A if B represents the broader, more general category (e.g. 'animal' is a hypernym of 'dog')",
+      "A synonym of bird",
+      "A punctuation mark",
+      "A word with multiple senses"
+    ],
+    "correct": 0,
+    "explanation": "Hypernyms name broader categories encompassing more specific hyponym concepts.",
+    "topic": "Taxonomic Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_12",
+    "chapter": 16,
+    "question": "What is Meronymy (Part-Whole relation)?",
+    "options": [
+      "The opposite of synonym",
+      "Word A is a meronym of word B if A is a physical or conceptual PART of B (e.g., 'wheel' is a meronym of 'car', 'finger' is a meronym of 'hand')",
+      "The IS-A relationship",
+      "A grammatical relation"
+    ],
+    "correct": 1,
+    "explanation": "Meronymy defines part-whole constituency ('X is part of Y'), distinguished from taxonomic class inclusion.",
+    "topic": "Meronymy & Holonymy",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_13",
+    "chapter": 16,
+    "question": "What is Holonymy in lexical semantics?",
+    "options": [
+      "An antonym",
+      "A synonym",
+      "A word meaning everything",
+      "The inverse of meronymy: word B is a holonym of word A if B represents the WHOLE of which A is a part (e.g. 'car' is a holonym of 'wheel')"
+    ],
+    "correct": 3,
+    "explanation": "Holonymy names the complete entity that possesses the meronymic part.",
+    "topic": "Meronymy & Holonymy",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_14",
+    "chapter": 16,
+    "question": "What is Troponymy in verb semantics?",
+    "options": [
+      "A verb without tense",
+      "A specific lexical relation for verbs: expressing a particular MANNER of doing an action (e.g. 'stroll' is a troponym of 'walk'; 'lisp' is a troponym of 'talk')",
+      "A passive verb",
+      "An irregular verb"
+    ],
+    "correct": 1,
+    "explanation": "Troponymy specializes verbs by manner ('to X is to Y in a particular manner').",
+    "topic": "Troponymy",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_15",
+    "chapter": 16,
+    "question": "What is Princeton WordNet (Fellbaum, Miller et al., 1990)?",
+    "options": [
+      "A large, hand-crafted computational lexical database of English nouns, verbs, adjectives, and adverbs structured into sets of cognitive synonyms (Synsets)",
+      "A computer networking tool",
+      "A spell checking dictionary",
+      "A translation model"
+    ],
+    "correct": 0,
+    "explanation": "WordNet is the foundational lexical knowledge ontology organizing English vocabulary into a semantic graph.",
+    "topic": "WordNet Overview",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_16",
+    "chapter": 16,
+    "question": "What is the fundamental building block / structural unit in WordNet?",
+    "options": [
+      "A single letter",
+      "A CFG rule",
+      "The Synset (Synonym Set): a set of near-synonymous words representing a single discrete conceptual sense",
+      "A phoneme"
+    ],
+    "correct": 2,
+    "explanation": "Synsets group interchangeable lemma strings sharing an identical semantic concept.",
+    "topic": "Synsets",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_17",
+    "chapter": 16,
+    "question": "What is a 'Gloss' in WordNet?",
+    "options": [
+      "A brief textual definition of the synset concept, usually accompanied by one or more illustrative example sentences",
+      "A phonetic pronunciation",
+      "A list of antonyms",
+      "A shiny surface"
+    ],
+    "correct": 0,
+    "explanation": "The gloss provides human-readable definitions and usage examples anchoring the synset meaning.",
+    "topic": "WordNet Components",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_18",
+    "chapter": 16,
+    "question": "In WordNet notation `bank.n.01`, what do the components represent?",
+    "options": [
+      "A syntax bracket",
+      "Bank number 1 on network 0",
+      "Lemma: 'bank', Part of Speech: noun ('n'), Sense Number: 1 (the most frequent sense)",
+      "A binary code"
+    ],
+    "correct": 2,
+    "explanation": "`word.pos.sense_index` specifies the canonical synset identifier.",
+    "topic": "WordNet Notation",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_19",
+    "chapter": 16,
+    "question": "How are senses ordered in WordNet for a given word lemma?",
+    "options": [
+      "In descending order of frequency based on the SemCor sense-tagged corpus (Sense 1 is the most common / dominant sense)",
+      "In order of word length",
+      "In alphabetical order",
+      "Randomly"
+    ],
+    "correct": 0,
+    "explanation": "WordNet orders senses by empirical corpus frequency: sense 1 is the predominant primary meaning.",
+    "topic": "WordNet Senses",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_20",
+    "chapter": 16,
+    "question": "What root non-terminal node sits at the very top of the WordNet noun hierarchy?",
+    "options": [
+      "`root.n.01`",
+      "`entity.n.01` (Unique Beginner)",
+      "`thing.n.01`",
+      "`noun.n.01`"
+    ],
+    "correct": 1,
+    "explanation": "`entity.n.01` serves as the ultimate apex ancestor for all noun synsets in the WordNet taxonomy.",
+    "topic": "WordNet Taxonomy",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_21",
+    "chapter": 16,
+    "question": "What is Word Sense Disambiguation (WSD)?",
+    "options": [
+      "Translating words into French",
+      "The computational task of determining which specific word sense from a dictionary/inventory is intended for a polysemous word in a given sentence context",
+      "Spelling correction",
+      "Counting how many words are in a sentence"
+    ],
+    "correct": 1,
+    "explanation": "WSD resolves lexical ambiguity by mapping polysemous surface words to discrete dictionary senses.",
+    "topic": "WSD Task",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_22",
+    "chapter": 16,
+    "question": "What is the Most Frequent Sense (MFS) baseline in WordNet WSD?",
+    "options": [
+      "Always predicting Sense 1 (`word.pos.01`) for the target word, which achieves a remarkably high baseline accuracy (~60-70%)",
+      "Picking a sense at random",
+      "Picking the least frequent sense",
+      "Picking the sense with the longest gloss"
+    ],
+    "correct": 0,
+    "explanation": "Due to Zipfian sense distributions, simply choosing sense 1 provides an exceptionally formidable baseline.",
+    "topic": "WSD Baselines",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_23",
+    "chapter": 16,
+    "question": "What is the core intuition of the classic Lesk Algorithm (Michael Lesk, 1986)?",
+    "options": [
+      "The sense that rhymes with the subject",
+      "The sense with the most letters",
+      "A target word's intended sense is the one whose dictionary definition (gloss) shares the HIGHEST word overlap with the context words in the surrounding sentence",
+      "The sense with zero vowels"
+    ],
+    "correct": 2,
+    "explanation": "The Lesk algorithm measures word co-occurrence overlap between dictionary glosses and conversational context.",
+    "topic": "Lesk Algorithm",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_24",
+    "chapter": 16,
+    "question": "In the Simplified Lesk algorithm, how is the score for candidate sense S calculated?",
+    "options": [
+      "Score(S) = Length of Gloss(S)",
+      "Score(S) = Word count / 2",
+      "Score(S) = |Words in Gloss(S) INTERSECT Words in Sentence Context|",
+      "Score(S) = Frequency in WordNet"
+    ],
+    "correct": 2,
+    "explanation": "Simplified Lesk computes the size of the set intersection between the candidate synset gloss and surrounding context words.",
+    "topic": "Lesk Algorithm",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_25",
+    "chapter": 16,
+    "question": "How does the Extended Lesk algorithm (Banerjee & Pedersen, 2002) improve upon Simplified Lesk?",
+    "options": [
+      "It deletes common words",
+      "It translates glosses to Chinese",
+      "It augments the comparison by including the glosses of related synsets in WordNet (hypernyms, hyponyms, meronyms) to overcome small overlap sparsity",
+      "It uses speech recognition"
+    ],
+    "correct": 2,
+    "explanation": "Extended Lesk enriches the gloss vocabulary by concatenating definition text from taxonomically adjacent relatives.",
+    "topic": "Extended Lesk",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_26",
+    "chapter": 16,
+    "question": "What is a major limitation of rule-based Lesk algorithms?",
+    "options": [
+      "Dictionary definitions are often very brief, resulting in zero word overlap between gloss and context even for the correct sense",
+      "They are too fast",
+      "They require 100 GPUs",
+      "They only run on Linux"
+    ],
+    "correct": 0,
+    "explanation": "Glossware sparsity frequently causes ties or zero overlaps when valid synonyms are used instead of exact word matches.",
+    "topic": "Lesk Limitations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_27",
+    "chapter": 16,
+    "question": "What is SemCor (Semantic Concordance)?",
+    "options": [
+      "A treebank of syntax trees",
+      "A parallel corpus for translation",
+      "A dictionary of computer parts",
+      "A large, human-annotated corpus of text from the Brown Corpus where words have been manually tagged with their corresponding WordNet synset IDs"
+    ],
+    "correct": 3,
+    "explanation": "SemCor (Miller et al., 1993) is the primary supervised training corpus for English WordSense Disambiguation.",
+    "topic": "Sense Corpora",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_28",
+    "chapter": 16,
+    "question": "What is the difference between All-Words WSD and Target-Word (Lexical Sample) WSD?",
+    "options": [
+      "Target-word requires no dictionary",
+      "All-words only evaluates nouns",
+      "They are identical tasks",
+      "All-Words disambiguates EVERY content word across an entire text; Target-Word disambiguates occurrences of a small, specific pre-selected list of words"
+    ],
+    "correct": 3,
+    "explanation": "All-Words evaluates system-wide disambiguation breadth; Lexical Sample trains specialized classifiers for specific polysemous words.",
+    "topic": "WSD Tasks",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_29",
+    "chapter": 16,
+    "question": "In WordNet taxonomy, what is the Least Common Subsumer (LCS) of two synsets c1 and c2?",
+    "options": [
+      "The most specific (lowest-level / deepest) shared ancestor synset that both c1 and c2 inherit from in the hypernym tree",
+      "The root node `entity.n.01` always",
+      "The leaf node with the most children",
+      "The shortest word"
+    ],
+    "correct": 0,
+    "explanation": "The LCS represents the closest conceptual ancestor unifying two concepts in the taxonomy.",
+    "topic": "Least Common Subsumer",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_30",
+    "chapter": 16,
+    "question": "What is the Path Length Distance between two synsets in WordNet?",
+    "options": [
+      "The physical distance between servers",
+      "The shortest number of hypernym/hyponym edge steps connecting synset c1 and synset c2 in the taxonomic hierarchy",
+      "The number of letters in their names",
+      "The difference in word frequency"
+    ],
+    "correct": 1,
+    "explanation": "Path distance counts the minimum directed edge steps traversed through the taxonomy tree between two nodes.",
+    "topic": "Path Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_31",
+    "chapter": 16,
+    "question": "What is Path Similarity formula: `sim_path(c1, c2)`?",
+    "options": [
+      "sim_path(c1, c2) = path_length(c1, c2)^2",
+      "sim_path(c1, c2) = 1 / (path_length(c1, c2) + 1)",
+      "sim_path(c1, c2) = 0",
+      "sim_path(c1, c2) = path_length(c1, c2)"
+    ],
+    "correct": 1,
+    "explanation": "Inverse path distance maps identical concepts (distance 0) to similarity 1.0, and distant nodes to small fractions.",
+    "topic": "Path Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_32",
+    "chapter": 16,
+    "question": "What is a fundamental problem with purely Path-Based similarity in WordNet?",
+    "options": [
+      "Taxonomic edge steps are not uniform in semantic distance: deep down in the tree, steps represent fine nuances, whereas high up, steps span huge conceptual leaps",
+      "Edges have negative weights",
+      "It cannot be computed",
+      "Path length is non-deterministic"
+    ],
+    "correct": 0,
+    "explanation": "Path distance treats all edges as having equal semantic magnitude, ignoring taxonomy depth and density.",
+    "topic": "Similarity Limitations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_33",
+    "chapter": 16,
+    "question": "What is the Wu-Palmer Similarity (`wup_similarity`) formula between synsets c1 and c2?",
+    "options": [
+      "wup(c1, c2) = (2 * depth(LCS)) / (depth(c1) + depth(c2))",
+      "wup(c1, c2) = depth(LCS) / 2",
+      "wup(c1, c2) = depth(c1) - depth(c2)",
+      "wup(c1, c2) = 1 / depth(LCS)"
+    ],
+    "correct": 0,
+    "explanation": "Wu-Palmer measures depth of the lowest common ancestor relative to the depths of the two individual concepts.",
+    "topic": "Wu-Palmer Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_34",
+    "chapter": 16,
+    "question": "What is the range of the Wu-Palmer Similarity score?",
+    "options": [
+      "Between 0.0 and 1.0, (0, 1]",
+      "[-infinity, 0]",
+      "[-1.0, 1.0]",
+      "[0, infinity)"
+    ],
+    "correct": 0,
+    "explanation": "Wu-Palmer similarity yields values strictly between 0 and 1, with identical concepts scoring 1.0.",
+    "topic": "Wu-Palmer Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_35",
+    "chapter": 16,
+    "question": "What is Information Content (IC) of a concept c in Resnik's similarity framework (Philip Resnik, 1995)?",
+    "options": [
+      "IC(c) = log(c)",
+      "IC(c) = - log P(c), where P(c) is the probability of encountering an instance of concept c in a large text corpus",
+      "IC(c) = P(c) / 2",
+      "IC(c) = depth(c)"
+    ],
+    "correct": 1,
+    "explanation": "Information content quantifies the specificity of a concept: rare specific concepts have high IC; abstract general concepts have low IC.",
+    "topic": "Information Content",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_36",
+    "chapter": 16,
+    "question": "In Resnik similarity, what does Resnik Similarity equal: `sim_res(c1, c2)`?",
+    "options": [
+      "sim_res(c1, c2) = IC(c1) + IC(c2)",
+      "sim_res(c1, c2) = 1",
+      "sim_res(c1, c2) = IC( LCS(c1, c2) ) = - log P( LCS(c1, c2) )",
+      "sim_res(c1, c2) = depth(c1) * depth(c2)"
+    ],
+    "correct": 2,
+    "explanation": "Resnik similarity is defined as the information content of their lowest common subsumer: more informative shared ancestors reflect higher similarity.",
+    "topic": "Resnik Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_37",
+    "chapter": 16,
+    "question": "What is Lin Similarity (Dekang Lin, 1998)?",
+    "options": [
+      "sim_lin = 1 / IC(LCS)",
+      "A normalized information-theoretic measure: sim_lin(c1, c2) = (2 * IC(LCS)) / (IC(c1) + IC(c2))",
+      "sim_lin = depth(LCS)",
+      "sim_lin = IC(c1) * IC(c2)"
+    ],
+    "correct": 1,
+    "explanation": "Lin similarity scales Resnik's metric into [0, 1] by dividing double the shared information by the sum of individual information contents.",
+    "topic": "Lin Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch16_38",
+    "chapter": 16,
+    "question": "In NLTK, how do you import WordNet?",
+    "options": [
+      "`from nltk.corpus import wordnet as wn`",
+      "`from nltk.tag import wordnet`",
+      "`import wordnet`",
+      "`from nltk.stem import wn`"
+    ],
+    "correct": 0,
+    "explanation": "`from nltk.corpus import wordnet as wn` is the standard import statement in Python.",
+    "topic": "NLTK WordNet",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_39",
+    "chapter": 16,
+    "question": "In NLTK, what does `wn.synsets('dog')` return?",
+    "options": [
+      "A list of all Synset objects associated with the word lemma 'dog'",
+      "A list of translations",
+      "The count of dogs in corpus",
+      "The definition of dog as a string"
+    ],
+    "correct": 0,
+    "explanation": "`wn.synsets()` retrieves all synset records matching the query string across all parts of speech.",
+    "topic": "NLTK WordNet",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_40",
+    "chapter": 16,
+    "question": "In NLTK, how do you extract the definition text of a synset `s`?",
+    "options": [
+      "`s.definition()`",
+      "`s.text()`",
+      "`s.gloss()`",
+      "`s.meaning()`"
+    ],
+    "correct": 0,
+    "explanation": "In NLTK's API, `s.definition()` returns the gloss definition string.",
+    "topic": "NLTK WordNet",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_41",
+    "chapter": 16,
+    "question": "In NLTK, how do you access the direct hypernyms of a synset `s`?",
+    "options": [
+      "`s.parents()`",
+      "`s.ancestors()`",
+      "`s.hypernyms()`",
+      "`s.superordinates()`"
+    ],
+    "correct": 2,
+    "explanation": "`s.hypernyms()` returns a list of direct parent synsets in the taxonomic graph.",
+    "topic": "NLTK WordNet",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_42",
+    "chapter": 16,
+    "question": "What is BabelNet (Navigli & Ponzetto, 2012)?",
+    "options": [
+      "A massive multilingual semantic network and lexical knowledge base integrating WordNet with Wikipedia across 500+ languages",
+      "A speech synthesizer",
+      "A parser for ancient languages",
+      "A machine translation software"
+    ],
+    "correct": 0,
+    "explanation": "BabelNet bridges WordNet synsets with Wikipedia articles to provide wide-coverage multilingual encyclopedic knowledge.",
+    "topic": "BabelNet",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_43",
+    "chapter": 16,
+    "question": "What is the difference between Semantic Similarity and Semantic Relatedness?",
+    "options": [
+      "Relatedness only applies to verbs",
+      "Similarity only applies to numbers",
+      "Semantic Similarity is a specific subset based on taxonomic IS-A relations ('cat' and 'dog' are similar); Relatedness includes any associative relation ('doctor' and 'hospital' are related, but not similar)",
+      "They are identical terms"
+    ],
+    "correct": 2,
+    "explanation": "Doctor and hospital are highly related (functional association) but taxonomically dissimilar; car and truck are semantically similar.",
+    "topic": "Similarity vs Relatedness",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_44",
+    "chapter": 16,
+    "question": "How does Contextualized Word Embeddings (like BERT) perform WSD compared to classical discrete algorithms?",
+    "options": [
+      "By reading WordNet glosses only",
+      "By counting vowels",
+      "By comparing the contextualized token embedding in a sentence against nearest centroid representations of labeled senses (e.g. 1-NN clustering in embedding space)",
+      "By using one-hot vectors"
+    ],
+    "correct": 2,
+    "explanation": "BERT's contextual embeddings capture nuanced sense distinctions directly, enabling state-of-the-art WSD via simple nearest-neighbor classification.",
+    "topic": "Neural WSD",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_45",
+    "chapter": 16,
+    "question": "What is Lexical Substitution in WSD evaluation?",
+    "options": [
+      "Deleting words from text",
+      "Translating words into Latin",
+      "Replacing words with random letters",
+      "Evaluating whether a system can suggest valid synonymous substitutes that preserve sentence meaning without relying on predefined discrete sense inventories"
+    ],
+    "correct": 3,
+    "explanation": "Lexical substitution sidesteps rigid dictionary inventory boundaries by testing contextual paraphrase replacement directly.",
+    "topic": "Lexical Substitution",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_46",
+    "chapter": 16,
+    "question": "What is Word Sense Induction (WSI)?",
+    "options": [
+      "The unsupervised task of discovering and clustering word senses directly from unlabelled text data without an external dictionary",
+      "Looking up senses in a dictionary",
+      "Translating senses into English",
+      "Memorizing WordNet definitions"
+    ],
+    "correct": 0,
+    "explanation": "Word Sense Induction clusters context vectors of a word automatically into discrete latent senses without human supervision.",
+    "topic": "Word Sense Induction",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch16_47",
+    "chapter": 16,
+    "question": "In WordNet, what relation connects adjectives with their opposite polarity counterparts (e.g. 'heavy' and 'light')?",
+    "options": [
+      "Troponymy",
+      "Meronymy",
+      "Hypernymy",
+      "Antonymy (`lemma.antonyms()`)"
+    ],
+    "correct": 3,
+    "explanation": "Antonymy is represented in WordNet as a direct lexical relation between individual lemma objects.",
+    "topic": "WordNet Relations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_48",
+    "chapter": 16,
+    "question": "Can two synsets have a Path Similarity of 1.0?",
+    "options": [
+      "Only if depth > 10",
+      "Only for nouns",
+      "No, maximum is 0.5",
+      "Yes, when comparing a synset with ITSELF (distance = 0, similarity = 1 / (0 + 1) = 1.0)"
+    ],
+    "correct": 3,
+    "explanation": "A synset compared to itself has path length 0, producing a path similarity of exactly 1.0.",
+    "topic": "Path Similarity",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch16_49",
+    "chapter": 16,
+    "question": "What is the Least Common Subsumer of `cat.n.01` and `dog.n.01` in WordNet?",
+    "options": [
+      "`entity.n.01`",
+      "`mammal.n.01`",
+      "`carnivore.n.01`",
+      "`canine.n.01`"
+    ],
+    "correct": 2,
+    "explanation": "In WordNet, both cats (felines) and dogs (canines) meet at their closest common taxonomic ancestor `carnivore.n.01`.",
+    "topic": "WordNet Taxonomy",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch16_50",
+    "chapter": 16,
+    "question": "Why is WordNet sense granularity sometimes criticized as TOO FINE-GRAINED for real-world NLP applications?",
+    "options": [
+      "It makes micro-distinctions between subtle shades of meaning that even human annotators disagree on, causing artificial evaluation penalties",
+      "It contains only 100 words",
+      "It has too few words",
+      "It has no verbs"
+    ],
+    "correct": 0,
+    "explanation": "Fine-grained distinctions (e.g. 15 senses of 'play') lead to low human annotator agreement, prompting coarse-grained sense clusterings.",
+    "topic": "WordNet Limitations",
+    "slide_ref": "16. Word Senses and WordNet.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_01",
+    "chapter": 17,
+    "question": "What is a Sentiment Lexicon?",
+    "options": [
+      "A dictionary of foreign languages",
+      "A dictionary or word list associating lexical entries with sentiment polarity (positive, negative, neutral) or numerical valence scores",
+      "A grammar book",
+      "A dataset of audio files"
+    ],
+    "correct": 1,
+    "explanation": "A sentiment lexicon maps words to their affective polarity or continuous valence ratings.",
+    "topic": "Sentiment Lexicons",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_02",
+    "chapter": 17,
+    "question": "What is SentiWordNet (Esuli & Sebastiani, 2006)?",
+    "options": [
+      "A parser for syntax",
+      "A machine translation dictionary",
+      "An image database",
+      "A lexical resource that assigns three sentiment scores to every WordNet synset: PosScore, NegScore, and ObjScore (such that Pos + Neg + Obj = 1.0)"
+    ],
+    "correct": 3,
+    "explanation": "SentiWordNet assigns positive, negative, and objective scores to WordNet synsets using semi-supervised classification.",
+    "topic": "SentiWordNet",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_03",
+    "chapter": 17,
+    "question": "In SentiWordNet, what is the mathematical constraint on the three scores (PosScore, NegScore, ObjScore) for any synset?",
+    "options": [
+      "PosScore - NegScore = 0",
+      "PosScore + NegScore + ObjScore = 1.0",
+      "PosScore * NegScore = 1.0",
+      "PosScore + NegScore = 100"
+    ],
+    "correct": 1,
+    "explanation": "The three scores form a valid probability distribution over affective orientation summing strictly to 1.0.",
+    "topic": "SentiWordNet",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_04",
+    "chapter": 17,
+    "question": "What is VADER (Valence Aware Dictionary and sEntiment Reasoner, Hutto & Gilbert, 2014)?",
+    "options": [
+      "A deep learning neural network",
+      "A speech synthesis software",
+      "A gold-standard rule-based and lexicon-based sentiment analysis tool specifically designed for social media and short informal text",
+      "A character in Star Wars"
+    ],
+    "correct": 2,
+    "explanation": "VADER combines an intensity-scored sentiment lexicon with grammatical heuristic rules tailored for social media.",
+    "topic": "VADER",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_05",
+    "chapter": 17,
+    "question": "Which of the following is a key heuristic rule implemented in VADER?",
+    "options": [
+      "Deleting all emojis",
+      "Converting slang to Latin",
+      "Ignoring punctuation",
+      "Capitalization (ALL-CAPS increases sentiment intensity, e.g. 'GREAT' > 'great')"
+    ],
+    "correct": 3,
+    "explanation": "VADER recognizes uppercase lettering as an intensity booster.",
+    "topic": "VADER Heuristics",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_06",
+    "chapter": 17,
+    "question": "How does VADER handle Exclamation Marks ('!!!') in text?",
+    "options": [
+      "They are ignored",
+      "Repeated exclamation marks linearly boost the magnitude/intensity of the sentiment score",
+      "They cause a syntax error",
+      "They reverse the polarity"
+    ],
+    "correct": 1,
+    "explanation": "Punctuation repetition (e.g. 'good!!!') amplifies the valence rating in VADER's rule engine.",
+    "topic": "VADER Heuristics",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_07",
+    "chapter": 17,
+    "question": "How does VADER handle contrastive conjunctions like 'BUT' in a sentence?",
+    "options": [
+      "It averages both clauses equally",
+      "It shifts the dominant sentiment toward the clause following 'but' (the post-'but' clause receives higher weight)",
+      "It deletes the second clause",
+      "It converts the score to zero"
+    ],
+    "correct": 1,
+    "explanation": "In 'The food was great, BUT the service was terrible', the 'but' signals that the primary takeaway is negative.",
+    "topic": "VADER Heuristics",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_08",
+    "chapter": 17,
+    "question": "How does VADER handle Degree Adverbs / Intensifiers (e.g. 'very good' vs 'barely good')?",
+    "options": [
+      "They have zero effect",
+      "Intensifiers ('very', 'extremely') boost the valence; dampeners ('barely', 'hardly') reduce the valence score",
+      "They are deleted as stopwords",
+      "They flip positive to negative"
+    ],
+    "correct": 1,
+    "explanation": "Degree modifiers scale the base valence of the modified sentiment word dynamically.",
+    "topic": "VADER Heuristics",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_09",
+    "chapter": 17,
+    "question": "In VADER output, what is the 'Compound Score'?",
+    "options": [
+      "A normalized, unidimensional composite metric ranging from -1.0 (most extreme negative) to +1.0 (most extreme positive)",
+      "The total number of words",
+      "The accuracy of the model",
+      "The percentage of neutral words"
+    ],
+    "correct": 0,
+    "explanation": "VADER's compound score sums normalized valence ratings, bounded between -1 and +1.",
+    "topic": "VADER Output",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_10",
+    "chapter": 17,
+    "question": "In VADER, what compound score thresholds standardly classify text as Positive, Neutral, or Negative?",
+    "options": [
+      "Positive: compound >= 0.05; Neutral: between -0.05 and 0.05; Negative: compound <= -0.05",
+      "Positive: > 0.9; Negative: < 0.1",
+      "Positive: > 10; Negative: < -10",
+      "Positive: > 0; Negative: = 0"
+    ],
+    "correct": 0,
+    "explanation": "Hutto & Gilbert established the standard benchmark thresholds at +0.05 and -0.05.",
+    "topic": "VADER Classification",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_11",
+    "chapter": 17,
+    "question": "What is LIWC (Linguistic Inquiry and Word Count, Pennebaker et al.)?",
+    "options": [
+      "A text analysis software and psychological dictionary classifying words into psychological categories (affect, cognitive processes, social processes)",
+      "A spelling checker",
+      "A dependency tree parser",
+      "A speech-to-text model"
+    ],
+    "correct": 0,
+    "explanation": "LIWC categorizes words into psychologically validated dimensions to reveal emotional states and personality traits.",
+    "topic": "LIWC",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_12",
+    "chapter": 17,
+    "question": "What are Paul Ekman's 6 Basic Universal Emotions (Ekman, 1971)?",
+    "options": [
+      "Joy, Sadness, Anger, Fear, Disgust, and Surprise",
+      "Love, Hate, Hope, Despair, Peace, War",
+      "Happy, Sad, Neutral, Excited, Bored, Tired",
+      "Optimism, Pessimism, Trust, Envy, Pride, Shame"
+    ],
+    "correct": 0,
+    "explanation": "Ekman's cross-cultural facial expression studies established 6 primary universal emotion categories.",
+    "topic": "Ekman Emotions",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_13",
+    "chapter": 17,
+    "question": "What is Robert Plutchik's Wheel of Emotions (Plutchik, 1980)?",
+    "options": [
+      "A Ferris wheel simulation",
+      "A circular neural network",
+      "A structural model of 8 primary bipolar emotions arranged in opposing pairs along an emotion wheel with intensity gradients and dyadic blends",
+      "A circular color wheel for painting"
+    ],
+    "correct": 2,
+    "explanation": "Plutchik organized 8 primary emotions in opposing pairs (e.g. Joy vs Sadness) that combine into complex emotional dyads.",
+    "topic": "Plutchik Wheel",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_14",
+    "chapter": 17,
+    "question": "In Plutchik's model, what are the four pairs of opposing bipolar emotions?",
+    "options": [
+      "Pleasure vs Pain, Hope vs Despair, Pride vs Shame, Calm vs Stress",
+      "Joy vs Sadness, Trust vs Disgust, Fear vs Anger, Surprise vs Anticipation",
+      "Love vs Hate, Peace vs War, Light vs Dark, Hot vs Cold",
+      "Happy vs Unhappy, Good vs Bad, Fast vs Slow, Big vs Small"
+    ],
+    "correct": 1,
+    "explanation": "Plutchik's 8 primary emotions form four functional polar axes: Joy-Sadness, Trust-Disgust, Fear-Anger, Surprise-Anticipation.",
+    "topic": "Plutchik Pairs",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_15",
+    "chapter": 17,
+    "question": "In Plutchik's wheel, what primary dyad is formed by combining JOY and TRUST?",
+    "options": [
+      "Aggressiveness",
+      "Remorse",
+      "Love",
+      "Contempt"
+    ],
+    "correct": 2,
+    "explanation": "In Plutchik's structural dyad algebra, Joy + Trust = Love.",
+    "topic": "Plutchik Dyads",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_16",
+    "chapter": 17,
+    "question": "In Plutchik's wheel, what primary dyad is formed by combining ANGER and DISGUST?",
+    "options": [
+      "Submission",
+      "Awe",
+      "Contempt",
+      "Optimism"
+    ],
+    "correct": 2,
+    "explanation": "Anger + Disgust combine to form the complex emotion of Contempt.",
+    "topic": "Plutchik Dyads",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_17",
+    "chapter": 17,
+    "question": "What is the Dimensional Model of Emotion (VAD Model / Russell's Circumplex Model)?",
+    "options": [
+      "Representing affective states as continuous points in a 3D space defined by Valence, Arousal, and Dominance",
+      "A tree of emotion labels",
+      "A list of 100 emotion words",
+      "A 1D positive-negative scale"
+    ],
+    "correct": 0,
+    "explanation": "The VAD dimensional model maps all emotional states into three continuous psychological axes: Valence, Arousal, and Dominance.",
+    "topic": "VAD Model",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_18",
+    "chapter": 17,
+    "question": "In the VAD model of emotion, what does VALENCE represent?",
+    "options": [
+      "The feeling of being in control",
+      "The degree of pleasure, pleasantness, or positivity of the emotion (ranging from unhappy/painful to happy/pleasurable)",
+      "The physical energy level",
+      "The speed of speech"
+    ],
+    "correct": 1,
+    "explanation": "Valence measures positive vs negative affective evaluation.",
+    "topic": "VAD Dimensions",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_19",
+    "chapter": 17,
+    "question": "In the VAD model of emotion, what does AROUSAL represent?",
+    "options": [
+      "The physiological activation or intensity level of the emotion (ranging from calm/sluggish/sleepy to excited/frenzied/alert)",
+      "Pleasantness",
+      "Social power",
+      "Vocabulary size"
+    ],
+    "correct": 0,
+    "explanation": "Arousal measures the physiological energy and readiness for action.",
+    "topic": "VAD Dimensions",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_20",
+    "chapter": 17,
+    "question": "In the VAD model of emotion, what does DOMINANCE represent?",
+    "options": [
+      "The duration of the state",
+      "The loudness of voice",
+      "The pleasure of the event",
+      "The degree of perceived control, power, or agency the individual feels over the situation (ranging from submissive/helpless to in-control/powerful)"
+    ],
+    "correct": 3,
+    "explanation": "Dominance measures agency: feeling influential and empowered versus feeling dominated and overwhelmed.",
+    "topic": "VAD Dimensions",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_21",
+    "chapter": 17,
+    "question": "In the VAD space, how do ANGER and FEAR compare on the Dominance axis?",
+    "options": [
+      "Both have high dominance",
+      "Anger has HIGH Dominance (empowered, confrontational); Fear has LOW Dominance (submissive, helpless, vulnerable)",
+      "Both have low dominance",
+      "Fear has higher dominance than anger"
+    ],
+    "correct": 1,
+    "explanation": "While both Anger and Fear share negative valence and high arousal, Anger is high-dominance whereas Fear is low-dominance.",
+    "topic": "VAD Comparisons",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_22",
+    "chapter": 17,
+    "question": "What is the NRC VAD Lexicon (Mohammad, 2018)?",
+    "options": [
+      "A dictionary of computer terms",
+      "A large lexicon of over 20,000 English words annotated with real-valued scores between 0 and 1 for Valence, Arousal, and Dominance",
+      "A list of animal names",
+      "A translation database"
+    ],
+    "correct": 1,
+    "explanation": "The NRC VAD lexicon provides gold-standard human ratings of continuous VAD scores for 20,000+ terms.",
+    "topic": "NRC Lexicons",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_23",
+    "chapter": 17,
+    "question": "What are Connotation Frames (Rashkin et al., 2016)?",
+    "options": [
+      "Representations of the implicit social and pragmatic judgments encoded in verbs regarding the Power, Agency, and Sentiment toward their arguments",
+      "Picture frames for photos",
+      "HTML frames for web design",
+      "Grammar tree brackets"
+    ],
+    "correct": 0,
+    "explanation": "Connotation frames formalize how relational verbs implicitly convey power differentials and moral perspective toward actors.",
+    "topic": "Connotation Frames",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_24",
+    "chapter": 17,
+    "question": "In Connotation Frames, what does the verb 'X commands Y' imply about the Power dynamic between X and Y?",
+    "options": [
+      "Neither has power",
+      "Patient Y has more power",
+      "Agent X has MORE power than Patient Y: Power(X > Y)",
+      "Both have equal power"
+    ],
+    "correct": 2,
+    "explanation": "Verbs of command inherently presuppose an asymmetric power hierarchy where the subject exercises authority over the object.",
+    "topic": "Connotation Frames",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_25",
+    "chapter": 17,
+    "question": "In Connotation Frames, how does the verb 'framed' in 'Alice framed Bob' color the speaker's implied sentiment?",
+    "options": [
+      "Completely neutral",
+      "Negative toward Bob",
+      "Positive toward Alice",
+      "Negative sentiment toward Alice (the framing agent committed wrongdoing); Positive or sympathetic sentiment toward Bob (the victim)"
+    ],
+    "correct": 3,
+    "explanation": "'Framed' implies deceit by the agent, eliciting negative perspective toward Alice and sympathy for Bob.",
+    "topic": "Connotation Frames",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_26",
+    "chapter": 17,
+    "question": "What is Aspect-Based Sentiment Analysis (ABSA)?",
+    "options": [
+      "Counting adjectives",
+      "Extracting specific aspect terms/attributes of an entity from text and determining the sentiment polarity directed at EACH individual aspect",
+      "Classifying the sentiment of an entire book as a single label",
+      "Translating sentiment words"
+    ],
+    "correct": 1,
+    "explanation": "ABSA decomposes opinions into fine-grained tuples: (Aspect Target, Opinion Word, Sentiment Polarity).",
+    "topic": "ABSA",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_27",
+    "chapter": 17,
+    "question": "In the review: 'The laptop has an incredible screen, but the battery life is awful', what are the ABSA aspect polarities?",
+    "options": [
+      "The entire review is neutral",
+      "Both are positive",
+      "Both are negative",
+      "Aspect 'screen': Positive (+); Aspect 'battery life': Negative (-)"
+    ],
+    "correct": 3,
+    "explanation": "ABSA separates distinct aspects within the same document, assigning conflicting polarities appropriately.",
+    "topic": "ABSA",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_28",
+    "chapter": 17,
+    "question": "What are the two subtasks of Aspect-Based Sentiment Analysis?",
+    "options": [
+      "HTML rendering and CSS styling",
+      "Aspect Term Extraction (ATE) and Aspect Sentiment Classification (ASC)",
+      "Spelling correction and Tokenization",
+      "Speech synthesis and Audio decoding"
+    ],
+    "correct": 1,
+    "explanation": "ABSA first identifies aspect words (ATE), then predicts the sentiment polarity expressed toward each aspect (ASC).",
+    "topic": "ABSA Subtasks",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_29",
+    "chapter": 17,
+    "question": "What is Turney's SO-PMI Algorithm (Peter Turney, 2002) for building sentiment lexicons?",
+    "options": [
+      "Using a neural network with 10 layers",
+      "Calculating the Semantic Orientation (SO) of a word by subtracting its Pointwise Mutual Information with 'poor' from its PMI with 'excellent'",
+      "Looking up words in a dictionary",
+      "Counting word letters"
+    ],
+    "correct": 1,
+    "explanation": "SO(w) = PMI(w, 'excellent') - PMI(w, 'poor'). Words co-occurring more with 'excellent' receive positive orientation.",
+    "topic": "SO-PMI Algorithm",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_30",
+    "chapter": 17,
+    "question": "What is the mathematical formula for Turney's Semantic Orientation (SO-PMI) of word w?",
+    "options": [
+      "SO(w) = 1 - PMI(w)",
+      "SO(w) = hits(w) / hits('excellent')",
+      "SO(w) = PMI(w, 'excellent') + PMI(w, 'poor')",
+      "SO(w) = PMI(w, 'excellent') - PMI(w, 'poor') = log2( [hits(w, 'excellent') * hits('poor')] / [hits(w, 'poor') * hits('excellent')] )"
+    ],
+    "correct": 3,
+    "explanation": "Using web hit counts, SO-PMI measures relative lexical affinity to prototypical positive vs negative seed anchors.",
+    "topic": "SO-PMI Algorithm",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_31",
+    "chapter": 17,
+    "question": "What is the seed-based graph propagation method for building sentiment lexicons on WordNet (Hatzivassiloglou & McKeown, 1997)?",
+    "options": [
+      "Training a random forest",
+      "Translating WordNet into French",
+      "Deleting all nouns",
+      "Starting with a small seed set of positive/negative adjectives, and propagating polarity across the WordNet graph using synonym and antonym links"
+    ],
+    "correct": 3,
+    "explanation": "Polarity propagates along synonym links (same sign) and flips along antonym links (opposite sign) across the lexical graph.",
+    "topic": "Graph Propagation",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_32",
+    "chapter": 17,
+    "question": "What syntactic constraint did Hatzivassiloglou & McKeown (1997) discover between conjoined adjectives?",
+    "options": [
+      "Conjunctions always reverse polarity",
+      "Adjectives conjoined with 'AND' almost always share the SAME polarity ('fair and balanced'); adjectives conjoined with 'BUT' have OPPOSITE polarity",
+      "Adjectives never conjoin",
+      "Conjunctions delete adjectives"
+    ],
+    "correct": 1,
+    "explanation": "Coordinating conjunctions enforce polarity consistency ('and' preserves valence; 'but' contrasts valence).",
+    "topic": "Syntactic Constraints",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_33",
+    "chapter": 17,
+    "question": "What is Sarcasm / Irony in sentiment analysis, and why is it challenging?",
+    "options": [
+      "Spelling words incorrectly",
+      "Using foreign languages",
+      "Using too many exclamation marks",
+      "Expressing negative sentiment using explicitly positive surface words (e.g. 'Oh great, another flat tire!'), confounding simple lexicon counts"
+    ],
+    "correct": 3,
+    "explanation": "Sarcasm inverts surface valence through contextual incongruity, deceiving naive lexical bag-of-words counters.",
+    "topic": "Sarcasm",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_34",
+    "chapter": 17,
+    "question": "What is a Negation Shifter (Valence Inverter)?",
+    "options": [
+      "A pronoun",
+      "A word (like 'not', 'never', 'hardly', 'without') that inverts or flips the polarity of the modified sentiment word",
+      "A word that adds punctuation",
+      "A word that repeats itself"
+    ],
+    "correct": 1,
+    "explanation": "Negation shifters transform positive polarity into negative (e.g. 'not good' -> negative) and vice versa.",
+    "topic": "Negation",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_35",
+    "chapter": 17,
+    "question": "What is a Diminisher (Dampener) in sentiment analysis?",
+    "options": [
+      "An inverter that flips sign",
+      "A modifier that decreases the intensity of an emotion without inverting polarity (e.g. 'slightly', 'barely', 'somewhat')",
+      "An intensifier that multiplies score by 3",
+      "A stopword"
+    ],
+    "correct": 1,
+    "explanation": "Diminishers soften emotional strength while maintaining the underlying positive or negative orientation.",
+    "topic": "Modifiers",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_36",
+    "chapter": 17,
+    "question": "What is an Intensifier (Booster) in sentiment analysis?",
+    "options": [
+      "A noun",
+      "A dampener",
+      "A modifier that amplifies the emotional valence of a word (e.g. 'extremely', 'immensely', 'incredibly')",
+      "A negation word"
+    ],
+    "correct": 2,
+    "explanation": "Intensifiers elevate affective magnitude, strengthening praise or condemnation.",
+    "topic": "Modifiers",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_37",
+    "chapter": 17,
+    "question": "What is the MPQA Subjectivity Lexicon (Wilson et al., 2005)?",
+    "options": [
+      "A syntactic treebank",
+      "A curated lexicon of 8,000+ subjectivity clues annotated with prior polarity (positive, negative, neutral) and subjectivity strength (strongsubj, weaksubj)",
+      "A machine translation corpus",
+      "A dictionary of medical terms"
+    ],
+    "correct": 1,
+    "explanation": "MPQA provides prior valence annotations combined with strength indicators distinguishing strong from weak clues.",
+    "topic": "MPQA Lexicon",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_38",
+    "chapter": 17,
+    "question": "What is the difference between Subjective text and Objective text?",
+    "options": [
+      "Subjective text is always false",
+      "Subjective text expresses personal feelings, beliefs, or evaluations; Objective text expresses factual, verifiable assertions about the world",
+      "Subjective text has nouns; Objective text has verbs",
+      "They are identical in NLP"
+    ],
+    "correct": 1,
+    "explanation": "Subjective statements convey speaker perspective and opinions, while objective statements describe empirical facts.",
+    "topic": "Subjectivity",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_39",
+    "chapter": 17,
+    "question": "Why is Subjectivity Detection often performed as a PRE-FILTER before Sentiment Analysis?",
+    "options": [
+      "To filter out purely factual, non-opinionated sentences (which could contain noise words) before analyzing opinion polarity",
+      "To make text shorter",
+      "To remove vowels",
+      "To check spelling"
+    ],
+    "correct": 0,
+    "explanation": "Removing objective statements prevents neutral facts containing affective terms (e.g. 'accident killed five') from misclassifying as subjective opinions.",
+    "topic": "Subjectivity Filtering",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_40",
+    "chapter": 17,
+    "question": "What is Emotion Cause Extraction (ECE)?",
+    "options": [
+      "Extracting only negative words",
+      "Translating emotion words",
+      "The task of identifying both the emotional state in text AND the specific triggering reason or stimulus clause that caused that emotion",
+      "Counting characters"
+    ],
+    "correct": 2,
+    "explanation": "ECE detects the causal stimulus behind an affective expression (e.g., 'She was thrilled [because she passed the exam]').",
+    "topic": "Emotion Causes",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_41",
+    "chapter": 17,
+    "question": "What is the SenticNet knowledge base (Cambria et al.)?",
+    "options": [
+      "A treebank of sentences",
+      "A conceptual resource for concept-level sentiment analysis integrating commonsense knowledge with affective primitives (Hourglass of Emotions)",
+      "A database of internet speed",
+      "A speech recognizer"
+    ],
+    "correct": 1,
+    "explanation": "SenticNet models sentiment using sub-symbolic commonsense representations across four affective dimensions.",
+    "topic": "SenticNet",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_42",
+    "chapter": 17,
+    "question": "How does Deep Learning (e.g., fine-tuned BERT) compare to Lexicon-based approaches for Sentiment Analysis?",
+    "options": [
+      "Lexicons are slower than BERT",
+      "Deep learning cannot classify sentiment",
+      "Deep learning captures complex compositional semantics, negation scope, and sarcasm much better, but requires labeled data and is computationally heavier",
+      "Lexicons are always 100% accurate"
+    ],
+    "correct": 2,
+    "explanation": "Neural models model intricate contextual interactions end-to-end, whereas lexicons are transparent, lightweight, and zero-shot.",
+    "topic": "Lexicon vs Deep Learning",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_43",
+    "chapter": 17,
+    "question": "What is the primary advantage of Lexicon-based sentiment analysis over Deep Learning models?",
+    "options": [
+      "Zero training data required, transparent explainability, deterministic behavior, and blazingly fast CPU execution",
+      "Zero memory needed",
+      "Learns without human input",
+      "Higher accuracy on long novels"
+    ],
+    "correct": 0,
+    "explanation": "Lexicons require no labeled training datasets and offer clear rule-based transparency for production pipelines.",
+    "topic": "Lexicon Advantages",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_44",
+    "chapter": 17,
+    "question": "What is Sentiment Drift over time?",
+    "options": [
+      "When text is translated",
+      "A clock desynchronization",
+      "A computer bug",
+      "The phenomenon where the sentiment connotation of words evolves over historical eras or cultural contexts (e.g. 'sick', 'terrific', 'wicked')"
+    ],
+    "correct": 3,
+    "explanation": "Language semantics shifts over time; slang terms frequently invert polarity (e.g. 'sick' used positively as 'amazing').",
+    "topic": "Sentiment Drift",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_45",
+    "chapter": 17,
+    "question": "In NLTK, how do you instantiate the VADER Sentiment Intensity Analyzer?",
+    "options": [
+      "`import vader_nltk`",
+      "`nltk.VaderAnalyzer()`",
+      "`from nltk.vader import VADER`",
+      "`from nltk.sentiment.vader import SentimentIntensityAnalyzer; sia = SentimentIntensityAnalyzer()`"
+    ],
+    "correct": 3,
+    "explanation": "NLTK encapsulates VADER in `nltk.sentiment.vader.SentimentIntensityAnalyzer`.",
+    "topic": "NLTK VADER",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_ch17_46",
+    "chapter": 17,
+    "question": "What dictionary keys are returned by `sia.polarity_scores('This is amazing!')` in NLTK's VADER?",
+    "options": [
+      "`{'neg': 0.0, 'neu': ..., 'pos': ..., 'compound': ...}`",
+      "`{'positive': 1, 'negative': 0}`",
+      "`{'label': 'Positive'}`",
+      "`{'score': 100}`"
+    ],
+    "correct": 0,
+    "explanation": "VADER returns a dictionary containing negative, neutral, and positive proportions alongside the normalized compound score.",
+    "topic": "NLTK VADER",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_47",
+    "chapter": 17,
+    "question": "What is Domain Adaptation in sentiment analysis?",
+    "options": [
+      "Moving servers to another country",
+      "Translating code into Java",
+      "Adapting a sentiment model trained on one domain (e.g. Movie reviews) to perform accurately on a different target domain (e.g. Financial reports)",
+      "Changing monitor resolution"
+    ],
+    "correct": 2,
+    "explanation": "Sentiment terms vary dramatically by domain: 'unpredictable' is positive for movies but negative for financial earnings.",
+    "topic": "Domain Adaptation",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 2
+  },
+  {
+    "id": "q_ch17_48",
+    "chapter": 17,
+    "question": "Why does the word 'unpredictable' illustrate the domain sensitivity of sentiment lexicons?",
+    "options": [
+      "It is positive in movie reviews ('an unpredictable plot twist is thrilling') but negative in financial and automotive reviews ('unpredictable steering is dangerous')",
+      "Because it is an adverb",
+      "Because it cannot be lemmatized",
+      "Because it has 13 letters"
+    ],
+    "correct": 0,
+    "explanation": "Context and domain govern semantic orientation: surprise is prized in entertainment but avoided in engineering.",
+    "topic": "Domain Sensitivity",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 0
+  },
+  {
+    "id": "q_ch17_49",
+    "chapter": 17,
+    "question": "What is the Emoji Sentiment Ranking (Kralj Novak et al., 2015)?",
+    "options": [
+      "A list of emoji sizes",
+      "A sentiment lexicon mapping emojis (e.g. smiling face, crying face) to empirical sentiment polarity scores derived from millions of tweets",
+      "A font for emojis",
+      "A game on iOS"
+    ],
+    "correct": 1,
+    "explanation": "Emoji lexicons quantify the affective valence of pictographic emojis in social media streams.",
+    "topic": "Emoji Sentiment",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 1
+  },
+  {
+    "id": "q_ch17_50",
+    "chapter": 17,
+    "question": "Can sentiment analysis be used for Stance Detection in political discourse?",
+    "options": [
+      "No, stance is completely unrelated to text",
+      "Only using unigrams",
+      "Only in English",
+      "Yes, but Stance Detection specifically determines whether an author is in FAVOR or AGAINST a specific target proposition, which may differ from surface sentiment"
+    ],
+    "correct": 3,
+    "explanation": "Stance captures alignment toward an ideological target, whereas sentiment captures general emotional valence.",
+    "topic": "Stance Detection",
+    "slide_ref": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_001",
+    "chapter": "comp",
+    "question": "In an end-to-end Question Answering pipeline, which preprocessing choice is most likely to cause irreversible loss of crucial semantic information?",
+    "options": [
+      "Removing whitespace",
+      "Sentence segmentation",
+      "Aggressive lowercasing (Case Folding), which conflates proper nouns like 'US' (United States) with 'us' (pronoun)",
+      "Tokenizing by punctuation"
+    ],
+    "correct": 2,
+    "explanation": "Aggressive case folding destroys proper name distinctions in Named Entity Recognition and QA.",
+    "topic": "Pipeline Tradeoffs",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_002",
+    "chapter": "comp",
+    "question": "Why has Byte-Pair Encoding (BPE) or WordPiece largely replaced Porter Stemming in modern neural NLP models like BERT and GPT?",
+    "options": [
+      "BPE only works on English",
+      "Stemmers delete all vowels",
+      "Stemming requires 100 GPUs",
+      "Subword tokenization achieves an open vocabulary that handles unknown words and morphological variants without discarding dictionary validity or destroying root semantics"
+    ],
+    "correct": 3,
+    "explanation": "Subwords eliminate OOV tokens while preserving morphological sub-units, unlike heuristic affix stripping.",
+    "topic": "Tokenization Comparison",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_003",
+    "chapter": "comp",
+    "question": "What is the primary difference between Levenshtein Distance and Hamming Distance?",
+    "options": [
+      "Hamming distance only permits substitutions between strings of EQUAL length; Levenshtein distance permits insertions, deletions, and substitutions on strings of different lengths",
+      "They are identical in math",
+      "Hamming distance is non-deterministic",
+      "Levenshtein only works on numbers"
+    ],
+    "correct": 0,
+    "explanation": "Hamming distance strictly requires equal string lengths; Levenshtein handles arbitrary string length differences.",
+    "topic": "Distance Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_004",
+    "chapter": "comp",
+    "question": "When building a spelling correction candidate generator for noisy user search queries, why is Damerau-Levenshtein / SDIT Distance superior to standard Levenshtein?",
+    "options": [
+      "It runs in O(1) time",
+      "It deletes all numbers",
+      "It requires no dictionary",
+      "Over 80% of human typographical errors are adjacent character transpositions (e.g. 'teh' -> 'the'), which Damerau-Levenshtein penalizes with cost 1 instead of cost 2"
+    ],
+    "correct": 3,
+    "explanation": "Cognitive and typing studies show adjacent swaps are primary human slip errors; SDIT models transposition as a single atomic operation.",
+    "topic": "Edit Distance",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_005",
+    "chapter": "comp",
+    "question": "If an NLP search engine strips all Stop Words, which of the following queries will be completely RUINED?",
+    "options": [
+      "'To be or not to be'",
+      "'Natural language processing'",
+      "'Python regex tutorial'",
+      "'Machine learning algorithms'"
+    ],
+    "correct": 0,
+    "explanation": "Famous literary queries consisting solely of functional stop words become empty queries when aggressive stop-word filters are applied.",
+    "topic": "Stop Words",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_006",
+    "chapter": "comp",
+    "question": "Which regex pattern matches a valid IPv4 address formatted as 4 octets separated by periods (e.g. 192.168.1.1)?",
+    "options": [
+      "\\d+\\.\\d+",
+      "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b",
+      "\\w+@\\w+",
+      "[0-9]{4}"
+    ],
+    "correct": 1,
+    "explanation": "`(?:\\d{1,3}\\.){3}\\d{1,3}` matches three octets followed by dots, concluded by a fourth octet.",
+    "topic": "Regex Patterns",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_007",
+    "chapter": "comp",
+    "question": "In Unicode text normalization, why is NFKC (Compatibility Decomposition followed by Canonical Composition) commonly applied to web-scraped text?",
+    "options": [
+      "It standardizes typographical variations (such as curly quotes, ligatures like 'ﬁ', and circled numbers) into standard ASCII/Unicode equivalents",
+      "It removes all vowels",
+      "It translates text into English",
+      "It converts text to audio"
+    ],
+    "correct": 0,
+    "explanation": "NFKC resolves visual idiosyncrasies and composite characters into uniform canonical representations.",
+    "topic": "Unicode Normalization",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_008",
+    "chapter": "comp",
+    "question": "What is the computational complexity of the dynamic programming algorithm for Minimum Edit Distance between two strings of lengths M and N?",
+    "options": [
+      "O(M + N)",
+      "O(1)",
+      "O(M * N) time and space complexity",
+      "O(2^(M+N))"
+    ],
+    "correct": 2,
+    "explanation": "Filling the (M+1) x (N+1) dynamic programming matrix requires O(M*N) operations.",
+    "topic": "Algorithms",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_009",
+    "chapter": "comp",
+    "question": "Which text processing tool uses Non-Capturing groups `(?:pattern)` to optimize performance?",
+    "options": [
+      "When replacing words",
+      "When finding vowels",
+      "When grouping sub-expressions for repetition quantifiers without wanting the overhead of allocating memory buffers to store matches",
+      "When extracting dates"
+    ],
+    "correct": 2,
+    "explanation": "Non-capturing groups group tokens purely for syntax or quantification without storing back-references.",
+    "topic": "Regex",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_010",
+    "chapter": "comp",
+    "question": "What is the effect of applying the regex `re.sub(r'\\s+', ' ', text).strip()` in Python?",
+    "options": [
+      "It collapses multiple consecutive spaces, tabs, and newlines into a single standard space and strips leading/trailing whitespace",
+      "It reverses the string",
+      "It deletes all spaces",
+      "It splits text into sentences"
+    ],
+    "correct": 0,
+    "explanation": "This idiom is the standard Python approach for normalizing irregular multi-whitespace runs.",
+    "topic": "Python Regex",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_011",
+    "chapter": "comp",
+    "question": "In N-gram language modeling, what does the Markov Assumption state?",
+    "options": [
+      "Words have no probabilities",
+      "Grammar determines word order",
+      "The probability of the current word depends only on the immediately preceding k words, rather than the entire infinite history",
+      "All words are independent"
+    ],
+    "correct": 2,
+    "explanation": "The k-th order Markov assumption bounds the conditioning context to a local window of k words.",
+    "topic": "Language Modeling",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_012",
+    "chapter": "comp",
+    "question": "Why does an Unsmoothed Maximum Likelihood Estimation (MLE) N-gram model assign a test perplexity of INFINITY if a single test bigram was unseen in training?",
+    "options": [
+      "Because vocabulary becomes 0",
+      "Because the computer runs out of memory",
+      "Because N-grams cannot be tested",
+      "Because P(test_set) becomes 0, and perplexity PP = (0)^(-1/N) = 1/0 = infinity"
+    ],
+    "correct": 3,
+    "explanation": "A single zero probability nullifies the entire joint probability product, resulting in infinite perplexity.",
+    "topic": "Language Modeling",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_013",
+    "chapter": "comp",
+    "question": "How does Kneser-Ney smoothing fundamentally improve upon traditional Laplace or Good-Turing smoothing?",
+    "options": [
+      "It uses neural networks",
+      "It replaces lower-order unigram frequencies with Continuation Probabilities (how likely a word completes a novel context)",
+      "It eliminates the vocabulary",
+      "It adds 1 to all counts"
+    ],
+    "correct": 1,
+    "explanation": "Continuation probability prevents frequent collocational words (like 'Francisco') from dominating backoff distributions.",
+    "topic": "Smoothing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_014",
+    "chapter": "comp",
+    "question": "What is the relationship between Language Model Perplexity and Shannon Entropy H?",
+    "options": [
+      "Perplexity PP = 2^H (or e^H depending on the logarithm base)",
+      "PP = log(H)",
+      "PP = 1 - H",
+      "PP = H / 2"
+    ],
+    "correct": 0,
+    "explanation": "Perplexity is the base-2 exponentiation of the cross-entropy per word.",
+    "topic": "Information Theory",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_015",
+    "chapter": "comp",
+    "question": "If Model A has a perplexity of 50 on a test set, and Model B has a perplexity of 150 on the same test set with the same vocabulary, what does this indicate?",
+    "options": [
+      "Perplexity cannot compare models",
+      "Model A assigns significantly higher probability to the test sentences and is a better language model",
+      "Both models are identical",
+      "Model B is better"
+    ],
+    "correct": 1,
+    "explanation": "Lower perplexity reflects higher predictive likelihood and lower uncertainty.",
+    "topic": "Evaluation",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_016",
+    "chapter": "comp",
+    "question": "Why can Perplexity NOT be used to compare models with DIFFERENT vocabularies?",
+    "options": [
+      "Because different vocabularies have different CPU speeds",
+      "Because log cannot be computed",
+      "A model with a tiny vocabulary (e.g. 50 words) divides probability among fewer choices, giving artificially low perplexity without being more capable",
+      "It is mathematically illegal"
+    ],
+    "correct": 2,
+    "explanation": "Restricting vocabulary artificially concentrates probability mass, rendering cross-vocabulary perplexity comparisons meaningless.",
+    "topic": "Evaluation",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_017",
+    "chapter": "comp",
+    "question": "What is the primary role of Add-k (Lidstone) smoothing in language modeling?",
+    "options": [
+      "Dividing counts by k",
+      "Multiplying counts by k",
+      "Deleting counts below k",
+      "Adding a small fractional pseudo-count k (0 < k < 1) to avoid zero probabilities while shifting less probability mass than Add-1 smoothing"
+    ],
+    "correct": 3,
+    "explanation": "Add-k dampens the aggressive probability redistribution of Laplace smoothing by choosing a tuned fractional constant k.",
+    "topic": "Smoothing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_018",
+    "chapter": "comp",
+    "question": "What is Backoff in N-gram smoothing?",
+    "options": [
+      "Reversing the sentence",
+      "Using the higher-order N-gram count if available, and only falling back to the (N-1)-gram distribution when the higher-order count is zero",
+      "Mixing all models with weights",
+      "Deleting unigrams"
+    ],
+    "correct": 1,
+    "explanation": "Backoff strictly prioritizes the most specific non-zero model available before backing off.",
+    "topic": "Smoothing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_019",
+    "chapter": "comp",
+    "question": "What is Linear Interpolation in N-gram smoothing?",
+    "options": [
+      "Using only trigrams",
+      "Always computing a weighted linear combination of unigram, bigram, and trigram probabilities: P = lambda3 * P_tri + lambda2 * P_bi + lambda1 * P_uni",
+      "Deleting zero counts",
+      "Using the maximum count"
+    ],
+    "correct": 1,
+    "explanation": "Interpolation continuously blends information from all orders regardless of count magnitudes.",
+    "topic": "Smoothing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_020",
+    "chapter": "comp",
+    "question": "Why are N-gram models incapable of capturing grammatical agreement across long clauses (e.g. 'The **dogs** in the backyard ... **are** loud')?",
+    "options": [
+      "N-grams only work on letters",
+      "Their conditioning context is strictly bounded to N-1 words; intervening words push the subject outside the N-gram window",
+      "N-grams do not support plural nouns",
+      "N-grams cannot count past 3"
+    ],
+    "correct": 1,
+    "explanation": "Finite context windows make N-grams blind to long-range grammatical dependencies.",
+    "topic": "LM Limitations",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_021",
+    "chapter": "comp",
+    "question": "What is the fundamental difference between Naive Bayes and Logistic Regression?",
+    "options": [
+      "Naive Bayes uses neural networks; Logistic Regression uses rules",
+      "Logistic Regression cannot classify text",
+      "Naive Bayes is a Generative model that estimates joint P(x, y); Logistic Regression is a Discriminative model that estimates conditional P(y|x) directly",
+      "Naive Bayes only works on numbers"
+    ],
+    "correct": 2,
+    "explanation": "Generative models model how data was generated P(x,y); discriminative models optimize the decision boundary P(y|x) directly.",
+    "topic": "Model Comparison",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_022",
+    "chapter": "comp",
+    "question": "When does the Naive Bayes conditional independence assumption cause severe miscalibration of predicted probabilities?",
+    "options": [
+      "When calculating priors",
+      "When features are highly correlated or redundant (e.g., duplicated identical features), causing the model to multiply correlated probabilities and become overconfident",
+      "When data is perfectly balanced",
+      "When using small vocabularies"
+    ],
+    "correct": 1,
+    "explanation": "Naive Bayes double-counts evidence for correlated features, pushing probabilities unrealistically toward 0 or 1.",
+    "topic": "Naive Bayes Limitations",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_023",
+    "chapter": "comp",
+    "question": "Why does Logistic Regression handle correlated text features much better than Naive Bayes?",
+    "options": [
+      "It deletes correlated words",
+      "It requires features to be orthogonal",
+      "Its optimization adjusts weights jointly, splitting weights among correlated features without double-counting evidence",
+      "It uses Bayes rule"
+    ],
+    "correct": 2,
+    "explanation": "Gradient descent optimizes all weights simultaneously, adjusting coefficients to reflect marginal conditional gain.",
+    "topic": "Logistic Regression",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_024",
+    "chapter": "comp",
+    "question": "What loss function is minimized in binary Logistic Regression?",
+    "options": [
+      "Mean Squared Error",
+      "Hinge Loss",
+      "Inertia",
+      "Binary Cross-Entropy Loss (Negative Log-Likelihood)"
+    ],
+    "correct": 3,
+    "explanation": "BCE loss guarantees strict convexity for logistic regression, ensuring convergence to the global minimum.",
+    "topic": "Loss Functions",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_025",
+    "chapter": "comp",
+    "question": "What does L1 Regularization (Lasso) accomplish that L2 Regularization (Ridge) does not?",
+    "options": [
+      "It speeds up GPU training by 10x",
+      "It squares the weights",
+      "It keeps all weights non-zero",
+      "It drives many feature weights strictly to ZERO, resulting in sparse models and automatic feature selection"
+    ],
+    "correct": 3,
+    "explanation": "L1's sharp geometric corners on the axes force uninformative feature coefficients exactly to zero.",
+    "topic": "Regularization",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_026",
+    "chapter": "comp",
+    "question": "In scikit-learn's `LogisticRegression(C=0.01)`, what does a SMALL value of C mean?",
+    "options": [
+      "VERY STRONG regularization (since C = 1/lambda), heavily shrinking weights toward zero",
+      "A batch size of 100",
+      "A learning rate of 0.01",
+      "No regularization"
+    ],
+    "correct": 0,
+    "explanation": "In scikit-learn, C is the inverse of regularization strength; smaller C enforces stronger penalty.",
+    "topic": "Scikit-Learn",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_027",
+    "chapter": "comp",
+    "question": "In a binary classification confusion matrix, what is the formula for Precision?",
+    "options": [
+      "True Positives / (True Positives + False Negatives)",
+      "True Positives / (True Positives + False Positives)",
+      "(TP + TN) / Total",
+      "False Positives / Total"
+    ],
+    "correct": 1,
+    "explanation": "Precision measures how many predicted positive instances were actually positive.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_028",
+    "chapter": "comp",
+    "question": "In a binary classification confusion matrix, what is the formula for Recall (Sensitivity)?",
+    "options": [
+      "True Positives / (True Positives + False Positives)",
+      "True Positives / (True Positives + False Negatives)",
+      "False Negatives / Total",
+      "(TP + TN) / Total"
+    ],
+    "correct": 1,
+    "explanation": "Recall measures how many actual positive instances were successfully captured by the classifier.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_029",
+    "chapter": "comp",
+    "question": "What does the F1-Score represent?",
+    "options": [
+      "The harmonic mean of Precision and Recall: 2 * (P * R) / (P + R)",
+      "Precision multiplied by Recall",
+      "The arithmetic mean: (P + R) / 2",
+      "The difference: P - R"
+    ],
+    "correct": 0,
+    "explanation": "Harmonic mean heavily penalizes extreme trade-offs where one metric collapses toward zero.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_030",
+    "chapter": "comp",
+    "question": "Why is Accuracy a DANGEROUS metric for evaluating a spam detector on a dataset where 99% of emails are legitimate Ham and 1% is Spam?",
+    "options": [
+      "A naive model predicting 'Ham' 100% of the time achieves 99% Accuracy while detecting zero spam emails",
+      "Because accuracy is always negative",
+      "Because accuracy cannot be computed on decimals",
+      "Because accuracy ignores true positives"
+    ],
+    "correct": 0,
+    "explanation": "Severe class imbalance renders raw accuracy useless, requiring Precision, Recall, and F1 on the minority class.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_031",
+    "chapter": "comp",
+    "question": "What is the fundamental difference between Term-Document matrices and Word-Word co-occurrence matrices?",
+    "options": [
+      "They are identical in size",
+      "Term-Document matrices only contain nouns",
+      "Term-Document matrices represent documents as vectors in vocabulary space; Word-Word matrices represent word semantics by capturing local co-occurrences within a sliding window",
+      "Term-Document matrices are dense; Word-Word are 1D"
+    ],
+    "correct": 2,
+    "explanation": "Term-document matrices capture topical distribution across documents; word-word matrices capture lexical semantics from local context windows.",
+    "topic": "Vector Semantics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_032",
+    "chapter": "comp",
+    "question": "What is the formula for Inverse Document Frequency (IDF)?",
+    "options": [
+      "idf(t) = tf * idf",
+      "idf(t) = log(tf)",
+      "idf(t) = log10(Total_Documents / Document_Frequency(t))",
+      "idf(t) = Document_Frequency / Total_Documents"
+    ],
+    "correct": 2,
+    "explanation": "IDF downweights words that occur in many documents, highlighting words uniquely characteristic of specific documents.",
+    "topic": "TF-IDF",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_033",
+    "chapter": "comp",
+    "question": "Why does Cosine Similarity evaluate text document similarity better than Euclidean Distance?",
+    "options": [
+      "Cosine similarity evaluates the angle between vectors, normalizing for document length differences, whereas Euclidean distance is inflated by text length",
+      "Euclidean distance is always zero",
+      "Cosine similarity ignores word order",
+      "Cosine similarity only works on 2D vectors"
+    ],
+    "correct": 0,
+    "explanation": "Normalizing by vector norms ensures long and short texts covering identical topics receive high similarity scores.",
+    "topic": "Cosine Similarity",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_034",
+    "chapter": "comp",
+    "question": "What is the objective of the Skip-Gram model with Negative Sampling (SGNS) in Word2Vec?",
+    "options": [
+      "Parse syntax trees",
+      "Cluster documents into K groups",
+      "Predict center word from context",
+      "Maximize the probability of true context words given a center word while minimizing the probability of k randomly sampled noise words using binary logistic regression"
+    ],
+    "correct": 3,
+    "explanation": "SGNS reformulates multi-class softmax into binary classification against random negative noise words.",
+    "topic": "Word2Vec",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_035",
+    "chapter": "comp",
+    "question": "Why does the Negative Sampling distribution in Word2Vec raise unigram frequencies to the 0.75 power: P_n(w) proportional to U(w)^0.75?",
+    "options": [
+      "It makes all words equally likely",
+      "It normalizes probabilities to 1",
+      "It prevents GPU memory leaks",
+      "It moderately boosts the sampling probability of rare words relative to very frequent stopwords"
+    ],
+    "correct": 3,
+    "explanation": "The 3/4 exponent flattens the frequency curve slightly, ensuring rare words are sampled more often than raw frequency would dictate.",
+    "topic": "Word2Vec",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_036",
+    "chapter": "comp",
+    "question": "What famous semantic vector relationship demonstrates linear compositionality in Word2Vec space?",
+    "options": [
+      "vec('King') - vec('Man') + vec('Woman') ≈ vec('Queen')",
+      "vec('Car') / vec('Wheel') = 4",
+      "vec('Dog') + vec('Cat') = vec('Fish')",
+      "vec('Apple') * vec('Orange') = 0"
+    ],
+    "correct": 0,
+    "explanation": "Dense continuous vector representations capture directional analogies across gender, capital cities, and tenses.",
+    "topic": "Vector Arithmetic",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_037",
+    "chapter": "comp",
+    "question": "How does GloVe (Global Vectors for Word Representation) combine the advantages of matrix factorization and local context windows?",
+    "options": [
+      "It clusters words using K-Means",
+      "It trains a log-bilinear model on non-zero cells of the global word-word co-occurrence matrix using weighted least squares loss",
+      "It trains an autoregressive Transformer",
+      "It uses only one-hot vectors"
+    ],
+    "correct": 1,
+    "explanation": "GloVe models global log co-occurrence ratios directly through matrix factorization with frequency weighting.",
+    "topic": "GloVe",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_038",
+    "chapter": "comp",
+    "question": "What is the primary advantage of FastText over standard Word2Vec?",
+    "options": [
+      "It uses 0 parameters",
+      "It works only on English",
+      "It represents words as bags of character n-grams, enabling vector generation for Out-Of-Vocabulary (OOV) words and capturing morphology",
+      "It never needs training"
+    ],
+    "correct": 2,
+    "explanation": "Subword character n-grams allow FastText to construct embeddings for unseen compound and inflected words.",
+    "topic": "FastText",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_039",
+    "chapter": "comp",
+    "question": "What major limitation of static embeddings (Word2Vec, GloVe, FastText) did Contextualized Language Models (BERT, ELMo) overcome?",
+    "options": [
+      "Static embeddings cannot run on CPUs",
+      "Static embeddings only work on letters",
+      "Polysemy conflation: static embeddings assign a single fixed vector per word regardless of context, whereas contextualized models dynamically produce distinct vectors per sentence",
+      "Static embeddings have too many dimensions"
+    ],
+    "correct": 2,
+    "explanation": "Static models assign identical vectors to 'bank' in 'river bank' and 'investment bank'; contextual models adjust dynamically.",
+    "topic": "Contextual Embeddings",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_040",
+    "chapter": "comp",
+    "question": "What does Positive Pointwise Mutual Information (PPMI) do to negative PMI values?",
+    "options": [
+      "Leaves them unchanged",
+      "Replaces all negative PMI values with 0: PPMI(w, c) = max(0, PMI(w, c))",
+      "Divides them by 2",
+      "Multiplies them by -1"
+    ],
+    "correct": 1,
+    "explanation": "Negative PMI values reflect rare, unreliable co-occurrences and are cleanly truncated to zero in PPMI.",
+    "topic": "PPMI",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_041",
+    "chapter": "comp",
+    "question": "What is the objective function minimized by the K-Means clustering algorithm?",
+    "options": [
+      "Perplexity",
+      "Inertia / Within-Cluster Sum of Squared Errors (SSE): sum of squared Euclidean distances from data points to their assigned cluster centroid",
+      "BLEU score",
+      "Cross-entropy loss"
+    ],
+    "correct": 1,
+    "explanation": "K-Means minimizes the sum of squared Euclidean distances between points and their assigned centroids.",
+    "topic": "K-Means",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_042",
+    "chapter": "comp",
+    "question": "Why does standard K-Means clustering converge to a LOCAL minimum rather than guaranteeing the global optimum?",
+    "options": [
+      "Because data is high dimensional",
+      "Because K is unknown",
+      "Because computers use binary arithmetic",
+      "The SSE objective function is non-convex with multiple local minima, making final cluster quality sensitive to initial centroid placement"
+    ],
+    "correct": 3,
+    "explanation": "Lloyd's algorithm is a greedy coordinate descent that converges to the nearest local valley of the non-convex surface.",
+    "topic": "K-Means",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_043",
+    "chapter": "comp",
+    "question": "How does K-Means++ initialization prevent poor local minima in K-Means?",
+    "options": [
+      "It runs PCA first",
+      "It picks the first K data points",
+      "It chooses initial centroids sequentially with probability proportional to their squared distance from already chosen centroids, spreading them apart",
+      "It places all centroids at the origin"
+    ],
+    "correct": 2,
+    "explanation": "K-Means++ spaces initial seeds far apart across the data manifold, providing provable performance bounds.",
+    "topic": "K-Means++",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_044",
+    "chapter": "comp",
+    "question": "What does the Silhouette Coefficient measure for a clustered data point?",
+    "options": [
+      "The time to converge",
+      "The number of points in the cluster",
+      "The distance to the origin",
+      "The balance between intra-cluster cohesion a(i) and separation from the nearest alternative cluster b(i): s(i) = (b - a) / max(a, b)"
+    ],
+    "correct": 3,
+    "explanation": "Silhouette scores evaluate whether points are tightly packed inside their cluster and cleanly isolated from others.",
+    "topic": "Silhouette",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_045",
+    "chapter": "comp",
+    "question": "What range does the Silhouette Coefficient span, and what does a score close to +1 signify?",
+    "options": [
+      "[0, 100]; 100 means 100 points",
+      "[-1.0, +1.0]; +1 indicates dense, well-separated clusters where points are far from neighboring clusters",
+      "[-infinity, 0]",
+      "[0, infinity)"
+    ],
+    "correct": 1,
+    "explanation": "Scores near +1 reflect optimal clustering; scores near 0 indicate boundary ambiguity; negative scores suggest misassignment.",
+    "topic": "Silhouette",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_046",
+    "chapter": "comp",
+    "question": "What is the difference between Agglomerative and Divisive Hierarchical Clustering?",
+    "options": [
+      "Agglomerative is bottom-up (starts with single points and merges); Divisive is top-down (starts with one cluster and recursively splits)",
+      "Agglomerative is only for images",
+      "They are identical in algorithm",
+      "Agglomerative uses K-Means; Divisive uses DBSCAN"
+    ],
+    "correct": 0,
+    "explanation": "Agglomerative iteratively merges pairs; divisive recursively partitions the master cluster.",
+    "topic": "Hierarchical Clustering",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_047",
+    "chapter": "comp",
+    "question": "What is the 'Chaining Effect' in Single Linkage hierarchical clustering?",
+    "options": [
+      "A computer virus",
+      "The undesirable tendency to form long, straggly, chain-like clusters by merging groups based on a single pair of close points",
+      "Linking words into a sentence",
+      "Chaining servers together"
+    ],
+    "correct": 1,
+    "explanation": "Because single linkage looks only at minimum pairwise distance, noise bridges easily link disparate clusters.",
+    "topic": "Hierarchical Linkage",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_048",
+    "chapter": "comp",
+    "question": "What is Complete Linkage in hierarchical clustering?",
+    "options": [
+      "Distance between two clusters is defined as the MAXIMUM distance between any point in cluster A and any point in cluster B",
+      "Minimum distance between points",
+      "Average distance",
+      "Distance between centroids"
+    ],
+    "correct": 0,
+    "explanation": "Complete linkage considers maximum distance, producing compact, roughly spherical clusters resistant to chaining.",
+    "topic": "Hierarchical Linkage",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_049",
+    "chapter": "comp",
+    "question": "What is a Dendrogram?",
+    "options": [
+      "A confusion matrix",
+      "A tree diagram illustrating the hierarchical arrangement of clusters and the distance thresholds at which successive merges occurred",
+      "A histogram of word lengths",
+      "A scatter plot of centroids"
+    ],
+    "correct": 1,
+    "explanation": "Dendrograms display the complete hierarchical decomposition, allowing users to choose K by cutting across a height threshold.",
+    "topic": "Hierarchical Clustering",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_050",
+    "chapter": "comp",
+    "question": "Why is Cosine Distance generally preferred over Euclidean Distance for clustering high-dimensional sparse TF-IDF text vectors?",
+    "options": [
+      "Cosine distance is always an integer",
+      "Cosine distance evaluates topical orientation regardless of document length, whereas Euclidean distance is distorted by document word count variations",
+      "Euclidean distance cannot be computed on text",
+      "Cosine distance is faster on CPUs"
+    ],
+    "correct": 1,
+    "explanation": "High-dimensional text clustering requires scale invariance so that brief abstracts and long articles cluster by topic rather than length.",
+    "topic": "Distance Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_051",
+    "chapter": "comp",
+    "question": "What is the mathematical formula for Scaled Dot-Product Attention in the Transformer?",
+    "options": [
+      "Attention(Q, K, V) = softmax( (Q * K^T) / sqrt(d_k) ) * V",
+      "Attention = (Q + K) / V",
+      "Attention = Q * K * V",
+      "Attention = softmax(Q) * V"
+    ],
+    "correct": 0,
+    "explanation": "Scaled dot-product attention normalizes dot-product logits by the square root of key dimension before applying softmax.",
+    "topic": "Transformers",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_052",
+    "chapter": "comp",
+    "question": "Why does the Transformer divide dot products Q * K^T by the scaling factor sqrt(d_k)?",
+    "options": [
+      "To prevent negative numbers",
+      "To divide by batch size",
+      "To keep dot-product magnitudes from growing large in high dimensions, preventing Softmax from entering vanishing-gradient saturation regions",
+      "To normalize vectors to length 1"
+    ],
+    "correct": 2,
+    "explanation": "Large dimensions inflate dot products, driving softmax into flat regions with near-zero gradients during backpropagation.",
+    "topic": "Transformers",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_053",
+    "chapter": "comp",
+    "question": "What is the purpose of Positional Encoding in the Transformer architecture?",
+    "options": [
+      "To count words",
+      "To translate words into English",
+      "To normalize sentence lengths",
+      "Because self-attention is permutation-invariant (order-agnostic), positional encodings inject token sequence order into the model"
+    ],
+    "correct": 3,
+    "explanation": "Self-attention treats input as an unordered set; positional encodings provide essential sequential order signals.",
+    "topic": "Transformers",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_054",
+    "chapter": "comp",
+    "question": "What components make up every standard Transformer Encoder layer?",
+    "options": [
+      "Regex, Tokenizer, Classifier",
+      "Multi-Head Self-Attention, Position-wise Feed-Forward Network (FFN), Residual Connections, and Layer Normalization",
+      "Convolution, Pooling, Softmax",
+      "LSTM, GRU, Linear"
+    ],
+    "correct": 1,
+    "explanation": "Each encoder layer contains self-attention and an FFN, each wrapped in residual connections and LayerNorm.",
+    "topic": "Transformer Encoder",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_055",
+    "chapter": "comp",
+    "question": "What is the role of the Causal (Look-Ahead) Mask in the Transformer Decoder?",
+    "options": [
+      "It deletes nouns",
+      "It hides punctuation marks",
+      "It sets attention scores of future tokens to -infinity, preventing the decoder from attending to upcoming positions during autoregressive generation",
+      "It prevents GPU overheating"
+    ],
+    "correct": 2,
+    "explanation": "Causal masking enforces autoregressive conditioning so predictions at step t only depend on known tokens < t.",
+    "topic": "Transformer Decoder",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_056",
+    "chapter": "comp",
+    "question": "What is Cross-Attention (Encoder-Decoder Attention)?",
+    "options": [
+      "Attention across two GPUs",
+      "Self-attention within the encoder",
+      "Attention between two different languages",
+      "Attention where Queries come from the decoder layer, and Keys and Values come from the encoder's output representations"
+    ],
+    "correct": 3,
+    "explanation": "Cross-attention aligns target generation tokens with relevant contextual source representations.",
+    "topic": "Transformer Decoder",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_057",
+    "chapter": "comp",
+    "question": "What architecture family does BERT belong to?",
+    "options": [
+      "Recurrent Neural Network",
+      "Encoder-Only Transformer architecture",
+      "Decoder-Only Transformer architecture",
+      "Encoder-Decoder architecture"
+    ],
+    "correct": 1,
+    "explanation": "BERT uses a bidirectional Transformer encoder stack, ideal for classification, extraction, and representation.",
+    "topic": "BERT",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_058",
+    "chapter": "comp",
+    "question": "What architecture family does GPT (Generative Pre-trained Transformer) belong to?",
+    "options": [
+      "Decoder-Only Transformer architecture with causal self-attention",
+      "Encoder-Decoder architecture",
+      "Convolutional Neural Network",
+      "Encoder-Only Transformer architecture"
+    ],
+    "correct": 0,
+    "explanation": "GPT uses an autoregressive decoder stack with causal masking for generative text completion.",
+    "topic": "GPT",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_059",
+    "chapter": "comp",
+    "question": "What architecture family do T5 and BART belong to?",
+    "options": [
+      "Encoder-Decoder Transformer architecture",
+      "Linear RNN",
+      "Decoder-Only architecture",
+      "Encoder-Only architecture"
+    ],
+    "correct": 0,
+    "explanation": "T5 and BART preserve the dual encoder-decoder design for seq2seq transformations like translation and summarization.",
+    "topic": "Seq2Seq Models",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_060",
+    "chapter": "comp",
+    "question": "What are the two pre-training objectives used to train original BERT?",
+    "options": [
+      "Masked Language Model (MLM, predicting 15% masked tokens) and Next Sentence Prediction (NSP)",
+      "K-Means and Softmax",
+      "Skip-gram and Negative sampling",
+      "Causal language modeling and Contrastive loss"
+    ],
+    "correct": 0,
+    "explanation": "BERT trains bidirectionally by predicting masked tokens and classifying whether sentence B follows sentence A.",
+    "topic": "BERT Pre-training",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_061",
+    "chapter": "comp",
+    "question": "What is the 80/10/10 masking rule in BERT's Masked Language Model?",
+    "options": [
+      "100% replaced with [MASK]",
+      "50% [MASK], 50% random",
+      "80% deleted, 20% kept",
+      "Of the 15% chosen tokens: 80% are replaced with [MASK], 10% with a random token, and 10% kept unchanged"
+    ],
+    "correct": 3,
+    "explanation": "The 80/10/10 distribution mitigates the pre-train/fine-tune mismatch where [MASK] never appears at test time.",
+    "topic": "BERT Pre-training",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_062",
+    "chapter": "comp",
+    "question": "How did RoBERTa improve upon BERT's original pre-training recipe?",
+    "options": [
+      "It reduced vocabulary size to 100",
+      "It added an LSTM layer",
+      "It replaced attention with convolution",
+      "It removed the Next Sentence Prediction (NSP) task, used Dynamic Masking, trained on larger batches, and used vastly more data"
+    ],
+    "correct": 3,
+    "explanation": "RoBERTa demonstrated that NSP was unhelpful and that longer training with dynamic masking yields superior results.",
+    "topic": "RoBERTa",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_063",
+    "chapter": "comp",
+    "question": "What does LoRA (Low-Rank Adaptation) do in Parameter-Efficient Fine-Tuning (PEFT)?",
+    "options": [
+      "It freezes pre-trained model weights and injects trainable rank-decomposition matrices Delta W = B * A with rank r << d into linear layers",
+      "It quantizes weights to binary",
+      "It drops half the layers",
+      "It trains using genetic algorithms"
+    ],
+    "correct": 0,
+    "explanation": "LoRA achieves full fine-tuning performance while training < 1% of parameters by updating low-rank decomposition matrices.",
+    "topic": "PEFT",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_064",
+    "chapter": "comp",
+    "question": "What is the KV-Cache in Transformer autoregressive generation?",
+    "options": [
+      "A disk cache for weights",
+      "A database of sentences",
+      "Storing previously computed Key and Value vectors in GPU memory to avoid recomputing past representations at each new generation step",
+      "A CPU hardware cache"
+    ],
+    "correct": 2,
+    "explanation": "KV-caching reduces per-token generation complexity from O(N^2) to O(N) by caching past key-value states.",
+    "topic": "Inference Optimization",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_065",
+    "chapter": "comp",
+    "question": "What is FlashAttention?",
+    "options": [
+      "An approximate pruning tool",
+      "A new activation function",
+      "A smaller tokenizer",
+      "An exact, IO-aware GPU memory tiling algorithm that computes self-attention without materializing the massive N x N intermediate attention matrix in GPU HBM"
+    ],
+    "correct": 3,
+    "explanation": "FlashAttention optimizes SRAM/HBM data transfers, providing 2-4x speedups and dramatic memory savings for long sequences.",
+    "topic": "Modern Attention",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_066",
+    "chapter": "comp",
+    "question": "What is the Noisy Channel Model in Statistical Machine Translation?",
+    "options": [
+      "A neural seq2seq model",
+      "Filtering acoustic noise",
+      "Translating text over noisy radio channels",
+      "Decomposing translation into Translation Model P(Source|Target) * Language Model P(Target)"
+    ],
+    "correct": 3,
+    "explanation": "Bayes' rule splits translation into adequacy/fidelity P(Source|Target) and target fluency P(Target).",
+    "topic": "Machine Translation",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_067",
+    "chapter": "comp",
+    "question": "What is the primary difference between Greedy Decoding and Beam Search Decoding?",
+    "options": [
+      "They are identical when B=5",
+      "Greedy decoding picks the single highest-probability token at each step; Beam Search tracks the top B most probable partial candidate paths in parallel",
+      "Beam search evaluates all possible sentences",
+      "Greedy search is slower"
+    ],
+    "correct": 1,
+    "explanation": "Beam search maintains a frontier of B hypotheses, avoiding the local sub-optimality of greedy selection.",
+    "topic": "Decoding Strategies",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_068",
+    "chapter": "comp",
+    "question": "Why do Beam Search algorithms apply a Length Penalty when scoring hypotheses?",
+    "options": [
+      "To speed up decoding",
+      "Multiplying probabilities < 1 penalizes longer sentences, causing beam search to unfairly favor unnaturally short translations",
+      "To count words",
+      "To make sentences longer than 1000 words"
+    ],
+    "correct": 1,
+    "explanation": "Dividing cumulative log probability by a length normalization factor prevents short-sentence bias.",
+    "topic": "Beam Search",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_069",
+    "chapter": "comp",
+    "question": "What does the BLEU metric measure in Machine Translation evaluation?",
+    "options": [
+      "Modified n-gram precision (typically 1-gram to 4-gram) combined with a Brevity Penalty that penalizes candidate translations shorter than references",
+      "Grammar rule correctness",
+      "Translation speed",
+      "Spelling accuracy only"
+    ],
+    "correct": 0,
+    "explanation": "BLEU evaluates n-gram overlap against human reference translations, adjusted for sentence brevity.",
+    "topic": "BLEU Score",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_070",
+    "chapter": "comp",
+    "question": "In BLEU score calculation, what is Modified N-Gram Precision (clipping)?",
+    "options": [
+      "Clipping candidate n-gram match counts to the maximum count of that n-gram in any single reference translation to penalize repeated hallucination",
+      "Deleting stop words",
+      "Dividing counts by 4",
+      "Counting words twice"
+    ],
+    "correct": 0,
+    "explanation": "Clipping prevents degenerate outputs like 'the the the the' from receiving a false 100% precision score.",
+    "topic": "BLEU Score",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_071",
+    "chapter": "comp",
+    "question": "If a candidate translation has 8 words and the reference translation has 10 words, what is the Brevity Penalty (BP)?",
+    "options": [
+      "1.0",
+      "0.0",
+      "1.25",
+      "BP = exp(1 - 10/8) = exp(-0.25) ≈ 0.7788"
+    ],
+    "correct": 3,
+    "explanation": "Because candidate length c (8) < reference length r (10), BP = exp(1 - r/c) = exp(-0.25) ≈ 0.7788.",
+    "topic": "BLEU Calculation",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_072",
+    "chapter": "comp",
+    "question": "Why does the METEOR metric correlate better with human translation judgments than BLEU?",
+    "options": [
+      "It measures GPU speed",
+      "It considers both Precision and Recall (via harmonic mean), supports Stemming and WordNet Synonyms, and penalizes word fragmentation",
+      "It eliminates references",
+      "It only evaluates nouns"
+    ],
+    "correct": 1,
+    "explanation": "METEOR rewards valid synonym substitutions and morphological variants that exact n-gram matching in BLEU penalizes.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_073",
+    "chapter": "comp",
+    "question": "What is Back-Translation in Neural Machine Translation?",
+    "options": [
+      "Decoding from right to left",
+      "Translating target-language monolingual text back into the source language using an intermediate model to generate synthetic parallel training data",
+      "Translating words in reverse letter order",
+      "Translating twice through French"
+    ],
+    "correct": 1,
+    "explanation": "Back-translation leverages abundant target monolingual data to generate synthetic bitext, boosting translation performance.",
+    "topic": "Data Augmentation",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_074",
+    "chapter": "comp",
+    "question": "What is Zero-Shot Translation in multilingual NMT?",
+    "options": [
+      "Translating without a computer",
+      "Translating with 0 parameters",
+      "Translating in 0 seconds",
+      "Translating directly between language pair A and B when the model was trained on A<->English and B<->English without ever seeing direct A-B parallel data"
+    ],
+    "correct": 3,
+    "explanation": "Multilingual models learn shared cross-lingual representations that enable zero-shot translation between unaligned pairs.",
+    "topic": "Multilingual NMT",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_075",
+    "chapter": "comp",
+    "question": "What are modern learned metrics like COMET and BLEURT?",
+    "options": [
+      "Simple word counters",
+      "Regex scripts",
+      "Unsupervised clustering tools",
+      "Neural cross-encoders fine-tuned on human Direct Assessment ratings that evaluate semantic similarity in continuous representation space"
+    ],
+    "correct": 3,
+    "explanation": "COMET and BLEURT evaluate semantic fidelity in continuous embedding space, outperforming surface n-gram metrics.",
+    "topic": "Learned Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_076",
+    "chapter": "comp",
+    "question": "What is Chomsky Normal Form (CNF) for Context-Free Grammars?",
+    "options": [
+      "A grammar for binary code",
+      "A grammar with no terminals",
+      "A grammar with 1 rule",
+      "A formal standard where every rule is strictly of the form A -> B C (two non-terminals) OR A -> a (one terminal)"
+    ],
+    "correct": 3,
+    "explanation": "CNF restricts rules strictly to binary branching non-terminals or single terminal emissions.",
+    "topic": "CFG & Parsing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_077",
+    "chapter": "comp",
+    "question": "What is the time complexity of the CKY (Cocke-Kasami-Younger) chart parsing algorithm for a sentence of length N?",
+    "options": [
+      "O(N)",
+      "O(N^3 * |R|) cubic time complexity",
+      "O(N^2)",
+      "O(2^N)"
+    ],
+    "correct": 1,
+    "explanation": "CKY iterates over span lengths, start positions, and split points k, yielding O(N^3) complexity.",
+    "topic": "CKY Algorithm",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_078",
+    "chapter": "comp",
+    "question": "How does the Earley Parser differ from the CKY parser?",
+    "options": [
+      "Earley is a top-down chart parser using dotted rules that operates on arbitrary CFGs without converting to Chomsky Normal Form",
+      "Earley only parses English",
+      "Earley is bottom-up only",
+      "Earley is O(2^N)"
+    ],
+    "correct": 0,
+    "explanation": "The Earley parser avoids CNF conversion and parses general CFGs using Predictor, Scanner, and Completer operators.",
+    "topic": "Earley Parser",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_079",
+    "chapter": "comp",
+    "question": "In PARSEVAL evaluation, what is a Crossing Bracket?",
+    "options": [
+      "A misplaced parenthesis in Python code",
+      "A structural boundary error where a candidate bracket overlaps the boundary of a gold bracket without proper nesting: e.g. (2, 5) and (4, 7)",
+      "A syntax error",
+      "A bracket with a typo"
+    ],
+    "correct": 1,
+    "explanation": "Crossing brackets represent structural bracket boundary conflicts.",
+    "topic": "PARSEVAL",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_080",
+    "chapter": "comp",
+    "question": "What are the core structural constraints of a standard Dependency Tree?",
+    "options": [
+      "Single Head (each word has exactly one head), Connected (all words reachable from ROOT), and Acyclic (no loops)",
+      "Disconnected islands allowed",
+      "Cycles permitted",
+      "Multiple heads per word"
+    ],
+    "correct": 0,
+    "explanation": "A valid dependency tree is a rooted, connected, acyclic directed graph where every word has exactly one incoming edge.",
+    "topic": "Dependency Parsing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_081",
+    "chapter": "comp",
+    "question": "In Universal Dependencies, what relation labels the nominal subject of a clause?",
+    "options": [
+      "`nsubj`",
+      "`obj`",
+      "`amod`",
+      "`det`"
+    ],
+    "correct": 0,
+    "explanation": "`nsubj` marks the nominal grammatical subject.",
+    "topic": "Universal Dependencies",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_082",
+    "chapter": "comp",
+    "question": "What are the three basic operations in the Arc-Standard Transition-Based dependency parsing algorithm?",
+    "options": [
+      "SHIFT, LEFT-ARC_r, and RIGHT-ARC_r",
+      "PUSH, POP, SWAP",
+      "SPLIT, MERGE, REDUCE",
+      "INSERT, DELETE, REPLACE"
+    ],
+    "correct": 0,
+    "explanation": "Arc-Standard parses in 2N linear steps using SHIFT, LEFT-ARC, and RIGHT-ARC.",
+    "topic": "Transition Parsing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_083",
+    "chapter": "comp",
+    "question": "What is the time complexity of Transition-Based dependency parsing?",
+    "options": [
+      "O(N^3)",
+      "O(log N)",
+      "O(N^2)",
+      "O(N) linear time (exactly 2N transitions for a sentence of length N)"
+    ],
+    "correct": 3,
+    "explanation": "Each word is shifted once and popped once, giving optimal O(N) linear parsing time.",
+    "topic": "Transition Parsing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_084",
+    "chapter": "comp",
+    "question": "What is the difference between UAS (Unlabeled Attachment Score) and LAS (Labeled Attachment Score)?",
+    "options": [
+      "UAS is always lower than LAS",
+      "LAS ignores labels",
+      "They are identical metrics",
+      "UAS measures correct head assignment only; LAS measures BOTH correct head AND correct dependency relation label"
+    ],
+    "correct": 3,
+    "explanation": "LAS is a stricter metric requiring both the structural parent index and the grammatical relation label to be correct.",
+    "topic": "Evaluation Metrics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_085",
+    "chapter": "comp",
+    "question": "What is a Non-Projective Dependency Tree, and which parsing approach handles it naturally?",
+    "options": [
+      "A tree with 1 branch",
+      "A tree in binary code",
+      "A tree with crossing dependency arcs; handled naturally by Graph-Based parsers (e.g. Chu-Liu-Edmonds MST)",
+      "A tree with no nouns; handled by CKY"
+    ],
+    "correct": 2,
+    "explanation": "Graph-based maximum spanning tree parsers find optimal directed trees over complete graphs without projectivity constraints.",
+    "topic": "Graph-Based Parsing",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_086",
+    "chapter": "comp",
+    "question": "In task-oriented dialogue systems, what is the role of Dialogue State Tracking (DST)?",
+    "options": [
+      "Recording audio to disk",
+      "Measuring CPU speed",
+      "Tracking the user's GPS",
+      "Maintaining an accurate record of all accumulated slot values and user constraints across conversation turns"
+    ],
+    "correct": 3,
+    "explanation": "DST aggregates evidence across dialogue turns into an updated belief state representing user constraints.",
+    "topic": "Dialogue Systems",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_087",
+    "chapter": "comp",
+    "question": "What are the two core tasks performed by the NLU module in task-oriented chatbots?",
+    "options": [
+      "Intent Determination (Classification) and Slot Filling (Entity Extraction via sequence labeling)",
+      "Speech recognition and text translation",
+      "Clustering documents",
+      "Parsing CFGs and calculating perplexity"
+    ],
+    "correct": 0,
+    "explanation": "NLU identifies user intent (e.g., BookFlight) and extracts parameter slots (e.g., DepartureCity).",
+    "topic": "Dialogue Systems",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_088",
+    "chapter": "comp",
+    "question": "What is Grounding in conversation analysis and dialogue management?",
+    "options": [
+      "The cooperative interactive process of establishing mutual understanding / Common Ground between participants",
+      "Connecting electrical wires to earth",
+      "Storing data in SQL",
+      "Running gradient descent"
+    ],
+    "correct": 0,
+    "explanation": "Grounding ensures conversational partners verify and maintain shared communicative understanding.",
+    "topic": "Grounding",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_089",
+    "chapter": "comp",
+    "question": "What does the Principle of Compositionality (Frege's Principle) state?",
+    "options": [
+      "Sentences are made of words",
+      "Computers compose music",
+      "The meaning of a whole sentence is a function of the meanings of its syntactic parts and the syntactic rules used to combine them",
+      "Grammars have start symbols"
+    ],
+    "correct": 2,
+    "explanation": "Frege's principle underpins formal computational semantics, combining component meanings via lambda calculus.",
+    "topic": "Formal Semantics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_090",
+    "chapter": "comp",
+    "question": "In First-Order Logic, why is pairing the Existential Quantifier with Implication (exists x (P(x) => Q(x))) almost always a semantic BUG?",
+    "options": [
+      "Because exists cannot be combined with x",
+      "Because an implication A => B is vacuously TRUE whenever A is false; so exists x (P(x) => Q(x)) is trivially true as long as ANY object exists that is not P",
+      "Because computers crash on =>",
+      "Because P(x) must be a number"
+    ],
+    "correct": 1,
+    "explanation": "Vacuous truth makes exists x (P(x) => Q(x)) true if any non-P entity exists in the domain.",
+    "topic": "Logic Semantics",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_091",
+    "chapter": "comp",
+    "question": "What is the result of Beta-Reduction in Lambda Calculus on the expression: `(lambda x. Student(x))(Alice)`?",
+    "options": [
+      "`Student(x)`",
+      "`Alice(Student)`",
+      "`lambda x. Alice`",
+      "`Student(Alice)`"
+    ],
+    "correct": 3,
+    "explanation": "Beta-reduction substitutes the argument 'Alice' for variable x in the function body.",
+    "topic": "Lambda Calculus",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  },
+  {
+    "id": "q_comp_092",
+    "chapter": "comp",
+    "question": "In Information Extraction, what is Distant Supervision?",
+    "options": [
+      "Using only dictionary definitions",
+      "Training models without data",
+      "Aligning a structured Knowledge Base (e.g. Wikidata) with unlabelled text by assuming that any sentence mentioning two related entities expresses their relation",
+      "Supervising workers remotely"
+    ],
+    "correct": 2,
+    "explanation": "Distant supervision automatically creates massive weakly-labeled training corpora by cross-referencing text with KBs.",
+    "topic": "Information Extraction",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_093",
+    "chapter": "comp",
+    "question": "What is an Event Trigger in Event Extraction?",
+    "options": [
+      "The specific word or phrase in text that most clearly signals the occurrence of an event (e.g. 'assassinated', 'married', 'bankrupt')",
+      "A database trigger in SQL",
+      "A punctuation mark",
+      "A click on a button"
+    ],
+    "correct": 0,
+    "explanation": "The trigger word evokes the event type and serves as the structural anchor for event arguments.",
+    "topic": "Event Extraction",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_094",
+    "chapter": "comp",
+    "question": "In Allen's Interval Algebra, what does it mean for Interval A to MEET Interval B?",
+    "options": [
+      "A overlaps with B",
+      "Interval A ends at the EXACT same instant that Interval B begins (end(A) = start(B), with zero gap)",
+      "A and B never touch",
+      "A is longer than B"
+    ],
+    "correct": 1,
+    "explanation": "Meets describes abutting contiguous intervals with identical transition points.",
+    "topic": "Temporal Reasoning",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_095",
+    "chapter": "comp",
+    "question": "What is the fundamental structural unit in Princeton WordNet?",
+    "options": [
+      "A phoneme",
+      "A CFG rule",
+      "The Synset (Synonym Set): a group of interchangeable word lemmas representing a single unique conceptual sense",
+      "A single letter"
+    ],
+    "correct": 2,
+    "explanation": "WordNet organizes lexical knowledge into sets of cognitive synonyms called synsets.",
+    "topic": "WordNet",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_096",
+    "chapter": "comp",
+    "question": "What is the core intuition behind the Lesk Algorithm for Word Sense Disambiguation?",
+    "options": [
+      "The sense that rhymes with the subject",
+      "The intended sense of a polysemous word is the one whose dictionary definition (gloss) shares the highest word overlap with the context words in the sentence",
+      "The sense with the most letters",
+      "The sense with zero vowels"
+    ],
+    "correct": 1,
+    "explanation": "Lesk disambiguates senses by maximizing vocabulary overlap between candidate glosses and context.",
+    "topic": "WSD",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 1
+  },
+  {
+    "id": "q_comp_097",
+    "chapter": "comp",
+    "question": "What is the Least Common Subsumer (LCS) in WordNet taxonomy?",
+    "options": [
+      "The leaf node with the most children",
+      "The shortest word",
+      "The lowest (deepest / most specific) common hypernym ancestor that both synsets inherit from in the taxonomic tree",
+      "The root node entity.n.01 always"
+    ],
+    "correct": 2,
+    "explanation": "The LCS represents the closest conceptual generalization shared by two synsets in the taxonomy.",
+    "topic": "WordNet Similarity",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_098",
+    "chapter": "comp",
+    "question": "In SentiWordNet, what is the mathematical relationship between PosScore, NegScore, and ObjScore for any synset?",
+    "options": [
+      "PosScore - NegScore = 0",
+      "PosScore * NegScore = 1.0",
+      "PosScore + NegScore + ObjScore = 1.0",
+      "PosScore + NegScore = 100"
+    ],
+    "correct": 2,
+    "explanation": "The three affective scores form a normalized probability distribution summing strictly to 1.0.",
+    "topic": "Sentiment Lexicons",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 2
+  },
+  {
+    "id": "q_comp_099",
+    "chapter": "comp",
+    "question": "How does VADER handle contrastive conjunctions like 'BUT' in sentiment analysis?",
+    "options": [
+      "It shifts dominant sentiment weighting heavily toward the clause following 'but' (the second clause carries higher weight)",
+      "It deletes the second clause",
+      "It converts the score to zero",
+      "It averages both clauses equally"
+    ],
+    "correct": 0,
+    "explanation": "In sentences containing 'but', the second clause dominates the speaker's true pragmatic opinion.",
+    "topic": "VADER",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 0
+  },
+  {
+    "id": "q_comp_100",
+    "chapter": "comp",
+    "question": "In the VAD (Valence, Arousal, Dominance) dimensional model of emotion, what does DOMINANCE measure?",
+    "options": [
+      "The pleasure of the event",
+      "The loudness of voice",
+      "The duration of the state",
+      "The degree of perceived control, power, or agency the individual feels over the situation (ranging from submissive/helpless to powerful/in-control)"
+    ],
+    "correct": 3,
+    "explanation": "Dominance captures subjective empowerment: feeling in control versus feeling overwhelmed and helpless.",
+    "topic": "Emotion Models",
+    "slide_ref": "Comprehensive NLP Synthesis",
+    "answer": 3
+  }
+];

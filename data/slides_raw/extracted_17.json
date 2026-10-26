@@ -1,0 +1,180 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Lexicons for Sentiment Effect and Connotation"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Introduction\rSentiment Lexicons (SL)\rExamples of SL\rConnotation Lexcions (CL)\rExamples of CL\rApplications\rCombine with Machine Learning",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Introduction",
+                     "3",
+                     "Sentiment Effect and Connotation\r\rThe sentiment effect refers to the emotional impact or tone that a word or phrase conveys beyond its literal meaning. \r\rIt reflects the positive, negative, or neutral emotions associated with a word, which can influence how the word is perceived and how it contributes to the overall sentiment of a sentence or text.\r\rConnotation refers to the additional meanings, associations, or implications that a word carries beyond its explicit definition. \r\rConnotations can be positive, negative, or neutral and contribute to the nuanced interpretation of a word in context."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Introduction",
+                     "4",
+                     "Lexicons\rA lexicon is a resource that contains a collection of words along with their associated attributes, meanings, sentiments, and connotations. \r\rLexicons are valuable tools in natural language processing, sentiment analysis, and various other language-related tasks. \r\rThey provide information beyond the denotative meanings of words, helping to capture their emotional impact and nuances.\r\rIn sentiment analysis, lexicons are often used to identify and classify the sentiment of words in a text. \r\rEach word is associated with sentiment scores that indicate whether it\u0027s positive, negative, or neutral. \r\rLexicons play a crucial role in understanding sentiment effects and connotations, enabling more accurate sentiment analysis and language understanding."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Sentiment Lexicons (SL)",
+                     "5",
+                     "Sentiment lexicons are curated collections of words or phrases in a language, where each word or phrase is assigned a polarity label indicating whether it conveys a positive, negative, or neutral sentiment.\r\rThese lexicons serve as valuable resources for sentiment analysis and other text processing tasks that involve understanding the emotional tone of written or spoken content."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Sentiment Lexicons (SL)",
+                     "6",
+                     "Key Points\rPolarity Labels\rSentiment lexicons associate words with polarity labels that reflect the emotional orientation of the word. \rThese labels help distinguish between words that contribute to positive, negative, or neutral sentiments.\r\rPolarity Spectrum\rWhile sentiment lexicons often categorize words into discrete polarities (positive, negative, neutral), sentiment can also exist on a spectrum, allowing for subtle gradations of emotion.\r\rSentiment Analysis\rSentiment lexicons are commonly used in sentiment analysis, a process that involves determining the overall sentiment expressed in a piece of text.\rBy analyzing the sentiment polarity of individual words in a sentence, paragraph, or document, sentiment analysis tools can gauge the emotional tone of the content."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Sentiment Lexicons (SL)",
+                     "7",
+                     "Key Points\rText Classification\rSentiment lexicons are particularly useful in text classification tasks, where the goal is to categorize text into sentiment classes. \rLexicons provide valuable features for machine learning models that predict sentiment based on the presence and polarity of words.\r\rLexicon Enrichment\rSentiment lexicons are continuously updated and expanded as new words and expressions emerge.\rLexicon enrichment involves adding new words and adjusting polarity labels to keep the lexicon current and reflective of evolving language use."
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Examples of SL",
+                     "8",
+                     "AFINN (Affective Norms for English Words and Phrases)\rAFINN is a widely used sentiment lexicon that assigns a sentiment score to words and phrases in English.\rEach word or phrase is associated with a polarity score, where positive values indicate positive sentiment and negative values indicate negative sentiment.\rThe scores in AFINN are based on human judgment and intuition.",
+                     "SentiWordNet\rSentiWordNet is a lexical resource that assigns sentiment scores to synsets in WordNet, reflecting the sentiment of words across different senses.\rLike AFINN, SentiWordNet uses positive and negative scores to indicate sentiment polarity.\rSentiWordNet\u0027s scores are based on a combination of WordNet\u0027s synset structure and human-annotated sentiment scores.",
+                     "VADER (Valence Aware Dictionary and sEntiment Reasoner)\rVADER is a lexicon and rule-based sentiment analysis tool that focuses on capturing sentiment from social media text.\rIt assigns a sentiment score to individual words and considers grammatical and syntactical rules to handle negations, capitalization, punctuation, and emphasis.\rVADER is designed to work well with informal language and emoticons often found in social media posts."
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Examples of SL",
+                     "9",
+                     "AFINN Example\rAFINN assigns sentiment scores to words, helping to determine the overall sentiment of a sentence. Let\u0027s consider the sentence \"The concert was amazing, but the weather was terrible.\"\r\"amazing\" with a positive score: +3\r\"terrible\" with a negative score: -3\r\rTotal sentiment score = +3 - 3 = 0 (neutral)\r\rSentiWordNet Example\rSentiWordNet provides sentiment scores for synsets in WordNet. Let\u0027s look at the word \"happy\"\r\"happy\" in SentiWordNet has a positive score of 0.875 and a negative score of 0.\r\rThis indicates that \"happy\" is predominantly positive in sentiment."
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Examples of SL",
+                     "10",
+                     "VADER Example\r\rVADER takes into account grammatical and syntactical rules to analyze sentiment, making it suitable for social media text. Let\u0027s analyze the sentence \"I\u0027m so thrilled! 😄\":\r\"thrilled\" is positive\r\"so\" intensifies the positivity\r😄 is a positive emoticon\r\rVADER would likely assign a high positive sentiment score to this sentence."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Examples of SL",
+                     "11",
+                     "VADER Example (Python Implementation)",
+                     "We use the nltk library to perform sentiment analysis using the VADER sentiment lexicon.\r\rWe create a SentimentIntensityAnalyzer instance to analyze sentiment.\r\rWe provide example sentences for sentiment analysis.\r\rThe polarity_scores method computes sentiment scores for the given sentences, including positive, negative, neutral, and compound scores.\r\rBased on the compound score, we classify the sentiment as positive, negative, or neutral."
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Connotation Lexcions (CL)",
+                     "12",
+                     "Connotation lexicons are specialized resources that go beyond merely indicating positive, negative, or neutral sentiment associated with words. \r\rThey provide a more nuanced understanding of word meanings by capturing the emotional, associative, or cultural connotations that words carry. \r\rThese lexicons focus on the additional layers of meaning and associations that words evoke beyond their literal definitions."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Connotation Lexcions (CL)",
+                     "13",
+                     "Key Points\r\rEmotional and Associative Meanings\rConnotation lexicons delve into the emotional nuances, cultural associations, and implied meanings that words carry based on context and usage.\rSubjectivity\rConnotations are often subjective and can vary between different individuals, cultures, and contexts. Connotation lexicons attempt to capture these variations.\rNuanced Sentiments\rWhile sentiment lexicons focus on simple positive/negative sentiment, connotation lexicons acknowledge that words can convey complex feelings, attitudes, and shades of meaning.\rLanguage Nuances\rConnotations are an essential part of language use and can influence how words are chosen to express ideas, evoke emotions, and create imagery.\rApplications\rConnotation lexicons find applications in creative writing, advertising, branding, rhetoric analysis, and any task that requires a deep understanding of the layers of meaning within language."
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Examples of CL",
+                     "14",
+                     "ANEW (Affective Norms for English Words)\rANEW is a connotation lexicon that goes beyond sentiment analysis to capture a wide range of emotional and connotative dimensions associated with words.\r\rIt provides scores for multiple emotional dimensions, such as valence (positiveness/negativeness), arousal (intensity), and dominance (control or influence).",
+                     "NRC Emotion Lexicon\r\rThe NRC Emotion Lexicon is a resource that assigns words emotional labels related to eight basic emotions, including anger, fear, anticipation, trust, surprise, sadness, joy, and disgust.\r\rThis lexicon provides a more granular understanding of how words evoke specific emotional reactions beyond simple positive/negative sentiment."
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Examples of CL",
+                     "15",
+                     "ANEW (Affective Norms for English Words) Example:\rANEW captures emotional dimensions beyond sentiment, such as valence, arousal, and dominance. Let\u0027s consider the word \"bittersweet\":\rValence score: 4.46 (positive valence)\rArousal score: 5.33 (moderately arousing)\rDominance score: 4.11 (moderate dominance)\rThe word \"bittersweet\" is associated with positive emotions but also carries an element of complexity and mixed emotions, as reflected by its arousal and dominance scores.\rNRC Emotion Lexicon Example:\rThe NRC Emotion Lexicon categorizes words into different emotions. Let\u0027s analyze the word \"surprise\":\rEmotion labels: Surprise (1), Joy (1), Sadness (0), Fear (0), Anger (0), Trust (0), Anticipation (0), Disgust (0)\rThe word \"surprise\" is primarily associated with the emotion of surprise and, to a lesser extent, with joy. \rThis indicates that the word evokes feelings of unexpectedness and excitement."
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Examples of CL",
+                     "16",
+                     "ANEW Example (Python Implementation)",
+                     "In this example:\r\rWe use the pandas library to handle data manipulation.\r\rThe ANEW connotation lexicon data is loaded from the URL using pd.read_csv(). It contains columns for words, valence, arousal, and dominance scores.\r\rWe filter the words based on valence, considering words with valence scores greater than 5 as positive.\r\rWe display the list of positive words."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Applications",
+                     "17",
+                     "Sentiment Analysis in Social Media\rSentiment and connotation lexicons play a crucial role in analyzing social media content. \rBusinesses and organizations use these resources to monitor public sentiment towards their products, services, and campaigns. \rBy analyzing social media posts and comments, sentiment lexicons help gauge how customers perceive brands and products, identify customer concerns, and track shifts in public opinion over time.\r\rBrand Sentiment Monitoring\rSentiment and connotation lexicons enable companies to track the sentiment associated with their brand and competitors in the market. \rBy analyzing reviews, feedback, and customer conversations, businesses can gain insights into customer opinions, identify areas for improvement, and make data-driven decisions to enhance their brand perception.\r\rCreative Writing and Content Creation\rConnotation lexicons are valuable tools for writers, content creators, and marketers. \rWhen crafting content, writers can use connotation lexicons to select words that evoke specific emotions or nuances, enhancing the impact and engagement of their writing. \rCreative professionals can ensure that the intended tone and emotional resonance are conveyed effectively in their work."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Applications",
+                     "18",
+                     "Movie and Music Reviews\rSentiment and connotation lexicons find application in analyzing movie and music reviews. \rCritics and audiences alike can use these resources to assess the emotional and connotative dimensions of a film or song. \rBy understanding how certain words are perceived, reviewers can better convey their opinions about the artistic work.\r\rAdvertising and Marketing Campaigns\rAdvertisers and marketers use sentiment and connotation lexicons to gauge how their marketing campaigns are received by the target audience. \rBy analyzing customer feedback, comments, and interactions with advertisements, marketers can adjust their campaigns to align with the desired emotional and associative responses.\r\rPsychological and Clinical Analysis\rSentiment and connotation lexicons find application in psychological and clinical analysis. \rResearchers and practitioners can analyze written content, such as patient testimonials or diary entries, to gain insights into emotional states, track mood changes, and provide more personalized interventions."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Combine with Machine Learning",
+                     "Lexicon-Based Methods\rLexicon-based sentiment analysis involves assigning sentiment scores to text based on the presence of words from sentiment or connotation lexicons. \rEach word in the text is matched against the lexicon, and its associated sentiment value contributes to the overall sentiment of the text. \rThe sentiment score can be calculated by summing or averaging the individual word scores. \rThis approach is straightforward and can provide a quick sentiment estimate.\r\rHybrid Approaches\rHybrid approaches combine lexicon-based methods with machine learning techniques to enhance sentiment analysis. \rIn this setup, sentiment lexicons are used as additional features alongside other linguistic or contextual features in machine learning classifiers. \rThe machine learning model learns to weigh the importance of various features, including lexicon-based features, in predicting sentiment. \rThis approach leverages the strengths of both lexicons and machine learning algorithms.",
+                     "19"
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Combine with Machine Learning",
+                     "Example in a hybrid approach for sentiment analysis\rFeature Extraction: Lexicon-based features are extracted by calculating sentiment scores for words in the text using a sentiment lexicon.\r\rAdditional Features: Other features, such as word embeddings, syntactic features, and contextual information, are also extracted from the text.\r\rTraining the Classifier: A machine learning classifier, such as a support vector machine (SVM) or a neural network, is trained on a labeled dataset. The lexicon-based features, along with other features, are used as input to the classifier.\r\rWeighted Contributions: During training, the classifier learns how to weight the contributions of different features, including the sentiment lexicon-based features, to make accurate sentiment predictions.\r\rInference: When applied to new text, the trained classifier considers both lexicon-based features and other features to predict the sentiment.",
+                     "20"
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Practice",
+                     "Instructions\rIn this assignment, you\u0027ll explore lexicons for sentiment effect and connotation analysis using Python.\rTasks\rTask 1: Exploring Sentiment Effect Lexicons\rChoose a sentiment effect lexicon (e.g., AFINN, EmoLex) or create a simple one.\rLoad the lexicon data (either from a file or manually).\rImplement a function to calculate the overall sentiment effect score for a given text, considering the scores of individual words.\rTask 2: Exploring Connotation Lexicons\rChoose a connotation lexicon (e.g., ANEW, LIWC) or create a simple one.\rLoad the lexicon data (either from a file or manually).\rImplement a function to analyze the emotional connotations of words in a given text using the lexicon data.",
+                     "21"
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Q \u0026 A",
+                     "22"
+                 ]
+    }
+]

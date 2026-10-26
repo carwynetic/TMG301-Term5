@@ -1,0 +1,119 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "N-Gram Languages Model"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Introduction\rUnigrams and Bigrams\rLimitations\rTrigram and Higher N-Grams\rApplications of N-Gram Language Model",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Introduction",
+                     "3",
+                     "N-Gram models are statistical language models used in NLP. They estimate the likelihood of a sequence of N words based on their frequency in data. \"N\" represents the number of words grouped together. \r\rFor instance, in a bigram (2-gram) model, the probability of a word depends on the previous word. These models are simple but struggle with understanding complex language patterns compared to modern models like RNNs and transformers."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Introduction",
+                     "4",
+                     "Example\rDataset with the following sentences\r\t\"I love to eat ice cream.\"\r\t\"I love to play soccer.\"\r\t\"I prefer tea over coffee.“\r\rIf we want to create a bigram (2-gram) model, we\u0027ll look at pairs of consecutive words in each sentence. For example, the first sentence would be split into these bigrams:\r\r    \"I love\"\r    \"love to\"\r    \"to eat\"\r    \"eat ice\"\r    \"ice cream\""
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Unigrams and Bigrams",
+                     "5",
+                     "Unigrams (1-grams):\rUnigrams are the simplest form of N-Grams, where each word or token in a text is treated as a separate unit, and its probability is calculated independently of other words. In other words, unigrams don\u0027t take into account any context or relationship with surrounding words.\r\rBigrams (2-grams):\rBigrams are a type of N-Gram where words are grouped into pairs, and the probability of a word depends on the previous word. This introduces a basic level of context into the model. Bigram models consider the likelihood of observing a word given the word that immediately precedes it."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Unigrams and Bigrams",
+                     "6",
+                     "Example\r\r\t\"I love to eat ice cream.“\r\rUnigrams: each word\u0027s probability is calculated separately. So, for each word: P(\"I\"), P(\"love\"), P(\"to\"), P(\"eat\"), P(\"ice\"), P(\"cream\").\r\rBigrams: the probabilities of words are calculated based on their relationship with the preceding word. P(\"I love\"), P(\"love to\"), P(\"to eat\"), P(\"eat ice\"), P(\"ice cream\")."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Example in Python",
+                     "7",
+                     "In this example, the code performs the following steps\r\rPreprocess the text by removing non-alphanumeric characters and converting it to lowercase.\r\rTokenize the text into individual words.\r\rCalculate the frequency of each unigram (individual word) using the Counter class.\r\rCalculate the frequency of each bigram (pair of consecutive words) using the ngrams function and the Counter class.\r\rDisplay the results for both unigrams and bigrams."
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Limitations",
+                     "8",
+                     "Using only unigrams and bigrams in language modeling has several limitations\r\rLack of Context Beyond Adjacent Words\rIgnoring Long-Range Dependencies\rLimited Understanding of Nuanced Language Patterns\rDifficulty with Ambiguity\rPoor Performance on Tasks Requiring Deep Semantics\rInadequate for Creative Text Generation"
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Trigrams, Higher N-Grams",
+                     "9",
+                     "Trigrams (3-grams) and higher N-Grams are extensions of the N-Gram language modeling concept. \r\rWhile bigrams consider pairs of adjacent words, trigrams consider sequences of three consecutive words, and higher N-Grams consider sequences of N words, where N is greater than 3.\r\rThese models aim to capture more intricate language patterns by considering a broader context within the text."
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Example in Python",
+                     "10",
+                     "In this example, the code performs the following steps:\r\rPreprocess the text by removing non-alphanumeric characters and converting it to lowercase.\r\rTokenize the text into individual words.\r\rCalculate the frequency of each trigram (group of three consecutive words) using the ngrams function and the Counter class.\r\rDisplay the results for trigrams."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Applications",
+                     "11",
+                     "Speech Recognition\rMachine Translation\rText Generation\rLanguage Modeling\rSpell Checking and Correction\rInformation Retrieval\rPredictive Text Analytics"
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Summary",
+                     "While N-Gram models offer simplicity and efficiency, they are best suited for tasks that require basic language understanding and context prediction. \r\rFor more advanced applications that demand nuanced understanding and generation of text, modern models like RNNs, LSTMs, and transformer-based models have proven to be more effective due to their ability to capture long-range dependencies and semantic relationships in language.",
+                     "12"
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Practice on N-Gram Models",
+                     "Instructions\rCreate a Python program that builds an N-Gram language model from a given text and generates text based on the model. \rYou\u0027ll work with a dataset containing sample text. \rYour task is to build a simple N-Gram language model and use it to generate text.\r\rDataset\rtext_data = \"\"\"Natural language processing (NLP) is a field of artificial intelligence that focuses on the interaction between computers and humans through natural language. NLP techniques are used to analyze, understand, and generate human language in a valuable way.\"\"\"",
+                     "13"
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Practice on N-Gram Models",
+                     "Tasks\rTask 1: Preprocessing\rWrite a function preprocess_text(text) that takes a text as input and preprocesses it by converting to lowercase and removing non-alphanumeric characters.\r\rTask 2: Build N-Gram Model\rWrite a function build_ngram_model(text, n) that takes preprocessed text and the value of n (order of the N-Gram) as input, and builds an N-Gram language model.\r\rTask 3: Generate Text\rWrite a function generate_text(model, seed, length) that takes the N-Gram model, a seed (starting word or phrase), and the desired length of the generated text as input, and generates text using the N-Gram language model.\r\rTask 4: Test Your Functions\rApply each function to the given text_data and print the generated text using different seeds and lengths.",
+                     "14"
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Q \u0026 A",
+                     "15"
+                 ]
+    }
+]

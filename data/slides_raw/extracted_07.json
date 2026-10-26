@@ -1,0 +1,226 @@
+[
+  {
+    "slide_number": 1,
+    "text": [
+      "Transformer and Pre-Trained Language Models"
+    ],
+    "notes": "1"
+  },
+  {
+    "slide_number": 2,
+    "text": [
+      "Contents",
+      "Introduction to Transformer\rMotivation for Transformer\rTransformer Architecture\rSelf-Attention Mechanism\rPositional Encoding\rPre-Trained Language Models",
+      "2"
+    ],
+    "notes": "2"
+  },
+  {
+    "slide_number": 3,
+    "text": [
+      "Introduction to Transformers",
+      "3",
+      "Transformers in Natural Language Processing (NLP)\rTransformers represent a revolutionary architecture in the field of Natural Language Processing (NLP) that has transformed how we process, understand, and generate human language. \r\rThey have significantly advanced the state-of-the-art in various NLP tasks, from machine translation to text generation and sentiment analysis."
+    ],
+    "notes": "3"
+  },
+  {
+    "slide_number": 4,
+    "text": [
+      "Introduction to Transformers",
+      "4",
+      "Handling Sequential Data without Recurrence or Convolution\r\rUnlike earlier models that relied on recurrent neural networks (RNNs) for sequential data or convolutional neural networks (CNNs) for image data, Transformers introduced a paradigm shift in how sequential data, such as text, is processed. \r\rTransformers utilize a mechanism called self-attention, which allows them to capture relationships between words in a sentence regardless of their distance from each other. \r\rThis self-attention mechanism makes Transformers inherently parallelizable and efficient, avoiding the sequential processing limitations of RNNs."
+    ],
+    "notes": "4"
+  },
+  {
+    "slide_number": 5,
+    "text": [
+      "Introduction to Transformers",
+      "5",
+      "Breakthrough Role in NLP Tasks\rMachine Translation\rTransformers, especially models like \"Transformer\" and \"BERT,\" have greatly improved machine translation by capturing context and relationships between words more effectively.\rText Generation\rTransformers have been used to generate coherent and contextually relevant text, producing impressive results in areas like story generation and content summarization.\rQuestion Answering\rModels like BERT have excelled in question-answering tasks by understanding context and providing accurate answers based on given questions and passages.\rSentiment Analysis\rTransformers have improved sentiment analysis by considering the overall context and nuances of language, resulting in more accurate sentiment classification.\rNamed Entity Recognition\rThey have demonstrated remarkable performance in identifying named entities (e.g., names, locations) within text.\rDocument Classification\rTransformers have been used for classifying entire documents into categories, enhancing the understanding of document content."
+    ],
+    "notes": "5"
+  },
+  {
+    "slide_number": 6,
+    "text": [
+      "Motivation for Transformer",
+      "6",
+      "Limitations of RNNs and CNNs\r\rRecurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) have been foundational in various machine learning tasks, but they come with limitations, particularly in handling sequential data like language.\rRNNs\rWhile RNNs can capture sequential dependencies, they suffer from vanishing and exploding gradient problems.\rThese issues hinder their ability to effectively learn long-range dependencies in sequences.\r\rCNNs\rConvolutional Neural Networks are highly efficient for image data due to their ability to capture local patterns, but they are less effective in capturing long-range dependencies in sequences, like sentences."
+    ],
+    "notes": "6"
+  },
+  {
+    "slide_number": 7,
+    "text": [
+      "Motivation for Transformer",
+      "7",
+      "Combining Attention Mechanisms and Parallel Processing\r\rThe limitations of RNNs and CNNs prompted the development of the Transformer architecture. \rTransformers use self-attention mechanisms to address the challenges of capturing long-range dependencies while enabling parallel processing.\r\rAttention Mechanism\rThe attention mechanism allows each word to consider the importance of other words in the sequence, creating contextual relationships. It overcomes the limitations of fixed-size context windows in RNNs and the local receptive fields in CNNs.\r\rParallel Processing\rTransformers' self-attention mechanism is inherently parallelizable. Unlike RNNs that process sequences sequentially, Transformers can process all words in parallel, making them highly efficient and suitable for modern hardware architectures."
+    ],
+    "notes": "7"
+  },
+  {
+    "slide_number": 8,
+    "text": [
+      "Transformer Architecture",
+      "8",
+      "The architecture is based on self-attention mechanisms and feedforward neural networks."
+    ],
+    "notes": "8"
+  },
+  {
+    "slide_number": 9,
+    "text": [
+      "Transformer Architecture",
+      "9",
+      "Self-Attention Mechanism\rThe self-attention mechanism is a key component of Transformers that allows a word to consider the importance of other words in the same sequence. It captures relationships between words regardless of their distance.\r\rFeedforward Neural Networks\rAfter self-attention, a feedforward neural network is applied to each word's contextual representation. This network consists of fully connected layers and non-linear activation functions."
+    ],
+    "notes": "9"
+  },
+  {
+    "slide_number": 10,
+    "text": [
+      "Transformer Architecture",
+      "10",
+      "Encoder and Decode\r\r\tEncoder\rThe encoder stack consists of multiple layers of self-attention mechanisms followed by feedforward neural networks. Each layer refines the representation of words based on context and relationships with other words in the sequence.\r\r\tDecoder\rThe decoder stack mirrors the encoder but also includes an additional attention mechanism that focuses on the encoder's output. This enables the decoder to generate output sequences, making the Transformer architecture suitable for tasks like machine translation and text generation."
+    ],
+    "notes": "10"
+  },
+  {
+    "slide_number": 11,
+    "text": [
+      "Transformer Architecture",
+      "11",
+      "Positional Encodings\rSince Transformers don't have inherent positional information like RNNs, positional encodings are added to input embeddings to convey word order.\r\rMultiple Heads\rIn practice, the self-attention mechanism often uses multiple attention \"heads\" to capture different types of relationships within a sequence."
+    ],
+    "notes": "11"
+  },
+  {
+    "slide_number": 12,
+    "text": [
+      "Example",
+      "12",
+      "example of a Transformer architecture using the Hugging Face Transformers library, which is a popular library for working with transformer models",
+      "In this example:\r\rWe use the Hugging Face Transformers library to load a pre-trained tokenizer (bert-base-uncased) and model (bert-base-uncased).\r\rWe tokenize an input text and convert it to the format expected by the transformer model.\r\rWe pass the tokenized input to the model and obtain the model's output, which includes embeddings for each token.\r\rWe extract the embedding of the [CLS] token, which is commonly used as the representation for downstream tasks."
+    ],
+    "notes": "12"
+  },
+  {
+    "slide_number": 13,
+    "text": [
+      "Self-Attention Mechanism",
+      "13",
+      "Calculating Attention Scores and Weighted Context Vectors\r\rQuery, Key, Value\rEach word in the sequence is transformed into three vectors: Query, Key, and Value. These vectors are derived from the original word embeddings.\rAttention Scores\rFor each Query, attention scores are calculated by taking the dot product (or using other similarity measures) between the Query vector and all Key vectors. These scores reflect how much attention the Query word should assign to each Key word.\rApplying Softmax\rThe attention scores are then passed through a softmax function to ensure that the scores sum up to 1. This step essentially determines the importance weights for each Key.\rWeighted Context Vectors\rThe attention scores are used to compute a weighted sum of the Value vectors. This weighted sum represents the contextual information that the Query word derives from other words in the sequence. It captures how much emphasis each neighbor contributes to the Query's understanding."
+    ],
+    "notes": "13"
+  },
+  {
+    "slide_number": 14,
+    "text": [
+      "Self-Attention Mechanism",
+      "14",
+      "Capturing Local and Global Dependencies\r\rSelf-attention captures both local and global dependencies in a sequence\rLocal Dependencies\rNearby words have high attention scores, allowing each word to consider its neighboring words and their meanings. This enables the model to understand local word relationships and grammatical structures.\rGlobal Dependencies\rWords that are farther apart can still have significant attention scores if they contribute to understanding the context. This enables the model to capture long-range dependencies and nuanced semantic relationships between distant words."
+    ],
+    "notes": "14"
+  },
+  {
+    "slide_number": 15,
+    "text": [
+      "Self-Attention Mechanism",
+      "15",
+      "In this example:\r\rWe define a custom PositionalEncoding module that calculates the positional encoding for input sequences.\r\rThe get_positional_encoding method generates the positional encoding matrix for a given sequence length and embedding size.\r\rThe forward method adds the positional encoding to the input data.\r\rWe provide example input for sequence_length, embedding_size, and batch_size.\r\rThe output shape of the positional encoding is printed.",
+      "Example"
+    ],
+    "notes": "15"
+  },
+  {
+    "slide_number": 16,
+    "text": [
+      "Positional Encoding",
+      "16",
+      "Concept\r\rPositional encodings are introduced in the Transformer architecture to address the absence of positional information in the model's initial input. \r\rThey inject information about the position of words into the word embeddings, allowing the model to differentiate words based on their positions within the sequence."
+    ],
+    "notes": "16"
+  },
+  {
+    "slide_number": 17,
+    "text": [
+      "Positional Encoding",
+      "17",
+      "Injecting Order Information\r\rEncoding Scheme \rPositional encodings are generated based on a predefined scheme, often using trigonometric functions. These encodings are designed to have distinct patterns for different positions.\r\rAdding to Word Embeddings\rThe positional encodings are added element-wise to the word embeddings. This addition introduces a unique pattern for each position that the model can learn from."
+    ],
+    "notes": "17"
+  },
+  {
+    "slide_number": 18,
+    "text": [
+      "Positional Encoding",
+      "18"
+    ],
+    "notes": "18"
+  },
+  {
+    "slide_number": 19,
+    "text": [
+      "Positional Encoding",
+      "19",
+      "In this example:\r\rWe define the scaled_dot_product_attention function that implements the self-attention mechanism. It takes query, key, and value matrices as input and an optional mask for masking certain positions.\r\rWe calculate the scaled dot product of query and key, and then apply the scaled softmax to obtain attention weights.\r\rWe multiply the attention weights with the value matrix to get the output of the self-attention mechanism.\r\rWe provide an example input for query, key, and value matrices.\r\rThe output and attention weights are printed to demonstrate the result of the self-attention mechanism.",
+      "Example"
+    ],
+    "notes": "19"
+  },
+  {
+    "slide_number": 20,
+    "text": [
+      "Pre-Trained Language Models",
+      "20",
+      "Pre-trained language models are neural network models that are trained on massive amounts of text data from diverse sources before being fine-tuned for specific downstream tasks. \r\rDuring pre-training, these models learn to generate contextual word representations that capture the meaning and relationships of words within their surrounding context."
+    ],
+    "notes": "20"
+  },
+  {
+    "slide_number": 21,
+    "text": [
+      "Pre-Trained Language Models",
+      "21",
+      "Capturing Semantic Meanings and Relationships. \r\rPre-trained models learn to encode words in a way that captures not only their individual meanings but also the nuances of how they relate to other words in various contexts. \r\rThis contextual understanding enables them to grasp semantic relationships, synonyms, antonyms, analogies, and other linguistic intricacies."
+    ],
+    "notes": "21"
+  },
+  {
+    "slide_number": 22,
+    "text": [
+      "Pre-Trained Language Models",
+      "22",
+      "Emergence of BERT, GPT-3, and Advanced Models. \r\rBERT (Bidirectional Encoder Representations from Transformers)\rBERT was a breakthrough pre-trained model introduced by Google. It demonstrated remarkable contextual understanding by training on both left and right context in sentences. BERT's bidirectional nature helped it capture broader contextual information, leading to significant improvements in various NLP tasks.\r\rGPT-3 (Generative Pre-trained Transformer 3)\rDeveloped by OpenAI, GPT-3 took pre-trained models to another level with its massive scale—175 billion parameters. GPT-3 is known for its ability to generate coherent and contextually relevant text. It can perform tasks ranging from text completion to translation without fine-tuning."
+    ],
+    "notes": "22"
+  },
+  {
+    "slide_number": 23,
+    "text": [
+      "Pre-Trained Language Models",
+      "23",
+      "Emergence of BERT, GPT-3, and Advanced Models. \r\rXLNet, T5, RoBERTa, etc.:\rThe success of BERT and GPT-3 sparked the development of various advanced models. XLNet introduced a permutation-based training approach, T5 focused on text-to-text tasks, and RoBERTa optimized BERT's training methodology. These models pushed the boundaries of what pre-trained language models could achieve.\r\rTask-Specific Fine-Tuning\rWhile pre-trained models like BERT and GPT-3 offer powerful contextual representations, they are often fine-tuned for specific tasks to enhance their performance on those tasks. This fine-tuning stage adapts the general language understanding to the specifics of the target task."
+    ],
+    "notes": "23"
+  },
+  {
+    "slide_number": 24,
+    "text": [
+      "Practice",
+      "24",
+      "Instructions\rIn this assignment, you'll explore and analyze the inner workings of a Transformer architecture and work with more advanced aspects of pre-trained language models.\rTasks\rTask 1: Transformer Components\rImplement a self-attention mechanism from scratch using NumPy.\rExplain the purpose of multi-head attention and how it improves the attention mechanism in Transformers.\rTask 2: Pre-Training and Fine-Tuning\rChoose a pre-trained language model (e.g., GPT-2) and load it using the Hugging Face Transformers library.\rExplain the concepts of pre-training and fine-tuning in the context of language models.\rTask 3: Text Generation\rUse the loaded pre-trained language model to generate creative text.\rImplement a temperature parameter to control the randomness of generated text."
+    ],
+    "notes": "24"
+  },
+  {
+    "slide_number": 25,
+    "text": [
+      "Q & A",
+      "25"
+    ],
+    "notes": "25"
+  }
+]

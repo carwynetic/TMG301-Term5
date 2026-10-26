@@ -1,0 +1,202 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Machine Translation"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "What is Machine Translation?\rRule-Based Machine Translation\rStatistical Machine Translation\rNeural Machine Translation (NMT)\rNMT Architecture\rTraining NMT Models\rEvaluation Metrics",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "What is Machine Translation? ",
+                     "3",
+                     "\rMachine translation is the automated process of translating text from one language to another using computational methods and algorithms. \r\rIt aims to enable communication between people who speak different languages by converting text from a source language into a target language."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "What is Machine Translation? ",
+                     "4",
+                     "Importance of Machine Translation ",
+                     "Tourism and Travel\rTravelers can navigate foreign countries more easily, understanding signs, menus, and information in their native language.\rEmergency Situations\rMachine translation can aid communication during emergencies, such as natural disasters or medical crises, when language barriers can hinder information dissemination.\rCultural Exchange\rLiterature, art, and cultural works can reach wider audiences, contributing to the exchange of cultural knowledge and ideas.\r",
+                     "Global Communication\rMachine translation allows people from different linguistic backgrounds to communicate and share information effortlessly, fostering global connectivity.\rBusiness and Commerce\rIn the business world, machine translation facilitates international trade, collaboration, and marketing by making content accessible to diverse audiences.\rEducation and Research\rScholars and researchers can access information across languages, promoting knowledge exchange and academic cooperation."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "What is Machine Translation? ",
+                     "5",
+                     "Approaches to Machine Translation ",
+                     "Neural Machine Translation (NMT)\rNMT employs deep learning techniques, particularly neural networks, to model the translation process. It has led to significant improvements in translation quality by capturing complex linguistic patterns.\r\rTransformer-Based NMT\rThe transformer architecture, popularized by models like BERT and GPT-3, has revolutionized NMT. It captures contextual information better, making it suitable for various language pairs and domains.",
+                     "Rule-Based Approach\rThis approach uses linguists\u0027 expertise to create linguistic rules and dictionaries for translation. While accurate for simple sentences, it struggles with idiomatic expressions and complex structures.\r\rStatistical Machine Translation (SMT)\rSMT uses large bilingual corpora to learn statistical relationships between words and phrases in different languages. It produces acceptable translations but may struggle with rare or unseen phrases."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Rule-Based Machine Translation ",
+                     "6",
+                     "\rRule-Based Machine Translation (RBMT) was one of the early approaches to machine translation, developed before the advent of sophisticated machine learning techniques. \r\rRBMT relies on human linguists and experts to create a set of linguistic rules that guide the translation process."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Rule-Based Machine Translation ",
+                     "7",
+                     "Example ",
+                     "In this example:\r\rWe define a RuleBasedTranslator class with a dictionary of translation rules.\r\rThe dictionary maps English words to their corresponding French translations.\r\rThe translate method splits the input text into words, applies the translation rules, and returns the translated text.\r\rWe create an instance of RuleBasedTranslator.\r\rWe provide an English sentence that we want to translate.\r\rWe call the translate method to obtain the translated sentence."
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Rule-Based Machine Translation ",
+                     "8",
+                     "Limitations of Rule-Based Machine Translation ",
+                     "Idioms and Cultural Nuances\rRBMT struggles with translating idiomatic expressions, metaphors, and cultural nuances that do not have direct equivalents in the target language. These nuances often require a deep understanding of the cultural context, which rule-based systems may lack.\rCoverage\rCreating comprehensive sets of rules for all possible language combinations, contexts, and vocabulary is challenging and time-consuming. RBMT systems may not cover specialized or domain-specific terminology.\rAmbiguity\rLanguages often have ambiguous words or phrases that require context to be correctly translated. RBMT struggles with resolving such ambiguities accurately.",
+                     "Scalability and Maintenance\rExpanding and maintaining rule sets for new language pairs or languages can be labor-intensive and may not scale well as the complexity of the language increases.\r\rLimited Adaptability\rRBMT systems cannot learn from data or adapt to new language patterns automatically. Any improvements or updates require manual intervention from linguists.\r\rTranslational Variability\rLanguages may exhibit significant variability in how words and phrases are used, making it difficult to capture all possible variations using rules."
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Statistical Machine Translation ",
+                     "9",
+                     "\rStatistical Machine Translation (SMT) represents a significant advancement in the field of machine translation. \r\rUnlike rule-based approaches, SMT systems learn translation patterns and relationships directly from parallel corpora, enabling more data-driven translation processes."
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Statistical Machine Translation ",
+                     "10",
+                     "Learning Translation Probabilities from Parallel Corpora\r\rIn SMT, translation probabilities are learned from large sets of bilingual text pairs, known as parallel corpora. \r\rThe fundamental idea is to observe how words, phrases, and sentences are translated from a source language to a target language in the parallel data. \r\rBy analyzing these translation patterns, the SMT system calculates probabilities to guide the translation process."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Statistical Machine Translation ",
+                     "11",
+                     "Importance of Alignment Models\r\rTo learn these translation probabilities, SMT systems use alignment models that identify which words or phrases in the source language correspond to those in the target language. \r\rThese alignment models help establish word-to-word or phrase-to-phrase mappings between the source and target languages."
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Statistical Machine Translation ",
+                     "12",
+                     "Phrase-Based Translation\r\rOne of the key advancements in SMT is the introduction of phrase-based translation. \r\rInstead of translating words individually, SMT systems consider phrases or small groups of words as translation units. \r\rThis approach allows for more flexibility in handling phrases, idioms, and non-compositional expressions that rule-based systems struggled with."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Statistical Machine Translation ",
+                     "13",
+                     "SMT Workflow",
+                     "Parallel Corpora\rSMT systems require large bilingual parallel corpora consisting of source language sentences and their corresponding translations in the target language.\rAlignment Models\rThe alignment models identify word or phrase alignments between the source and target sentences. These models help capture the relationships between words in different languages.\rTranslation Probabilities\rBased on the observed alignments, SMT systems calculate translation probabilities for different translation units (words, phrases). These probabilities guide the translation process.",
+                     "Decoding\rDuring translation, SMT systems use these probabilities to generate translations for input sentences in the source language. The translation process involves selecting the most likely target phrases given the source phrases and their probabilities.\r\rPhrase-Based Approach\rSMT introduces a phrase-based translation approach, where translations are generated for phrases rather than individual words, allowing for improved handling of language nuances and expressions.."
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Neural Machine Translation (NMT) ",
+                     "14",
+                     "\rNeural Machine Translation (NMT) marks a significant breakthrough in machine translation, representing a departure from rule-based and statistical approaches.\r\rNMT leverages deep learning techniques to model and learn the translation process directly from data, leading to improved translation quality and handling of complex language structures."
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Neural Machine Translation (NMT) ",
+                     "15",
+                     "Deep Learning and Sequence-to-Sequence Models\r\rNMT employs a class of deep learning models known as sequence-to-sequence (seq2seq) models. These models consist of two main components: an encoder and a decoder.\r\rEncoder: The encoder processes the input sentence in the source language and generates a context vector that captures the semantic representation of the input.\r\rDecoder: The decoder takes the context vector generated by the encoder and generates the translated sentence in the target language."
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "NMT Architecture ",
+                     "16",
+                     "Encoder\rThe Encoder processes the input sentence in the source language and transforms it into a fixed-size context vector or hidden state. \rThis context vector serves as a compressed representation of the input sentence\u0027s meaning. The encoder\u0027s role is to capture the semantic and syntactic information of the source sentence.",
+                     "Attention Mechanism\rThe Attention Mechanism is a crucial component that aligns the input and output sequences during translation. It allows the model to focus on different parts of the input sentence while generating each word of the translated output. This attention mechanism enables the model to effectively capture the relationships between words and phrases in both languages, accommodating long-range dependencies.",
+                     "Decoder\rThe Decoder takes the context vector generated by the encoder and generates the translated output sentence in the target language. It operates in a step-by-step manner, generating each word of the translation sequentially. At each step, the decoder\u0027s hidden state, the context vector from the attention mechanism, and the previously generated words guide the prediction of the next word in the target language."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Training NMT Models ",
+                     "17",
+                     "1. Parallel Corpora\rNMT models are trained on bilingual data, where each sentence in the source language corresponds to a sentence in the target language. These pairs of sentences form the parallel corpora, which are essential for the model to learn translation relationships.\r\r2. Loss Minimization\rThe primary objective during training is to minimize the loss, which quantifies the difference between the model\u0027s predicted translations and the actual target translations. The loss function guides the model\u0027s learning process to generate translations that align well with the target translations in the training data."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Training NMT Models ",
+                     "18",
+                     "3. Training Steps\r\rInput Encoding: \rThe source language sentences are tokenized and encoded by the Encoder, generating context vectors.\rAttention Mechanism\rThe attention mechanism calculates attention weights to align input and output sequences.\rDecoding\rThe Decoder generates translations word by word, predicting the next word based on the context vector and attention mechanism\u0027s context.\rLoss Calculation\rThe predicted translations are compared to the target translations in the training data, and a loss is calculated. This loss measures the discrepancy between the predicted and actual translations.\rBackpropagation\rThe gradients of the loss with respect to the model\u0027s parameters are calculated using backpropagation. These gradients indicate how the model\u0027s parameters should be adjusted to reduce the loss.\rGradient Descent\rThe model\u0027s parameters are updated using gradient descent. This process iteratively adjusts the parameters in the direction that reduces the loss."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Example",
+                     "19",
+                     "We use the Hugging Face Transformers library to load a pre-trained machine translation model for English to German.\r\rWe provide an English sentence that we want to translate.\r\rWe tokenize the English sentence using the tokenizer and convert it to input IDs.\r\rWe use the pre-trained model to generate translated token IDs.\r\rFinally, we decode the translated token IDs to obtain the translated text in German."
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Evaluation Metrics ",
+                     "20",
+                     "BLEU (Bilingual Evaluation Understudy):\r\rBLEU is a widely used metric that measures the quality of machine-generated translations by comparing them to one or more reference translations. \r\rIt calculates a score between 0 and 1, where higher scores indicate better translation quality. \r\rBLEU focuses on precision by assessing how many n-grams (word sequences) in the generated translation match n-grams in the reference translations."
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Evaluation Metrics ",
+                     "21",
+                     "METEOR (Metric for Evaluation of Translation with Explicit ORdering):\r\rMETEOR is another evaluation metric that considers not only word overlap but also synonyms and paraphrases. \r\rIt takes into account various aspects of translation quality, including precision, recall, stemming, synonymy, and word order. \r\rMETEOR provides a score between 0 and 1, where higher scores indicate better translation quality.\r"
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Evaluation Metrics ",
+                     "22",
+                     "ROUGE (Recall-Oriented Understudy for Gisting Evaluation):\r\rROUGE is a family of evaluation metrics designed for automatic summarization and machine translation. \r\rIt evaluates the overlap of n-grams (usually up to 4-grams) between the generated translation and the reference translations. \r\rROUGE metrics, such as ROUGE-N (n-gram overlap) and ROUGE-L (longest common subsequence), provide insights into the precision and recall of translation output."
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "Practice ",
+                     "23",
+                     "Instructions\rIn this assignment, you\u0027ll work with machine translation using a pre-trained model and evaluate its performance using appropriate metrics.\rTasks\rTask 1: Machine Translation\rChoose a language pair for translation (e.g., English to French, Spanish to English).\rLoad a pre-trained machine translation model from the Hugging Face Transformers library for the chosen language pair.\rImplement a function that takes an English sentence as input and generates a translated sentence using the loaded model.\rTask 2: Evaluation\rCollect a set of reference translations for a diverse set of English sentences.\rImplement a function that evaluates the translated sentences from Task 1 against the reference translations.\rCalculate and report evaluation metrics such as BLEU score, ROUGE score, or METEOR score."
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Q \u0026 A",
+                     "24"
+                 ]
+    }
+]

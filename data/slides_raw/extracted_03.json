@@ -1,0 +1,147 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Text Classification and Sentiment"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Text Classification\rNavie Bayes to Text Classification\rNavie Bayes Algorithm\rSentiment Analysis (SA)\rNavie Bayes to SA\rEvaluation Metrics",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Text Classification",
+                     "3",
+                     "Define\rText classification is the task of categorizing or assigning predefined labels or categories to text documents based on their content. \r\rThe goal is to develop algorithms or models that can automatically determine the most appropriate category for a given piece of text, enabling efficient organization and analysis of large volumes of textual data."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Text Classification",
+                     "4",
+                     "Relevance of Text Classification\rSpam Detection\rIdentifying and filtering out unwanted or unsolicited emails, messages, or comments.\rSentiment Analysis\rDetermining the sentiment or emotion expressed in text, such as positive, negative, or neutral sentiments in customer reviews or social media posts.\rTopic Categorization\rGrouping documents into topics or subjects, aiding in content organization and retrieval.\rLanguage Identification\rDetermining the language in which a text is written.\rNews Categorization\rOrganizing news articles into relevant categories like politics, sports, entertainment, etc.\rDocument Classification\rSorting legal documents, research papers, or any textual data into predefined categories."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Navie Bayes to Text Classification",
+                     "5",
+                     "Naive Bayes is a powerful and widely used algorithm for text classification. It\u0027s based on the Bayes\u0027 theorem, which calculates the probability of a certain event occurring based on prior knowledge of related events.\r\rIn the context of text classification, Naive Bayes assumes that the presence of a particular word in a document is independent of the presence of other words. This is a simplification, as words in a text often have contextual relationships. However, despite this \"naive\" assumption, the algorithm often works well in practice, especially for tasks like spam detection and sentiment analysis."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Navie Bayes Algorithm",
+                     "6"
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Navie Bayes Algorithm",
+                     "7"
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Navie Bayes Algorithm",
+                     "8"
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Example",
+                     "9",
+                     "In this example:\r\rWe have a small dataset of movie reviews, each labeled as \"positive\" or \"negative.“\r\rWe use the CountVectorizer to convert the text data into a numeric representation (Bag-of-Words model).\r\rA Naive Bayes classifier (MultinomialNB) is trained on the training data.\r\rThe trained classifier predicts the labels for the test data.\r\rWe evaluate the classifier\u0027s performance using accuracy and a classification report."
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Sentiment Analysis (SA)",
+                     "10",
+                     "Sentiment analysis, also known as opinion mining, is the process of analyzing a piece of text to determine the sentiment, emotion, or attitude expressed within it. \r\rThe goal is to identify whether the text conveys a positive, negative, or neutral sentiment, and sometimes to further classify emotions like joy, anger, sadness, etc."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Sentiment Analysis (SA)",
+                     "11",
+                     "Importance of Sentiment Analysis\r\rUnderstanding Public Opinion\rCustomer Feedback Analysis\rSocial Media Monitoring\rBrand Management\rMarket Research\rPolitical and Social Analysis\rCrisis Management\rInvestor Relations\rProduct Launch and Campaign Evaluation"
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Navie Bayes to SA",
+                     "12",
+                     "Training the Naive Bayes Model\r\rData Preparation: The first step is to gather a labeled dataset containing text samples along with their sentiment labels. These labels could be binary (positive/negative) or include additional sentiment categories.\r\rFeature Extraction: For text data, features are typically words or terms. Each word becomes a feature, and the presence or absence of a word in a text is a binary feature. The text is preprocessed, which involves steps like tokenization (breaking into words), removing stop words (common words like \"the,\" \"and\"), and stemming (reducing words to their base form).\r\rCreating the Training Data: From the labeled dataset, the algorithm calculates the frequency of each word in each sentiment category. This information forms the basis of the probabilities needed for classification."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Navie Bayes to SA",
+                     "13",
+                     "Training the Naive Bayes Model\r\rCalculating Class Probabilities: The prior probabilities of each sentiment class are calculated based on the frequency of documents in each class. For example, P(positive)P(positive) is the ratio of positive documents to the total number of documents.\r\rCalculating Word Probabilities: For each word in the vocabulary, the algorithm calculates the probabilities of that word occurring in each sentiment class. This is done by counting how many times the word appears in documents of each sentiment class and dividing by the total number of words in documents of that class."
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Navie Bayes to SA",
+                     "14"
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Evaluation Metrics",
+                     "15",
+                     "Accuracy: Accuracy measures the proportion of correctly classified instances out of the total instances. While it\u0027s a straightforward metric, it might be misleading in cases of imbalanced datasets where one class dominates.\r\rPrecision: Precision quantifies the ratio of correctly predicted positive instances to all instances predicted as positive. It indicates the model\u0027s ability to avoid false positives.\r\rRecall (Sensitivity or True Positive Rate): Recall calculates the ratio of correctly predicted positive instances to all actual positive instances. It shows the model\u0027s effectiveness in capturing all positive instances."
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Evaluation Metrics",
+                     "16",
+                     "F1-Score: The F1-score is the harmonic mean of precision and recall. It balances both metrics and is especially useful when class distribution is imbalanced.\r\rConfusion Matrix: A confusion matrix is a tabular representation of the model\u0027s predictions compared to the actual labels. It provides insight into true positives, true negatives, false positives, and false negatives."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Practice",
+                     "17",
+                     "Dataset\rpositive_reviews = [\r\"I loved the movie! The acting was great.\",\r\"The plot was engaging and the characters were well-developed.\",\r\"The visuals were amazing. Highly recommended.\",\r\"The movie exceeded my expectations. A must-watch!\",]\rnegative_reviews = [\r\"The movie was a complete disappointment.\",\r\"I couldn\u0027t stand the acting and the plot was confusing.\",\r\"The film lacked depth and failed to impress.\",\r\"It was a waste of time and money.\",]\rtest_reviews = [\r\"The movie was fantastic! The storyline was captivating.\",\r\"I didn\u0027t enjoy the film. The acting was mediocre.\",\r\"Overall, the movie was decent, but not exceptional.\",\r\"The plot had potential, but execution fell short.\",]\rInstructions\rCreate a Python program that performs sentiment analysis using a Naive Bayes classifier. \rYou\u0027ll work with a dataset containing movie reviews labeled as positive or negative. \rYour task is to build a Naive Bayes classifier to predict the sentiment of movie reviews."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Practice",
+                     "18",
+                     "Tasks\rTask 1: Data Preprocessing\rWrite a function preprocess_text(text) that takes a text as input and preprocesses it by converting to lowercase and removing non-alphanumeric characters.\rTask 2: Build Naive Bayes Classifier\rWrite a function build_naive_bayes_classifier(positive_data, negative_data) that takes the positive and negative reviews as input, preprocesses them, and builds a Naive Bayes classifier.\rTask 3: Predict Sentiments\rWrite a function predict_sentiments(classifier, test_data) that takes the trained classifier and test reviews as input, preprocesses the test reviews, and predicts the sentiments (positive or negative) using the classifier.\rTask 4: Evaluate the Classifier\rWrite a function evaluate_classifier(predictions, true_labels) that takes the predicted sentiments and true labels as input and calculates the accuracy of the classifier.\rTask 5: Test Your Functions\rApply each function to the provided reviews and evaluate the classifier\u0027s performance using the test data."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Q \u0026 A",
+                     "19"
+                 ]
+    }
+]

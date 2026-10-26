@@ -1,0 +1,216 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Regular Expressions"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Regular Experesion\rText Normalization\rSDIT Distance",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Regular Experession",
+                     "3",
+                     "Definition of Regular Expressions (regex)",
+                     "Regular Expressions, often abbreviated as regex, are sequences of characters that serve as powerful tools for defining search patterns within text data.\r\rThese patterns allow for sophisticated text matching, manipulation, and validation."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Regular Experession",
+                     "4",
+                     "Functionality of Regular Expressions",
+                     "Regular expressions are extensively used for various text-related tasks:\r\rSearching: Regex enables the identification of specific patterns within text, allowing for efficient data extraction and analysis.\r\rManipulating: Regex can modify or rearrange text by replacing or transforming substrings based on specified patterns.\r\rValidating: Regular expressions assist in verifying whether text adheres to a predefined pattern or format, such as checking if an email address is correctly structured."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Regular Experession",
+                     "5",
+                     "Example",
+                     "Let\u0027s consider the task of finding email addresses within a text document using a basic regex pattern:",
+                     "[a-zA-Z0-9._%+-]+ matches the username part of the email.\r\r@ matches the literal \"@\" character.\r\r[a-zA-Z0-9.-]+ matches the domain name (e.g., gmail.com).\r\r\\.[a-zA-Z]{2,} matches the top-level domain (e.g., .com) using the period (.) as an escaped character."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Regular Experession",
+                     "6",
+                     "Syntax",
+                     "Regular expressions use a combination of normal characters and special metacharacters to define patterns. \r\r    ^ (Caret): This metacharacter denotes the start of a line or string. It\u0027s used to anchor patterns at the beginning.\r    Example: ^Hello matches lines or strings that start with \"Hello\".\r\r    $ (Dollar Sign): The dollar sign indicates the end of a line or string. It\u0027s used to anchor patterns at the end.\r    Example: world$ matches lines or strings that end with \"world\".\r\r    . (Period/Dot): The dot matches any single character except a newline. It\u0027s a wildcard that can be used to represent any character.\r    Example: col.r matches \"color\", \"colour\", \"collar\", etc."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Regular Experession",
+                     "7",
+                     "* (Asterisk): The asterisk matches the preceding character or group zero or more times.\r    Example: ab*c matches \"ac\", \"abc\", \"abbc\", \"abbbc\", and so on.\r\r    + (Plus): The plus matches the preceding character or group one or more times.\r    Example: go+l matches \"gol\", \"gool\", \"gooool\", and so on.\r\r    ? (Question Mark): The question mark matches the preceding character or group zero or one time.\r    Example: colou?r matches \"color\" and \"colour\".",
+                     "Syntax"
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Regular Experession",
+                     "8",
+                     "Quantifiers",
+                     "Quantifiers in regular expressions define how many times a preceding character or group should occur. They allow for specifying the frequency of occurrences in a flexible manner.\r\r    * (Asterisk): This quantifier matches zero or more occurrences of the preceding character or group.\r    Example: go*l matches \"gl\", \"gol\", \"gool\", \"gooool\", and so on.\r\r    + (Plus): The plus quantifier matches one or more occurrences of the preceding character or group.\r    Example: go+l matches \"gol\", \"gool\", \"gooool\", and so on."
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Regular Experession",
+                     "9",
+                     "Quantifiers",
+                     "? (Question Mark): The question mark quantifier matches zero or one occurrence of the preceding character or group.\r    Example: colou?r matches \"color\" and \"colour\".\r\r    {m}: Curly braces with a specific number (m) indicate exactly m occurrences of the preceding character or group.\r    Example: x{3} matches \"xxx\".\r\r    {m,n}: Curly braces with a range (m and n) specify a minimum of m occurrences and a maximum of n occurrences of the preceding character or group.\r    Example: o{2,4} matches \"oo\", \"ooo\", and \"oooo\"."
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Regular Experession",
+                     "10",
+                     "Groups and Capturing",
+                     "Groups in regular expressions, created using parentheses (), serve two main purposes:\r\rCapturing: Groups allow you to capture and extract portions of the matched text for further use.\rGrouping: Groups help to define the scope of quantifiers and alternations.\r\rNon-Capturing Groups\r\rNon-capturing groups (?: ) are used when you need to group parts of a pattern but don\u0027t want to capture the matched text. They don\u0027t store the captured value for retrieval."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Example in Python",
+                     "11",
+                     "In this example, the regular expression \r\rr\u0027\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b’ \r\ris used to match valid email addresses. \r\rThe re.findall() function is used to find all occurrences of the pattern in the text and return them as a list."
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Practice",
+                     "12",
+                     "Regular Expersions Practice\rInstructions\rCreate a Python program that performs text pattern matching using regular expressions. You\u0027ll work with a dataset containing various types of information. \rYour task is to extract specific patterns from the text using regular expressions.\rDataset\rtext_data = \"\"\"John\u0027s email is john@example.com. Mary can be reached at mary@gmail.com.\rThe meeting is scheduled for 2023-09-15. Don\u0027t forget to bring your ID!\rOur support hotline is (123)456-7890. Call us if you have any questions. \"\"“\rTasks\rTask 1 - Extract Emails: Write a function extract_emails(text) that takes a text as input and returns a list of all email addresses present in the text.\r\rTask 2 - Extract Dates Write a function extract_dates(text) that takes a text as input and returns a list of all dates in the format \"YYYY-MM-DD\" present in the text.\r\rTask 3 - Extract Phone Numbers Write a function extract_phone_numbers(text) that takes a text as input and returns a list of all phone numbers in the format \"(123)456-7890\" present in the text."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Text Normalization",
+                     "13",
+                     "Techniques",
+                     "Case Normalization\r\rCase normalization involves converting text to a consistent case, usually lowercase or uppercase. This ensures uniformity in text analysis regardless of the original case.\r\rExample:\r\tOriginal: \"Hello World\"\r\tCase Normalized (Lowercase): \"hello world\"\r\tCase Normalized (Uppercase): \"HELLO WORLD\""
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Text Normalization",
+                     "14",
+                     "Techniques",
+                     "Punctuation and Special Character Removal\r\rRemoving punctuation and special characters from text helps eliminate noise that might interfere with analysis. This is especially useful for tasks like sentiment analysis or keyword extraction.\r\rExample:\r\tOriginal: \"Wow! What an amazing day!!! :)\"\r\tAfter Removal: \"Wow What an amazing day\""
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Text Normalization",
+                     "15",
+                     "Techniques",
+                     "Whitespace and Line Break Handling\r\rHandling whitespace and line breaks ensures consistent spacing and structure. Extra whitespace and line breaks can cause inconsistency in text data.\r\rExample:\r\tOriginal: \r\r\r\r\tAfter Handling: \"The quick brown fox jumps over the lazy dog.\""
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Text Normalization",
+                     "16",
+                     "Stemming and Lemmatization",
+                     "Stemming: Stemming involves removing prefixes, suffixes, and inflections from words to obtain their root form. The resulting stems might not always be actual words.\r\rLemmatization: Lemmatization, on the other hand, involves transforming words to their dictionary or base form (lemma), which is a valid word. Lemmatization considers word context and part-of-speech information for accuracy."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Text Normalization",
+                     "17",
+                     "Stemming and Lemmatization",
+                     "Example:\r\rSentence: \"Running shoes are better for runners.\"\r\r    Stemming (Porter Stemmer):\r        \"run\": running, runners\r        \"shoe\": shoes\r        \"better\": better\r\r    Lemmatization:\r        \"run\": running, runners\r        \"shoe\": shoes\r        \"be\": better"
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Text Normalization",
+                     "18",
+                     "Stop Word Removal",
+                     "Stop words are common words that are frequently used in a language but generally do not carry significant meaning on their own. These words are often removed from text data during preprocessing to improve the quality of text analysis and reduce computational load.\r\rExamples\rArticles: \"a\", \"an\", \"the\"\rPrepositions: \"in\", \"on\", \"under\", \"with\"\rPronouns: \"I\", \"you\", \"he\", \"she\", \"it\"\rConjunctions: \"and\", \"but\", \"or\"\rCommon verbs: \"is\", \"are\", \"am\", \"was\", \"were\""
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Example in Python",
+                     "19",
+                     "In this example, the normalize_text function performs the following normalization steps\r\rConverts the text to lowercase.\rTokenizes the text by splitting it into words.\rRemoves common stop words using the NLTK library.\rApplies stemming to reduce words to their base form using the Porter stemming algorithm.\rJoins the normalized words back into a sentence."
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Practice",
+                     "20",
+                     "Text Normalization Practice\rInstructions\rCreate a Python program that performs text normalization using lowercasing, stemming, and stop word removal. \rYou\u0027ll work with a dataset containing sample text. Your task is to normalize the text by applying these techniques.\rDataset\rtext_data = \"\"\"\rNatural language processing (NLP) involves the application of\rlinguistic analysis to comprehend and generate human language.\rIt\u0027s an exciting field with diverse challenges and applications.\r\"\"\"\r# List of sample stop words\rstop_words = [\"the\", \"and\", \"of\", \"it\u0027s\", \"with\", \"an\", \"to\", \"is\", \"and\"]"
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Practice",
+                     "21",
+                     "Text Normalization Practice\rTask 1: Lowercasing\rWrite a function lowercase_text(text) that takes a text as input and returns the same text with all characters converted to lowercase.\r\rTask 2: Tokenization and Stop Word Removal\rWrite a function remove_stop_words(text, stop_words) that takes a text and a list of stop words as input and returns the text with the specified stop words removed.\r\rTask 3: Stemming\rWrite a function stem_text(text) that takes a text as input and returns the text with words stemmed using the Porter stemmer algorithm.\r\rTask 4: Complete Normalization\rWrite a function normalize_text(text, stop_words) that takes a text and a list of stop words as input and returns the normalized text by applying lowercasing, tokenization, stop word removal, and stemming."
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "SDIT Distance",
+                     "22",
+                     "Introduction",
+                     "SDIT Distance is a string similarity metric that measures the similarity between two strings by considering the minimum number of insertions and transpositions required to transform one string into the other. \r\rIt\u0027s particularly useful when transpositions (swapping adjacent characters) are common in the transformation process."
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "SDIT Distance",
+                     "23",
+                     "Applications in NLP",
+                     "Spelling correction: Identifying and suggesting corrections for transposed or mistyped characters in text.\r\rPlagiarism detection: Identifying text segments that have been reorganized or slightly modified.\r\rDetecting fraudulent transactions involving textual information, where attackers might subtly modify text to avoid detection."
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Example in Python",
+                     "24",
+                     "Calculating the Sorted-Distance-Insensitive-Tolerant (SDIT) distance between two strings\rIn this example, the sdit_distance function calculates the SDIT distance between two strings by considering the positions of characters in both strings.\rThe SDIT distance is the count of pairs of characters where the character from the first string comes before or at the same position as the character from the second string. \rThe example compares the strings \"abcdef\" and \"acdefb\" and calculates their SDIT distance."
+                 ]
+    },
+    {
+        "slide_number":  25,
+        "text":  [
+                     "Q \u0026 A",
+                     "25"
+                 ]
+    }
+]

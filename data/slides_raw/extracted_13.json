@@ -1,0 +1,188 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Locial Representations of Sentences Meaning"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Introduction to Logical Representations\rPropositional Logic\rFirst-Order Logic\rLambda Calculus\rMontague Grammar\rCompositional Semantics\rSemantic Parsing",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Introduction to Logical Representations",
+                     "3",
+                     "Logical representations are formal structures used to capture the meaning of sentences using logical symbols and operators.\r\rThese representations aim to provide a precise and structured way to encode the semantics of natural language sentences, making them amenable to computational processing and reasoning.\r\rExample\rConsider the sentence \"All humans are mortal.\" This sentence can be represented logically as: \rFor all x, if x is a human, then x is mortal."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Introduction to Logical Representations",
+                     "4",
+                     "Importance of Logical Representations\r\rSemantic Precision\rNatural language is inherently ambiguous and context-dependent. Logical representations provide a way to disambiguate and represent the intended meaning of sentences in a precise and unambiguous manner. This precision is essential for computational systems to accurately interpret and analyze text.\rInteroperability\rLogical representations serve as a common ground for communication between humans and machines, and among different computational systems. They allow different systems to share information and reasoning processes using a standardized language, enabling better collaboration and interoperability.\rNatural Language Understanding\rLogical representations bridge the gap between the rich expressiveness of natural language and the structured nature of computational systems. They help computers extract, process, and reason about the meaning of text, enabling tasks such as question answering, information extraction, and sentiment analysis."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Introduction to Logical Representations",
+                     "5",
+                     "Importance of Logical Representations\r\rMachine Reasoning\rLogical representations provide a formal framework for conducting automated reasoning and inference. Machines can apply logical rules and deductions to draw conclusions, make decisions, and answer complex queries based on the information encoded in the logical structure.\rKnowledge Representation\rLogical representations are used to encode and organize knowledge in structured databases and knowledge bases. This facilitates efficient retrieval and manipulation of information, making it possible to build powerful knowledge-driven applications.\rNatural Language Generation\rIn addition to understanding, logical representations also play a role in natural language generation. By translating structured information into natural language sentences, machines can generate coherent and contextually relevant text."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Propositional Logic",
+                     "6",
+                     "Propositional logic\rPropositional logic, also known as propositional calculus or sentential logic, is a basic formalism for representing logical relationships and statements. \rIt serves as a foundation for expressing the truth values and logical connectives of simple propositions.\rRepresentation in Propositional Logic\rIn propositional logic, sentences are represented using propositional variables (also called propositions or variables) that stand for statements that can be true or false. \rLogical connectives are used to combine these variables to form more complex expressions.\rLogical Connectives\rAND (∧)\rRepresents the logical conjunction, where both propositions must be true for the combined expression to be true.\rOR (∨)\rRepresents the logical disjunction, where at least one of the propositions must be true for the combined expression to be true.\rNOT (¬)\rRepresents the negation of a proposition, changing its truth value."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Propositional Logic",
+                     "7"
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "First-Order Logic",
+                     "8"
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "First-Order Logic",
+                     "9"
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "First-Order Logic",
+                     "10",
+                     "Expressive Power of First-Order Logic:\r\rFirst-order logic\u0027s introduction of quantifiers and predicate symbols significantly enhances its expressive power compared to propositional logic. It enables the representation of complex relationships, such as:\r\rRelationships involving multiple objects and their attributes.\r\rStatements involving generalizations (\"for all\") and existence (\"there exists\").\r\rStatements about sets of objects that satisfy certain conditions."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "Lambda Calculus",
+                     "11",
+                     "Concept\rLambda calculus is a formal system in mathematical logic and computer science that serves as a notation for representing functions and their applications. \rIt was introduced by Alonzo Church in the 1930s as a foundation for exploring the concept of computation and formalizing mathematical functions.\rAbstraction and Subsitution\rAbstraction (λ-abstraction)\rLambda calculus introduces lambda (λ) notation to represent functions. \rAn abstraction takes the form (λx.e) where x is a variable and e is an expression. \rIt represents a function that takes an argument x and produces the result specified by e.\rSubstitution\rLambda calculus allows the substitution of variables in expressions. \rWhen an abstraction is applied to an argument, the variable in the abstraction is replaced by the argument in the expression."
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Lambda Calculus",
+                     "12",
+                     "Role in Formal Semantics and Logical Representations:\rLambda calculus plays a significant role in formal semantics, which is concerned with providing precise meanings to languages, including natural languages and programming languages. In formal semantics, lambda calculus is used to define the meanings of linguistic expressions and the rules for deriving truth conditions.\r\rLambda calculus is also closely related to logical representations. It provides a way to formalize the relationship between natural language expressions and their meanings in a structured and compositional manner. By associating lambda terms with logical expressions, it enables the representation of complex semantic structures, including quantification, scope, and compositional interpretations.\r\rFurthermore, lambda calculus is foundational to functional programming languages, such as Lisp and Haskell, where functions are first-class citizens. It serves as the basis for defining function definitions, higher-order functions, and functional programming paradigms."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Montague Grammar",
+                     "13",
+                     "Montague grammar, developed by linguist Richard Montague in the 1970s, is a framework that aims to connect natural language to formal logic. \r\rIt seeks to provide a systematic way to assign precise meanings to natural language expressions while maintaining the compositional nature of language."
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Montague Grammar",
+                     "14",
+                     "Treating Linguistic Expressions as Functions\rIn Montague grammar, linguistic expressions are treated as functions that map from syntactic structures to logical representations. \rThis approach allows for a direct link between the syntax of a sentence and its meaning in formal logic. \rEach word and phrase is assigned a type that corresponds to the type of the function it represents.\r\rCompositionality and Meaning Derivation\rMontague grammar addresses the principle of compositionality, which states that the meaning of a sentence is derived from the meanings of its parts and the way they are combined. \rThis is achieved through a process of function application."
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Montague Grammar",
+                     "15",
+                     "Example\rConsider the sentence \"John loves Mary.\" \rIn Montague grammar, the words \"John,\" \"loves,\" and \"Mary\" are assigned types that correspond to their meanings. \rThe sentence itself is treated as a function application, where the meaning of \"John loves Mary\" is obtained by applying the meaning of \"loves\" to the meanings of \"John\" and \"Mary.\"\r\rRole of Types\rTypes play a crucial role in Montague grammar. \rThey ensure that expressions are combined in a meaningful way and that the result is well-typed, ensuring that only valid compositions are formed."
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Compositional Semantics",
+                     "16",
+                     "Compositional semantics is the process of deriving the meaning of a complex expression, such as a sentence, by systematically combining the meanings of its constituent parts, such as words and phrases. \r\rIt follows the principle that the meaning of a whole is determined by the meanings of its parts and their syntactic relationships."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Compositional Semantics",
+                     "17",
+                     "Deriving Meaning from Parts\rIn compositional semantics, the meaning of a complex expression is constructed by combining the meanings of its individual components. \rEach word or phrase is associated with a logical representation, which captures its semantic content. \rBy applying appropriate rules of composition, the meanings of these parts are combined to yield the overall meaning of the expression.\r\rLogical Representations for Composition\rLogical representations, such as those provided by formal languages like first-order logic, lambda calculus, and predicate logic, play a crucial role in the compositional interpretation of sentences. \rThey provide a structured framework to encode the meanings of linguistic elements and their relationships. \rThe use of logical symbols, operators, and quantifiers allows for precise representation and manipulation of meaning."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Compositional Semantics",
+                     "18",
+                     "Example\rConsider the sentence \"The cat chased the mouse.\" \r\rEach word and phrase can be associated with logical representations. \r\rFor instance:\r\"The cat\" might be represented as an entity that is a cat.\r\"Chased\" might be represented as a binary relation denoting chasing.\r\"The mouse\" might be represented as an entity that is a mouse.\r\rThrough compositional semantics, the logical representations of these components are combined using the meaning of the verb \"chased\" to derive the overall meaning of the sentence, which expresses an action involving a cat and a mouse."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Compositional Semantics",
+                     "19",
+                     "Facilitating Interpretation\r\rLogical representations facilitate compositional interpretation by providing a structured way to model relationships and constraints among linguistic elements. \r\rThese representations allow for\rExpressing complex meanings using simple building blocks.\rGuiding the combination of meanings according to grammatical rules.\rCapturing the subtleties of meaning that arise from the interaction of words."
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Semantic Parsing",
+                     "20",
+                     "Semantic parsing is the task of converting natural language sentences into formal representations, often in the form of logical forms or structured queries. \r\rThe goal is to bridge the gap between human language and computational systems by enabling machines to understand and interpret the meaning of natural language expressions in a structured and precise manner."
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Semantic Parsing",
+                     "21",
+                     "Challenges of Semantic Ambiguity and Variability\r\rSemantic Ambiguity\rMany natural language sentences can have multiple valid interpretations or meanings. This ambiguity arises from linguistic phenomena such as word sense ambiguity, syntactic ambiguity, and homonymy. For example, the sentence \"Time flies like an arrow\" can be interpreted in various ways, leading to different logical forms.\r\rSyntactic Variability\rDifferent ways of phrasing the same meaning can lead to syntactic variations in logical forms. This challenge is compounded by the diverse ways people express the same ideas using different sentence structures and word choices.\r\rWorld Knowledge and Context\rUnderstanding the context and background knowledge required for interpreting sentences correctly is another challenge. Some sentences may rely on external knowledge to disambiguate meanings or infer relationships between entities."
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Semantic Parsing",
+                     "22",
+                     "Challenges of Semantic Ambiguity and Variability\r\rOut-of-Vocabulary Words\rHandling words or phrases that are not present in the training data (out-of-vocabulary words) poses a challenge, as the system must generalize its knowledge to new terms.\r\rLimited Training Data\rAnnotating data with accurate logical forms for training is labor-intensive and expensive. The limited availability of high-quality training data can impact the performance of semantic parsing models.\r\rCross-Domain Variation\rSemantic parsing models may struggle to generalize well across different domains or genres of text, as the language and context can vary significantly."
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "Practice",
+                     "23",
+                     "Instructions\rIn this assignment, you\u0027ll explore logical representations of sentence meaning and practice converting sentences into first-order logic expressions.\rTasks\rTask 1: Understanding Logical Representations\rExplain the concept of logical representations of sentence meaning in the context of natural language understanding.\rDescribe the role of first-order logic (FOL) in representing sentences in a formal and structured way.\rTask 2: Converting Sentences to FOL\rChoose three simple sentences (e.g., \"All cats are mammals,\" \"Some birds can fly,\" \"No humans can breathe underwater\").\rFor each sentence, convert it into a first-order logic expression using predicates, quantifiers, and variables.\rWrite down the domain of discourse and define any necessary predicates.\rTask 3: Discussion\rReflect on the advantages and limitations of representing sentence meaning using first-order logic.\rExplain how logical representations can help in resolving ambiguity and capturing meaning more precisely."
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Q \u0026 A",
+                     "24"
+                 ]
+    }
+]

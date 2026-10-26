@@ -1,0 +1,260 @@
+[
+  {
+    "slide_number": 1,
+    "text": [
+      "Vector Semantics and Embeddings"
+    ],
+    "notes": "1"
+  },
+  {
+    "slide_number": 2,
+    "text": [
+      "Contents",
+      "Vector Semantics\rWord Embeddings\rDistributed Representation\rTraining Word Embeddings\rSemantic Relationships in Embeddings\rLimitations \rContextualized Word Embeddings",
+      "2"
+    ],
+    "notes": "2"
+  },
+  {
+    "slide_number": 3,
+    "text": [
+      "Vector Semantics",
+      "3",
+      "Concept\rVector semantics represents words or phrases as numerical vectors in a high-dimensional space to capture their semantic relationships and meanings.\rThis involves mapping words to points in the vector space, enabling mathematical manipulation and analysis based on semantic similarities.\r\rCapturing Semantic Relationships\rVector semantics aims to capture both syntactic and semantic relationships among words. \rSimilar or contextually linked words are depicted as vectors positioned closely in the vector space. \rVectors' proximity and orientation convey word relationships and meanings, facilitating algorithms to measure semantic similarities and execute tasks such as word analogy and similarity computations."
+    ],
+    "notes": "3"
+  },
+  {
+    "slide_number": 4,
+    "text": [
+      "Word Embeddings",
+      "4",
+      "Concept\rWord embeddings, derived from vector semantics, are compact, continuous-value word representations that maintain semantic relationships. Learned from extensive text data via techniques like neural networks, word embeddings ensure analogous words share akin vector forms.\r\rWord embeddings excel at grasping intricate word connections like synonyms, antonyms, context, and analogies. A prime instance involves the vector for \"king\" - \"man\" + \"woman\" closely aligning with the vector for \"queen\" in a proficiently trained embedding space.\r\rLeveraging word embeddings, natural language processing (NLP) algorithms enhance diverse tasks like text classification, sentiment analysis, and machine translation. These embeddings substantially elevate computers' grasp of human language, resulting in enhanced precision and effectiveness across NLP applications."
+    ],
+    "notes": "4"
+  },
+  {
+    "slide_number": 5,
+    "text": [
+      "Word Embeddings",
+      "5",
+      "Effectiveness in Natural Language Processing Tasks\rText Classification: Word embeddings help models understand the meanings and context of words, improving the accuracy of text classification tasks like sentiment analysis, topic categorization, and spam detection.\r\rMachine Translation: By learning word embeddings from multilingual text, models can better understand how words in different languages relate to each other, leading to improved translation accuracy.\r\rNamed Entity Recognition (NER): Word embeddings aid in identifying named entities (names of people, places, organizations) by recognizing patterns and contexts associated with them."
+    ],
+    "notes": "5"
+  },
+  {
+    "slide_number": 6,
+    "text": [
+      "Word Embeddings",
+      "6",
+      "Effectiveness in Natural Language Processing Tasks\rInformation Retrieval: Word embeddings enable more relevant search results by understanding synonyms, context, and relationships between query terms and document content.\r\rQuestion Answering: Models can use word embeddings to better understand questions and find relevant passages or answers by identifying the semantic meanings within the text.\r\rText Similarity and Clustering: Word embeddings help measure semantic similarity between texts and cluster similar documents together."
+    ],
+    "notes": "6"
+  },
+  {
+    "slide_number": 7,
+    "text": [
+      "Word Embeddings",
+      "7",
+      "Effectiveness in Natural Language Processing Tasks\rNatural Language Understanding: In tasks like sentiment analysis, emotion detection, and intent recognition, word embeddings enable models to capture nuanced linguistic patterns.\r\rWord Analogy Tasks: Word embeddings can solve analogy tasks like \"king - man + woman = queen\" by manipulating the vectors to preserve semantic relationships.\r\rText Generation: Word embeddings enhance the quality and coherence of generated text by ensuring that words chosen by the model fit contextually.\r\rSpeech Recognition: In automatic speech recognition, word embeddings assist in understanding the spoken words and their semantic meanings."
+    ],
+    "notes": "7"
+  },
+  {
+    "slide_number": 8,
+    "text": [
+      "Example",
+      "8",
+      "In this example:\r\rWe use the spaCy library to load pre-trained word vectors for English words (en_core_web_md).\r\rWe calculate the similarity between words \"apple,\" \"banana,\" and \"orange\" using the .similarity() method.\r\rWe demonstrate vector arithmetic by finding a word similar to \"king - man + woman,\" which should be similar to \"queen.\"",
+      "When running this code, it will output the similarity scores between words and the word most similar to \"queen\" based on vector arithmetic"
+    ],
+    "notes": "8"
+  },
+  {
+    "slide_number": 9,
+    "text": [
+      "Distributed Representation",
+      "9",
+      "Concept\r\rDistributed representation, or distributed semantics, is central to word embeddings. \r\rThis concept represents words as vectors in a multi-dimensional space. \r\rEach vector dimension encapsulates a unique semantic trait. \r\rHere, a word's meaning stems from interactions with other words, fostering nuanced and contextually profound comprehension."
+    ],
+    "notes": "9"
+  },
+  {
+    "slide_number": 10,
+    "text": [
+      "Distributed Representation",
+      "10",
+      "Encoding Semantic Features in Vector Dimensions\r\rIn word embeddings, each dimension of a vector is dedicated to encoding a particular semantic feature. \r\rThese features might include things like gender, tense, sentiment, context, and more. \r\rInstead of representing a word as a binary presence-absence signal (as in one-hot encodings), distributed representation assigns values to multiple dimensions, allowing words to capture a combination of semantic attributes."
+    ],
+    "notes": "10"
+  },
+  {
+    "slide_number": 11,
+    "text": [
+      "Distributed Representation",
+      "11",
+      "Illustrating Similar Words in the Embedding Space\r\rConsider a hypothetical two-dimensional vector space for illustration purposes. In reality, word embeddings typically have hundreds of dimensions. Let's say we're working with a small vocabulary of animals, and we've learned the following word embeddings:\r\r\"cat\": [0.5, 0.7]\r\"dog\": [0.4, 0.6]\r\"elephant\": [0.2, 0.1]\r\"tiger\": [0.45, 0.65]"
+    ],
+    "notes": "11"
+  },
+  {
+    "slide_number": 12,
+    "text": [
+      "Distributed Representation",
+      "12",
+      "Illustrating Similar Words in the Embedding Space\r\rIn this two-dimensional space, vectors are visualized as points, showing close proximity for similar animals like \"cat\" and \"dog,\" distinguishing them from \"elephant.\"\r\rDistances and angles between vectors reflect word relationships. Similar words have close vectors; distinct ones are distant. Word embeddings' distributed nature captures intricate semantics.\r\rReal-world embeddings span hundreds of dimensions, capturing vast nuances. This vital distributed representation enhances natural language processing by refining word meanings and relationships.."
+    ],
+    "notes": "12"
+  },
+  {
+    "slide_number": 13,
+    "text": [
+      "Example",
+      "13",
+      "In this example\r\rWe use the Word2Vec model from gensim to learn word embeddings from a small dataset of sentences.\rThe parameters vector_size define the dimensionality of the word vectors, window sets the maximum distance between the current and predicted word, and min_count sets the minimum number of occurrences of a word to consider for training.\rWe use the Skip-gram model (sg=0) to predict context words from the target word.\rWe access the learned word vectors using the .wv attribute of the trained model.\rWe find the word vector for the word \"machine\" and find the most similar words to \"learning\" based on the learned embeddings."
+    ],
+    "notes": "13"
+  },
+  {
+    "slide_number": 14,
+    "text": [
+      "Training Word Embeddings",
+      "14",
+      "Techniques for Training Word Embeddings\r\rWord2Vec\rThis method learns embeddings by predicting context words from a target word (Skip-gram) or predicting a target word from context (Continuous Bag of Words, CBOW).\rThrough text iterations, it enhances embeddings, adept at semantic relations and analogies.\r\rGloVe (Global Vectors for Word Representation)\rGloVe learns embeddings from corpus-wide word co-occurrence stats.\rIt factorizes a co-occurrence matrix into vectors, aiming for both local (contextual) and global (corpus-wide) relationships.\r\rFastText: \rExtending Word2Vec, FastText views words as character n-gram sets. \rThis enables embeddings for new words and subword insights. \rWords can be represented by summing their character n-grams."
+    ],
+    "notes": "14"
+  },
+  {
+    "slide_number": 15,
+    "text": [
+      "Training Word Embeddings",
+      "15",
+      "Iterative Optimization Process\r\rInitialization\rInitialize word vectors randomly or with pre-trained values\r\rObjective Function\rGradient Descent\rNegative Sampling (Word2Vec)\rUpdating Vectors\rConvergence\rExtracting Word Embeddings"
+    ],
+    "notes": "15"
+  },
+  {
+    "slide_number": 16,
+    "text": [
+      "Training Word Embeddings",
+      "16",
+      "Iterative Optimization Process\r\rInitialization\rObjective Function\rDefine an objective function that quantifies the quality of the embeddings. For Word2Vec, the objective function measures how well the model predicts context words from target words (or vice versa).\r\rGradient Descent\rNegative Sampling (Word2Vec)\rUpdating Vectors\rConvergence\rExtracting Word Embeddings"
+    ],
+    "notes": "16"
+  },
+  {
+    "slide_number": 17,
+    "text": [
+      "Training Word Embeddings",
+      "17",
+      "Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rUse optimization techniques like gradient descent to update the word vectors iteratively. The goal is to minimize the difference between predicted and actual words in the context.\r\rNegative Sampling (Word2Vec)\rUpdating Vectors\rConvergence\rExtracting Word Embeddings"
+    ],
+    "notes": "17"
+  },
+  {
+    "slide_number": 18,
+    "text": [
+      "Training Word Embeddings",
+      "18",
+      "Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative Sampling (Word2Vec)\rTo avoid updating weights for all words in the vocabulary (which can be computationally expensive), Word2Vec uses negative sampling. It selects a small number of negative samples (words not in the context) for each positive sample and updates their weights.\r\rUpdating Vectors\rConvergence\rExtracting Word Embeddings"
+    ],
+    "notes": "18"
+  },
+  {
+    "slide_number": 19,
+    "text": [
+      "Training Word Embeddings",
+      "19",
+      "Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative Sampling (Word2Vec)\rUpdating Vectors\rThe optimization process adjusts word vectors to improve the model's ability to predict context words. Similar words (based on co-occurrence) end up having similar vectors.\r\rConvergence\rExtracting Word Embeddings"
+    ],
+    "notes": "19"
+  },
+  {
+    "slide_number": 20,
+    "text": [
+      "Training Word Embeddings",
+      "20",
+      "Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative Sampling (Word2Vec)\rUpdating Vectors\rConvergence\rRepeat the optimization process for multiple epochs until the model's performance stabilizes or converges.\rExtracting Word Embeddings"
+    ],
+    "notes": "20"
+  },
+  {
+    "slide_number": 21,
+    "text": [
+      "Training Word Embeddings",
+      "21",
+      "Iterative Optimization Process\r\rInitialization\rObjective Function\rGradient Descent\rNegative Sampling (Word2Vec)\rUpdating Vectors\rConvergence\rExtracting Word Embeddings\rOnce training is complete, the learned vectors represent word embeddings. These vectors can be used for various NLP tasks."
+    ],
+    "notes": "21"
+  },
+  {
+    "slide_number": 22,
+    "text": [
+      "Semantic Relationships in Embeddings",
+      "22",
+      "Word embeddings capture semantic relationships by representing words as dense vectors in a high-dimensional space. \r\rThe key idea is that words with similar meanings or contextual usage are represented by vectors that are close to each other in this space. \r\rThis closeness enables word embeddings to capture various types of semantic relationships and analogies."
+    ],
+    "notes": "22"
+  },
+  {
+    "slide_number": 23,
+    "text": [
+      "Semantic Relationships in Embeddings",
+      "23"
+    ],
+    "notes": "23"
+  },
+  {
+    "slide_number": 24,
+    "text": [
+      "Semantic Relationships in Embeddings",
+      "24",
+      "Similar Words in the Vector Space\rIn the embedding space, words with similar meanings or contexts are represented by vectors that are close together. \r\rThis proximity reflects the semantic similarity between the words. \r\rFor example:\r\rThe vectors for \"cat\" and \"dog\" are closer to each other than to the vector for \"elephant,\" indicating their semantic similarity.\r\rThe vectors for synonyms like \"big\" and \"large\" are also close, as are words that often appear in similar contexts."
+    ],
+    "notes": "24"
+  },
+  {
+    "slide_number": 25,
+    "text": [
+      "Limitations",
+      "25",
+      "Polysemy and Homonymy Challenges:\rPolysemy: Words often have multiple meanings based on context. Word embeddings may struggle to disambiguate these meanings, resulting in a single vector that represents all contexts.\rHomonymy: Different words with the same spelling (homonyms) can be confused in embeddings, leading to vectors that mix their meanings.\rCapturing Rare Words:\rWord embeddings are trained on large corpora, which can make them less effective for representing rare words or domain-specific terms with limited occurrences in the training data. Rare words may not have well-defined vectors.\rDomain-Specific Information:\rWord embeddings trained on general text may not capture domain-specific nuances and terminology. For specialized domains, the embeddings might not adequately reflect the required semantics."
+    ],
+    "notes": "25"
+  },
+  {
+    "slide_number": 26,
+    "text": [
+      "Contextualized Word Embeddings",
+      "26",
+      "BERT (Bidirectional Encoder Representations from Transformers):\rBERT models consider both left and right context words, capturing richer contextual information for each word.\rThis approach helps in resolving polysemy and homonymy challenges, as words can have different meanings based on their surroundings.\rELMo (Embeddings from Language Models):\rELMo uses a bidirectional LSTM (Long Short-Term Memory) model to create embeddings that are sensitive to context.\rIt generates multiple layers of embeddings, each capturing different levels of language information.\rGPT (Generative Pre-trained Transformer):\rGPT models, like BERT, are trained to predict words in a sentence based on their context.\rThey excel in generating coherent and contextually relevant text."
+    ],
+    "notes": "26"
+  },
+  {
+    "slide_number": 27,
+    "text": [
+      "Practice",
+      "27",
+      "Dataset\rsentences = [\r\t[\"natural\", \"language\", \"processing\", \"is\", \"a\", \"subfield\", \"of\", \"artificial\", \"intelligence\"],\r\t[\"word\", \"embeddings\", \"capture\", \"semantic\", \"meanings\", \"of\", \"words\"],\r\t[\"machine\", \"learning\", \"techniques\", \"are\", \"widely\", \"used\", \"in\", \"text\", \"mining\"],\r\t[\"vector\", \"semantics\", \"enable\", \"semantic\", \"similarities\", \"between\", \"words\"],\r\t[\"deep\", \"learning\", \"models\", \"have\", \"revolutionized\", \"language\", \"processing\"]\r]\r\rInstructions:\rCreate a Python program that explores advanced concepts in vector semantics and word embeddings using the Word2Vec model. \rYou'll work with a larger dataset of sentences and perform more sophisticated tasks to analyze word embeddings and relationships."
+    ],
+    "notes": "27"
+  },
+  {
+    "slide_number": 28,
+    "text": [
+      "Practice",
+      "28",
+      "Tasks\rTask 1: Training Word2Vec Model\rWrite a function train_word2vec_model(sentences) that takes a list of sentences as input and trains a Word2Vec model on the sentences. Use parameters vector_size=100, window=5, min_count=1, and sg=0 for the model.\rTask 2: Calculate Similarity\rWrite a function calculate_similarity(model, word1, word2) that takes the trained Word2Vec model and two words as input. Calculate the cosine similarity between the word vectors of the given words using the model.wv attribute.\rTask 3: Most Similar Words\rWrite a function find_most_similar_words(model, word, topn) that takes the trained Word2Vec model, a word, and the number of most similar words to find (topn) as input. Use the model.wv.most_similar() method to find the most similar words to the given word.\rTask 4: Word Analogies\rWrite a function word_analogies(model, word1, word2, word3, topn) that takes the trained Word2Vec model and three words (word1, word2, and word3) as input. The function should perform the analogy: word1 - word2 + word3 and find the most similar words to the result.\rTask 5: Test Your Functions\rApply each function to the provided dataset and demonstrate the use of word embeddings for similarity calculations, finding most similar words, and word analogies."
+    ],
+    "notes": "28"
+  },
+  {
+    "slide_number": 29,
+    "text": [
+      "Q & A",
+      "29"
+    ],
+    "notes": "29"
+  }
+]

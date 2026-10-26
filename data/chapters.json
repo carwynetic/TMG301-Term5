@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "title": "Regular Expressions - Text Normalization - SDIT Distance",
+    "title_vn": "Biểu thức chính quy, Chuẩn hóa văn bản & Khoảng cách chuỗi",
+    "file": "01. Regular Expressions - Text Normalization - SDIT Distance.ppt",
+    "icon": "fas fa-code",
+    "category": "Foundations & Preprocessing",
+    "summary": "Nền tảng xử lý văn bản thô: biểu thức chính quy (Regex), tách từ (Tokenization), đưa về gốc từ (Stemming/Lemmatization), chuẩn hóa Unicode và đo khoảng cách chuỗi (Levenshtein, Damerau-Levenshtein, SDIT Distance)."
+  },
+  {
+    "id": 2,
+    "title": "N-Gram Language Models",
+    "title_vn": "Mô hình ngôn ngữ N-Gram & Kỹ thuật làm mịn (Smoothing)",
+    "file": "02. N-Gram Language Models.ppt",
+    "icon": "fas fa-layer-group",
+    "category": "Language Modeling",
+    "summary": "Mô hình xác suất chuỗi từ: giả định Markov, ước lượng hợp lý cực đại (MLE), độ hỗn loạn (Perplexity), và các kỹ thuật làm mịn giải quyết từ chưa thấy: Laplace, Add-k, Good-Turing, Backoff, Kneser-Ney."
+  },
+  {
+    "id": 3,
+    "title": "Naive Bayes - Text Classification and Sentiment",
+    "title_vn": "Phân loại văn bản Naive Bayes & Phân tích cảm xúc",
+    "file": "03. Naive Bayes - Text Classification and Sentiment.ppt",
+    "icon": "fas fa-filter",
+    "category": "Classification & Sentiment",
+    "summary": "Mô hình sinh học xác suất: Định lý Bayes, giả định độc lập có điều kiện, luật quyết định MAP, Bag-of-Words, xử lý phủ định (Negation), và các chỉ số đánh giá: Precision, Recall, F1, Macro/Micro-averaging."
+  },
+  {
+    "id": 4,
+    "title": "Logistic Regression",
+    "title_vn": "Hồi quy Logistic, Hàm Sigmoid & Tối ưu hóa Cross-Entropy",
+    "file": "04. Logistic Regression.ppt",
+    "icon": "fas fa-chart-line",
+    "category": "Classification & Sentiment",
+    "summary": "Mô hình phân loại phân biệt (Discriminative linear classifier): hàm Sigmoid, Odds & Logit, hàm mất mát Binary Cross-Entropy, Gradient Descent, điều chuẩn L1 (Lasso) / L2 (Ridge), và hồi quy Softmax đa lớp."
+  },
+  {
+    "id": 5,
+    "title": "Vector Semantics and Embeddings",
+    "title_vn": "Ngữ nghĩa vector, TF-IDF, PPMI & Word2Vec Embeddings",
+    "file": "05. Vector Semantics and Embeddings.ppt",
+    "icon": "fas fa-project-diagram",
+    "category": "Vector Representations",
+    "summary": "Giả thuyết phân bố (Firth), ma trận Term-Document & Term-Term, trọng số TF-IDF, PPMI, khoảng cách Cosine Similarity, mô hình Word2Vec (Skip-Gram with Negative Sampling, CBOW), GloVe và FastText."
+  },
+  {
+    "id": 6,
+    "title": "Clustering for Text Similarity",
+    "title_vn": "Phân cụm văn bản, K-Means & Phân cụm thứ bậc (Hierarchical)",
+    "file": "06. Clustering for Text Similarity.ppt",
+    "icon": "fas fa-braille",
+    "category": "Unsupervised Learning",
+    "summary": "Học không giám sát: thuật toán K-Means, khởi tạo K-Means++, Inertia (SSE), phương pháp Elbow, hệ số Silhouette, phân cụm thứ bậc (Agglomerative, Dendrogram, Single/Complete/Average linkage) và mô hình hóa chủ đề."
+  },
+  {
+    "id": 7,
+    "title": "Transformer and Pre-Trained Language Models",
+    "title_vn": "Kiến trúc Transformer, Cơ chế Attention & Mô hình nền tảng",
+    "file": "07. Transformer and Pre-Tranined Language Models.ppt",
+    "icon": "fas fa-microchip",
+    "category": "Deep Learning & Transformers",
+    "summary": "Đột phá kiến trúc Attention Is All You Need (2017): hạn chế của RNN/CNN, cơ chế Scaled Dot-Product Attention (Q, K, V), Multi-Head Attention, Positional Encoding, khối Encoder-Decoder và chuẩn hóa LayerNorm."
+  },
+  {
+    "id": 8,
+    "title": "Fine-Tuning and Masked Language Models",
+    "title_vn": "Tinh chỉnh (Fine-Tuning), Kiến trúc BERT & Kỹ thuật PEFT/LoRA",
+    "file": "08. Fine-Tuning and Masked Language Models.ppt",
+    "icon": "fas fa-sliders-h",
+    "category": "Deep Learning & Transformers",
+    "summary": "Mô hình BERT: biểu diễn đầu vào [CLS], [SEP], WordPiece, mục tiêu tiền huấn luyện Masked LM (MLM 80/10/10) và Next Sentence Prediction (NSP), tinh chỉnh tác vụ hạ tầng và thích ứng tham số hiệu quả (PEFT/LoRA)."
+  },
+  {
+    "id": 9,
+    "title": "Machine Translation",
+    "title_vn": "Dịch máy: SMT, Seq2Seq NMT, Beam Search & Đánh giá BLEU",
+    "file": "09. Machine Translation.ppt",
+    "icon": "fas fa-language",
+    "category": "Sequence-to-Sequence & Generation",
+    "summary": "Lịch sử dịch máy: SMT (Noisy Channel, Word Alignment, IBM Models), Neural Machine Translation (Seq2Seq, Attention Bahdanau/Luong), giải mã Beam Search và độ đo đánh giá BLEU (Brevity Penalty, clipped n-grams)."
+  },
+  {
+    "id": 10,
+    "title": "Chatbot and Dialogue Systems",
+    "title_vn": "Hệ thống Chatbot, Hội thoại hướng tác vụ (DST/NLU) & Grice",
+    "file": "10. Chatbot and Dialogue Systems.ppt",
+    "icon": "fas fa-comments",
+    "category": "Dialogue & Conversational AI",
+    "summary": "Chatbot luật (ELIZA), chatbot truy xuất thông tin (IR), hệ thống hướng tác vụ (GUS, Frame-and-Slot), kiến trúc NLU (Intent/Slots) -> DST -> Policy -> NLG, Speech Acts, phương châm hội thoại Grice và mô hình RAG."
+  },
+  {
+    "id": 11,
+    "title": "Context-Free Grammars and Constituency Parsing",
+    "title_vn": "Ngữ pháp phi ngữ cảnh (CFG), Cú pháp thành phần & CKY",
+    "file": "11. Context-Free Grammars and Constituency Parsing.ppt",
+    "icon": "fas fa-sitemap",
+    "category": "Syntax & Parsing",
+    "summary": "Cú pháp cấu trúc ngữ đoạn: quy tắc viết lại CFG, sự nhập nhằng cấu trúc (PP-attachment), dạng chuẩn Chomsky (CNF), thuật toán quy hoạch động CKY, bộ phân tích Earley và tiêu chuẩn đánh giá PARSEVAL."
+  },
+  {
+    "id": 12,
+    "title": "Dependency Parsing",
+    "title_vn": "Phân tích cú pháp phụ thuộc & Thuật toán Shift-Reduce",
+    "file": "12. Dependency Parsing.ppt",
+    "icon": "fas fa-project-diagram",
+    "category": "Syntax & Parsing",
+    "summary": "Cú pháp phụ thuộc: quan hệ Head-Dependent, Universal Dependencies (nsubj, obj, amod, root), tính xạ ảnh (Projectivity), phân tích chuyển trạng thái Shift-Reduce (Arc-Standard/Eager), Graph-based MST, độ đo UAS/LAS."
+  },
+  {
+    "id": 13,
+    "title": "Logical Representations of Sentences Meaning",
+    "title_vn": "Biểu diễn logic ngữ nghĩa câu, Logic bậc một (FOL) & Lambda",
+    "file": "13. Locial Representations of Sentences Meaning.ppt",
+    "icon": "fas fa-brain",
+    "category": "Semantics & Reasoning",
+    "summary": "Ngữ nghĩa hình thức: yêu cầu của biểu diễn ý nghĩa, Logic vị từ bậc một (FOL: vị từ, biến, lượng từ forall/exists), giải tích Lambda (trừu tượng hóa, biến đổi beta), nguyên lý hợp thành (Frege) và ngữ nghĩa lý thuyết mô hình."
+  },
+  {
+    "id": 14,
+    "title": "Relation and Event Extraction",
+    "title_vn": "Trích xuất thực thể, quan hệ (Hearst, Distant) & sự kiện",
+    "file": "14. Relation and Event Extraction.ppt",
+    "icon": "fas fa-network-wired",
+    "category": "Information Extraction",
+    "summary": "Trích xuất thông tin (IE): Named Entity Recognition (BIO scheme), trích xuất quan hệ (mẫu Hearst, học có giám sát, Bootstrapping DIPRE/Snowball, Distant Supervision, Open IE) và trích xuất sự kiện (Triggers, Arguments)."
+  },
+  {
+    "id": 15,
+    "title": "Time and Temporal Reasoning",
+    "title_vn": "Thời gian, Chuẩn hóa biểu thức (TIMEX3) & Đại số khoảng Allen",
+    "file": "15. Time and Temporal Reasoning.ppt",
+    "icon": "fas fa-clock",
+    "category": "Temporal Reasoning",
+    "summary": "Xử lý thời gian trong NLP: nhận diện và chuẩn hóa biểu thức thời gian (TIMEX3: Date, Time, Duration, Set) theo chuẩn ISO 8601, Document Creation Time (DCT), 13 quan hệ khoảng thời gian của James Allen và TimeBank."
+  },
+  {
+    "id": 16,
+    "title": "Word Senses and WordNet",
+    "title_vn": "Đa nghĩa từ vựng, Cơ sở tri thức WordNet & Thuật toán Lesk",
+    "file": "16. Word Senses and WordNet.ppt",
+    "icon": "fas fa-book",
+    "category": "Lexical Semantics",
+    "summary": "Từ vựng học: hiện tượng đa nghĩa (Polysemy), đồng âm (Homonymy), từ điển điện tử Princeton WordNet (Synsets, Gloss, Hypernym, Meronym), bài toán gỡ nhập nhằng nghĩa từ (WSD: thuật toán Lesk, MFS) và đo độ tương đồng (Wu-Palmer, Lin)."
+  },
+  {
+    "id": 17,
+    "title": "Lexicons for Sentiment Effect and Connotation",
+    "title_vn": "Từ điển cảm xúc (Lexicons), Mô hình Ekman/Plutchik/VAD & SO-PMI",
+    "file": "17. Lexicons for Sentiment Effect and Connotation.ppt",
+    "icon": "fas fa-heart",
+    "category": "Sentiment & Affect Analysis",
+    "summary": "Từ điển cảm xúc (VADER, SentiWordNet, LIWC), các mô hình tâm lý học cảm xúc (6 cảm xúc cơ bản của Ekman, vòng quay 8 cảm xúc của Plutchik, không gian 3 chiều VAD), khung hàm ý (Connotation Frames) và thuật toán mở rộng SO-PMI."
+  }
+]

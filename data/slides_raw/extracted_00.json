@@ -1,0 +1,88 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Text Mining\u000b\u000bTMG301m"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Prerequisites",
+                     "Completed: \rCSD203\rAIL303m",
+                     "2",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Course Objectives",
+                     "Understanding of the fundamental concepts and principles of text mining, including techniques for extracting, transforming, and analyzing textual data.\r\rUsing machine learning/deep learning (neural networks, neural language models, recurrent neural networks, LSTM) for specific text-mining applications.",
+                     "3",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Course Objectives",
+                     "Explore the methods and algorithms used for text classification and clustering tasks (e.g., Naive Bayes, Support Vector Machines, and k-means clustering). \r\rDifferent methods for representing text data, such as bag-of-words, term frequency-inverse document frequency (TF-IDF), and word embeddings.",
+                     "4",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Course Objectives",
+                     "Aware of the popular applications in text mining, such as machine translation, question answering, and chatbots to design text mining-related applications in real-world.\rWriting academia paper relevance with text mining research topic",
+                     "5",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Learning Environments",
+                     "GitHub\rJupyter Notebooks\rGoogle colab",
+                     "6",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Course Rules",
+                     "How to conduct\rPrepare contents of the next session/ topic at home \rFollowing lessons in classrooms\rCompleting chapter assessments in time and Quizzes\rCommunication\rClass/Forum\rDiscussing actively in your teams and in classrooms",
+                     "7",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Academic policy",
+                     "Cheating, plagiarism and breach of copyright are serious offenses under this Policy.\rCheating\rCheating during a test or exam is construed as talking, peeking at another student’s paper or any other clandestine method of transmitting information.\rCheating during in making lab and assignment as copy source code, copy style, same meaning in progress, …",
+                     "8",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Academic policy",
+                     "Cheating, plagiarism and breach of copyright are serious offenses under this Policy.\rPlagiarism\rPlagiarism is using the work of others without citing it; that is, holding the work of others out as your own work. \rBreach of Copyright\rIf you photocopy a textbook without the copyright holder\u0027s permission, you violate copyright law.",
+                     "9",
+                     "Course Introduction"
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "Q \u0026 A",
+                     "10",
+                     "Course Introduction"
+                 ]
+    }
+]

@@ -1,0 +1,220 @@
+﻿[
+    {
+        "slide_number":  1,
+        "text":  [
+                     "Clustering for Text Similarity"
+                 ]
+    },
+    {
+        "slide_number":  2,
+        "text":  [
+                     "Contents",
+                     "Clustering Overview\rClustering for Text Similarity\rDistance Metrics for Text\rK-Means Clustering\rHierarchical Clustering\rDensity-based Clustering\rText Pre-Processing for Clustering",
+                     "2"
+                 ]
+    },
+    {
+        "slide_number":  3,
+        "text":  [
+                     "Clustering Overview",
+                     "3",
+                     "Concept\r\rClustering is a process in which data points are grouped together based on their similarities or distances in a multi-dimensional space. \r\rThe goal of clustering is to find natural groupings or patterns within a dataset, allowing similar data points to belong to the same cluster while being distinct from other clusters."
+                 ]
+    },
+    {
+        "slide_number":  4,
+        "text":  [
+                     "Clustering Overview",
+                     "4",
+                     "Significance of Clustering in Unstructured Data\r\rClustering is particularly significant when dealing with unstructured data, such as text, images, or other forms of data where the underlying structure is not explicitly defined. \r\rIn unstructured data, patterns and relationships are often hidden, making it challenging to organize and extract meaningful insights. \r\rClustering helps uncover these hidden patterns by grouping similar data points together, enabling the identification of categories, topics, trends, or groups that may not be immediately apparent."
+                 ]
+    },
+    {
+        "slide_number":  5,
+        "text":  [
+                     "Clustering for Text Similarity",
+                     "5",
+                     "How Clustering Algorithms Group Similar Text Documents\rVector Representation: Each text document is represented as a numerical vector in a high-dimensional space. Common methods include using term frequency-inverse document frequency (TF-IDF) or word embeddings to convert words into numerical values.\r\rDistance Calculation: Clustering algorithms compute the distance between document vectors to determine their similarity. Documents with smaller distances are considered more similar to each other.\r\rAssignment to Clusters: The algorithm assigns each document to the cluster with the nearest centroid (average vector) or based on a similarity threshold. Documents that are closer in vector space are grouped together.\r\rIterative Refinement: Depending on the algorithm, the process might be iterative. The centroids are recalculated, documents are reassigned, and the clusters are refined in each iteration."
+                 ]
+    },
+    {
+        "slide_number":  6,
+        "text":  [
+                     "Clustering for Text Similarity",
+                     "6",
+                     "Role of Distance Metrics in Measuring Text Similarity\r\rEuclidean Distance: Measures the straight-line distance between two vectors in the space. It\u0027s sensitive to differences in both magnitude and direction.\r\rCosine Similarity: Measures the cosine of the angle between two vectors. It\u0027s often used with TF-IDF vectors and is insensitive to vector magnitude.\r\rJaccard Similarity: Measures the size of the intersection of two sets divided by the size of their union. It\u0027s often used for measuring similarity between sets of words.\r\rPearson Correlation: Measures the linear correlation between two vectors. It captures both magnitude and direction."
+                 ]
+    },
+    {
+        "slide_number":  7,
+        "text":  [
+                     "Distance Metrics for Text",
+                     "7"
+                 ]
+    },
+    {
+        "slide_number":  8,
+        "text":  [
+                     "Distance Metrics for Text",
+                     "8"
+                 ]
+    },
+    {
+        "slide_number":  9,
+        "text":  [
+                     "Distance Metrics for Text",
+                     "9"
+                 ]
+    },
+    {
+        "slide_number":  10,
+        "text":  [
+                     "K-Means Clustering",
+                     "10",
+                     "Concept\rK-Means clustering is a widely used unsupervised machine learning algorithm for partitioning a dataset into a predetermined number of clusters. It\u0027s particularly useful for text clustering, where the goal is to group similar text documents into distinct clusters based on their content.\r\rAvantages of K-Means\rK-Means is simple, easy to understand, and computationally efficient, making it suitable for large datasets.\rIt\u0027s effective for cases where clusters are spherical and similarly sized.\rIt provides insights into data grouping and can help uncover patterns within text data."
+                 ]
+    },
+    {
+        "slide_number":  11,
+        "text":  [
+                     "K-Means Clustering",
+                     "11",
+                     "Basic Steps of the K-Means Algorithm\rChoose the Number of Clusters (K): The first step is to specify the number of clusters you want the algorithm to partition the data into.\rInitialize Cluster Centroids: Randomly select K data points as initial cluster centroids. Each centroid represents the center of a cluster.\rAssign Data Points to the Nearest Centroid: \rFor each data point, calculate the distance (using a distance metric like Euclidean distance or cosine similarity) to each of the K centroids.\rAssign the data point to the cluster whose centroid is the nearest (minimizing the distance).\rUpdate Centroids: After all data points are assigned to clusters, recalculate the centroids of each cluster by computing the mean of all data points assigned to that cluster.\rRepeat Until Convergence: Steps 3 and 4 are repeated iteratively until the centroids no longer change significantly or a predefined number of iterations is reached"
+                 ]
+    },
+    {
+        "slide_number":  12,
+        "text":  [
+                     "Example",
+                     "12",
+                     "In this example:\r\rWe have a sample dataset of text documents.\r\rWe use the TfidfVectorizer to convert the text documents into TF-IDF vectors, which is a common approach for representing text data.\r\rWe perform K-Means clustering on the TF-IDF vectors using the KMeans class from scikit-learn.\r\rWe find the closest document to each cluster center using pairwise_distances_argmin_min.\r\rFinally, we print the cluster assignments along with the closest document for each cluster."
+                 ]
+    },
+    {
+        "slide_number":  13,
+        "text":  [
+                     "Hierarchical Clustering",
+                     "13",
+                     "Concept\rHierarchical clustering is a method used to create a hierarchy of clusters in a dataset. \r\rUnlike K-Means, which requires specifying the number of clusters beforehand, hierarchical clustering builds a tree-like structure of clusters, allowing for more nuanced insights into data relationships. \r\rIt doesn\u0027t just assign data points to clusters; it arranges them in a hierarchy that can be visualized as a dendrogram."
+                 ]
+    },
+    {
+        "slide_number":  14,
+        "text":  [
+                     "Hierarchical Clustering",
+                     "14",
+                     "Agglomerative and Divisive Hierarchical Clustering\r\r Agglomerative (Bottom-Up):\rAgglomerative hierarchical clustering starts by treating each data point as an individual cluster.\rIt iteratively merges the closest clusters into larger ones, moving up the hierarchy until all data points belong to a single cluster.\r\rDivisive (Top-Down):\rDivisive hierarchical clustering starts with all data points in a single cluster.\rIt recursively divides the clusters into smaller ones, moving down the hierarchy until each data point forms its own cluster."
+                 ]
+    },
+    {
+        "slide_number":  15,
+        "text":  [
+                     "Hierarchical Clustering",
+                     "15",
+                     "Hierarchical Clustering Process\r\rCompute the pairwise distances between data points.\rTreat each data point as a single cluster.\rCombine the closest two clusters (or split the largest cluster) based on the chosen linkage method.\rRecalculate distances between the new cluster(s) and the remaining clusters.\rRepeat steps 3 and 4 until all data points are in a single cluster (agglomerative) or each data point is its own cluster (divisive)."
+                 ]
+    },
+    {
+        "slide_number":  16,
+        "text":  [
+                     "Example",
+                     "16",
+                     "In this example:\r\rWe have a sample dataset of text documents.\rWe use the TfidfVectorizer to convert the text documents into TF-IDF vectors.\rWe calculate the cosine similarity between the TF-IDF vectors using cosine_similarity.\rWe perform hierarchical clustering using the AgglomerativeClustering class from scikit-learn with the cosine similarity matrix.\rWe create a linkage matrix using the linkage function from scipy.cluster.hierarchy to visualize the dendrogram.\rWe plot the dendrogram to visualize the hierarchical clustering process.\rWe print the cluster assignments for each document."
+                 ]
+    },
+    {
+        "slide_number":  17,
+        "text":  [
+                     "Density-based Clustering",
+                     "17",
+                     "Concept\rDensity-Based Spatial Clustering of Applications with Noise (DBSCAN) is a popular density-based clustering algorithm used to discover clusters of arbitrary shapes in datasets. \r\rUnlike K-Means or hierarchical clustering, which assume that clusters have similar sizes and shapes, DBSCAN can identify clusters with varying shapes and densities."
+                 ]
+    },
+    {
+        "slide_number":  18,
+        "text":  [
+                     "Density-based Clustering",
+                     "18",
+                     "DBSCAN Groups Data Points\r\rThe algorithm classifies data points into three categories:\rCore Points:\rA core point is a data point that has a minimum number of neighboring points (specified by the \"minPts\" parameter) within a specified radius (\"eps\").\rCore points are central to clusters and form the starting points for building clusters.\rBorder Points:\rA border point is a data point that has fewer neighboring points than \"minPts\" within the radius \"eps\" but falls within the radius of a core point.\rBorder points are on the edges of clusters and can connect clusters if they are near multiple core points.\rNoise Points (Outliers):\rA noise point (outlier) is a data point that is neither a core nor a border point.\rNoise points are considered to be part of no cluster and are often considered as unstructured or less relevant data."
+                 ]
+    },
+    {
+        "slide_number":  19,
+        "text":  [
+                     "Density-based Clustering",
+                     "19",
+                     "DBSCAN Clustering Process\r\rSelect Parameters: Choose the \"eps\" (distance threshold) and \"minPts\" (minimum number of neighboring points) parameters.\rIdentify Core Points: Identify core points by finding data points with at least \"minPts\" neighbors within distance \"eps.\"\rExpand Clusters: For each core point:\rForm a cluster by including the core point and all directly reachable points (core and border) within distance \"eps.\"\rRecursively expand the cluster by adding additional core and border points.\rLabel Border and Noise Points: Label border points as part of the cluster but not core points. Label noise points as outliers.\rRepeat for All Data Points: Iterate through all data points, forming clusters and labeling points based on connectivity."
+                 ]
+    },
+    {
+        "slide_number":  20,
+        "text":  [
+                     "Text Pre-Processing for Clustering",
+                     "20",
+                     "Importance of Text Preprocessing for Clustering\r\rText preprocessing is a crucial step in text clustering that involves cleaning and transforming raw text data into a format that is more suitable for analysis. \r\rEffective preprocessing enhances the quality of clustering results by reducing noise, standardizing representation, and improving the accuracy of text similarity measurements."
+                 ]
+    },
+    {
+        "slide_number":  21,
+        "text":  [
+                     "Text Pre-Processing for Clustering",
+                     "21",
+                     "Techniques in Text Preprocessing\r\rTokenization\rTokenization breaks text into individual words or tokens. It\u0027s a fundamental step that forms the basis for text analysis.\r\rStop Word Removal\rStop words are common words (e.g., \"and,\" \"the,\" \"is\") that don\u0027t carry much meaning. Removing them reduces the dimensionality of the data and focuses on more meaningful terms.."
+                 ]
+    },
+    {
+        "slide_number":  22,
+        "text":  [
+                     "Text Pre-Processing for Clustering",
+                     "22",
+                     "Techniques in Text Preprocessing\r\rStemming and Lemmatization\rStemming reduces words to their base or root form (e.g., \"running\" to \"run\"). Lemmatization goes a step further by converting words to their dictionary or lemma form.\r\rTF-IDF Vectorization\rTF-IDF (Term Frequency-Inverse Document Frequency) represents words as numerical values, considering both their frequency in a document and their importance across the corpus."
+                 ]
+    },
+    {
+        "slide_number":  23,
+        "text":  [
+                     "Text Pre-Processing for Clustering",
+                     "23",
+                     "Enhancing Clustering Results through Preprocessing\r\rNoise Reduction\rPreprocessing removes irrelevant or redundant information, reducing noise that can interfere with the identification of meaningful patterns and clusters.\r\rStandardization\rPreprocessing ensures that text data is standardized, making clustering algorithms more effective. Different forms of the same word (e.g., \"running\" and \"runs\") are treated consistently, improving text similarity measurement.\r\rDimensionality Reduction\rTechniques like stop word removal and stemming reduce the dimensionality of the data. This helps in handling high-dimensional text spaces and reducing computational complexity."
+                 ]
+    },
+    {
+        "slide_number":  24,
+        "text":  [
+                     "Text Pre-Processing for Clustering",
+                     "24",
+                     "Enhancing Clustering Results through Preprocessing\r\rFocus on Semantic Meaning:\rPreprocessing refines the text by removing stop words and transforming words to their base forms. This helps clustering algorithms focus on semantic meaning rather than noise.\r\rEnhanced Similarity Calculation:\rTechniques like TF-IDF vectorization capture the importance of words in documents, leading to more accurate text similarity measurements during clustering."
+                 ]
+    },
+    {
+        "slide_number":  25,
+        "text":  [
+                     "Example",
+                     "25",
+                     "In this example:\r\rWe have a sample dataset of text documents.\r\rWe define a function preprocess_text to perform tokenization, stop-word removal, and stemming using NLTK library.\r\rWe preprocess the text documents using this function.\r\rWe use the TfidfVectorizer to convert the preprocessed text documents into TF-IDF vectors."
+                 ]
+    },
+    {
+        "slide_number":  26,
+        "text":  [
+                     "Practice",
+                     "26",
+                     "Instructions\rCreate a Python program that performs text similarity clustering on a more challenging dataset. \rYou\u0027ll work with a larger dataset of text documents and perform pre-processing, vectorization, and clustering to group similar documents\rDataset\rdocuments = [    \r\"Machine learning techniques are used in artificial intelligence applications.\",    \r\"Natural language processing is a subfield of artificial intelligence.\",    \r\"Data mining and machine learning are used to analyze large datasets.\",    \r\"Deep learning models have achieved state-of-the-art results in various tasks.\",   \r\"Text classification is a common application of natural language processing.\",    \r\"Recommendation systems use machine learning to suggest relevant items.\",    \r\"Sentiment analysis aims to determine the sentiment expressed in text data.\",    \r\"Clustering algorithms group similar data points together.\",    \r\"Supervised learning requires labeled training data.\",    \r\"Unsupervised learning explores patterns in unlabeled data.\",\r\"Reinforcement learning is used to train agents in dynamic environments.“\r]"
+                 ]
+    },
+    {
+        "slide_number":  27,
+        "text":  [
+                     "Practice",
+                     "27",
+                     "Tasks\rTask 1: Text Pre-Processing\rWrite a function preprocess_text(text) that takes a text document as input and performs tokenization, lowercase conversion, stop-word removal, and stemming using NLTK.\rTask 2: Text Vectorization\rWrite a function vectorize_text(documents) that takes a list of pre-processed documents as input and converts them into TF-IDF vectors using the TfidfVectorizer from scikit-learn.\rTask 3: Perform Clustering\rWrite a function perform_clustering(X, num_clusters) that takes the TF-IDF vectors and the number of clusters as input. Perform K-Means clustering using the KMeans class from scikit-learn.\rTask 4: Print Cluster Assignments\rWrite a function print_cluster_assignments(cluster_assignments, documents) that takes the cluster assignments and the original documents as input and prints the cluster assignments for each document.\rTask 5: Evaluate Clustering Results\rWrite a function evaluate_clustering(cluster_assignments) that takes the cluster assignments as input and calculates the silhouette score to evaluate the quality of clustering.\rTask 6: Test Your Functions\rApply each function to the provided dataset and demonstrate the text similarity clustering process. Print the cluster assignments and the silhouette score."
+                 ]
+    },
+    {
+        "slide_number":  28,
+        "text":  [
+                     "Q \u0026 A",
+                     "28"
+                 ]
+    }
+]
