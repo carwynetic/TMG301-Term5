@@ -16,3 +16,6 @@ __pycache__/
 
 # Local logs
 *.log
+
+# Agent workspace internals
+.agents/

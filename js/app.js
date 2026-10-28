@@ -91,6 +91,58 @@
     }
   }
 
+  // Utility: Lightweight Content & Markdown Formatter (F07)
+  function formatContentText(str) {
+    if (!str) return '';
+    if (typeof str !== 'string') return String(str);
+
+    // 1. Stash KaTeX math delimiters ($$...$$ and $...$)
+    const mathStash = [];
+    let processed = str.replace(/(\$\$[\s\S]*?\$\$|\$[^$\n]+\$)/g, (match) => {
+      mathStash.push(match);
+      return `___MATH_PLACEHOLDER_${mathStash.length - 1}___`;
+    });
+
+    // 2. Stash pre-existing safe HTML tags like <code>$</code>, <span>...</span>, <i>...</i>
+    const tagStash = [];
+    processed = processed.replace(/(<code[^>]*>[\s\S]*?<\/code>|<span[^>]*>[\s\S]*?<\/span>|<i[^>]*>[\s\S]*?<\/i>)/gi, (match) => {
+      tagStash.push(match);
+      return `___TAG_PLACEHOLDER_${tagStash.length - 1}___`;
+    });
+
+    // 3. Escape raw HTML entities on remaining text
+    processed = processed
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    // 4. Markdown inline code: `code`
+    processed = processed.replace(/`([^`\n]+)`/g, '<code class="inline-code">$1</code>');
+
+    // 5. Markdown bold: **text**
+    processed = processed.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+
+    // 6. Markdown italic: *text*
+    processed = processed.replace(/(^|[^*])\*([^*\n]+)\*([^*]|$)/g, '$1<em>$2</em>$3');
+
+    // 7. Restore safe HTML tags
+    processed = processed.replace(/___TAG_PLACEHOLDER_(\d+)___/g, (_, idx) => tagStash[Number(idx)] || '');
+
+    // 8. Restore math placeholders
+    processed = processed.replace(/___MATH_PLACEHOLDER_(\d+)___/g, (_, idx) => mathStash[Number(idx)] || '');
+
+    return processed;
+  }
+
+  // Utility: Debounce function for smooth search keystrokes (F12)
+  function debounce(fn, delay = 200) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
   // DOM Elements Cache
   const dom = {};
 
@@ -185,6 +237,10 @@
   // --- VIEW RENDERERS ---
   function renderCurrentView() {
     if (!dom.contentArea) return;
+
+    dom.contentArea.classList.remove('view-animate');
+    void dom.contentArea.offsetWidth;
+    dom.contentArea.classList.add('view-animate');
 
     switch (state.currentView) {
       case 'knowledge':
@@ -282,7 +338,8 @@
       const refNum = refId ? refId.replace('#ref-', '') : '';
       const refData = (knowData.references || []).find(r => String(r.id) === String(refNum));
       if (refData) {
-        citeLink.setAttribute('title', `Slide ${refData.slide_range}: ${refData.title}`);
+        const slideLabel = refData.slide_range.startsWith('Slide') ? refData.slide_range : `Slide ${refData.slide_range}`;
+        citeLink.setAttribute('title', `${slideLabel}: ${refData.title}`);
       }
 
       citeLink.addEventListener('click', (e) => {
@@ -315,7 +372,7 @@
       <div class="quiz-header-card">
         <div class="quiz-title-group">
           <h2><i class="fas fa-edit"></i> Luyện tập Trắc nghiệm Chapter ${state.currentChapter}</h2>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">
+          <p id="quiz-stats-summary" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">
             ${chData ? chData.title : ''} • Đã làm: <strong>${answeredCount}/50</strong> (Đúng: <strong style="color: var(--accent-success);">${correctCount}</strong>)
           </p>
         </div>
@@ -388,7 +445,7 @@
         return `
           <button class="${optClass}" data-qid="${q.id}" data-opt="${optIdx}" ${isAnswered ? 'disabled' : ''}>
             <span class="opt-letter">${letters[optIdx]}</span>
-            <span>${escapeHtml(opt)}</span>
+            <span>${formatContentText(opt)}</span>
           </button>
         `;
       }).join('');
@@ -399,15 +456,15 @@
             <span class="q-index-badge">Câu ${idx + 1}/50</span>
             <span class="q-topic-tag"><i class="fas fa-tag"></i> ${escapeHtml(q.topic)}</span>
           </div>
-          <div class="q-text">${escapeHtml(q.question)}</div>
+          <div class="q-text">${formatContentText(q.question)}</div>
           <div class="options-grid">
             ${optionsHtml}
           </div>
-          <div class="explanation-box ${isAnswered ? 'show' : ''}">
+          <div class="explanation-box ${isAnswered ? 'show' : ''}" id="exp-box-${q.id}">
             <div class="exp-header">
               <i class="fas fa-lightbulb"></i> Giải thích chi tiết & Đáp án đúng:
             </div>
-            <div>${escapeHtml(q.explanation)}</div>
+            <div>${formatContentText(q.explanation)}</div>
             <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
               <i class="far fa-file-powerpoint"></i> Nguồn tham khảo: ${escapeHtml(q.slide_ref)}
             </div>
@@ -424,9 +481,51 @@
         const opt = parseInt(btn.dataset.opt, 10);
         state.quizAnswers[qid] = opt;
         localStorage.setItem('tmg_quiz_answers', JSON.stringify(state.quizAnswers));
+
+        // In-place DOM update (Contract 3 & F11)
+        const card = document.getElementById(`q-card-${qid}`);
+        const qMap = new Map((window.TMG_QUESTIONS || []).map(q => [q.id, q]));
+        const q = qMap.get(qid);
+
+        if (card && q && quizFilter === 'all') {
+          const isCorrect = opt === q.correct;
+          card.classList.remove('answered-correct', 'answered-wrong');
+          card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+
+          const optBtns = card.querySelectorAll('.option-btn');
+          optBtns.forEach((b, idx) => {
+            b.disabled = true;
+            b.classList.remove('correct', 'wrong');
+            if (idx === q.correct) b.classList.add('correct');
+            else if (idx === opt) b.classList.add('wrong');
+          });
+
+          const expBox = card.querySelector('.explanation-box');
+          if (expBox) {
+            expBox.classList.add('show');
+          }
+
+          updateQuizStatsHeader();
+          typesetMath(card);
+          return;
+        }
+
         renderQuizView();
       });
     });
+  }
+
+  function updateQuizStatsHeader() {
+    const statsElem = document.getElementById('quiz-stats-summary');
+    if (!statsElem) return;
+    const chData = window.TMG_CHAPTERS.find(c => c.id === state.currentChapter);
+    const questions = (window.TMG_QUESTIONS || []).filter(q => q.chapter === state.currentChapter);
+    const answeredCount = questions.filter(q => state.quizAnswers[q.id] !== undefined).length;
+    const correctCount = questions.filter(q => state.quizAnswers[q.id] === q.correct).length;
+
+    statsElem.innerHTML = `
+      ${chData ? escapeHtml(chData.title) : ''} • Đã làm: <strong>${answeredCount}/50</strong> (Đúng: <strong style="color: var(--accent-success);">${correctCount}</strong>)
+    `;
   }
 
   // 3. EXAM SIMULATION (50 Mins / 50 Random Questions from 950 questions)
@@ -614,7 +713,7 @@
     const optionsHtml = currentQ.options.map((opt, optIdx) => `
       <button class="option-btn ${currentAns === optIdx ? 'selected' : ''}" data-opt="${optIdx}">
         <span class="opt-letter">${letters[optIdx]}</span>
-        <span>${escapeHtml(opt)}</span>
+        <span>${formatContentText(opt)}</span>
       </button>
     `).join('');
 
@@ -644,7 +743,7 @@
               <span class="q-index-badge">Câu hỏi ${exam.currentQuestionIdx + 1} / 50</span>
               <span class="q-topic-tag"><i class="fas fa-tag"></i> Chapter ${escapeHtml(currentQ.chapter)}: ${escapeHtml(currentQ.topic)}</span>
             </div>
-            <div class="q-text">${escapeHtml(currentQ.question)}</div>
+            <div class="q-text">${formatContentText(currentQ.question)}</div>
             <div class="options-grid">
               ${optionsHtml}
             </div>
@@ -933,7 +1032,7 @@
                 ${isCorrect ? '<i class="fas fa-check-circle"></i> ĐÚNG' : '<i class="fas fa-times-circle"></i> SAI'}
               </span>
             </div>
-            <div class="q-text">${escapeHtml(q.question)}</div>
+            <div class="q-text">${formatContentText(q.question)}</div>
             <div class="options-grid">
               ${q.options.map((opt, optIdx) => {
                 let cls = 'option-btn';
@@ -942,14 +1041,14 @@
                 return `
                   <div class="${cls}">
                     <span class="opt-letter">${letters[optIdx]}</span>
-                    <span>${escapeHtml(opt)}</span>
+                    <span>${formatContentText(opt)}</span>
                   </div>
                 `;
               }).join('')}
             </div>
             <div class="explanation-box show" style="margin-top: 0.75rem;">
               <div class="exp-header"><i class="fas fa-lightbulb"></i> Giải thích chi tiết & Đáp án đúng:</div>
-              <div>${escapeHtml(q.explanation)}</div>
+              <div>${formatContentText(q.explanation)}</div>
               <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem;">
                 <i class="far fa-file-powerpoint"></i> Nguồn tham khảo: ${escapeHtml(q.slide_ref)}
               </div>
@@ -1160,7 +1259,7 @@
                   </span>
                 ` : ''}
               </div>
-              <div class="q-text">${escapeHtml(q.question)}</div>
+              <div class="q-text">${formatContentText(q.question)}</div>
               <div class="options-grid">
                 ${q.options.map((opt, optIdx) => {
                   let cls = 'option-btn';
@@ -1171,7 +1270,7 @@
                   return `
                     <button class="${cls}" data-qid="${q.id}" data-opt="${optIdx}">
                       <span class="opt-letter">${letters[optIdx]}</span>
-                      <span>${escapeHtml(opt)}</span>
+                      <span>${formatContentText(opt)}</span>
                     </button>
                   `;
                 }).join('')}
@@ -1183,7 +1282,7 @@
               </div>
               <div class="explanation-box ${isRevealed ? 'show' : ''}" id="bank-exp-${q.id}">
                 <div class="exp-header"><i class="fas fa-lightbulb"></i> Giải thích chi tiết & Đáp án đúng:</div>
-                <div>${escapeHtml(q.explanation)}</div>
+                <div>${formatContentText(q.explanation)}</div>
                 <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">
                   <i class="far fa-file-powerpoint"></i> Nguồn trích dẫn: ${escapeHtml(q.slide_ref)}
                 </div>
@@ -1205,8 +1304,8 @@
     // Attach bank controls event handlers
     const searchInput = document.getElementById('bank-search-input');
     if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        state.bankSearchQuery = e.target.value;
+      const debouncedBankSearch = debounce((val) => {
+        state.bankSearchQuery = val;
         state.bankCurrentLimit = 50;
         renderQuestionBankView();
         const fresh = document.getElementById('bank-search-input');
@@ -1214,6 +1313,10 @@
           fresh.focus();
           fresh.setSelectionRange(fresh.value.length, fresh.value.length);
         }
+      }, 200);
+
+      searchInput.addEventListener('input', (e) => {
+        debouncedBankSearch(e.target.value);
       });
     }
 
@@ -1264,23 +1367,53 @@
       });
     }
 
-    // Attach toggle individual explanation buttons in bank
+    // Attach toggle individual explanation buttons in bank (in-place)
     dom.contentArea.querySelectorAll('.bank-toggle-exp-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const qid = btn.dataset.qid;
+        const expBox = document.getElementById(`bank-exp-${qid}`);
+        if (expBox) {
+          expBox.classList.toggle('show');
+          const isNowShown = expBox.classList.contains('show');
+          state.bankRevealedAnswers[qid] = isNowShown;
+          btn.innerHTML = `<i class="fas ${isNowShown ? 'fa-eye-slash' : 'fa-eye'}"></i> ${isNowShown ? 'Ẩn đáp án & giải thích' : 'Xem đáp án & giải thích'}`;
+          if (isNowShown) typesetMath(expBox);
+          return;
+        }
         state.bankRevealedAnswers[qid] = !state.bankRevealedAnswers[qid];
         renderQuestionBankView();
       });
     });
 
-    // Attach option click handlers inside question bank
+    // Attach option click handlers inside question bank (in-place)
     dom.contentArea.querySelectorAll('.bank-questions-stream .option-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const qid = btn.dataset.qid;
         const opt = parseInt(btn.dataset.opt, 10);
         state.quizAnswers[qid] = opt;
         localStorage.setItem('tmg_quiz_answers', JSON.stringify(state.quizAnswers));
+
+        const card = document.getElementById(`bank-q-${qid}`);
+        const q = (window.TMG_QUESTIONS || []).find(it => it.id === qid);
+        if (card && q && state.bankStatusFilter === 'all') {
+          const isCorrect = opt === q.correct;
+          card.classList.remove('answered-correct', 'answered-wrong');
+          card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+
+          const optBtns = card.querySelectorAll('.option-btn');
+          optBtns.forEach((b, idx) => {
+            b.classList.remove('correct', 'wrong');
+            if (idx === q.correct) b.classList.add('correct');
+            else if (idx === opt) b.classList.add('wrong');
+          });
+
+          const expBox = document.getElementById(`bank-exp-${qid}`);
+          if (expBox) expBox.classList.add('show');
+          typesetMath(card);
+          return;
+        }
+
         renderQuestionBankView();
       });
     });
@@ -1334,14 +1467,18 @@
 
     const searchInput = document.getElementById('glossary-search-input');
     if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        state.glossaryQuery = e.target.value;
+      const debouncedGlossarySearch = debounce((val) => {
+        state.glossaryQuery = val;
         renderGlossaryView();
         const freshInput = document.getElementById('glossary-search-input');
         if (freshInput) {
           freshInput.focus();
           freshInput.setSelectionRange(freshInput.value.length, freshInput.value.length);
         }
+      }, 200);
+
+      searchInput.addEventListener('input', (e) => {
+        debouncedGlossarySearch(e.target.value);
       });
     }
 
@@ -1483,8 +1620,18 @@
 
     // Mobile menu toggle
     if (dom.mobileMenuBtn && dom.appSidebar) {
-      dom.mobileMenuBtn.addEventListener('click', () => {
+      dom.mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         dom.appSidebar.classList.toggle('mobile-open');
+      });
+
+      // Close mobile sidebar on outside click
+      document.addEventListener('click', (e) => {
+        if (dom.appSidebar.classList.contains('mobile-open')) {
+          if (!dom.appSidebar.contains(e.target) && !dom.mobileMenuBtn.contains(e.target)) {
+            dom.appSidebar.classList.remove('mobile-open');
+          }
+        }
       });
     }
 
@@ -1493,10 +1640,13 @@
       dom.btnSearchTrigger.addEventListener('click', openGlobalSearch);
     }
 
-    // Search Input
+    // Search Input with Debounce
     if (dom.globalSearchInput) {
+      const debouncedGlobalSearch = debounce((val) => {
+        renderGlobalSearchResults(val);
+      }, 150);
       dom.globalSearchInput.addEventListener('input', (e) => {
-        renderGlobalSearchResults(e.target.value);
+        debouncedGlobalSearch(e.target.value);
       });
     }
 

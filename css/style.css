@@ -880,6 +880,7 @@ pre code {
   line-height: 1.5;
   color: var(--text-primary);
   margin-bottom: 1.2rem;
+  white-space: pre-line;
 }
 
 .options-grid {
@@ -905,10 +906,22 @@ pre code {
   transition: all var(--transition-fast);
 }
 
+.option-btn > span:last-child {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
 .option-btn:hover:not(:disabled) {
   background: var(--bg-hover);
   border-color: var(--accent-primary);
   color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.option-btn:active:not(:disabled) {
+  transform: scale(0.985);
 }
 
 .opt-letter {
@@ -1010,16 +1023,24 @@ pre code {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: 0 1rem;
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
   font-size: 0.9rem;
   line-height: 1.55;
   color: var(--text-secondary);
-  display: none;
+  white-space: pre-line;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
 }
 
 .explanation-box.show {
-  display: block;
+  max-height: 1200px;
+  opacity: 1;
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow: visible;
 }
 
 .exp-header {
@@ -1509,8 +1530,17 @@ pre code {
   padding: 1.5rem;
 }
 
+#btn-mobile-menu {
+  display: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 960px) {
+  #btn-mobile-menu {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
   .app-sidebar {
     display: none;
   }
@@ -1519,15 +1549,48 @@ pre code {
     position: fixed;
     top: 60px;
     left: 0;
-    width: 280px;
-    z-index: 50;
-    box-shadow: var(--shadow-lg);
+    bottom: 0;
+    width: 290px;
+    z-index: 100;
+    box-shadow: var(--shadow-lg), 0 0 0 100vw rgba(0, 0, 0, 0.45);
   }
   .app-content {
     padding: 1.25rem 1rem;
   }
   .live-exam-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.5rem 0.75rem;
+    height: auto;
+    min-height: 56px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .brand-section {
+    gap: 0.5rem;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .nav-tabs {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-tab-btn {
+    white-space: nowrap;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -1618,5 +1681,181 @@ pre code {
 
 .katex-display::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Callout Alert Boxes & Semantic Badges (F06)
+   ========================================================================== */
+
+.callout-box {
+  margin: 1.5rem 0;
+  padding: 1.15rem 1.4rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent-primary);
+  background-color: var(--bg-tertiary);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.callout-box:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.callout-note {
+  border-left-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.07);
+}
+
+.callout-note .callout-header {
+  color: #3b82f6;
+}
+
+.callout-important {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.callout-important .callout-header {
+  color: #d97706;
+}
+
+.callout-tip {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.07);
+}
+
+.callout-tip .callout-header {
+  color: #10b981;
+}
+
+.callout-content p {
+  margin-bottom: 0.5rem;
+}
+
+.callout-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Badges for Pros / Cons */
+.badge-pro, .badge-con {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+
+.badge-pro {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-con {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Inline Code Badge (F07) */
+code.inline-code {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.45rem;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-size: 0.88em;
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Micro-Animations Catalog (F13 & F14)
+   ========================================================================== */
+
+/* 1. View transition fade-in */
+@keyframes viewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-animate {
+  animation: viewFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. Card entrance animation */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-card, .glossary-card, .chapter-meta-card {
+  animation: cardEntrance 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* 3. Option feedback animations */
+@keyframes correctPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.option-btn.correct {
+  animation: correctPop 0.35s ease-out;
+}
+
+.option-btn.wrong {
+  animation: wrongShake 0.4s ease-out;
+}
+
+/* 4. Timer pulse danger warning */
+@keyframes timerPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.85; }
+}
+
+#exam-timer-text.danger {
+  animation: timerPulse 1.2s infinite ease-in-out;
+  color: var(--accent-danger) !important;
+  font-weight: 700;
+}
+
+/* 5. Reduced Motion Accessibility (F15) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 

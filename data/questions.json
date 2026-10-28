@@ -4,7 +4,7 @@
     "chapter": 1,
     "question": "Which regular expression metacharacter represents a word boundary anchor?",
     "options": [
-      "$",
+      "<code>$</code>",
       "^",
       "\\b",
       "\\w"
@@ -1314,15 +1314,15 @@
   {
     "id": "q_ch02_33",
     "chapter": 2,
-    "question": "In Good-Turing smoothing, what is the formula for the adjusted count r* for an N-gram with raw count r?",
+    "question": "In Good-Turing smoothing, what is the formula for the adjusted count $r^*$ for an N-gram with raw count $r$?",
     "options": [
-      "r* = (r + 1) * (N_{r+1} / N_r)",
-      "r* = r - 0.75",
-      "r* = r / |V|",
-      "r* = r + 1"
+      "$r^* = (r + 1) \\frac{N_{r+1}}{N_r}$",
+      "$r^* = r - 0.75$",
+      "$r^* = \\frac{r}{|V|}$",
+      "$r^* = r + 1$"
     ],
     "correct": 0,
-    "explanation": "Good-Turing replaces count r with r* = (r+1) * N_{r+1} / N_r.",
+    "explanation": "Good-Turing replaces count $r$ with $r^* = (r + 1) \\frac{N_{r+1}}{N_r}$.",
     "topic": "Good-Turing",
     "slide_ref": "02. N-Gram Language Models.ppt",
     "answer": 0
@@ -2420,13 +2420,13 @@
     "chapter": 4,
     "question": "What is the mathematical definition of the standard Sigmoid (Logistic) activation function?",
     "options": [
-      "sigma(z) = e^z / (1 - e^z)",
-      "sigma(z) = 1 / (1 + e^(-z))",
-      "sigma(z) = (e^z - e^(-z)) / 2",
-      "sigma(z) = max(0, z)"
+      "$\\sigma(z) = \\frac{e^z}{1 - e^z}$",
+      "$\\sigma(z) = \\frac{1}{1 + e^{-z}}$",
+      "$\\sigma(z) = \\frac{e^z - e^{-z}}{2}$",
+      "$\\sigma(z) = \\max(0, z)$"
     ],
     "correct": 1,
-    "explanation": "The sigmoid function sigma(z) = 1 / (1 + exp(-z)) maps any real-valued number into the probability interval (0, 1).",
+    "explanation": "The sigmoid function $\\sigma(z) = \\frac{1}{1 + e^{-z}}$ maps any real-valued number into the probability interval $(0, 1)$.",
     "topic": "Sigmoid Function",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 1
@@ -2442,7 +2442,7 @@
       "0.0"
     ],
     "correct": 2,
-    "explanation": "sigma(0) = 1 / (1 + e^0) = 1 / (1 + 1) = 0.5.",
+    "explanation": "$\\sigma(0) = \\frac{1}{1 + e^0} = \\frac{1}{1 + 1} = 0.5$.",
     "topic": "Sigmoid Properties",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 2
@@ -2466,15 +2466,15 @@
   {
     "id": "q_ch04_05",
     "chapter": 4,
-    "question": "What is the mathematical derivative of the sigmoid function sigma(z) with respect to z?",
+    "question": "What is the mathematical derivative of the sigmoid function $\\sigma(z)$ with respect to $z$?",
     "options": [
-      "sigma'(z) = sigma(z)^2",
-      "sigma'(z) = 1 - sigma(z)",
-      "sigma'(z) = e^(-z)",
-      "sigma'(z) = sigma(z) * (1 - sigma(z))"
+      "$\\sigma'(z) = \\sigma(z)^2$",
+      "$\\sigma'(z) = 1 - \\sigma(z)$",
+      "$\\sigma'(z) = e^{-z}$",
+      "$\\sigma'(z) = \\sigma(z)(1 - \\sigma(z))$"
     ],
     "correct": 3,
-    "explanation": "A key property of sigmoid is its elegant derivative: d/dz sigma(z) = sigma(z) * (1 - sigma(z)).",
+    "explanation": "A key property of sigmoid is its elegant derivative: $\\frac{d}{dz} \\sigma(z) = \\sigma(z)(1 - \\sigma(z))$.",
     "topic": "Sigmoid Calculus",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 3
@@ -2724,13 +2724,13 @@
     "chapter": 4,
     "question": "What penalty does L2 Regularization (Ridge / Weight Decay) add to the objective function?",
     "options": [
-      "lambda/2 * SUM(w_j^2)",
-      "lambda / SUM(w_j)",
-      "lambda * SUM(|w_j|)",
-      "lambda * max(w_j)"
+      "$\\frac{\\lambda}{2} \\sum w_j^2$",
+      "$\\frac{\\lambda}{\\sum w_j}$",
+      "$\\lambda \\sum |w_j|$",
+      "$\\lambda \\max(w_j)$"
     ],
     "correct": 0,
-    "explanation": "L2 regularization penalizes the sum of squared weights: (lambda/2) * ||w||_2^2.",
+    "explanation": "L2 regularization penalizes the sum of squared weights: $\\frac{\\lambda}{2} \\|w\\|_2^2$.",
     "topic": "L2 Regularization",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 0
@@ -2740,13 +2740,13 @@
     "chapter": 4,
     "question": "What penalty does L1 Regularization (Lasso) add to the objective function?",
     "options": [
-      "lambda * log(w_j)",
-      "lambda * SUM(|w_j|)",
-      "lambda/2 * SUM(w_j^2)",
-      "lambda * SUM(w_j^3)"
+      "$\\lambda \\log(w_j)$",
+      "$\\lambda \\sum |w_j|$",
+      "$\\frac{\\lambda}{2} \\sum w_j^2$",
+      "$\\lambda \\sum w_j^3$"
     ],
     "correct": 1,
-    "explanation": "L1 regularization penalizes the sum of absolute weight values: lambda * ||w||_1.",
+    "explanation": "L1 regularization penalizes the sum of absolute weight values: $\\lambda \\|w\\|_1$.",
     "topic": "L1 Regularization",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 1
@@ -2866,15 +2866,15 @@
   {
     "id": "q_ch04_30",
     "chapter": 4,
-    "question": "What is the Softmax formula for class c among K classes?",
+    "question": "What is the Softmax formula for class $c$ among $K$ classes?",
     "options": [
-      "softmax(z)_c = z_c / SUM z_j",
-      "softmax(z)_c = 1 / (1 + e^(-z_c))",
-      "softmax(z)_c = e^(z_c) / SUM_{j=1}^K e^(z_j)",
-      "softmax(z)_c = e^(z_c) * K"
+      "$\\text{softmax}(z)_c = \\frac{z_c}{\\sum z_j}$",
+      "$\\text{softmax}(z)_c = \\frac{1}{1 + e^{-z_c}}$",
+      "$\\text{softmax}(z)_c = \\frac{e^{z_c}}{\\sum_{j=1}^K e^{z_j}}$",
+      "$\\text{softmax}(z)_c = e^{z_c} \\cdot K$"
     ],
     "correct": 2,
-    "explanation": "Softmax exponentiates logits z_c and normalizes by the sum of exponentiated logits across all classes.",
+    "explanation": "Softmax exponentiates logits $z_c$ and normalizes by the sum of exponentiated logits across all classes: $\\text{softmax}(z)_c = \\frac{e^{z_c}}{\\sum_{j=1}^K e^{z_j}}$.",
     "topic": "Softmax Regression",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 2
@@ -2901,12 +2901,12 @@
     "question": "What loss function is used for Multiclass Logistic Regression with Softmax?",
     "options": [
       "Binary Hinge Loss",
-      "Categorical Cross-Entropy Loss: - SUM_{c=1}^K y_c * log(y_hat_c)",
+      "Categorical Cross-Entropy Loss: $-\\sum_{c=1}^K y_c \\log(\\hat{y}_c)$",
       "K-Means Inertia",
       "Mean Squared Error"
     ],
     "correct": 1,
-    "explanation": "Categorical Cross-Entropy measures the divergence between the true one-hot vector y and predicted probabilities y_hat.",
+    "explanation": "Categorical Cross-Entropy measures the divergence between the true one-hot vector $y$ and predicted probabilities $\\hat{y}$: $L = -\\sum_{c=1}^K y_c \\log(\\hat{y}_c)$.",
     "topic": "Softmax Regression",
     "slide_ref": "04. Logistic Regression.ppt",
     "answer": 1
@@ -3189,7 +3189,7 @@
     "question": "What is the primary stopping criterion for Gradient Descent optimization in Logistic Regression?",
     "options": [
       "When epoch count reaches 1,000,000",
-      "When the change in loss |L_{t} - L_{t-1}| or gradient norm ||dL/dw|| falls below a tolerance threshold epsilon (e.g. 1e-4)",
+      "When the change in loss $|L_t - L_{t-1}|$ or gradient norm $\\|dL/dw\\|$ falls below a tolerance threshold $\\epsilon$ (e.g. $10^{-4}$)",
       "When all weights become equal",
       "When CPU temperature exceeds 80C"
     ],
@@ -3348,13 +3348,13 @@
     "chapter": 5,
     "question": "What is the formula for the Cosine Similarity between two vectors u and v?",
     "options": [
-      "cos(u, v) = (u . v) / 2",
-      "cos(u, v) = (u . v) / (||u|| * ||v||)",
-      "cos(u, v) = ||u|| - ||v||",
-      "cos(u, v) = u . v"
+      "$\\cos(u, v) = \\frac{u \\cdot v}{2}$",
+      "$\\cos(u, v) = \\frac{u \\cdot v}{\\|u\\| \\cdot \\|v\\|}$",
+      "$\\cos(u, v) = \\|u\\| - \\|v\\|$",
+      "$\\cos(u, v) = u \\cdot v$"
     ],
     "correct": 1,
-    "explanation": "Cosine similarity computes the dot product of two vectors normalized by the product of their L2 Euclidean norms.",
+    "explanation": "Cosine similarity computes the dot product of two vectors normalized by the product of their L2 Euclidean norms: $\\cos(u, v) = \\frac{u \\cdot v}{\\|u\\| \\|v\\|}$.",
     "topic": "Cosine Similarity",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 1
@@ -3474,15 +3474,15 @@
   {
     "id": "q_ch05_18",
     "chapter": 5,
-    "question": "Why is standard Softmax computationally prohibitive when training Word2Vec on large vocabularies (|V| = 1,000,000)?",
+    "question": "Why is standard Softmax computationally prohibitive when training Word2Vec on large vocabularies ($|V| = 1{,}000{,}000$)?",
     "options": [
-      "Computing the denominator requires summing over all |V| words in the vocabulary for every single training word, taking O(|V|) time",
+      "Computing the denominator requires summing over all $|V|$ words in the vocabulary for every single training word, taking $O(|V|)$ time",
       "Vocabularies cannot exceed 100 words",
       "Softmax cannot run on GPUs",
       "Softmax produces negative probabilities"
     ],
     "correct": 0,
-    "explanation": "The normalizer SUM_{w in V} exp(u_w . v_c) requires computing dot products over the entire vocabulary at every step, causing severe computational bottlenecks.",
+    "explanation": "The normalizer $\\sum_{w \\in V} \\exp(u_w \\cdot v_c)$ requires computing dot products over the entire vocabulary at every step, causing severe computational bottlenecks.",
     "topic": "Negative Sampling",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 0
@@ -3594,7 +3594,7 @@
       "Binary cross-entropy"
     ],
     "correct": 1,
-    "explanation": "GloVe minimizes J = SUM f(X_ij) * (w_i . w_j + b_i + b_j - log(X_ij))^2 with a weighting function f(X_ij).",
+    "explanation": "GloVe minimizes $J = \\sum f(X_{ij}) (w_i^T \\tilde{w}_j + b_i + \\tilde{b}_j - \\log X_{ij})^2$ with a weighting function $f(X_{ij})$.",
     "topic": "GloVe",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 1
@@ -3682,15 +3682,15 @@
   {
     "id": "q_ch05_31",
     "chapter": 5,
-    "question": "What is the Euclidean Distance between two vectors u = [1, 2] and v = [4, 6]?",
+    "question": "What is the Euclidean Distance between two vectors $u = [1, 2]$ and $v = [4, 6]$?",
     "options": [
       "7.0",
-      "sqrt((4-1)^2 + (6-2)^2) = sqrt(9 + 16) = sqrt(25) = 5.0",
+      "$\\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5.0$",
       "3.0",
       "25.0"
     ],
     "correct": 1,
-    "explanation": "Euclidean distance ||u - v||_2 = sqrt(3^2 + 4^2) = sqrt(25) = 5.0.",
+    "explanation": "Euclidean distance $\\|u - v\\|_2 = \\sqrt{3^2 + 4^2} = \\sqrt{25} = 5.0$.",
     "topic": "Calculation",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 1
@@ -3722,7 +3722,7 @@
       "0.5"
     ],
     "correct": 2,
-    "explanation": "Orthogonal vectors have dot product 0, so cos(u, v) = 0 / (||u|| * ||v||) = 0.0.",
+    "explanation": "Orthogonal vectors have dot product 0, so $\\cos(u, v) = \\frac{0}{\\|u\\| \\cdot \\|v\\|} = 0.0$.",
     "topic": "Cosine Properties",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 2
@@ -3879,10 +3879,10 @@
       "They are placed in a separate dictionary",
       "They are assigned infinite weights",
       "They stop the training process",
-      "They are Subsampled during training with a probability formula based on frequency P(w) to accelerate learning and improve vector quality"
+      "They are Subsampled during training with a probability formula based on frequency $P(w)$ to accelerate learning and improve vector quality"
     ],
     "correct": 3,
-    "explanation": "Mikolov et al. applied subsampling to discard frequent words with probability P(w) = 1 - sqrt(t / f(w)), speeding up training.",
+    "explanation": "Mikolov et al. applied subsampling to discard frequent words with probability $P(w) = 1 - \\sqrt{\\frac{t}{f(w)}}$, speeding up training.",
     "topic": "Word2Vec Optimization",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 3
@@ -3942,11 +3942,11 @@
     "options": [
       "25.0",
       "7.0",
-      "5.0 (sqrt(3^2 + 4^2) = sqrt(25) = 5.0)",
+      "5.0 ($\\sqrt{3^2 + 4^2} = \\sqrt{25} = 5.0$)",
       "1.0"
     ],
     "correct": 2,
-    "explanation": "||v||_2 = sqrt(9 + 16) = 5.0.",
+    "explanation": "$\\|v\\|_2 = \\sqrt{9 + 16} = 5.0$.",
     "topic": "Calculation",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 2
@@ -3956,13 +3956,13 @@
     "chapter": 5,
     "question": "What is the L2 unit vector corresponding to [3, 4]?",
     "options": [
-      "[3/5, 4/5] = [0.6, 0.8]",
+      "$[3/5, 4/5] = [0.6, 0.8]$",
       "[9, 16]",
       "[0.5, 0.5]",
       "[1, 1]"
     ],
     "correct": 0,
-    "explanation": "Dividing each component by norm 5.0 gives [0.6, 0.8]. Its norm is sqrt(0.36 + 0.64) = 1.0.",
+    "explanation": "Dividing each component by norm $5.0$ gives $[0.6, 0.8]$. Its norm is $\\sqrt{0.36 + 0.64} = 1.0$.",
     "topic": "Calculation",
     "slide_ref": "05. Vector Semantics and Embeddings.ppt",
     "answer": 0
@@ -4036,13 +4036,13 @@
     "chapter": 6,
     "question": "What is the formula for the Sum of Squared Errors (SSE / Inertia) in K-Means?",
     "options": [
-      "SSE = SUM mu_k / K",
-      "SSE = SUM_{k=1}^K K^2",
-      "SSE = SUM_{k=1}^K SUM_{x in C_k} ||x - mu_k||^2",
-      "SSE = max(x - mu_k)"
+      "$\\text{SSE} = \\frac{\\sum \\mu_k}{K}$",
+      "$\\text{SSE} = \\sum_{k=1}^K K^2$",
+      "$\\text{SSE} = \\sum_{k=1}^K \\sum_{x \\in C_k} \\|x - \\mu_k\\|^2$",
+      "$\\text{SSE} = \\max(x - \\mu_k)$"
     ],
     "correct": 2,
-    "explanation": "Inertia/SSE sums the squared Euclidean distances from every data point x to its assigned cluster centroid mu_k.",
+    "explanation": "Inertia/SSE sums the squared Euclidean distances from every data point $x$ to its assigned cluster centroid $\\mu_k$: $\\text{SSE} = \\sum_{k=1}^K \\sum_{x \\in C_k} \\|x - \\mu_k\\|^2$.",
     "topic": "K-Means Objective",
     "slide_ref": "06. Clustering for Text Similarity.ppt",
     "answer": 2
@@ -4282,7 +4282,7 @@
       "Distance between centroids"
     ],
     "correct": 2,
-    "explanation": "Single linkage: D(A, B) = min_{x in A, y in B} dist(x, y).",
+    "explanation": "Single linkage: $D(A, B) = \\min_{x \\in A, y \\in B} \\text{dist}(x, y)$.",
     "topic": "Linkage Criteria",
     "slide_ref": "06. Clustering for Text Similarity.ppt",
     "answer": 2
@@ -4314,7 +4314,7 @@
       "Distance to origin"
     ],
     "correct": 1,
-    "explanation": "Complete linkage: D(A, B) = max_{x in A, y in B} dist(x, y).",
+    "explanation": "Complete linkage: $D(A, B) = \\max_{x \\in A, y \\in B} \\text{dist}(x, y)$.",
     "topic": "Linkage Criteria",
     "slide_ref": "06. Clustering for Text Similarity.ppt",
     "answer": 1
@@ -4346,7 +4346,7 @@
       "Minimum pairwise distance"
     ],
     "correct": 1,
-    "explanation": "Average linkage: D(A, B) = (1 / (|A|*|B|)) * SUM_{x in A} SUM_{y in B} dist(x, y).",
+    "explanation": "Average linkage: $D(A, B) = \\frac{1}{|A| \\cdot |B|} \\sum_{x \\in A} \\sum_{y \\in B} \\text{dist}(x, y)$.",
     "topic": "Linkage Criteria",
     "slide_ref": "06. Clustering for Text Similarity.ppt",
     "answer": 1
@@ -4821,12 +4821,12 @@
     "question": "What is the primary computational limitation of Recurrent Neural Networks (RNNs/LSTMs) that Transformers overcome?",
     "options": [
       "RNNs have zero parameters",
-      "Sequential processing: RNNs must compute hidden state h_t step-by-step from h_{t-1}, preventing parallel computation across the sequence on GPUs",
+      "Sequential processing: RNNs must compute hidden state $h_t$ step-by-step from $h_{t-1}$, preventing parallel computation across the sequence on GPUs",
       "RNNs cannot run on GPUs",
       "RNNs only accept 1 word"
     ],
     "correct": 1,
-    "explanation": "RNNs are fundamentally sequential (O(T) time steps), creating a severe training bottleneck on modern parallel hardware.",
+    "explanation": "RNNs are fundamentally sequential ($O(T)$ time steps), creating a severe training bottleneck on modern parallel hardware.",
     "topic": "Motivation",
     "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
     "answer": 1
@@ -4932,13 +4932,13 @@
     "chapter": 7,
     "question": "What is the mathematical formula for Scaled Dot-Product Attention?",
     "options": [
-      "Attention(Q, K, V) = (Q * K) / V",
-      "Attention(Q, K, V) = softmax( (Q * K^T) / sqrt(d_k) ) * V",
-      "Attention(Q, K, V) = softmax(Q + K) + V",
-      "Attention(Q, K, V) = Q * K^T * V"
+      "$\\text{Attention}(Q, K, V) = \\frac{Q K}{V}$",
+      "$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right) V$",
+      "$\\text{Attention}(Q, K, V) = \\text{softmax}(Q + K) + V$",
+      "$\\text{Attention}(Q, K, V) = Q K^T V$"
     ],
     "correct": 1,
-    "explanation": "Scaled dot-product attention computes softmax of normalized dot products (QK^T / sqrt(d_k)) multiplied by V.",
+    "explanation": "Scaled dot-product attention computes softmax of normalized dot products $\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right)$ multiplied by $V$: $\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right) V$.",
     "topic": "Attention Formula",
     "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
     "answer": 1
@@ -4946,15 +4946,15 @@
   {
     "id": "q_ch07_10",
     "chapter": 7,
-    "question": "Why is the dot product Q * K^T divided by the scaling factor sqrt(d_k)?",
+    "question": "Why is the dot product $Q K^T$ divided by the scaling factor $\\sqrt{d_k}$?",
     "options": [
-      "To prevent the dot products from growing excessively large for high dimensions d_k, which pushes the Softmax into regions with vanishingly small gradients",
+      "To prevent the dot products from growing excessively large for high dimensions $d_k$, which pushes the Softmax into regions with vanishingly small gradients",
       "To convert negative values into positive",
       "To make attention symmetric",
       "To divide by the batch size"
     ],
     "correct": 0,
-    "explanation": "For large d_k, dot products grow large in magnitude, causing softmax to yield extremely peaked distributions with near-zero gradients.",
+    "explanation": "For large $d_k$, dot products grow large in magnitude, causing softmax to yield extremely peaked distributions with near-zero gradients.",
     "topic": "Scaling Factor",
     "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
     "answer": 0
@@ -4962,7 +4962,7 @@
   {
     "id": "q_ch07_11",
     "chapter": 7,
-    "question": "If d_k = 64, what is the scaling factor sqrt(d_k)?",
+    "question": "If $d_k = 64$, what is the scaling factor $\\sqrt{d_k}$?",
     "options": [
       "8",
       "4",
@@ -4970,7 +4970,7 @@
       "64"
     ],
     "correct": 0,
-    "explanation": "sqrt(64) = 8. Dot products are divided by 8 before applying softmax.",
+    "explanation": "$\\sqrt{64} = 8$. Dot products are divided by $8$ before applying softmax.",
     "topic": "Attention Formula",
     "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
     "answer": 0
@@ -4994,7 +4994,7 @@
   {
     "id": "q_ch07_13",
     "chapter": 7,
-    "question": "What does each row in the normalized attention matrix softmax(Q * K^T / sqrt(d_k)) represent?",
+    "question": "What does each row in the normalized attention matrix $\\text{softmax}\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right)$ represent?",
     "options": [
       "The loss of each word",
       "A one-hot vector",
@@ -5002,7 +5002,7 @@
       "A vector of word counts"
     ],
     "correct": 2,
-    "explanation": "Softmax is applied row-wise, ensuring that attention weights assigned by token i to all tokens j sum to 1.0.",
+    "explanation": "Softmax is applied row-wise, ensuring that attention weights assigned by token $i$ to all tokens $j$ sum to $1.0$.",
     "topic": "Attention Weights",
     "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
     "answer": 2
@@ -5332,13 +5332,13 @@
     "chapter": 7,
     "question": "Why is a Decoder-only model (like GPT) called 'Autoregressive'?",
     "options": [
-      "It generates text token-by-token, conditioning each new token on the sequence of previously generated tokens: P(w_t | w_{<t})",
+      "It generates text token-by-token, conditioning each new token on the sequence of previously generated tokens: $P(w_t \\mid w_{<t})$",
       "It trains without data",
       "It runs automatic regression tests",
       "It has no weights"
     ],
     "correct": 0,
-    "explanation": "Autoregressive models consume their own past outputs as inputs for generating subsequent steps.",
+    "explanation": "Autoregressive models consume their own past outputs as inputs for generating subsequent steps: $P(w_t \\mid w_{<t})$.",
     "topic": "Autoregressive Models",
     "slide_ref": "07. Transformer and Pre-Tranined Language Models.ppt",
     "answer": 0
@@ -6023,10 +6023,10 @@
       "It trains using genetic algorithms",
       "It rounds weights to integers",
       "It drops half the layers",
-      "It freezes the pre-trained model weights W_0 and injects trainable rank-decomposition matrices Delta W = B * A, where rank r << d"
+      "It freezes the pre-trained model weights $W_0$ and injects trainable rank-decomposition matrices $\\Delta W = B \\cdot A$, where rank $r \\ll d$"
     ],
     "correct": 3,
-    "explanation": "LoRA decomposes weight updates into two low-rank matrices Delta W = B * A (r << d), reducing trainable parameters by 10,000x.",
+    "explanation": "LoRA decomposes weight updates into two low-rank matrices $\\Delta W = B \\cdot A$ ($r \\ll d$), reducing trainable parameters by 10,000x.",
     "topic": "LoRA",
     "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
     "answer": 3
@@ -6050,15 +6050,15 @@
   {
     "id": "q_ch08_29",
     "chapter": 8,
-    "question": "Can LoRA weights be merged directly back into the original base weights W_0 for zero-latency inference?",
+    "question": "Can LoRA weights be merged directly back into the original base weights $W_0$ for zero-latency inference?",
     "options": [
       "Only if quantized to 2 bits",
-      "Yes: W_new = W_0 + B * A can be computed once before deployment, incurring zero additional inference latency",
+      "Yes: $W_{\\text{new}} = W_0 + B \\cdot A$ can be computed once before deployment, incurring zero additional inference latency",
       "No, LoRA requires a separate GPU",
       "No, it causes NaN errors"
     ],
     "correct": 1,
-    "explanation": "Because matrix addition is associative, W_new = W_0 + BA merges into a standard linear layer with zero inference overhead.",
+    "explanation": "Because matrix addition is associative, $W_{\\text{new}} = W_0 + BA$ merges into a standard linear layer with zero inference overhead.",
     "topic": "LoRA Deployment",
     "slide_ref": "08. Fine-Tuning and Masked Language Models.ppt",
     "answer": 1
@@ -6610,15 +6610,15 @@
   {
     "id": "q_ch09_14",
     "chapter": 9,
-    "question": "In Bahdanau attention, how is the dynamic context vector c_i computed at decoder step i?",
+    "question": "In Bahdanau attention, how is the dynamic context vector $c_i$ computed at decoder step $i$?",
     "options": [
-      "As a weighted sum of encoder hidden states: c_i = SUM_{j=1}^Tx alpha_{ij} * h_j",
+      "As a weighted sum of encoder hidden states: $c_i = \\sum_{j=1}^{T_x} \\alpha_{ij} h_j$",
       "By averaging all words",
       "By taking the last encoder state only",
       "By multiplying by a random number"
     ],
     "correct": 0,
-    "explanation": "c_i is the linear combination of encoder states h_j weighted by alignment probabilities alpha_{ij}.",
+    "explanation": "$c_i$ is the linear combination of encoder states $h_j$ weighted by alignment probabilities $\\alpha_{ij}$: $c_i = \\sum_{j=1}^{T_x} \\alpha_{ij} h_j$.",
     "topic": "Attention Formula",
     "slide_ref": "09. Machine Translation.ppt",
     "answer": 0
@@ -6650,7 +6650,7 @@
       "The vocabulary frequency distribution"
     ],
     "correct": 0,
-    "explanation": "Attention weights alpha_{ij} display an intuitive alignment map showing correspondences (e.g. French 'la maison blanche' to English 'the white house').",
+    "explanation": "Attention weights $\\alpha_{ij}$ display an intuitive alignment map showing correspondences (e.g. French 'la maison blanche' to English 'the white house').",
     "topic": "Attention Visualization",
     "slide_ref": "09. Machine Translation.ppt",
     "answer": 0
@@ -6658,15 +6658,15 @@
   {
     "id": "q_ch09_17",
     "chapter": 9,
-    "question": "In greedy decoding for NMT, how is the next word chosen at step t?",
+    "question": "In greedy decoding for NMT, how is the next word chosen at step $t$?",
     "options": [
       "Pick a random word",
       "Pick the longest word",
-      "Pick the single word with the HIGHEST probability: w_t = argmax P(w | y_{<t}, x)",
+      "Pick the single word with the HIGHEST probability: $w_t = \\operatorname{argmax}_w P(w \\mid y_{<t}, x)$",
       "Pick the word with the lowest probability"
     ],
     "correct": 2,
-    "explanation": "Greedy search chooses the locally optimal token at each step, which may lead to globally sub-optimal translations.",
+    "explanation": "Greedy search chooses the locally optimal token at each step ($w_t = \\operatorname{argmax}_w P(w \\mid y_{<t}, x)$), which may lead to globally sub-optimal translations.",
     "topic": "Decoding Strategies",
     "slide_ref": "09. Machine Translation.ppt",
     "answer": 2
@@ -8182,11 +8182,11 @@
     "options": [
       "Because words have many letters",
       "Because computers slow down",
-      "Because nested combinations of PP-attachments and coordinations multiply combinatorially: C_n = (2n)! / ((n+1)! * n!)",
+      "Because nested combinations of PP-attachments and coordinations multiply combinatorially: $C_n = \\frac{(2n)!}{(n+1)! \\, n!}$",
       "Because grammars delete rules"
     ],
     "correct": 2,
-    "explanation": "Attachment ambiguities exhibit Catalan progression; a sentence with 4 PPs can yield 14 trees, 5 PPs yield 42 trees, 10 PPs yield 16,796 trees.",
+    "explanation": "Attachment ambiguities exhibit Catalan progression ($C_n = \\frac{(2n)!}{(n+1)! \\, n!}$); a sentence with 4 PPs can yield 14 trees, 5 PPs yield 42 trees, 10 PPs yield 16,796 trees.",
     "topic": "Parsing Complexity",
     "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
     "answer": 2
@@ -8439,10 +8439,10 @@
       "A grammar with random rules",
       "A rule-less system",
       "A grammar for lottery numbers",
-      "A CFG where each production rule A -> alpha is assigned a conditional probability P(alpha | A) such that SUM P(alpha | A) = 1"
+      "A CFG where each production rule $A \\to \\alpha$ is assigned a conditional probability $P(\\alpha \\mid A)$ such that $\\sum P(\\alpha \\mid A) = 1$"
     ],
     "correct": 3,
-    "explanation": "PCFGs augment CFG rules with probabilities, assigning a probability to each complete parse tree T: P(T) = PROD P(rule_i).",
+    "explanation": "PCFGs augment CFG rules with probabilities, assigning a probability to each complete parse tree $T$: $P(T) = \\prod P(\\text{rule}_i)$.",
     "topic": "PCFG",
     "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
     "answer": 3
@@ -8450,15 +8450,15 @@
   {
     "id": "q_ch11_29",
     "chapter": 11,
-    "question": "How is the probability of a complete parse tree T calculated in a PCFG?",
+    "question": "How is the probability of a complete parse tree $T$ calculated in a PCFG?",
     "options": [
       "The probability of the longest word",
-      "The product of the probabilities of all production rules used in its derivation: P(T) = PROD_{r in T} P(r)",
+      "The product of the probabilities of all production rules used in its derivation: $P(T) = \\prod_{r \\in T} P(r)$",
       "The sum of all rule probabilities",
       "The average of rule probabilities"
     ],
     "correct": 1,
-    "explanation": "Under rule independence assumptions, the tree probability is the product of all constituent rule probabilities.",
+    "explanation": "Under rule independence assumptions, the tree probability is the product of all constituent rule probabilities: $P(T) = \\prod_{r \\in T} P(r)$.",
     "topic": "PCFG",
     "slide_ref": "11. Context-Free Grammars and Constituency Parsing.ppt",
     "answer": 1
@@ -14404,13 +14404,13 @@
     "chapter": "comp",
     "question": "What is the mathematical formula for Scaled Dot-Product Attention in the Transformer?",
     "options": [
-      "Attention(Q, K, V) = softmax( (Q * K^T) / sqrt(d_k) ) * V",
-      "Attention = (Q + K) / V",
-      "Attention = Q * K * V",
-      "Attention = softmax(Q) * V"
+      "$\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right) V$",
+      "$\\text{Attention} = \\frac{Q + K}{V}$",
+      "$\\text{Attention} = Q K V$",
+      "$\\text{Attention} = \\text{softmax}(Q) V$"
     ],
     "correct": 0,
-    "explanation": "Scaled dot-product attention normalizes dot-product logits by the square root of key dimension before applying softmax.",
+    "explanation": "Scaled dot-product attention normalizes dot-product logits by the square root of key dimension before applying softmax: $\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{Q K^T}{\\sqrt{d_k}}\\right) V$.",
     "topic": "Transformers",
     "slide_ref": "Comprehensive NLP Synthesis",
     "answer": 0
@@ -14418,7 +14418,7 @@
   {
     "id": "q_comp_052",
     "chapter": "comp",
-    "question": "Why does the Transformer divide dot products Q * K^T by the scaling factor sqrt(d_k)?",
+    "question": "Why does the Transformer divide dot products $Q K^T$ by the scaling factor $\\sqrt{d_k}$?",
     "options": [
       "To prevent negative numbers",
       "To divide by batch size",
@@ -14596,13 +14596,13 @@
     "chapter": "comp",
     "question": "What does LoRA (Low-Rank Adaptation) do in Parameter-Efficient Fine-Tuning (PEFT)?",
     "options": [
-      "It freezes pre-trained model weights and injects trainable rank-decomposition matrices Delta W = B * A with rank r << d into linear layers",
+      "It freezes pre-trained model weights and injects trainable rank-decomposition matrices $\\Delta W = B \\cdot A$ with rank $r \\ll d$ into linear layers",
       "It quantizes weights to binary",
       "It drops half the layers",
       "It trains using genetic algorithms"
     ],
     "correct": 0,
-    "explanation": "LoRA achieves full fine-tuning performance while training < 1% of parameters by updating low-rank decomposition matrices.",
+    "explanation": "LoRA achieves full fine-tuning performance while training < 1% of parameters by updating low-rank decomposition matrices $\\Delta W = B \\cdot A$.",
     "topic": "PEFT",
     "slide_ref": "Comprehensive NLP Synthesis",
     "answer": 0
