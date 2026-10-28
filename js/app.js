@@ -65,6 +65,32 @@
     return (record.questionIds || []).map(id => qMap.get(id)).filter(Boolean);
   }
 
+  // Utility: KaTeX Mathematical Typesetting Engine
+  function typesetMath(element) {
+    const target = element || dom.contentArea || document.body;
+    if (!target) return;
+
+    if (typeof window.renderMathInElement === 'function') {
+      try {
+        window.renderMathInElement(target, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false }
+          ],
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'annotation', 'annotation-xml'],
+          ignoredClasses: ['no-math', 'btn-search-trigger'],
+          throwOnError: false,
+          errorColor: '#ef4444',
+          strict: false
+        });
+      } catch (err) {
+        console.warn('KaTeX typesetting warning:', err);
+      }
+    }
+  }
+
   // DOM Elements Cache
   const dom = {};
 
@@ -179,6 +205,8 @@
       default:
         renderKnowledgeView();
     }
+
+    typesetMath(dom.contentArea);
   }
 
   // 1. KNOWLEDGE VIEW
@@ -269,6 +297,8 @@
         }
       });
     });
+
+    typesetMath(dom.contentArea);
   }
 
   // 2. QUIZ PRACTICE VIEW (50 Questions per Chapter)
@@ -328,6 +358,8 @@
 
     // Attach answer option click events
     attachQuizOptionHandlers();
+
+    typesetMath(dom.contentArea);
   }
 
   function renderQuizQuestionsList(questions) {
@@ -723,6 +755,8 @@
         submitExam(false);
       });
     }
+
+    typesetMath(dom.contentArea);
   }
 
   function updateExamTimerDisplay() {
@@ -1004,9 +1038,12 @@
         const reviewList = document.getElementById('review-questions-list');
         if (reviewList) {
           reviewList.innerHTML = getReviewQuestionsHtml(filter);
+          typesetMath(reviewList);
         }
       });
     });
+
+    typesetMath(dom.contentArea);
   }
 
   // 5. QUESTION BANK EXPLORER (950 Questions)
@@ -1247,6 +1284,8 @@
         renderQuestionBankView();
       });
     });
+
+    typesetMath(dom.contentArea);
   }
 
   // 4. GLOSSARY VIEW
@@ -1305,6 +1344,8 @@
         }
       });
     }
+
+    typesetMath(dom.contentArea);
   }
 
   // --- GLOBAL SEARCH MODAL (Ctrl + K) ---
@@ -1396,6 +1437,8 @@
         ` : ''}
       </div>
     `;
+
+    typesetMath(dom.globalSearchResults);
   }
 
   // Global helper for code copy

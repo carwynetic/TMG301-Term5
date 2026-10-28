@@ -1530,3 +1530,93 @@ pre code {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Mathematical Formulas & KaTeX Typesetting Styles
+   ========================================================================== */
+
+/* Display block formulas ($$...$$) */
+.katex-display {
+  margin: 1.25rem 0 !important;
+  padding: 1.15rem 1.5rem !important;
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-left: 4px solid var(--accent-primary) !important;
+  border-radius: var(--radius-md) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  box-shadow: var(--shadow-sm) !important;
+  text-align: center;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.katex-display > .katex {
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+}
+
+/* Inline math ($...$) */
+.katex {
+  font-size: 1.08em !important;
+  text-rendering: auto;
+  line-height: 1.2;
+}
+
+/* Ensure math formulas in dark mode match text color */
+[data-theme="dark"] .katex {
+  color: #f1f5f9;
+}
+
+[data-theme="light"] .katex {
+  color: #0f172a;
+}
+
+/* Formula container box */
+.formula-box {
+  margin: 1.25rem 0;
+  padding: 0.25rem 0;
+  overflow-x: auto;
+}
+
+.formula-box .katex-display {
+  margin: 0 !important;
+}
+
+/* Math inside custom tables */
+.custom-table td .katex {
+  vertical-align: middle;
+}
+
+.custom-table td .katex-display {
+  margin: 0.5rem 0 !important;
+  padding: 0.75rem !important;
+}
+
+/* Math in question options and explanations */
+.option-btn .katex {
+  font-weight: 500;
+}
+
+.explanation-box .katex-display {
+  background: var(--bg-secondary) !important;
+}
+
+/* Smooth horizontal scrollbar for long formulas on mobile */
+.katex-display::-webkit-scrollbar {
+  height: 6px;
+}
+
+.katex-display::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.katex-display::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+}
+
+.katex-display::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
